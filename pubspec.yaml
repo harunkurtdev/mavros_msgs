@@ -1,0 +1,20 @@
+# Auto-generated. Do not edit!
+
+# Updated: Wed Aug 31 21:42:38 2022
+
+
+name: mavros_msgs
+description: A ros mavros_msgs message package for dartros
+version: 0.0.3
+publish_to: "none"
+
+environment:
+  sdk: ">=2.7.0 < 3.0.0"
+
+dependencies:
+  buffer: ^1.0.6
+  dartros: ^0.0.4+3
+  geometry_msgs: ^0.0.3
+  std_msgs: ^0.0.3
+  geographic_msgs:
+    path: ../geographic_msgs
