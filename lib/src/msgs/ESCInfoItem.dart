@@ -4,11 +4,10 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros_msgutils/msg_utils.dart';
 import 'package:std_msgs/msgs.dart';
 
 //-----------------------------------------------------------
@@ -23,29 +22,29 @@ class ESCInfoItem extends RosMessage<ESCInfoItem> {
   int temperature;
 
   static ESCInfoItem $prototype = ESCInfoItem();
-  ESCInfoItem({ 
-    Header header,
-    int failure_flags,
-    int error_count,
-    int temperature,
-  }):
-  this.header = header ?? Header(),
-  this.failure_flags = failure_flags ?? 0,
-  this.error_count = error_count ?? 0,
-  this.temperature = temperature ?? 0;
+  ESCInfoItem({
+    Header? header,
+    int? failure_flags,
+    int? error_count,
+    int? temperature,
+  })  : this.header = header ?? Header(),
+        this.failure_flags = failure_flags ?? 0,
+        this.error_count = error_count ?? 0,
+        this.temperature = temperature ?? 0;
 
   @override
-  ESCInfoItem call({ 
-    Header header,
-    int failure_flags,
-    int error_count,
-    int temperature,
-  }) => ESCInfoItem(
-  header: header,
-  failure_flags: failure_flags,
-  error_count: error_count,
-  temperature: temperature,
-  );
+  ESCInfoItem call({
+    Header? header,
+    int? failure_flags,
+    int? error_count,
+    int? temperature,
+  }) =>
+      ESCInfoItem(
+        header: header,
+        failure_flags: failure_flags,
+        error_count: error_count,
+        temperature: temperature,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type ESCInfoItem
@@ -126,6 +125,4 @@ string frame_id
 
 ''';
   }
-
 }
-

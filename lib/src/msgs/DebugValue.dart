@@ -4,11 +4,10 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros_msgutils/msg_utils.dart';
 import 'package:std_msgs/msgs.dart';
 
 //-----------------------------------------------------------
@@ -29,41 +28,41 @@ class DebugValue extends RosMessage<DebugValue> {
   int type;
 
   static DebugValue $prototype = DebugValue();
-  DebugValue({ 
-    Header header,
-    int index,
-    String name,
-    double value_float,
-    int value_int,
-    List<double> data,
-    int type,
-  }):
-  this.header = header ?? Header(),
-  this.index = index ?? 0,
-  this.name = name ?? '',
-  this.value_float = value_float ?? 0.0,
-  this.value_int = value_int ?? 0,
-  this.data = data ?? [],
-  this.type = type ?? 0;
+  DebugValue({
+    Header? header,
+    int? index,
+    String? name,
+    double? value_float,
+    int? value_int,
+    List<double>? data,
+    int? type,
+  })  : this.header = header ?? Header(),
+        this.index = index ?? 0,
+        this.name = name ?? '',
+        this.value_float = value_float ?? 0.0,
+        this.value_int = value_int ?? 0,
+        this.data = data ?? [],
+        this.type = type ?? 0;
 
   @override
-  DebugValue call({ 
-    Header header,
-    int index,
-    String name,
-    double value_float,
-    int value_int,
-    List<double> data,
-    int type,
-  }) => DebugValue(
-  header: header,
-  index: index,
-  name: name,
-  value_float: value_float,
-  value_int: value_int,
-  data: data,
-  type: type,
-  );
+  DebugValue call({
+    Header? header,
+    int? index,
+    String? name,
+    double? value_float,
+    int? value_int,
+    List<double>? data,
+    int? type,
+  }) =>
+      DebugValue(
+        header: header,
+        index: index,
+        name: name,
+        value_float: value_float,
+        value_int: value_int,
+        data: data,
+        type: type,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type DebugValue
@@ -78,7 +77,8 @@ class DebugValue extends RosMessage<DebugValue> {
     // Serialize message field [value_int]
     writer.writeInt32(value_int);
     // Serialize message field [data]
-    writer.writeArray<double>(data, (val) => writer.writeFloat32(val), specArrayLen: null);
+    writer.writeArray<double>(data, (val) => writer.writeFloat32(val),
+        specArrayLen: null);
     // Serialize message field [type]
     writer.writeUint8(type);
   }
@@ -98,7 +98,8 @@ class DebugValue extends RosMessage<DebugValue> {
     // Deserialize message field [value_int]
     data.value_int = reader.readInt32();
     // Deserialize message field [data]
-    data.data = reader.readArray<double>(() => reader.readFloat32(), arrayLen: null);
+    data.data =
+        reader.readArray<double>(() => reader.readFloat32(), arrayLen: null);
     // Deserialize message field [type]
     data.type = reader.readUint8();
     return data;
@@ -178,6 +179,4 @@ string frame_id
   static const int TYPE_DEBUG_ARRAY = 2;
   static const int TYPE_NAMED_VALUE_FLOAT = 3;
   static const int TYPE_NAMED_VALUE_INT = 4;
-
 }
-

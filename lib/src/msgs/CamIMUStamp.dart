@@ -4,11 +4,10 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros_msgutils/msg_utils.dart';
 
 //-----------------------------------------------------------
 
@@ -18,21 +17,21 @@ class CamIMUStamp extends RosMessage<CamIMUStamp> {
   int frame_seq_id;
 
   static CamIMUStamp $prototype = CamIMUStamp();
-  CamIMUStamp({ 
-    RosTime frame_stamp,
-    int frame_seq_id,
-  }):
-  this.frame_stamp = frame_stamp ?? RosTime(secs: 0, nsecs: 0),
-  this.frame_seq_id = frame_seq_id ?? 0;
+  CamIMUStamp({
+    RosTime? frame_stamp,
+    int? frame_seq_id,
+  })  : this.frame_stamp = frame_stamp ?? RosTime(secs: 0, nsecs: 0),
+        this.frame_seq_id = frame_seq_id ?? 0;
 
   @override
-  CamIMUStamp call({ 
-    RosTime frame_stamp,
-    int frame_seq_id,
-  }) => CamIMUStamp(
-  frame_stamp: frame_stamp,
-  frame_seq_id: frame_seq_id,
-  );
+  CamIMUStamp call({
+    RosTime? frame_stamp,
+    int? frame_seq_id,
+  }) =>
+      CamIMUStamp(
+        frame_stamp: frame_stamp,
+        frame_seq_id: frame_seq_id,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type CamIMUStamp
@@ -79,6 +78,4 @@ int32 frame_seq_id		# Sequence number of the image frame
 
 ''';
   }
-
 }
-

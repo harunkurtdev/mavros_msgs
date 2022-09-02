@@ -4,13 +4,14 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+// import 'package:dartros_msgutils/msg_utils.dart';
+// import 'package:dartros_msgutils/msg_utils.dart';
+import 'package:dartros/dartros.dart';
 import 'package:std_msgs/msgs.dart';
-
+// export 'package:dartros_msgutils/msg_utils.dart';
 //-----------------------------------------------------------
 
 class ADSBVehicle extends RosMessage<ADSBVehicle> {
@@ -43,69 +44,69 @@ class ADSBVehicle extends RosMessage<ADSBVehicle> {
   int squawk;
 
   static ADSBVehicle $prototype = ADSBVehicle();
-  ADSBVehicle({ 
-    Header header,
-    int ICAO_address,
-    String callsign,
-    double latitude,
-    double longitude,
-    double altitude,
-    double heading,
-    double hor_velocity,
-    double ver_velocity,
-    int altitude_type,
-    int emitter_type,
-    RosTime tslc,
-    int flags,
-    int squawk,
-  }):
-  this.header = header ?? Header(),
-  this.ICAO_address = ICAO_address ?? 0,
-  this.callsign = callsign ?? '',
-  this.latitude = latitude ?? 0.0,
-  this.longitude = longitude ?? 0.0,
-  this.altitude = altitude ?? 0.0,
-  this.heading = heading ?? 0.0,
-  this.hor_velocity = hor_velocity ?? 0.0,
-  this.ver_velocity = ver_velocity ?? 0.0,
-  this.altitude_type = altitude_type ?? 0,
-  this.emitter_type = emitter_type ?? 0,
-  this.tslc = tslc ?? RosTime(secs: 0, nsecs: 0),
-  this.flags = flags ?? 0,
-  this.squawk = squawk ?? 0;
+  ADSBVehicle({
+    Header? header,
+    int? ICAO_address,
+    String? callsign,
+    double? latitude,
+    double? longitude,
+    double? altitude,
+    double? heading,
+    double? hor_velocity,
+    double? ver_velocity,
+    int? altitude_type,
+    int? emitter_type,
+    RosTime? tslc,
+    int? flags,
+    int? squawk,
+  })  : this.header = header ?? Header(),
+        this.ICAO_address = ICAO_address ?? 0,
+        this.callsign = callsign ?? '',
+        this.latitude = latitude ?? 0.0,
+        this.longitude = longitude ?? 0.0,
+        this.altitude = altitude ?? 0.0,
+        this.heading = heading ?? 0.0,
+        this.hor_velocity = hor_velocity ?? 0.0,
+        this.ver_velocity = ver_velocity ?? 0.0,
+        this.altitude_type = altitude_type ?? 0,
+        this.emitter_type = emitter_type ?? 0,
+        this.tslc = tslc ?? RosTime(secs: 0, nsecs: 0),
+        this.flags = flags ?? 0,
+        this.squawk = squawk ?? 0;
 
   @override
-  ADSBVehicle call({ 
-    Header header,
-    int ICAO_address,
-    String callsign,
-    double latitude,
-    double longitude,
-    double altitude,
-    double heading,
-    double hor_velocity,
-    double ver_velocity,
-    int altitude_type,
-    int emitter_type,
-    RosTime tslc,
-    int flags,
-    int squawk,
-  }) => ADSBVehicle(
-  header: header,
-  ICAO_address: ICAO_address,
-  callsign: callsign,
-  latitude: latitude,
-  longitude: longitude,
-  altitude: altitude,
-  heading: heading,
-  hor_velocity: hor_velocity,
-  ver_velocity: ver_velocity,
-  altitude_type: altitude_type,
-  emitter_type: emitter_type,
-  tslc: tslc,
-  flags: flags,
-  squawk: squawk,
-  );
+  ADSBVehicle call({
+    Header? header,
+    int? ICAO_address,
+    String? callsign,
+    double? latitude,
+    double? longitude,
+    double? altitude,
+    double? heading,
+    double? hor_velocity,
+    double? ver_velocity,
+    int? altitude_type,
+    int? emitter_type,
+    RosTime? tslc,
+    int? flags,
+    int? squawk,
+  }) =>
+      ADSBVehicle(
+        header: header,
+        ICAO_address: ICAO_address,
+        callsign: callsign,
+        latitude: latitude,
+        longitude: longitude,
+        altitude: altitude,
+        heading: heading,
+        hor_velocity: hor_velocity,
+        ver_velocity: ver_velocity,
+        altitude_type: altitude_type,
+        emitter_type: emitter_type,
+        tslc: tslc,
+        flags: flags,
+        squawk: squawk,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type ADSBVehicle
@@ -328,6 +329,4 @@ string frame_id
   static const int FLAG_VERTICAL_VELOCITY_VALID = 128;
   static const int FLAG_BARO_VALID = 256;
   static const int FLAG_SOURCE_UAT = 32768;
-
 }
-

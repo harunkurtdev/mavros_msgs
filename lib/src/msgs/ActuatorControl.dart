@@ -4,11 +4,10 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros_msgutils/msg_utils.dart';
 import 'package:std_msgs/msgs.dart';
 
 //-----------------------------------------------------------
@@ -21,25 +20,25 @@ class ActuatorControl extends RosMessage<ActuatorControl> {
   List<double> controls;
 
   static ActuatorControl $prototype = ActuatorControl();
-  ActuatorControl({ 
-    Header header,
-    int group_mix,
-    List<double> controls,
-  }):
-  this.header = header ?? Header(),
-  this.group_mix = group_mix ?? 0,
-  this.controls = controls ?? List.generate(8, (_) => 0);
+  ActuatorControl({
+    Header? header,
+    int? group_mix,
+    List<double>? controls,
+  })  : this.header = header ?? Header(),
+        this.group_mix = group_mix ?? 0,
+        this.controls = controls ?? List.generate(8, (_) => 0);
 
   @override
-  ActuatorControl call({ 
-    Header header,
-    int group_mix,
-    List<double> controls,
-  }) => ActuatorControl(
-  header: header,
-  group_mix: group_mix,
-  controls: controls,
-  );
+  ActuatorControl call({
+    Header? header,
+    int? group_mix,
+    List<double>? controls,
+  }) =>
+      ActuatorControl(
+        header: header,
+        group_mix: group_mix,
+        controls: controls,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type ActuatorControl
@@ -49,10 +48,12 @@ class ActuatorControl extends RosMessage<ActuatorControl> {
     writer.writeUint8(group_mix);
     // Check that the constant length array field [controls] has the right length
     if (controls.length != 8) {
-      throw Exception('Unable to serialize array field controls - length must be 8');
+      throw Exception(
+          'Unable to serialize array field controls - length must be 8');
     }
     // Serialize message field [controls]
-    writer.writeArray<double>(controls, (val) => writer.writeFloat32(val), specArrayLen: 8);
+    writer.writeArray<double>(controls, (val) => writer.writeFloat32(val),
+        specArrayLen: 8);
   }
 
   @override
@@ -64,7 +65,8 @@ class ActuatorControl extends RosMessage<ActuatorControl> {
     // Deserialize message field [group_mix]
     data.group_mix = reader.readUint8();
     // Deserialize message field [controls]
-    data.controls = reader.readArray<double>(() => reader.readFloat32(), arrayLen: 8);
+    data.controls =
+        reader.readArray<double>(() => reader.readFloat32(), arrayLen: 8);
     return data;
   }
 
@@ -130,6 +132,4 @@ string frame_id
   static const int PX4_MIX_FLIGHT_CONTROL_VTOL_ALT = 1;
   static const int PX4_MIX_PAYLOAD = 2;
   static const int PX4_MIX_MANUAL_PASSTHROUGH = 3;
-
 }
-

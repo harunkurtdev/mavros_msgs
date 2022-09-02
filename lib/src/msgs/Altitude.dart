@@ -4,11 +4,10 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros/dartros.dart';
 import 'package:std_msgs/msgs.dart';
 
 //-----------------------------------------------------------
@@ -29,41 +28,41 @@ class Altitude extends RosMessage<Altitude> {
   double bottom_clearance;
 
   static Altitude $prototype = Altitude();
-  Altitude({ 
-    Header header,
-    double monotonic,
-    double amsl,
-    double local,
-    double relative,
-    double terrain,
-    double bottom_clearance,
-  }):
-  this.header = header ?? Header(),
-  this.monotonic = monotonic ?? 0.0,
-  this.amsl = amsl ?? 0.0,
-  this.local = local ?? 0.0,
-  this.relative = relative ?? 0.0,
-  this.terrain = terrain ?? 0.0,
-  this.bottom_clearance = bottom_clearance ?? 0.0;
+  Altitude({
+    Header? header,
+    double? monotonic,
+    double? amsl,
+    double? local,
+    double? relative,
+    double? terrain,
+    double? bottom_clearance,
+  })  : this.header = header ?? Header(),
+        this.monotonic = monotonic ?? 0.0,
+        this.amsl = amsl ?? 0.0,
+        this.local = local ?? 0.0,
+        this.relative = relative ?? 0.0,
+        this.terrain = terrain ?? 0.0,
+        this.bottom_clearance = bottom_clearance ?? 0.0;
 
   @override
-  Altitude call({ 
-    Header header,
-    double monotonic,
-    double amsl,
-    double local,
-    double relative,
-    double terrain,
-    double bottom_clearance,
-  }) => Altitude(
-  header: header,
-  monotonic: monotonic,
-  amsl: amsl,
-  local: local,
-  relative: relative,
-  terrain: terrain,
-  bottom_clearance: bottom_clearance,
-  );
+  Altitude call({
+    Header? header,
+    double? monotonic,
+    double? amsl,
+    double? local,
+    double? relative,
+    double? terrain,
+    double? bottom_clearance,
+  }) =>
+      Altitude(
+        header: header,
+        monotonic: monotonic,
+        amsl: amsl,
+        local: local,
+        relative: relative,
+        terrain: terrain,
+        bottom_clearance: bottom_clearance,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type Altitude
@@ -156,6 +155,4 @@ string frame_id
 
 ''';
   }
-
 }
-

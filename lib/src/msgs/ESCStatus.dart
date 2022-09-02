@@ -4,11 +4,10 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros_msgutils/msg_utils.dart';
 import 'package:std_msgs/msgs.dart';
 import 'ESCStatusItem.dart';
 
@@ -20,21 +19,21 @@ class ESCStatus extends RosMessage<ESCStatus> {
   List<ESCStatusItem> esc_status;
 
   static ESCStatus $prototype = ESCStatus();
-  ESCStatus({ 
-    Header header,
-    List<ESCStatusItem> esc_status,
-  }):
-  this.header = header ?? Header(),
-  this.esc_status = esc_status ?? [];
+  ESCStatus({
+    Header? header,
+    List<ESCStatusItem>? esc_status,
+  })  : this.header = header ?? Header(),
+        this.esc_status = esc_status ?? [];
 
   @override
-  ESCStatus call({ 
-    Header header,
-    List<ESCStatusItem> esc_status,
-  }) => ESCStatus(
-  header: header,
-  esc_status: esc_status,
-  );
+  ESCStatus call({
+    Header? header,
+    List<ESCStatusItem>? esc_status,
+  }) =>
+      ESCStatus(
+        header: header,
+        esc_status: esc_status,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type ESCStatus
@@ -58,7 +57,8 @@ class ESCStatus extends RosMessage<ESCStatus> {
     {
       // Deserialize array length for message field [esc_status]
       final len = reader.readInt32();
-      data.esc_status = List.generate(len, (_) => ESCStatusItem.$prototype.deserialize(reader));
+      data.esc_status = List.generate(
+          len, (_) => ESCStatusItem.$prototype.deserialize(reader));
     }
     return data;
   }
@@ -129,6 +129,4 @@ float32 current
 
 ''';
   }
-
 }
-

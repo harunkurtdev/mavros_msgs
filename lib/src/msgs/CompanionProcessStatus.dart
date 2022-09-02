@@ -4,11 +4,10 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros_msgutils/msg_utils.dart';
 import 'package:std_msgs/msgs.dart';
 
 //-----------------------------------------------------------
@@ -21,25 +20,25 @@ class CompanionProcessStatus extends RosMessage<CompanionProcessStatus> {
   int component;
 
   static CompanionProcessStatus $prototype = CompanionProcessStatus();
-  CompanionProcessStatus({ 
-    Header header,
-    int state,
-    int component,
-  }):
-  this.header = header ?? Header(),
-  this.state = state ?? 0,
-  this.component = component ?? 0;
+  CompanionProcessStatus({
+    Header? header,
+    int? state,
+    int? component,
+  })  : this.header = header ?? Header(),
+        this.state = state ?? 0,
+        this.component = component ?? 0;
 
   @override
-  CompanionProcessStatus call({ 
-    Header header,
-    int state,
-    int component,
-  }) => CompanionProcessStatus(
-  header: header,
-  state: state,
-  component: component,
-  );
+  CompanionProcessStatus call({
+    Header? header,
+    int? state,
+    int? component,
+  }) =>
+      CompanionProcessStatus(
+        header: header,
+        state: state,
+        component: component,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type CompanionProcessStatus
@@ -136,6 +135,4 @@ string frame_id
   static const int MAV_STATE_FLIGHT_TERMINATION = 8;
   static const int MAV_COMP_ID_OBSTACLE_AVOIDANCE = 196;
   static const int MAV_COMP_ID_VISUAL_INERTIAL_ODOMETRY = 197;
-
 }
-

@@ -4,11 +4,10 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros_msgutils/msg_utils.dart';
 import 'package:geometry_msgs/msgs.dart';
 import 'package:std_msgs/msgs.dart';
 
@@ -26,33 +25,32 @@ class AttitudeTarget extends RosMessage<AttitudeTarget> {
   double thrust;
 
   static AttitudeTarget $prototype = AttitudeTarget();
-  AttitudeTarget({ 
-    Header header,
-    int type_mask,
-    Quaternion orientation,
-    Vector3 body_rate,
-    double thrust,
-  }):
-  this.header = header ?? Header(),
-  this.type_mask = type_mask ?? 0,
-  this.orientation = orientation ?? Quaternion(),
-  this.body_rate = body_rate ?? Vector3(),
-  this.thrust = thrust ?? 0.0;
+  AttitudeTarget({
+    Header? header,
+    int? type_mask,
+    Quaternion? orientation,
+    Vector3? body_rate,
+    double? thrust,
+  })  : this.header = header ?? Header(),
+        this.type_mask = type_mask ?? 0,
+        this.orientation = orientation ?? Quaternion(),
+        this.body_rate = body_rate ?? Vector3(),
+        this.thrust = thrust ?? 0.0;
 
   @override
-  AttitudeTarget call({ 
-    Header header,
-    int type_mask,
-    Quaternion orientation,
-    Vector3 body_rate,
-    double thrust,
-  }) => AttitudeTarget(
-  header: header,
-  type_mask: type_mask,
-  orientation: orientation,
-  body_rate: body_rate,
-  thrust: thrust,
-  );
+  AttitudeTarget call({
+    Header? header,
+    int? type_mask,
+    Quaternion? orientation,
+    Vector3? body_rate,
+  }) =>
+      AttitudeTarget(
+        header: header,
+        type_mask: type_mask,
+        orientation: orientation,
+        body_rate: body_rate,
+        thrust: thrust,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type AttitudeTarget
@@ -170,6 +168,4 @@ float64 z
   static const int IGNORE_YAW_RATE = 4;
   static const int IGNORE_THRUST = 64;
   static const int IGNORE_ATTITUDE = 128;
-
 }
-

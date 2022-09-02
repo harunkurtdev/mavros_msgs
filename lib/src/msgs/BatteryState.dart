@@ -1,29 +1,23 @@
 // Auto-generated. Do not edit!
 
-// Updated: Wed Aug 31 21:34:20 2022
+// Updated: Thu Mar 18 10:22:38 2021
 
-// (in-package mavros_msgs.msg)
+// (in-package sensor_msgs.msg)
 
 // ignore_for_file: unused_import, overridden_fields
-
-//this package change from sensro_msgs/BatterState
-
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-// import 'package:dartros_msgutils/msg_utils.dart';
 import 'package:dartros_msgutils/msg_utils.dart';
 import 'package:std_msgs/msgs.dart';
 
 //-----------------------------------------------------------
 
-class BatteryStatus extends RosMessage<BatteryStatus> {
+class BatteryState extends RosMessage<BatteryState> {
   Header header;
 
   double voltage;
 
   double current;
-
-  double temperature;
 
   double charge;
 
@@ -47,12 +41,11 @@ class BatteryStatus extends RosMessage<BatteryStatus> {
 
   String serial_number;
 
-  static BatteryStatus $prototype = BatteryStatus();
-  BatteryStatus({
+  static BatteryState $prototype = BatteryState();
+  BatteryState({
     Header? header,
     double? voltage,
     double? current,
-    double? temperature,
     double? charge,
     double? capacity,
     double? design_capacity,
@@ -68,7 +61,6 @@ class BatteryStatus extends RosMessage<BatteryStatus> {
         this.voltage = voltage ?? 0.0,
         this.current = current ?? 0.0,
         this.charge = charge ?? 0.0,
-        this.temperature = temperature ?? 0.0,
         this.capacity = capacity ?? 0.0,
         this.design_capacity = design_capacity ?? 0.0,
         this.percentage = percentage ?? 0.0,
@@ -81,11 +73,10 @@ class BatteryStatus extends RosMessage<BatteryStatus> {
         this.serial_number = serial_number ?? '';
 
   @override
-  BatteryStatus call({
+  BatteryState call({
     Header? header,
     double? voltage,
     double? current,
-    double? temperature,
     double? charge,
     double? capacity,
     double? design_capacity,
@@ -98,11 +89,10 @@ class BatteryStatus extends RosMessage<BatteryStatus> {
     String? location,
     String? serial_number,
   }) =>
-      BatteryStatus(
+      BatteryState(
         header: header,
         voltage: voltage,
         current: current,
-        temperature: temperature,
         charge: charge,
         capacity: capacity,
         design_capacity: design_capacity,
@@ -117,12 +107,11 @@ class BatteryStatus extends RosMessage<BatteryStatus> {
       );
 
   void serialize(ByteDataWriter writer) {
-    // Serializes a message object of type BatteryStatus
+    // Serializes a message object of type BatteryState
     // Serialize message field [header]
     header.serialize(writer);
+    // Serialize message field [voltage]
     writer.writeFloat32(voltage);
-    // Serialize message field [current]
-    writer.writeFloat32(temperature);
     // Serialize message field [current]
     writer.writeFloat32(current);
     // Serialize message field [charge]
@@ -151,15 +140,13 @@ class BatteryStatus extends RosMessage<BatteryStatus> {
   }
 
   @override
-  BatteryStatus deserialize(ByteDataReader reader) {
-    //deserializes a message object of type BatteryStatus
-    final data = BatteryStatus();
+  BatteryState deserialize(ByteDataReader reader) {
+    //deserializes a message object of type BatteryState
+    final data = BatteryState();
     // Deserialize message field [header]
     data.header = Header.$prototype.deserialize(reader);
     // Deserialize message field [voltage]
     data.voltage = reader.readFloat32();
-    // Deserialize message field [temperature]
-    data.temperature = reader.readFloat32();
     // Deserialize message field [current]
     data.current = reader.readFloat32();
     // Deserialize message field [charge]
@@ -185,14 +172,16 @@ class BatteryStatus extends RosMessage<BatteryStatus> {
     data.location = reader.readString();
     // Deserialize message field [serial_number]
     data.serial_number = reader.readString();
-    ;
     return data;
   }
 
   int getMessageSize() {
     var length = 0;
     length += header.getMessageSize();
-    return length + 12;
+    length += 4 * cell_voltage.length;
+    length += utf8.encode(location).length;
+    length += utf8.encode(serial_number).length;
+    return length + 40;
   }
 
   @override
@@ -210,15 +199,55 @@ class BatteryStatus extends RosMessage<BatteryStatus> {
   @override
   String get messageDefinition {
     // Returns full string definition for message
-    return '''# Represent battery status from SYSTEM_STATUS
-#
-# To be replaced when sensor_msgs/BatteryState PR will be merged
-# https://github.com/ros/common_msgs/pull/74
+    return '''
+# Constants are chosen to match the enums in the linux kernel
+# defined in include/linux/power_supply.h as of version 3.7
+# The one difference is for style reasons the constants are
+# all uppercase not mixed case.
 
-std_msgs/Header header
-float32 voltage # [V]
-float32 current # [A]
-float32 remaining # 0..1
+# Power supply status constants
+uint8 POWER_SUPPLY_STATUS_UNKNOWN = 0
+uint8 POWER_SUPPLY_STATUS_CHARGING = 1
+uint8 POWER_SUPPLY_STATUS_DISCHARGING = 2
+uint8 POWER_SUPPLY_STATUS_NOT_CHARGING = 3
+uint8 POWER_SUPPLY_STATUS_FULL = 4
+
+# Power supply health constants
+uint8 POWER_SUPPLY_HEALTH_UNKNOWN = 0
+uint8 POWER_SUPPLY_HEALTH_GOOD = 1
+uint8 POWER_SUPPLY_HEALTH_OVERHEAT = 2
+uint8 POWER_SUPPLY_HEALTH_DEAD = 3
+uint8 POWER_SUPPLY_HEALTH_OVERVOLTAGE = 4
+uint8 POWER_SUPPLY_HEALTH_UNSPEC_FAILURE = 5
+uint8 POWER_SUPPLY_HEALTH_COLD = 6
+uint8 POWER_SUPPLY_HEALTH_WATCHDOG_TIMER_EXPIRE = 7
+uint8 POWER_SUPPLY_HEALTH_SAFETY_TIMER_EXPIRE = 8
+
+# Power supply technology (chemistry) constants
+uint8 POWER_SUPPLY_TECHNOLOGY_UNKNOWN = 0
+uint8 POWER_SUPPLY_TECHNOLOGY_NIMH = 1
+uint8 POWER_SUPPLY_TECHNOLOGY_LION = 2
+uint8 POWER_SUPPLY_TECHNOLOGY_LIPO = 3
+uint8 POWER_SUPPLY_TECHNOLOGY_LIFE = 4
+uint8 POWER_SUPPLY_TECHNOLOGY_NICD = 5
+uint8 POWER_SUPPLY_TECHNOLOGY_LIMN = 6
+
+Header  header
+float32 voltage          # Voltage in Volts (Mandatory)
+float32 current          # Negative when discharging (A)  (If unmeasured NaN)
+float32 charge           # Current charge in Ah  (If unmeasured NaN)
+float32 capacity         # Capacity in Ah (last full capacity)  (If unmeasured NaN)
+float32 design_capacity  # Capacity in Ah (design capacity)  (If unmeasured NaN)
+float32 percentage       # Charge percentage on 0 to 1 range  (If unmeasured NaN)
+uint8   power_supply_status     # The charging status as reported. Values defined above
+uint8   power_supply_health     # The battery health metric. Values defined above
+uint8   power_supply_technology # The battery chemistry. Values defined above
+bool    present          # True if the battery is present
+
+float32[] cell_voltage   # An array of individual cell voltages for each cell in the pack
+                         # If individual voltages unknown but number of cells known set each to NaN
+string location          # The location into which the battery is inserted. (slot number or plug)
+string serial_number     # The best approximation of the battery serial number
 
 ================================================================================
 MSG: std_msgs/Header
@@ -238,4 +267,27 @@ string frame_id
 
 ''';
   }
+
+// Constants for message
+  static const int POWER_SUPPLY_STATUS_UNKNOWN = 0;
+  static const int POWER_SUPPLY_STATUS_CHARGING = 1;
+  static const int POWER_SUPPLY_STATUS_DISCHARGING = 2;
+  static const int POWER_SUPPLY_STATUS_NOT_CHARGING = 3;
+  static const int POWER_SUPPLY_STATUS_FULL = 4;
+  static const int POWER_SUPPLY_HEALTH_UNKNOWN = 0;
+  static const int POWER_SUPPLY_HEALTH_GOOD = 1;
+  static const int POWER_SUPPLY_HEALTH_OVERHEAT = 2;
+  static const int POWER_SUPPLY_HEALTH_DEAD = 3;
+  static const int POWER_SUPPLY_HEALTH_OVERVOLTAGE = 4;
+  static const int POWER_SUPPLY_HEALTH_UNSPEC_FAILURE = 5;
+  static const int POWER_SUPPLY_HEALTH_COLD = 6;
+  static const int POWER_SUPPLY_HEALTH_WATCHDOG_TIMER_EXPIRE = 7;
+  static const int POWER_SUPPLY_HEALTH_SAFETY_TIMER_EXPIRE = 8;
+  static const int POWER_SUPPLY_TECHNOLOGY_UNKNOWN = 0;
+  static const int POWER_SUPPLY_TECHNOLOGY_NIMH = 1;
+  static const int POWER_SUPPLY_TECHNOLOGY_LION = 2;
+  static const int POWER_SUPPLY_TECHNOLOGY_LIPO = 3;
+  static const int POWER_SUPPLY_TECHNOLOGY_LIFE = 4;
+  static const int POWER_SUPPLY_TECHNOLOGY_NICD = 5;
+  static const int POWER_SUPPLY_TECHNOLOGY_LIMN = 6;
 }

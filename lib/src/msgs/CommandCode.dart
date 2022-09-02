@@ -4,11 +4,10 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros_msgutils/msg_utils.dart';
 
 //-----------------------------------------------------------
 
@@ -408,6 +407,4 @@ uint16 VIDEO_STOP_STREAMING = 2503                 # Stop the given video stream
   static const int VIDEO_STOP_CAPTURE = 2501;
   static const int VIDEO_START_STREAMING = 2502;
   static const int VIDEO_STOP_STREAMING = 2503;
-
 }
-

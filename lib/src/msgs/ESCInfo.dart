@@ -4,11 +4,10 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros_msgutils/msg_utils.dart';
 import 'package:std_msgs/msgs.dart';
 import 'ESCInfoItem.dart';
 
@@ -28,37 +27,37 @@ class ESCInfo extends RosMessage<ESCInfo> {
   List<ESCInfoItem> esc_info;
 
   static ESCInfo $prototype = ESCInfo();
-  ESCInfo({ 
-    Header header,
-    int counter,
-    int count,
-    int connection_type,
-    int info,
-    List<ESCInfoItem> esc_info,
-  }):
-  this.header = header ?? Header(),
-  this.counter = counter ?? 0,
-  this.count = count ?? 0,
-  this.connection_type = connection_type ?? 0,
-  this.info = info ?? 0,
-  this.esc_info = esc_info ?? [];
+  ESCInfo({
+    Header? header,
+    int? counter,
+    int? count,
+    int? connection_type,
+    int? info,
+    List<ESCInfoItem>? esc_info,
+  })  : this.header = header ?? Header(),
+        this.counter = counter ?? 0,
+        this.count = count ?? 0,
+        this.connection_type = connection_type ?? 0,
+        this.info = info ?? 0,
+        this.esc_info = esc_info ?? [];
 
   @override
-  ESCInfo call({ 
-    Header header,
-    int counter,
-    int count,
-    int connection_type,
-    int info,
-    List<ESCInfoItem> esc_info,
-  }) => ESCInfo(
-  header: header,
-  counter: counter,
-  count: count,
-  connection_type: connection_type,
-  info: info,
-  esc_info: esc_info,
-  );
+  ESCInfo call({
+    Header? header,
+    int? counter,
+    int? count,
+    int? connection_type,
+    int? info,
+    List<ESCInfoItem>? esc_info,
+  }) =>
+      ESCInfo(
+        header: header,
+        counter: counter,
+        count: count,
+        connection_type: connection_type,
+        info: info,
+        esc_info: esc_info,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type ESCInfo
@@ -98,7 +97,8 @@ class ESCInfo extends RosMessage<ESCInfo> {
     {
       // Deserialize array length for message field [esc_info]
       final len = reader.readInt32();
-      data.esc_info = List.generate(len, (_) => ESCInfoItem.$prototype.deserialize(reader));
+      data.esc_info =
+          List.generate(len, (_) => ESCInfoItem.$prototype.deserialize(reader));
     }
     return data;
   }
@@ -175,6 +175,4 @@ int32 temperature
 
 ''';
   }
-
 }
-
