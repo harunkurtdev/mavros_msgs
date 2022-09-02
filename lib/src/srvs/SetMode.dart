@@ -4,14 +4,13 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+// import 'package:dartros/msg_utils.dart';
+import 'package:dartros_msgutils/msg_utils.dart';
 
 //-----------------------------------------------------------
-
 
 //-----------------------------------------------------------
 
@@ -21,21 +20,21 @@ class SetModeRequest extends RosMessage<SetModeRequest> {
   String custom_mode;
 
   static SetModeRequest $prototype = SetModeRequest();
-  SetModeRequest({ 
-    int base_mode,
-    String custom_mode,
-  }):
-  this.base_mode = base_mode ?? 0,
-  this.custom_mode = custom_mode ?? '';
+  SetModeRequest({
+    int? base_mode,
+    String? custom_mode,
+  })  : this.base_mode = base_mode ?? 0,
+        this.custom_mode = custom_mode ?? '';
 
   @override
-  SetModeRequest call({ 
-    int base_mode,
-    String custom_mode,
-  }) => SetModeRequest(
-  base_mode: base_mode,
-  custom_mode: custom_mode,
-  );
+  SetModeRequest call({
+    int? base_mode,
+    String? custom_mode,
+  }) =>
+      SetModeRequest(
+        base_mode: base_mode,
+        custom_mode: custom_mode,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type SetModeRequest
@@ -113,24 +112,23 @@ string custom_mode	# string mode representation or integer
   static const int MAV_MODE_AUTO_ARMED = 220;
   static const int MAV_MODE_TEST_DISARMED = 66;
   static const int MAV_MODE_TEST_ARMED = 194;
-
 }
 
 class SetModeResponse extends RosMessage<SetModeResponse> {
   bool mode_sent;
 
   static SetModeResponse $prototype = SetModeResponse();
-  SetModeResponse({ 
-    bool mode_sent,
-  }):
-  this.mode_sent = mode_sent ?? false;
+  SetModeResponse({
+    bool? mode_sent,
+  }) : this.mode_sent = mode_sent ?? false;
 
   @override
-  SetModeResponse call({ 
-    bool mode_sent,
-  }) => SetModeResponse(
-  mode_sent: mode_sent,
-  );
+  SetModeResponse call({
+    bool? mode_sent,
+  }) =>
+      SetModeResponse(
+        mode_sent: mode_sent,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type SetModeResponse
@@ -171,7 +169,6 @@ class SetModeResponse extends RosMessage<SetModeResponse> {
 
 ''';
   }
-
 }
 
 class SetMode extends RosServiceMessage<SetModeRequest, SetModeResponse> {
@@ -184,4 +181,8 @@ class SetMode extends RosServiceMessage<SetModeRequest, SetModeResponse> {
   String get md5sum => 'e4f18fa93379f9ff1780d270ce110203';
   @override
   String get fullType => 'mavros_msgs/SetMode';
+
+  @override
+  // TODO: implement messageDefinition
+  String get messageDefinition => throw UnimplementedError();
 }

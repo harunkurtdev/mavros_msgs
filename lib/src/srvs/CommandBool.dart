@@ -4,14 +4,13 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+
+import 'package:dartros_msgutils/msg_utils.dart';
 
 //-----------------------------------------------------------
-
 
 //-----------------------------------------------------------
 
@@ -19,17 +18,17 @@ class CommandBoolRequest extends RosMessage<CommandBoolRequest> {
   bool value;
 
   static CommandBoolRequest $prototype = CommandBoolRequest();
-  CommandBoolRequest({ 
-    bool value,
-  }):
-  this.value = value ?? false;
+  CommandBoolRequest({
+    bool? value,
+  }) : this.value = value ?? false;
 
   @override
-  CommandBoolRequest call({ 
-    bool value,
-  }) => CommandBoolRequest(
-  value: value,
-  );
+  CommandBoolRequest call({
+    bool? value,
+  }) =>
+      CommandBoolRequest(
+        value: value,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type CommandBoolRequest
@@ -71,7 +70,6 @@ bool value
 
 ''';
   }
-
 }
 
 class CommandBoolResponse extends RosMessage<CommandBoolResponse> {
@@ -80,21 +78,21 @@ class CommandBoolResponse extends RosMessage<CommandBoolResponse> {
   int result;
 
   static CommandBoolResponse $prototype = CommandBoolResponse();
-  CommandBoolResponse({ 
-    bool success,
-    int result,
-  }):
-  this.success = success ?? false,
-  this.result = result ?? 0;
+  CommandBoolResponse({
+    bool? success,
+    int? result,
+  })  : this.success = success ?? false,
+        this.result = result ?? 0;
 
   @override
-  CommandBoolResponse call({ 
-    bool success,
-    int result,
-  }) => CommandBoolResponse(
-  success: success,
-  result: result,
-  );
+  CommandBoolResponse call({
+    bool? success,
+    int? result,
+  }) =>
+      CommandBoolResponse(
+        success: success,
+        result: result,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type CommandBoolResponse
@@ -140,10 +138,10 @@ uint8 result
 
 ''';
   }
-
 }
 
-class CommandBool extends RosServiceMessage<CommandBoolRequest, CommandBoolResponse> {
+class CommandBool
+    extends RosServiceMessage<CommandBoolRequest, CommandBoolResponse> {
   static final $prototype = CommandBool();
   @override
   CommandBoolRequest get request => CommandBoolRequest.$prototype;
@@ -153,4 +151,8 @@ class CommandBool extends RosServiceMessage<CommandBoolRequest, CommandBoolRespo
   String get md5sum => 'e09abbb4e5bae6b558e5010966eb6e9e';
   @override
   String get fullType => 'mavros_msgs/CommandBool';
+
+  @override
+  // TODO: implement messageDefinition
+  String get messageDefinition => throw UnimplementedError();
 }

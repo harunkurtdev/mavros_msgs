@@ -4,14 +4,14 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+// import 'package:dartros/msg_utils.dart';
+
+import 'package:dartros_msgutils/msg_utils.dart';
 
 //-----------------------------------------------------------
-
 
 //-----------------------------------------------------------
 
@@ -25,29 +25,29 @@ class CommandAckRequest extends RosMessage<CommandAckRequest> {
   int result_param2;
 
   static CommandAckRequest $prototype = CommandAckRequest();
-  CommandAckRequest({ 
-    int command,
-    int result,
-    int progress,
-    int result_param2,
-  }):
-  this.command = command ?? 0,
-  this.result = result ?? 0,
-  this.progress = progress ?? 0,
-  this.result_param2 = result_param2 ?? 0;
+  CommandAckRequest({
+    int? command,
+    int? result,
+    int? progress,
+    int? result_param2,
+  })  : this.command = command ?? 0,
+        this.result = result ?? 0,
+        this.progress = progress ?? 0,
+        this.result_param2 = result_param2 ?? 0;
 
   @override
-  CommandAckRequest call({ 
-    int command,
-    int result,
-    int progress,
-    int result_param2,
-  }) => CommandAckRequest(
-  command: command,
-  result: result,
-  progress: progress,
-  result_param2: result_param2,
-  );
+  CommandAckRequest call({
+    int? command,
+    int? result,
+    int? progress,
+    int? result_param2,
+  }) =>
+      CommandAckRequest(
+        command: command,
+        result: result,
+        progress: progress,
+        result_param2: result_param2,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type CommandAckRequest
@@ -105,7 +105,6 @@ uint32 result_param2
 
 ''';
   }
-
 }
 
 class CommandAckResponse extends RosMessage<CommandAckResponse> {
@@ -114,21 +113,21 @@ class CommandAckResponse extends RosMessage<CommandAckResponse> {
   int result;
 
   static CommandAckResponse $prototype = CommandAckResponse();
-  CommandAckResponse({ 
-    bool success,
-    int result,
-  }):
-  this.success = success ?? false,
-  this.result = result ?? 0;
+  CommandAckResponse({
+    bool? success,
+    int? result,
+  })  : this.success = success ?? false,
+        this.result = result ?? 0;
 
   @override
-  CommandAckResponse call({ 
-    bool success,
-    int result,
-  }) => CommandAckResponse(
-  success: success,
-  result: result,
-  );
+  CommandAckResponse call({
+    bool? success,
+    int? result,
+  }) =>
+      CommandAckResponse(
+        success: success,
+        result: result,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type CommandAckResponse
@@ -175,10 +174,10 @@ uint8 result
 
 ''';
   }
-
 }
 
-class CommandAck extends RosServiceMessage<CommandAckRequest, CommandAckResponse> {
+class CommandAck
+    extends RosServiceMessage<CommandAckRequest, CommandAckResponse> {
   static final $prototype = CommandAck();
   @override
   CommandAckRequest get request => CommandAckRequest.$prototype;
@@ -188,4 +187,8 @@ class CommandAck extends RosServiceMessage<CommandAckRequest, CommandAckResponse
   String get md5sum => 'a3d0814a86c597ac57373d872df6d1d3';
   @override
   String get fullType => 'mavros_msgs/CommandAck';
+
+  @override
+  // TODO: implement messageDefinition
+  String get messageDefinition => throw UnimplementedError();
 }

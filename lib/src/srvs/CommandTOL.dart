@@ -4,14 +4,14 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+// import 'package:dartros/msg_utils.dart';
+
+import 'package:dartros_msgutils/msg_utils.dart';
 
 //-----------------------------------------------------------
-
 
 //-----------------------------------------------------------
 
@@ -27,33 +27,33 @@ class CommandTOLRequest extends RosMessage<CommandTOLRequest> {
   double altitude;
 
   static CommandTOLRequest $prototype = CommandTOLRequest();
-  CommandTOLRequest({ 
-    double min_pitch,
-    double yaw,
-    double latitude,
-    double longitude,
-    double altitude,
-  }):
-  this.min_pitch = min_pitch ?? 0.0,
-  this.yaw = yaw ?? 0.0,
-  this.latitude = latitude ?? 0.0,
-  this.longitude = longitude ?? 0.0,
-  this.altitude = altitude ?? 0.0;
+  CommandTOLRequest({
+    double? min_pitch,
+    double? yaw,
+    double? latitude,
+    double? longitude,
+    double? altitude,
+  })  : this.min_pitch = min_pitch ?? 0.0,
+        this.yaw = yaw ?? 0.0,
+        this.latitude = latitude ?? 0.0,
+        this.longitude = longitude ?? 0.0,
+        this.altitude = altitude ?? 0.0;
 
   @override
-  CommandTOLRequest call({ 
-    double min_pitch,
-    double yaw,
-    double latitude,
-    double longitude,
-    double altitude,
-  }) => CommandTOLRequest(
-  min_pitch: min_pitch,
-  yaw: yaw,
-  latitude: latitude,
-  longitude: longitude,
-  altitude: altitude,
-  );
+  CommandTOLRequest call({
+    double? min_pitch,
+    double? yaw,
+    double? latitude,
+    double? longitude,
+    double? altitude,
+  }) =>
+      CommandTOLRequest(
+        min_pitch: min_pitch,
+        yaw: yaw,
+        latitude: latitude,
+        longitude: longitude,
+        altitude: altitude,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type CommandTOLRequest
@@ -115,7 +115,6 @@ float32 altitude
 
 ''';
   }
-
 }
 
 class CommandTOLResponse extends RosMessage<CommandTOLResponse> {
@@ -124,21 +123,21 @@ class CommandTOLResponse extends RosMessage<CommandTOLResponse> {
   int result;
 
   static CommandTOLResponse $prototype = CommandTOLResponse();
-  CommandTOLResponse({ 
-    bool success,
-    int result,
-  }):
-  this.success = success ?? false,
-  this.result = result ?? 0;
+  CommandTOLResponse({
+    bool? success,
+    int? result,
+  })  : this.success = success ?? false,
+        this.result = result ?? 0;
 
   @override
-  CommandTOLResponse call({ 
-    bool success,
-    int result,
-  }) => CommandTOLResponse(
-  success: success,
-  result: result,
-  );
+  CommandTOLResponse call({
+    bool? success,
+    int? result,
+  }) =>
+      CommandTOLResponse(
+        success: success,
+        result: result,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type CommandTOLResponse
@@ -184,10 +183,10 @@ uint8 result
 
 ''';
   }
-
 }
 
-class CommandTOL extends RosServiceMessage<CommandTOLRequest, CommandTOLResponse> {
+class CommandTOL
+    extends RosServiceMessage<CommandTOLRequest, CommandTOLResponse> {
   static final $prototype = CommandTOL();
   @override
   CommandTOLRequest get request => CommandTOLRequest.$prototype;
@@ -197,4 +196,8 @@ class CommandTOL extends RosServiceMessage<CommandTOLRequest, CommandTOLResponse
   String get md5sum => '93ff4eaa9907f58c0e7a909cddce23e2';
   @override
   String get fullType => 'mavros_msgs/CommandTOL';
+
+  @override
+  // TODO: implement messageDefinition
+  String get messageDefinition => throw UnimplementedError();
 }
