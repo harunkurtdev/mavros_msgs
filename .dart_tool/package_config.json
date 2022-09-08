@@ -1,0 +1,206 @@
+{
+  "configVersion": 2,
+  "packages": [
+    {
+      "name": "actionlib_msgs",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/actionlib_msgs-0.0.3+2",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
+      "name": "buffer",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/buffer-1.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "characters",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "charcode",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/charcode-1.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "collection",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/collection-1.16.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "convert",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/convert-2.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "1.17"
+    },
+    {
+      "name": "crypto",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/crypto-2.1.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.3"
+    },
+    {
+      "name": "dartros",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/dartros-0.0.5+5",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
+      "name": "dartx",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/dartx-0.5.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
+    },
+    {
+      "name": "freezed_annotation",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/freezed_annotation-0.15.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "geographic_msgs",
+      "rootUri": "../../geographic_msgs",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
+      "name": "geometry_msgs",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/geometry_msgs-0.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
+      "name": "http",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/http-0.12.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.4"
+    },
+    {
+      "name": "http_parser",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/http_parser-3.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.3"
+    },
+    {
+      "name": "json_annotation",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/json_annotation-4.6.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "logger",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/logger-0.9.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
+      "name": "meta",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "path",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/path-1.8.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "pedantic",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/pedantic-1.11.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "petitparser",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/petitparser-3.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
+      "name": "rosgraph_msgs",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/rosgraph_msgs-0.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
+      "name": "rxdart",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/rxdart-0.25.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
+    },
+    {
+      "name": "source_span",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "std_msgs",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/std_msgs-0.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
+      "name": "string_scanner",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "string_validator",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/string_validator-0.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "term_glyph",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "time",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/time-1.4.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
+    },
+    {
+      "name": "typed_data",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/typed_data-1.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "uuid_msgs",
+      "rootUri": "../../uuid_msgs",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
+      "name": "xml",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/xml-4.5.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
+      "name": "xml_rpc",
+      "rootUri": "file:///home/x/.pub-cache/hosted/pub.dartlang.org/xml_rpc-0.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
+      "name": "mavros_msgs",
+      "rootUri": "../",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    }
+  ],
+  "generated": "2022-09-08T22:14:37.788927Z",
+  "generator": "pub",
+  "generatorVersion": "2.18.0"
+}
