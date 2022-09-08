@@ -9,7 +9,7 @@ import 'dart:convert';
 import 'package:buffer/buffer.dart';
 // import 'package:dartros/msg_utils.dart';
 
-import 'package:dartros_msgutils/msg_utils.dart';
+import 'package:dartros/msg_utils.dart';
 
 //-----------------------------------------------------------
 
@@ -28,11 +28,11 @@ class CommandTOLRequest extends RosMessage<CommandTOLRequest> {
 
   static CommandTOLRequest $prototype = CommandTOLRequest();
   CommandTOLRequest({
-    double? min_pitch,
-    double? yaw,
-    double? latitude,
-    double? longitude,
-    double? altitude,
+    double min_pitch,
+    double yaw,
+    double latitude,
+    double longitude,
+    double altitude,
   })  : this.min_pitch = min_pitch ?? 0.0,
         this.yaw = yaw ?? 0.0,
         this.latitude = latitude ?? 0.0,
@@ -41,11 +41,11 @@ class CommandTOLRequest extends RosMessage<CommandTOLRequest> {
 
   @override
   CommandTOLRequest call({
-    double? min_pitch,
-    double? yaw,
-    double? latitude,
-    double? longitude,
-    double? altitude,
+    double min_pitch,
+    double yaw,
+    double latitude,
+    double longitude,
+    double altitude,
   }) =>
       CommandTOLRequest(
         min_pitch: min_pitch,
@@ -124,15 +124,15 @@ class CommandTOLResponse extends RosMessage<CommandTOLResponse> {
 
   static CommandTOLResponse $prototype = CommandTOLResponse();
   CommandTOLResponse({
-    bool? success,
-    int? result,
+    bool success,
+    int result,
   })  : this.success = success ?? false,
         this.result = result ?? 0;
 
   @override
   CommandTOLResponse call({
-    bool? success,
-    int? result,
+    bool success,
+    int result,
   }) =>
       CommandTOLResponse(
         success: success,

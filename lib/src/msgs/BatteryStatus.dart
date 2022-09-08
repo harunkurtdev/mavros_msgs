@@ -10,8 +10,10 @@
 
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-// import 'package:dartros_msgutils/msg_utils.dart';
-import 'package:dartros_msgutils/msg_utils.dart';
+//
+import 'package:dartros/msg_utils.dart';
+
+import 'package:dartros/msg_utils.dart';
 import 'package:std_msgs/msgs.dart';
 
 //-----------------------------------------------------------
@@ -49,21 +51,21 @@ class BatteryStatus extends RosMessage<BatteryStatus> {
 
   static BatteryStatus $prototype = BatteryStatus();
   BatteryStatus({
-    Header? header,
-    double? voltage,
-    double? current,
-    double? temperature,
-    double? charge,
-    double? capacity,
-    double? design_capacity,
-    double? percentage,
-    int? power_supply_status,
-    int? power_supply_health,
-    int? power_supply_technology,
-    bool? present,
-    List<double>? cell_voltage,
-    String? location,
-    String? serial_number,
+    Header header,
+    double voltage,
+    double current,
+    double temperature,
+    double charge,
+    double capacity,
+    double design_capacity,
+    double percentage,
+    int power_supply_status,
+    int power_supply_health,
+    int power_supply_technology,
+    bool present,
+    List<double> cell_voltage,
+    String location,
+    String serial_number,
   })  : this.header = header ?? Header(),
         this.voltage = voltage ?? 0.0,
         this.current = current ?? 0.0,
@@ -82,21 +84,21 @@ class BatteryStatus extends RosMessage<BatteryStatus> {
 
   @override
   BatteryStatus call({
-    Header? header,
-    double? voltage,
-    double? current,
-    double? temperature,
-    double? charge,
-    double? capacity,
-    double? design_capacity,
-    double? percentage,
-    int? power_supply_status,
-    int? power_supply_health,
-    int? power_supply_technology,
-    bool? present,
-    List<double>? cell_voltage,
-    String? location,
-    String? serial_number,
+    Header header,
+    double voltage,
+    double current,
+    double temperature,
+    double charge,
+    double capacity,
+    double design_capacity,
+    double percentage,
+    int power_supply_status,
+    int power_supply_health,
+    int power_supply_technology,
+    bool present,
+    List<double> cell_voltage,
+    String location,
+    String serial_number,
   }) =>
       BatteryStatus(
         header: header,

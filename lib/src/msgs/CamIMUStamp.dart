@@ -7,7 +7,8 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros_msgutils/msg_utils.dart';
+
+import 'package:dartros/msg_utils.dart';
 
 //-----------------------------------------------------------
 
@@ -18,15 +19,15 @@ class CamIMUStamp extends RosMessage<CamIMUStamp> {
 
   static CamIMUStamp $prototype = CamIMUStamp();
   CamIMUStamp({
-    RosTime? frame_stamp,
-    int? frame_seq_id,
+    RosTime frame_stamp,
+    int frame_seq_id,
   })  : this.frame_stamp = frame_stamp ?? RosTime(secs: 0, nsecs: 0),
         this.frame_seq_id = frame_seq_id ?? 0;
 
   @override
   CamIMUStamp call({
-    RosTime? frame_stamp,
-    int? frame_seq_id,
+    RosTime frame_stamp,
+    int frame_seq_id,
   }) =>
       CamIMUStamp(
         frame_stamp: frame_stamp,

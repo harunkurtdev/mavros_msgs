@@ -7,7 +7,8 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros_msgutils/msg_utils.dart';
+
+import 'package:dartros/msg_utils.dart';
 import 'package:std_msgs/msgs.dart';
 
 //-----------------------------------------------------------
@@ -29,13 +30,13 @@ class DebugValue extends RosMessage<DebugValue> {
 
   static DebugValue $prototype = DebugValue();
   DebugValue({
-    Header? header,
-    int? index,
-    String? name,
-    double? value_float,
-    int? value_int,
-    List<double>? data,
-    int? type,
+    Header header,
+    int index,
+    String name,
+    double value_float,
+    int value_int,
+    List<double> data,
+    int type,
   })  : this.header = header ?? Header(),
         this.index = index ?? 0,
         this.name = name ?? '',
@@ -46,13 +47,13 @@ class DebugValue extends RosMessage<DebugValue> {
 
   @override
   DebugValue call({
-    Header? header,
-    int? index,
-    String? name,
-    double? value_float,
-    int? value_int,
-    List<double>? data,
-    int? type,
+    Header header,
+    int index,
+    String name,
+    double value_float,
+    int value_int,
+    List<double> data,
+    int type,
   }) =>
       DebugValue(
         header: header,

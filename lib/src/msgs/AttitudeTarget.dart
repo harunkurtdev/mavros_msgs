@@ -7,7 +7,8 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros_msgutils/msg_utils.dart';
+
+import 'package:dartros/msg_utils.dart';
 import 'package:geometry_msgs/msgs.dart';
 import 'package:std_msgs/msgs.dart';
 
@@ -26,11 +27,11 @@ class AttitudeTarget extends RosMessage<AttitudeTarget> {
 
   static AttitudeTarget $prototype = AttitudeTarget();
   AttitudeTarget({
-    Header? header,
-    int? type_mask,
-    Quaternion? orientation,
-    Vector3? body_rate,
-    double? thrust,
+    Header header,
+    int type_mask,
+    Quaternion orientation,
+    Vector3 body_rate,
+    double thrust,
   })  : this.header = header ?? Header(),
         this.type_mask = type_mask ?? 0,
         this.orientation = orientation ?? Quaternion(),
@@ -39,10 +40,11 @@ class AttitudeTarget extends RosMessage<AttitudeTarget> {
 
   @override
   AttitudeTarget call({
-    Header? header,
-    int? type_mask,
-    Quaternion? orientation,
-    Vector3? body_rate,
+    Header header,
+    int type_mask,
+    Quaternion orientation,
+    Vector3 body_rate,
+    double thrust,
   }) =>
       AttitudeTarget(
         header: header,

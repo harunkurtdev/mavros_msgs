@@ -8,7 +8,8 @@
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
 // import 'package:dartros/msg_utils.dart';
-import 'package:dartros_msgutils/msg_utils.dart';
+
+import 'package:dartros/msg_utils.dart';
 
 //-----------------------------------------------------------
 
@@ -21,15 +22,15 @@ class SetModeRequest extends RosMessage<SetModeRequest> {
 
   static SetModeRequest $prototype = SetModeRequest();
   SetModeRequest({
-    int? base_mode,
-    String? custom_mode,
+    int base_mode,
+    String custom_mode,
   })  : this.base_mode = base_mode ?? 0,
         this.custom_mode = custom_mode ?? '';
 
   @override
   SetModeRequest call({
-    int? base_mode,
-    String? custom_mode,
+    int base_mode,
+    String custom_mode,
   }) =>
       SetModeRequest(
         base_mode: base_mode,

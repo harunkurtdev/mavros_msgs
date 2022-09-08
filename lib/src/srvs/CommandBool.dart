@@ -8,7 +8,7 @@
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
 
-import 'package:dartros_msgutils/msg_utils.dart';
+import 'package:dartros/msg_utils.dart';
 
 //-----------------------------------------------------------
 
@@ -19,12 +19,12 @@ class CommandBoolRequest extends RosMessage<CommandBoolRequest> {
 
   static CommandBoolRequest $prototype = CommandBoolRequest();
   CommandBoolRequest({
-    bool? value,
+    bool value,
   }) : this.value = value ?? false;
 
   @override
   CommandBoolRequest call({
-    bool? value,
+    bool value,
   }) =>
       CommandBoolRequest(
         value: value,
@@ -79,15 +79,15 @@ class CommandBoolResponse extends RosMessage<CommandBoolResponse> {
 
   static CommandBoolResponse $prototype = CommandBoolResponse();
   CommandBoolResponse({
-    bool? success,
-    int? result,
+    bool success,
+    int result,
   })  : this.success = success ?? false,
         this.result = result ?? 0;
 
   @override
   CommandBoolResponse call({
-    bool? success,
-    int? result,
+    bool success,
+    int result,
   }) =>
       CommandBoolResponse(
         success: success,

@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -21,25 +20,25 @@ class ExtendedState extends RosMessage<ExtendedState> {
   int landed_state;
 
   static ExtendedState $prototype = ExtendedState();
-  ExtendedState({ 
+  ExtendedState({
     Header header,
     int vtol_state,
     int landed_state,
-  }):
-  this.header = header ?? Header(),
-  this.vtol_state = vtol_state ?? 0,
-  this.landed_state = landed_state ?? 0;
+  })  : this.header = header ?? Header(),
+        this.vtol_state = vtol_state ?? 0,
+        this.landed_state = landed_state ?? 0;
 
   @override
-  ExtendedState call({ 
+  ExtendedState call({
     Header header,
     int vtol_state,
     int landed_state,
-  }) => ExtendedState(
-  header: header,
-  vtol_state: vtol_state,
-  landed_state: landed_state,
-  );
+  }) =>
+      ExtendedState(
+        header: header,
+        vtol_state: vtol_state,
+        landed_state: landed_state,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type ExtendedState
@@ -135,6 +134,4 @@ string frame_id
   static const int LANDED_STATE_IN_AIR = 2;
   static const int LANDED_STATE_TAKEOFF = 3;
   static const int LANDED_STATE_LANDING = 4;
-
 }
-

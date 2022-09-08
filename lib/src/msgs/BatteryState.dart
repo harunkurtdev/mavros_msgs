@@ -7,7 +7,8 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros_msgutils/msg_utils.dart';
+
+import 'package:dartros/msg_utils.dart';
 import 'package:std_msgs/msgs.dart';
 
 //-----------------------------------------------------------
@@ -43,20 +44,20 @@ class BatteryState extends RosMessage<BatteryState> {
 
   static BatteryState $prototype = BatteryState();
   BatteryState({
-    Header? header,
-    double? voltage,
-    double? current,
-    double? charge,
-    double? capacity,
-    double? design_capacity,
-    double? percentage,
-    int? power_supply_status,
-    int? power_supply_health,
-    int? power_supply_technology,
-    bool? present,
-    List<double>? cell_voltage,
-    String? location,
-    String? serial_number,
+    Header header,
+    double voltage,
+    double current,
+    double charge,
+    double capacity,
+    double design_capacity,
+    double percentage,
+    int power_supply_status,
+    int power_supply_health,
+    int power_supply_technology,
+    bool present,
+    List<double> cell_voltage,
+    String location,
+    String serial_number,
   })  : this.header = header ?? Header(),
         this.voltage = voltage ?? 0.0,
         this.current = current ?? 0.0,
@@ -74,20 +75,20 @@ class BatteryState extends RosMessage<BatteryState> {
 
   @override
   BatteryState call({
-    Header? header,
-    double? voltage,
-    double? current,
-    double? charge,
-    double? capacity,
-    double? design_capacity,
-    double? percentage,
-    int? power_supply_status,
-    int? power_supply_health,
-    int? power_supply_technology,
-    bool? present,
-    List<double>? cell_voltage,
-    String? location,
-    String? serial_number,
+    Header header,
+    double voltage,
+    double current,
+    double charge,
+    double capacity,
+    double design_capacity,
+    double percentage,
+    int power_supply_status,
+    int power_supply_health,
+    int power_supply_technology,
+    bool present,
+    List<double> cell_voltage,
+    String location,
+    String serial_number,
   }) =>
       BatteryState(
         header: header,

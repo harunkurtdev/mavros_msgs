@@ -7,7 +7,8 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros_msgutils/msg_utils.dart';
+
+import 'package:dartros/msg_utils.dart';
 import 'package:std_msgs/msgs.dart';
 
 //-----------------------------------------------------------
@@ -21,18 +22,18 @@ class ActuatorControl extends RosMessage<ActuatorControl> {
 
   static ActuatorControl $prototype = ActuatorControl();
   ActuatorControl({
-    Header? header,
-    int? group_mix,
-    List<double>? controls,
+    Header header,
+    int group_mix,
+    List<double> controls,
   })  : this.header = header ?? Header(),
         this.group_mix = group_mix ?? 0,
         this.controls = controls ?? List.generate(8, (_) => 0);
 
   @override
   ActuatorControl call({
-    Header? header,
-    int? group_mix,
-    List<double>? controls,
+    Header header,
+    int group_mix,
+    List<double> controls,
   }) =>
       ActuatorControl(
         header: header,
