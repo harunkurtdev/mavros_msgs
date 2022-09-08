@@ -120,7 +120,7 @@ class SetModeResponse extends RosMessage<SetModeResponse> {
 
   static SetModeResponse $prototype = SetModeResponse();
   SetModeResponse({
-    bool? mode_sent,
+    bool mode_sent,
   }) : this.mode_sent = mode_sent ?? false;
 
   @override
