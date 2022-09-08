@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -20,17 +19,17 @@ class FileListRequest extends RosMessage<FileListRequest> {
   String dir_path;
 
   static FileListRequest $prototype = FileListRequest();
-  FileListRequest({ 
+  FileListRequest({
     String dir_path,
-  }):
-  this.dir_path = dir_path ?? '';
+  }) : this.dir_path = dir_path ?? '';
 
   @override
-  FileListRequest call({ 
+  FileListRequest call({
     String dir_path,
-  }) => FileListRequest(
-  dir_path: dir_path,
-  );
+  }) =>
+      FileListRequest(
+        dir_path: dir_path,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type FileListRequest
@@ -77,7 +76,6 @@ string dir_path
 
 ''';
   }
-
 }
 
 class FileListResponse extends RosMessage<FileListResponse> {
@@ -88,25 +86,25 @@ class FileListResponse extends RosMessage<FileListResponse> {
   int r_errno;
 
   static FileListResponse $prototype = FileListResponse();
-  FileListResponse({ 
+  FileListResponse({
     List<FileEntry> list,
     bool success,
     int r_errno,
-  }):
-  this.list = list ?? [],
-  this.success = success ?? false,
-  this.r_errno = r_errno ?? 0;
+  })  : this.list = list ?? [],
+        this.success = success ?? false,
+        this.r_errno = r_errno ?? 0;
 
   @override
-  FileListResponse call({ 
+  FileListResponse call({
     List<FileEntry> list,
     bool success,
     int r_errno,
-  }) => FileListResponse(
-  list: list,
-  success: success,
-  r_errno: r_errno,
-  );
+  }) =>
+      FileListResponse(
+        list: list,
+        success: success,
+        r_errno: r_errno,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type FileListResponse
@@ -119,7 +117,7 @@ class FileListResponse extends RosMessage<FileListResponse> {
     // Serialize message field [success]
     writer.writeUint8(success == false ? 0 : 1);
     // Serialize message field [r_errno]
-    writer.writeInt32(r_errno);
+    writer.writeint32(r_errno);
   }
 
   @override
@@ -129,13 +127,14 @@ class FileListResponse extends RosMessage<FileListResponse> {
     // Deserialize message field [list]
     {
       // Deserialize array length for message field [list]
-      final len = reader.readInt32();
-      data.list = List.generate(len, (_) => FileEntry.$prototype.deserialize(reader));
+      final len = reader.readint32();
+      data.list =
+          List.generate(len, (_) => FileEntry.$prototype.deserialize(reader));
     }
     // Deserialize message field [success]
     data.success = reader.readUint8() != 0;
     // Deserialize message field [r_errno]
-    data.r_errno = reader.readInt32();
+    data.r_errno = reader.readint32();
     return data;
   }
 
@@ -184,7 +183,6 @@ uint64 size
 
 ''';
   }
-
 }
 
 class FileList extends RosServiceMessage<FileListRequest, FileListResponse> {

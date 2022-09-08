@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -19,21 +18,21 @@ class WaypointReached extends RosMessage<WaypointReached> {
   int wp_seq;
 
   static WaypointReached $prototype = WaypointReached();
-  WaypointReached({ 
+  WaypointReached({
     Header header,
     int wp_seq,
-  }):
-  this.header = header ?? Header(),
-  this.wp_seq = wp_seq ?? 0;
+  })  : this.header = header ?? Header(),
+        this.wp_seq = wp_seq ?? 0;
 
   @override
-  WaypointReached call({ 
+  WaypointReached call({
     Header header,
     int wp_seq,
-  }) => WaypointReached(
-  header: header,
-  wp_seq: wp_seq,
-  );
+  }) =>
+      WaypointReached(
+        header: header,
+        wp_seq: wp_seq,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type WaypointReached
@@ -101,6 +100,4 @@ string frame_id
 
 ''';
   }
-
 }
-

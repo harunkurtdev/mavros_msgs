@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -12,24 +11,23 @@ import 'package:dartros/msg_utils.dart';
 
 //-----------------------------------------------------------
 
-
 //-----------------------------------------------------------
 
 class FileRemoveDirRequest extends RosMessage<FileRemoveDirRequest> {
   String dir_path;
 
   static FileRemoveDirRequest $prototype = FileRemoveDirRequest();
-  FileRemoveDirRequest({ 
+  FileRemoveDirRequest({
     String dir_path,
-  }):
-  this.dir_path = dir_path ?? '';
+  }) : this.dir_path = dir_path ?? '';
 
   @override
-  FileRemoveDirRequest call({ 
+  FileRemoveDirRequest call({
     String dir_path,
-  }) => FileRemoveDirRequest(
-  dir_path: dir_path,
-  );
+  }) =>
+      FileRemoveDirRequest(
+        dir_path: dir_path,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type FileRemoveDirRequest
@@ -76,7 +74,6 @@ string dir_path
 
 ''';
   }
-
 }
 
 class FileRemoveDirResponse extends RosMessage<FileRemoveDirResponse> {
@@ -85,28 +82,28 @@ class FileRemoveDirResponse extends RosMessage<FileRemoveDirResponse> {
   int r_errno;
 
   static FileRemoveDirResponse $prototype = FileRemoveDirResponse();
-  FileRemoveDirResponse({ 
+  FileRemoveDirResponse({
     bool success,
     int r_errno,
-  }):
-  this.success = success ?? false,
-  this.r_errno = r_errno ?? 0;
+  })  : this.success = success ?? false,
+        this.r_errno = r_errno ?? 0;
 
   @override
-  FileRemoveDirResponse call({ 
+  FileRemoveDirResponse call({
     bool success,
     int r_errno,
-  }) => FileRemoveDirResponse(
-  success: success,
-  r_errno: r_errno,
-  );
+  }) =>
+      FileRemoveDirResponse(
+        success: success,
+        r_errno: r_errno,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type FileRemoveDirResponse
     // Serialize message field [success]
     writer.writeUint8(success == false ? 0 : 1);
     // Serialize message field [r_errno]
-    writer.writeInt32(r_errno);
+    writer.writeint32(r_errno);
   }
 
   @override
@@ -116,7 +113,7 @@ class FileRemoveDirResponse extends RosMessage<FileRemoveDirResponse> {
     // Deserialize message field [success]
     data.success = reader.readUint8() != 0;
     // Deserialize message field [r_errno]
-    data.r_errno = reader.readInt32();
+    data.r_errno = reader.readint32();
     return data;
   }
 
@@ -145,10 +142,10 @@ int32 r_errno
 
 ''';
   }
-
 }
 
-class FileRemoveDir extends RosServiceMessage<FileRemoveDirRequest, FileRemoveDirResponse> {
+class FileRemoveDir
+    extends RosServiceMessage<FileRemoveDirRequest, FileRemoveDirResponse> {
   static final $prototype = FileRemoveDir();
   @override
   FileRemoveDirRequest get request => FileRemoveDirRequest.$prototype;

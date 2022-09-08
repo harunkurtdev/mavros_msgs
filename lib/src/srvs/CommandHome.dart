@@ -4,14 +4,12 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
 import 'package:dartros/msg_utils.dart';
 
 //-----------------------------------------------------------
-
 
 //-----------------------------------------------------------
 
@@ -27,33 +25,33 @@ class CommandHomeRequest extends RosMessage<CommandHomeRequest> {
   double altitude;
 
   static CommandHomeRequest $prototype = CommandHomeRequest();
-  CommandHomeRequest({ 
+  CommandHomeRequest({
     bool current_gps,
     double yaw,
     double latitude,
     double longitude,
     double altitude,
-  }):
-  this.current_gps = current_gps ?? false,
-  this.yaw = yaw ?? 0.0,
-  this.latitude = latitude ?? 0.0,
-  this.longitude = longitude ?? 0.0,
-  this.altitude = altitude ?? 0.0;
+  })  : this.current_gps = current_gps ?? false,
+        this.yaw = yaw ?? 0.0,
+        this.latitude = latitude ?? 0.0,
+        this.longitude = longitude ?? 0.0,
+        this.altitude = altitude ?? 0.0;
 
   @override
-  CommandHomeRequest call({ 
+  CommandHomeRequest call({
     bool current_gps,
     double yaw,
     double latitude,
     double longitude,
     double altitude,
-  }) => CommandHomeRequest(
-  current_gps: current_gps,
-  yaw: yaw,
-  latitude: latitude,
-  longitude: longitude,
-  altitude: altitude,
-  );
+  }) =>
+      CommandHomeRequest(
+        current_gps: current_gps,
+        yaw: yaw,
+        latitude: latitude,
+        longitude: longitude,
+        altitude: altitude,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type CommandHomeRequest
@@ -115,7 +113,6 @@ float32 altitude
 
 ''';
   }
-
 }
 
 class CommandHomeResponse extends RosMessage<CommandHomeResponse> {
@@ -124,21 +121,21 @@ class CommandHomeResponse extends RosMessage<CommandHomeResponse> {
   int result;
 
   static CommandHomeResponse $prototype = CommandHomeResponse();
-  CommandHomeResponse({ 
+  CommandHomeResponse({
     bool success,
     int result,
-  }):
-  this.success = success ?? false,
-  this.result = result ?? 0;
+  })  : this.success = success ?? false,
+        this.result = result ?? 0;
 
   @override
-  CommandHomeResponse call({ 
+  CommandHomeResponse call({
     bool success,
     int result,
-  }) => CommandHomeResponse(
-  success: success,
-  result: result,
-  );
+  }) =>
+      CommandHomeResponse(
+        success: success,
+        result: result,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type CommandHomeResponse
@@ -184,10 +181,10 @@ uint8 result
 
 ''';
   }
-
 }
 
-class CommandHome extends RosServiceMessage<CommandHomeRequest, CommandHomeResponse> {
+class CommandHome
+    extends RosServiceMessage<CommandHomeRequest, CommandHomeResponse> {
   static final $prototype = CommandHome();
   @override
   CommandHomeRequest get request => CommandHomeRequest.$prototype;

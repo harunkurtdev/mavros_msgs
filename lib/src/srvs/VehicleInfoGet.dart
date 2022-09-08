@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -24,25 +23,25 @@ class VehicleInfoGetRequest extends RosMessage<VehicleInfoGetRequest> {
   bool get_all;
 
   static VehicleInfoGetRequest $prototype = VehicleInfoGetRequest();
-  VehicleInfoGetRequest({ 
+  VehicleInfoGetRequest({
     int sysid,
     int compid,
     bool get_all,
-  }):
-  this.sysid = sysid ?? 0,
-  this.compid = compid ?? 0,
-  this.get_all = get_all ?? false;
+  })  : this.sysid = sysid ?? 0,
+        this.compid = compid ?? 0,
+        this.get_all = get_all ?? false;
 
   @override
-  VehicleInfoGetRequest call({ 
+  VehicleInfoGetRequest call({
     int sysid,
     int compid,
     bool get_all,
-  }) => VehicleInfoGetRequest(
-  sysid: sysid,
-  compid: compid,
-  get_all: get_all,
-  );
+  }) =>
+      VehicleInfoGetRequest(
+        sysid: sysid,
+        compid: compid,
+        get_all: get_all,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type VehicleInfoGetRequest
@@ -103,7 +102,6 @@ bool get_all
 // Constants for message
   static const int GET_MY_SYSID = 0;
   static const int GET_MY_COMPID = 0;
-
 }
 
 class VehicleInfoGetResponse extends RosMessage<VehicleInfoGetResponse> {
@@ -112,21 +110,21 @@ class VehicleInfoGetResponse extends RosMessage<VehicleInfoGetResponse> {
   List<VehicleInfo> vehicles;
 
   static VehicleInfoGetResponse $prototype = VehicleInfoGetResponse();
-  VehicleInfoGetResponse({ 
+  VehicleInfoGetResponse({
     bool success,
     List<VehicleInfo> vehicles,
-  }):
-  this.success = success ?? false,
-  this.vehicles = vehicles ?? [];
+  })  : this.success = success ?? false,
+        this.vehicles = vehicles ?? [];
 
   @override
-  VehicleInfoGetResponse call({ 
+  VehicleInfoGetResponse call({
     bool success,
     List<VehicleInfo> vehicles,
-  }) => VehicleInfoGetResponse(
-  success: success,
-  vehicles: vehicles,
-  );
+  }) =>
+      VehicleInfoGetResponse(
+        success: success,
+        vehicles: vehicles,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type VehicleInfoGetResponse
@@ -149,8 +147,9 @@ class VehicleInfoGetResponse extends RosMessage<VehicleInfoGetResponse> {
     // Deserialize message field [vehicles]
     {
       // Deserialize array length for message field [vehicles]
-      final len = reader.readInt32();
-      data.vehicles = List.generate(len, (_) => VehicleInfo.$prototype.deserialize(reader));
+      final len = reader.readint32();
+      data.vehicles =
+          List.generate(len, (_) => VehicleInfo.$prototype.deserialize(reader));
     }
     return data;
   }
@@ -235,10 +234,10 @@ string frame_id
 
 ''';
   }
-
 }
 
-class VehicleInfoGet extends RosServiceMessage<VehicleInfoGetRequest, VehicleInfoGetResponse> {
+class VehicleInfoGet
+    extends RosServiceMessage<VehicleInfoGetRequest, VehicleInfoGetResponse> {
   static final $prototype = VehicleInfoGet();
   @override
   VehicleInfoGetRequest get request => VehicleInfoGetRequest.$prototype;

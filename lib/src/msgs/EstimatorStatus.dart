@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -41,7 +40,7 @@ class EstimatorStatus extends RosMessage<EstimatorStatus> {
   bool accel_error_status_flag;
 
   static EstimatorStatus $prototype = EstimatorStatus();
-  EstimatorStatus({ 
+  EstimatorStatus({
     Header header,
     bool attitude_status_flag,
     bool velocity_horiz_status_flag,
@@ -55,23 +54,24 @@ class EstimatorStatus extends RosMessage<EstimatorStatus> {
     bool pred_pos_horiz_abs_status_flag,
     bool gps_glitch_status_flag,
     bool accel_error_status_flag,
-  }):
-  this.header = header ?? Header(),
-  this.attitude_status_flag = attitude_status_flag ?? false,
-  this.velocity_horiz_status_flag = velocity_horiz_status_flag ?? false,
-  this.velocity_vert_status_flag = velocity_vert_status_flag ?? false,
-  this.pos_horiz_rel_status_flag = pos_horiz_rel_status_flag ?? false,
-  this.pos_horiz_abs_status_flag = pos_horiz_abs_status_flag ?? false,
-  this.pos_vert_abs_status_flag = pos_vert_abs_status_flag ?? false,
-  this.pos_vert_agl_status_flag = pos_vert_agl_status_flag ?? false,
-  this.const_pos_mode_status_flag = const_pos_mode_status_flag ?? false,
-  this.pred_pos_horiz_rel_status_flag = pred_pos_horiz_rel_status_flag ?? false,
-  this.pred_pos_horiz_abs_status_flag = pred_pos_horiz_abs_status_flag ?? false,
-  this.gps_glitch_status_flag = gps_glitch_status_flag ?? false,
-  this.accel_error_status_flag = accel_error_status_flag ?? false;
+  })  : this.header = header ?? Header(),
+        this.attitude_status_flag = attitude_status_flag ?? false,
+        this.velocity_horiz_status_flag = velocity_horiz_status_flag ?? false,
+        this.velocity_vert_status_flag = velocity_vert_status_flag ?? false,
+        this.pos_horiz_rel_status_flag = pos_horiz_rel_status_flag ?? false,
+        this.pos_horiz_abs_status_flag = pos_horiz_abs_status_flag ?? false,
+        this.pos_vert_abs_status_flag = pos_vert_abs_status_flag ?? false,
+        this.pos_vert_agl_status_flag = pos_vert_agl_status_flag ?? false,
+        this.const_pos_mode_status_flag = const_pos_mode_status_flag ?? false,
+        this.pred_pos_horiz_rel_status_flag =
+            pred_pos_horiz_rel_status_flag ?? false,
+        this.pred_pos_horiz_abs_status_flag =
+            pred_pos_horiz_abs_status_flag ?? false,
+        this.gps_glitch_status_flag = gps_glitch_status_flag ?? false,
+        this.accel_error_status_flag = accel_error_status_flag ?? false;
 
   @override
-  EstimatorStatus call({ 
+  EstimatorStatus call({
     Header header,
     bool attitude_status_flag,
     bool velocity_horiz_status_flag,
@@ -85,21 +85,22 @@ class EstimatorStatus extends RosMessage<EstimatorStatus> {
     bool pred_pos_horiz_abs_status_flag,
     bool gps_glitch_status_flag,
     bool accel_error_status_flag,
-  }) => EstimatorStatus(
-  header: header,
-  attitude_status_flag: attitude_status_flag,
-  velocity_horiz_status_flag: velocity_horiz_status_flag,
-  velocity_vert_status_flag: velocity_vert_status_flag,
-  pos_horiz_rel_status_flag: pos_horiz_rel_status_flag,
-  pos_horiz_abs_status_flag: pos_horiz_abs_status_flag,
-  pos_vert_abs_status_flag: pos_vert_abs_status_flag,
-  pos_vert_agl_status_flag: pos_vert_agl_status_flag,
-  const_pos_mode_status_flag: const_pos_mode_status_flag,
-  pred_pos_horiz_rel_status_flag: pred_pos_horiz_rel_status_flag,
-  pred_pos_horiz_abs_status_flag: pred_pos_horiz_abs_status_flag,
-  gps_glitch_status_flag: gps_glitch_status_flag,
-  accel_error_status_flag: accel_error_status_flag,
-  );
+  }) =>
+      EstimatorStatus(
+        header: header,
+        attitude_status_flag: attitude_status_flag,
+        velocity_horiz_status_flag: velocity_horiz_status_flag,
+        velocity_vert_status_flag: velocity_vert_status_flag,
+        pos_horiz_rel_status_flag: pos_horiz_rel_status_flag,
+        pos_horiz_abs_status_flag: pos_horiz_abs_status_flag,
+        pos_vert_abs_status_flag: pos_vert_abs_status_flag,
+        pos_vert_agl_status_flag: pos_vert_agl_status_flag,
+        const_pos_mode_status_flag: const_pos_mode_status_flag,
+        pred_pos_horiz_rel_status_flag: pred_pos_horiz_rel_status_flag,
+        pred_pos_horiz_abs_status_flag: pred_pos_horiz_abs_status_flag,
+        gps_glitch_status_flag: gps_glitch_status_flag,
+        accel_error_status_flag: accel_error_status_flag,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type EstimatorStatus
@@ -226,6 +227,4 @@ string frame_id
 
 ''';
   }
-
 }
-

@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -25,33 +24,33 @@ class TimesyncStatus extends RosMessage<TimesyncStatus> {
   double round_trip_time_ms;
 
   static TimesyncStatus $prototype = TimesyncStatus();
-  TimesyncStatus({ 
+  TimesyncStatus({
     Header header,
     int remote_timestamp_ns,
     int observed_offset_ns,
     int estimated_offset_ns,
     double round_trip_time_ms,
-  }):
-  this.header = header ?? Header(),
-  this.remote_timestamp_ns = remote_timestamp_ns ?? 0,
-  this.observed_offset_ns = observed_offset_ns ?? 0,
-  this.estimated_offset_ns = estimated_offset_ns ?? 0,
-  this.round_trip_time_ms = round_trip_time_ms ?? 0.0;
+  })  : this.header = header ?? Header(),
+        this.remote_timestamp_ns = remote_timestamp_ns ?? 0,
+        this.observed_offset_ns = observed_offset_ns ?? 0,
+        this.estimated_offset_ns = estimated_offset_ns ?? 0,
+        this.round_trip_time_ms = round_trip_time_ms ?? 0.0;
 
   @override
-  TimesyncStatus call({ 
+  TimesyncStatus call({
     Header header,
     int remote_timestamp_ns,
     int observed_offset_ns,
     int estimated_offset_ns,
     double round_trip_time_ms,
-  }) => TimesyncStatus(
-  header: header,
-  remote_timestamp_ns: remote_timestamp_ns,
-  observed_offset_ns: observed_offset_ns,
-  estimated_offset_ns: estimated_offset_ns,
-  round_trip_time_ms: round_trip_time_ms,
-  );
+  }) =>
+      TimesyncStatus(
+        header: header,
+        remote_timestamp_ns: remote_timestamp_ns,
+        observed_offset_ns: observed_offset_ns,
+        estimated_offset_ns: estimated_offset_ns,
+        round_trip_time_ms: round_trip_time_ms,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type TimesyncStatus
@@ -60,9 +59,9 @@ class TimesyncStatus extends RosMessage<TimesyncStatus> {
     // Serialize message field [remote_timestamp_ns]
     writer.writeUint64(remote_timestamp_ns);
     // Serialize message field [observed_offset_ns]
-    writer.writeInt64(observed_offset_ns);
+    writer.writeint64(observed_offset_ns);
     // Serialize message field [estimated_offset_ns]
-    writer.writeInt64(estimated_offset_ns);
+    writer.writeint64(estimated_offset_ns);
     // Serialize message field [round_trip_time_ms]
     writer.writeFloat32(round_trip_time_ms);
   }
@@ -76,9 +75,9 @@ class TimesyncStatus extends RosMessage<TimesyncStatus> {
     // Deserialize message field [remote_timestamp_ns]
     data.remote_timestamp_ns = reader.readUint64();
     // Deserialize message field [observed_offset_ns]
-    data.observed_offset_ns = reader.readInt64();
+    data.observed_offset_ns = reader.readint64();
     // Deserialize message field [estimated_offset_ns]
-    data.estimated_offset_ns = reader.readInt64();
+    data.estimated_offset_ns = reader.readint64();
     // Deserialize message field [round_trip_time_ms]
     data.round_trip_time_ms = reader.readFloat32();
     return data;
@@ -130,6 +129,4 @@ string frame_id
 
 ''';
   }
-
 }
-

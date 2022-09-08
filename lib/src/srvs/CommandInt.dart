@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -12,10 +11,9 @@ import 'package:dartros/msg_utils.dart';
 
 //-----------------------------------------------------------
 
-
 //-----------------------------------------------------------
 
-class CommandIntRequest extends RosMessage<CommandIntRequest> {
+class CommandintRequest extends RosMessage<CommandintRequest> {
   bool broadcast;
 
   int frame;
@@ -40,8 +38,8 @@ class CommandIntRequest extends RosMessage<CommandIntRequest> {
 
   double z;
 
-  static CommandIntRequest $prototype = CommandIntRequest();
-  CommandIntRequest({ 
+  static CommandintRequest $prototype = CommandintRequest();
+  CommandintRequest({
     bool broadcast,
     int frame,
     int command,
@@ -54,22 +52,21 @@ class CommandIntRequest extends RosMessage<CommandIntRequest> {
     int x,
     int y,
     double z,
-  }):
-  this.broadcast = broadcast ?? false,
-  this.frame = frame ?? 0,
-  this.command = command ?? 0,
-  this.current = current ?? 0,
-  this.autocontinue = autocontinue ?? 0,
-  this.param1 = param1 ?? 0.0,
-  this.param2 = param2 ?? 0.0,
-  this.param3 = param3 ?? 0.0,
-  this.param4 = param4 ?? 0.0,
-  this.x = x ?? 0,
-  this.y = y ?? 0,
-  this.z = z ?? 0.0;
+  })  : this.broadcast = broadcast ?? false,
+        this.frame = frame ?? 0,
+        this.command = command ?? 0,
+        this.current = current ?? 0,
+        this.autocontinue = autocontinue ?? 0,
+        this.param1 = param1 ?? 0.0,
+        this.param2 = param2 ?? 0.0,
+        this.param3 = param3 ?? 0.0,
+        this.param4 = param4 ?? 0.0,
+        this.x = x ?? 0,
+        this.y = y ?? 0,
+        this.z = z ?? 0.0;
 
   @override
-  CommandIntRequest call({ 
+  CommandintRequest call({
     bool broadcast,
     int frame,
     int command,
@@ -82,23 +79,24 @@ class CommandIntRequest extends RosMessage<CommandIntRequest> {
     int x,
     int y,
     double z,
-  }) => CommandIntRequest(
-  broadcast: broadcast,
-  frame: frame,
-  command: command,
-  current: current,
-  autocontinue: autocontinue,
-  param1: param1,
-  param2: param2,
-  param3: param3,
-  param4: param4,
-  x: x,
-  y: y,
-  z: z,
-  );
+  }) =>
+      CommandintRequest(
+        broadcast: broadcast,
+        frame: frame,
+        command: command,
+        current: current,
+        autocontinue: autocontinue,
+        param1: param1,
+        param2: param2,
+        param3: param3,
+        param4: param4,
+        x: x,
+        y: y,
+        z: z,
+      );
 
   void serialize(ByteDataWriter writer) {
-    // Serializes a message object of type CommandIntRequest
+    // Serializes a message object of type CommandintRequest
     // Serialize message field [broadcast]
     writer.writeUint8(broadcast == false ? 0 : 1);
     // Serialize message field [frame]
@@ -118,17 +116,17 @@ class CommandIntRequest extends RosMessage<CommandIntRequest> {
     // Serialize message field [param4]
     writer.writeFloat32(param4);
     // Serialize message field [x]
-    writer.writeInt32(x);
+    writer.writeint32(x);
     // Serialize message field [y]
-    writer.writeInt32(y);
+    writer.writeint32(y);
     // Serialize message field [z]
     writer.writeFloat32(z);
   }
 
   @override
-  CommandIntRequest deserialize(ByteDataReader reader) {
-    //deserializes a message object of type CommandIntRequest
-    final data = CommandIntRequest();
+  CommandintRequest deserialize(ByteDataReader reader) {
+    //deserializes a message object of type CommandintRequest
+    final data = CommandintRequest();
     // Deserialize message field [broadcast]
     data.broadcast = reader.readUint8() != 0;
     // Deserialize message field [frame]
@@ -148,9 +146,9 @@ class CommandIntRequest extends RosMessage<CommandIntRequest> {
     // Deserialize message field [param4]
     data.param4 = reader.readFloat32();
     // Deserialize message field [x]
-    data.x = reader.readInt32();
+    data.x = reader.readint32();
     // Deserialize message field [y]
-    data.y = reader.readInt32();
+    data.y = reader.readint32();
     // Deserialize message field [z]
     data.z = reader.readFloat32();
     return data;
@@ -163,7 +161,7 @@ class CommandIntRequest extends RosMessage<CommandIntRequest> {
   @override
   String get fullType {
     // Returns string type for a service object
-    return 'mavros_msgs/CommandIntRequest';
+    return 'mavros_msgs/CommandintRequest';
   }
 
   @override
@@ -175,7 +173,7 @@ class CommandIntRequest extends RosMessage<CommandIntRequest> {
   @override
   String get messageDefinition {
     // Returns full string definition for message
-    return '''# Generic COMMAND_INT
+    return '''# Generic COMMAND_int
 
 bool broadcast # send this command in broadcast mode
 
@@ -193,35 +191,34 @@ float32 z	# altitude
 
 ''';
   }
-
 }
 
-class CommandIntResponse extends RosMessage<CommandIntResponse> {
+class CommandintResponse extends RosMessage<CommandintResponse> {
   bool success;
 
-  static CommandIntResponse $prototype = CommandIntResponse();
-  CommandIntResponse({ 
+  static CommandintResponse $prototype = CommandintResponse();
+  CommandintResponse({
     bool success,
-  }):
-  this.success = success ?? false;
+  }) : this.success = success ?? false;
 
   @override
-  CommandIntResponse call({ 
+  CommandintResponse call({
     bool success,
-  }) => CommandIntResponse(
-  success: success,
-  );
+  }) =>
+      CommandintResponse(
+        success: success,
+      );
 
   void serialize(ByteDataWriter writer) {
-    // Serializes a message object of type CommandIntResponse
+    // Serializes a message object of type CommandintResponse
     // Serialize message field [success]
     writer.writeUint8(success == false ? 0 : 1);
   }
 
   @override
-  CommandIntResponse deserialize(ByteDataReader reader) {
-    //deserializes a message object of type CommandIntResponse
-    final data = CommandIntResponse();
+  CommandintResponse deserialize(ByteDataReader reader) {
+    //deserializes a message object of type CommandintResponse
+    final data = CommandintResponse();
     // Deserialize message field [success]
     data.success = reader.readUint8() != 0;
     return data;
@@ -234,7 +231,7 @@ class CommandIntResponse extends RosMessage<CommandIntResponse> {
   @override
   String get fullType {
     // Returns string type for a service object
-    return 'mavros_msgs/CommandIntResponse';
+    return 'mavros_msgs/CommandintResponse';
   }
 
   @override
@@ -253,17 +250,17 @@ class CommandIntResponse extends RosMessage<CommandIntResponse> {
 
 ''';
   }
-
 }
 
-class CommandInt extends RosServiceMessage<CommandIntRequest, CommandIntResponse> {
-  static final $prototype = CommandInt();
+class Commandint
+    extends RosServiceMessage<CommandintRequest, CommandintResponse> {
+  static final $prototype = Commandint();
   @override
-  CommandIntRequest get request => CommandIntRequest.$prototype;
+  CommandintRequest get request => CommandintRequest.$prototype;
   @override
-  CommandIntResponse get response => CommandIntResponse.$prototype;
+  CommandintResponse get response => CommandintResponse.$prototype;
   @override
   String get md5sum => '5d5fd287bf3d27ad6ec508b1692f3b09';
   @override
-  String get fullType => 'mavros_msgs/CommandInt';
+  String get fullType => 'mavros_msgs/Commandint';
 }

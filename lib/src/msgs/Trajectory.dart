@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -36,7 +35,7 @@ class Trajectory extends RosMessage<Trajectory> {
   List<double> time_horizon;
 
   static Trajectory $prototype = Trajectory();
-  Trajectory({ 
+  Trajectory({
     Header header,
     int type,
     PositionTarget point_1,
@@ -47,20 +46,19 @@ class Trajectory extends RosMessage<Trajectory> {
     List<int> point_valid,
     List<int> command,
     List<double> time_horizon,
-  }):
-  this.header = header ?? Header(),
-  this.type = type ?? 0,
-  this.point_1 = point_1 ?? PositionTarget(),
-  this.point_2 = point_2 ?? PositionTarget(),
-  this.point_3 = point_3 ?? PositionTarget(),
-  this.point_4 = point_4 ?? PositionTarget(),
-  this.point_5 = point_5 ?? PositionTarget(),
-  this.point_valid = point_valid ?? List.generate(5, (_) => 0),
-  this.command = command ?? List.generate(5, (_) => 0),
-  this.time_horizon = time_horizon ?? List.generate(5, (_) => 0);
+  })  : this.header = header ?? Header(),
+        this.type = type ?? 0,
+        this.point_1 = point_1 ?? PositionTarget(),
+        this.point_2 = point_2 ?? PositionTarget(),
+        this.point_3 = point_3 ?? PositionTarget(),
+        this.point_4 = point_4 ?? PositionTarget(),
+        this.point_5 = point_5 ?? PositionTarget(),
+        this.point_valid = point_valid ?? List.generate(5, (_) => 0),
+        this.command = command ?? List.generate(5, (_) => 0),
+        this.time_horizon = time_horizon ?? List.generate(5, (_) => 0);
 
   @override
-  Trajectory call({ 
+  Trajectory call({
     Header header,
     int type,
     PositionTarget point_1,
@@ -71,18 +69,19 @@ class Trajectory extends RosMessage<Trajectory> {
     List<int> point_valid,
     List<int> command,
     List<double> time_horizon,
-  }) => Trajectory(
-  header: header,
-  type: type,
-  point_1: point_1,
-  point_2: point_2,
-  point_3: point_3,
-  point_4: point_4,
-  point_5: point_5,
-  point_valid: point_valid,
-  command: command,
-  time_horizon: time_horizon,
-  );
+  }) =>
+      Trajectory(
+        header: header,
+        type: type,
+        point_1: point_1,
+        point_2: point_2,
+        point_3: point_3,
+        point_4: point_4,
+        point_5: point_5,
+        point_valid: point_valid,
+        command: command,
+        time_horizon: time_horizon,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type Trajectory
@@ -102,22 +101,28 @@ class Trajectory extends RosMessage<Trajectory> {
     point_5.serialize(writer);
     // Check that the constant length array field [point_valid] has the right length
     if (point_valid.length != 5) {
-      throw Exception('Unable to serialize array field point_valid - length must be 5');
+      throw Exception(
+          'Unable to serialize array field point_valid - length must be 5');
     }
     // Serialize message field [point_valid]
-    writer.writeArray<int>(point_valid, (val) => writer.writeUint8(val), specArrayLen: 5);
+    writer.writeArray<int>(point_valid, (val) => writer.writeUint8(val),
+        specArrayLen: 5);
     // Check that the constant length array field [command] has the right length
     if (command.length != 5) {
-      throw Exception('Unable to serialize array field command - length must be 5');
+      throw Exception(
+          'Unable to serialize array field command - length must be 5');
     }
     // Serialize message field [command]
-    writer.writeArray<int>(command, (val) => writer.writeUint16(val), specArrayLen: 5);
+    writer.writeArray<int>(command, (val) => writer.writeUint16(val),
+        specArrayLen: 5);
     // Check that the constant length array field [time_horizon] has the right length
     if (time_horizon.length != 5) {
-      throw Exception('Unable to serialize array field time_horizon - length must be 5');
+      throw Exception(
+          'Unable to serialize array field time_horizon - length must be 5');
     }
     // Serialize message field [time_horizon]
-    writer.writeArray<double>(time_horizon, (val) => writer.writeFloat32(val), specArrayLen: 5);
+    writer.writeArray<double>(time_horizon, (val) => writer.writeFloat32(val),
+        specArrayLen: 5);
   }
 
   @override
@@ -139,11 +144,14 @@ class Trajectory extends RosMessage<Trajectory> {
     // Deserialize message field [point_5]
     data.point_5 = PositionTarget.$prototype.deserialize(reader);
     // Deserialize message field [point_valid]
-    data.point_valid = reader.readArray<int>(() => reader.readUint8(), arrayLen: 5);
+    data.point_valid =
+        reader.readArray<int>(() => reader.readUint8(), arrayLen: 5);
     // Deserialize message field [command]
-    data.command = reader.readArray<int>(() => reader.readUint16(), arrayLen: 5);
+    data.command =
+        reader.readArray<int>(() => reader.readUint16(), arrayLen: 5);
     // Deserialize message field [time_horizon]
-    data.time_horizon = reader.readArray<double>(() => reader.readFloat32(), arrayLen: 5);
+    data.time_horizon =
+        reader.readArray<double>(() => reader.readFloat32(), arrayLen: 5);
     return data;
   }
 
@@ -179,7 +187,7 @@ class Trajectory extends RosMessage<Trajectory> {
 std_msgs/Header header
 
 uint8 type # See enum MAV_TRAJECTORY_REPRESENTATION.
-uint8 MAV_TRAJECTORY_REPRESENTATION_WAYPOINTS = 0
+uint8 MAV_TRAJECTORY_REPRESENTATION_WAYPOintS = 0
 uint8 MAV_TRAJECTORY_REPRESENTATION_BEZIER = 1
 
 mavros_msgs/PositionTarget point_1
@@ -189,7 +197,7 @@ mavros_msgs/PositionTarget point_4
 mavros_msgs/PositionTarget point_5
 
 uint8[5] point_valid # States if respective point is valid.
-uint16[5] command # MAV_CMD associated with each point. UINT16_MAX if unused.
+uint16[5] command # MAV_CMD associated with each point. Uint16_MAX if unused.
 
 float32[5] time_horizon # if type MAV_TRAJECTORY_REPRESENTATION_BEZIER, it represents the time horizon for each point, otherwise set to NaN
 
@@ -267,8 +275,6 @@ float64 z
   }
 
 // Constants for message
-  static const int MAV_TRAJECTORY_REPRESENTATION_WAYPOINTS = 0;
+  static const int MAV_TRAJECTORY_REPRESENTATION_WAYPOintS = 0;
   static const int MAV_TRAJECTORY_REPRESENTATION_BEZIER = 1;
-
 }
-

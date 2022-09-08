@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -20,25 +19,25 @@ class FileEntry extends RosMessage<FileEntry> {
   int size;
 
   static FileEntry $prototype = FileEntry();
-  FileEntry({ 
+  FileEntry({
     String name,
     int type,
     int size,
-  }):
-  this.name = name ?? '',
-  this.type = type ?? 0,
-  this.size = size ?? 0;
+  })  : this.name = name ?? '',
+        this.type = type ?? 0,
+        this.size = size ?? 0;
 
   @override
-  FileEntry call({ 
+  FileEntry call({
     String name,
     int type,
     int size,
-  }) => FileEntry(
-  name: name,
-  type: type,
-  size: size,
-  );
+  }) =>
+      FileEntry(
+        name: name,
+        type: type,
+        size: size,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type FileEntry
@@ -103,6 +102,4 @@ uint64 size
 // Constants for message
   static const int TYPE_FILE = 0;
   static const int TYPE_DIRECTORY = 1;
-
 }
-

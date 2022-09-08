@@ -4,14 +4,12 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
 import 'package:dartros/msg_utils.dart';
 
 //-----------------------------------------------------------
-
 
 //-----------------------------------------------------------
 
@@ -23,25 +21,25 @@ class StreamRateRequest extends RosMessage<StreamRateRequest> {
   bool on_off;
 
   static StreamRateRequest $prototype = StreamRateRequest();
-  StreamRateRequest({ 
+  StreamRateRequest({
     int stream_id,
     int message_rate,
     bool on_off,
-  }):
-  this.stream_id = stream_id ?? 0,
-  this.message_rate = message_rate ?? 0,
-  this.on_off = on_off ?? false;
+  })  : this.stream_id = stream_id ?? 0,
+        this.message_rate = message_rate ?? 0,
+        this.on_off = on_off ?? false;
 
   @override
-  StreamRateRequest call({ 
+  StreamRateRequest call({
     int stream_id,
     int message_rate,
     bool on_off,
-  }) => StreamRateRequest(
-  stream_id: stream_id,
-  message_rate: message_rate,
-  on_off: on_off,
-  );
+  }) =>
+      StreamRateRequest(
+        stream_id: stream_id,
+        message_rate: message_rate,
+        on_off: on_off,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type StreamRateRequest
@@ -115,7 +113,6 @@ bool on_off
   static const int STREAM_EXTRA1 = 10;
   static const int STREAM_EXTRA2 = 11;
   static const int STREAM_EXTRA3 = 12;
-
 }
 
 class StreamRateResponse extends RosMessage<StreamRateResponse> {
@@ -159,10 +156,10 @@ class StreamRateResponse extends RosMessage<StreamRateResponse> {
 
 ''';
   }
-
 }
 
-class StreamRate extends RosServiceMessage<StreamRateRequest, StreamRateResponse> {
+class StreamRate
+    extends RosServiceMessage<StreamRateRequest, StreamRateResponse> {
   static final $prototype = StreamRate();
   @override
   StreamRateRequest get request => StreamRateRequest.$prototype;

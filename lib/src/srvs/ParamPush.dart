@@ -4,14 +4,12 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
 import 'package:dartros/msg_utils.dart';
 
 //-----------------------------------------------------------
-
 
 //-----------------------------------------------------------
 
@@ -59,7 +57,6 @@ class ParamPushRequest extends RosMessage<ParamPushRequest> {
 
 ''';
   }
-
 }
 
 class ParamPushResponse extends RosMessage<ParamPushResponse> {
@@ -68,21 +65,21 @@ class ParamPushResponse extends RosMessage<ParamPushResponse> {
   int param_transfered;
 
   static ParamPushResponse $prototype = ParamPushResponse();
-  ParamPushResponse({ 
+  ParamPushResponse({
     bool success,
     int param_transfered,
-  }):
-  this.success = success ?? false,
-  this.param_transfered = param_transfered ?? 0;
+  })  : this.success = success ?? false,
+        this.param_transfered = param_transfered ?? 0;
 
   @override
-  ParamPushResponse call({ 
+  ParamPushResponse call({
     bool success,
     int param_transfered,
-  }) => ParamPushResponse(
-  success: success,
-  param_transfered: param_transfered,
-  );
+  }) =>
+      ParamPushResponse(
+        success: success,
+        param_transfered: param_transfered,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type ParamPushResponse
@@ -128,7 +125,6 @@ uint32 param_transfered
 
 ''';
   }
-
 }
 
 class ParamPush extends RosServiceMessage<ParamPushRequest, ParamPushResponse> {

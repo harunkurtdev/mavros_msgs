@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -12,24 +11,23 @@ import 'package:dartros/msg_utils.dart';
 
 //-----------------------------------------------------------
 
-
 //-----------------------------------------------------------
 
 class FileChecksumRequest extends RosMessage<FileChecksumRequest> {
   String file_path;
 
   static FileChecksumRequest $prototype = FileChecksumRequest();
-  FileChecksumRequest({ 
+  FileChecksumRequest({
     String file_path,
-  }):
-  this.file_path = file_path ?? '';
+  }) : this.file_path = file_path ?? '';
 
   @override
-  FileChecksumRequest call({ 
+  FileChecksumRequest call({
     String file_path,
-  }) => FileChecksumRequest(
-  file_path: file_path,
-  );
+  }) =>
+      FileChecksumRequest(
+        file_path: file_path,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type FileChecksumRequest
@@ -78,7 +76,6 @@ string file_path
 
 ''';
   }
-
 }
 
 class FileChecksumResponse extends RosMessage<FileChecksumResponse> {
@@ -89,25 +86,25 @@ class FileChecksumResponse extends RosMessage<FileChecksumResponse> {
   int r_errno;
 
   static FileChecksumResponse $prototype = FileChecksumResponse();
-  FileChecksumResponse({ 
+  FileChecksumResponse({
     int crc32,
     bool success,
     int r_errno,
-  }):
-  this.crc32 = crc32 ?? 0,
-  this.success = success ?? false,
-  this.r_errno = r_errno ?? 0;
+  })  : this.crc32 = crc32 ?? 0,
+        this.success = success ?? false,
+        this.r_errno = r_errno ?? 0;
 
   @override
-  FileChecksumResponse call({ 
+  FileChecksumResponse call({
     int crc32,
     bool success,
     int r_errno,
-  }) => FileChecksumResponse(
-  crc32: crc32,
-  success: success,
-  r_errno: r_errno,
-  );
+  }) =>
+      FileChecksumResponse(
+        crc32: crc32,
+        success: success,
+        r_errno: r_errno,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type FileChecksumResponse
@@ -116,7 +113,7 @@ class FileChecksumResponse extends RosMessage<FileChecksumResponse> {
     // Serialize message field [success]
     writer.writeUint8(success == false ? 0 : 1);
     // Serialize message field [r_errno]
-    writer.writeInt32(r_errno);
+    writer.writeint32(r_errno);
   }
 
   @override
@@ -128,7 +125,7 @@ class FileChecksumResponse extends RosMessage<FileChecksumResponse> {
     // Deserialize message field [success]
     data.success = reader.readUint8() != 0;
     // Deserialize message field [r_errno]
-    data.r_errno = reader.readInt32();
+    data.r_errno = reader.readint32();
     return data;
   }
 
@@ -158,10 +155,10 @@ int32 r_errno
 
 ''';
   }
-
 }
 
-class FileChecksum extends RosServiceMessage<FileChecksumRequest, FileChecksumResponse> {
+class FileChecksum
+    extends RosServiceMessage<FileChecksumRequest, FileChecksumResponse> {
   static final $prototype = FileChecksum();
   @override
   FileChecksumRequest get request => FileChecksumRequest.$prototype;

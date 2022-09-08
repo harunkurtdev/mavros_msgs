@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -24,33 +23,33 @@ class Tunnel extends RosMessage<Tunnel> {
   List<int> payload;
 
   static Tunnel $prototype = Tunnel();
-  Tunnel({ 
+  Tunnel({
     int target_system,
     int target_component,
     int payload_type,
     int payload_length,
     List<int> payload,
-  }):
-  this.target_system = target_system ?? 0,
-  this.target_component = target_component ?? 0,
-  this.payload_type = payload_type ?? 0,
-  this.payload_length = payload_length ?? 0,
-  this.payload = payload ?? List.generate(128, (_) => 0);
+  })  : this.target_system = target_system ?? 0,
+        this.target_component = target_component ?? 0,
+        this.payload_type = payload_type ?? 0,
+        this.payload_length = payload_length ?? 0,
+        this.payload = payload ?? List.generate(128, (_) => 0);
 
   @override
-  Tunnel call({ 
+  Tunnel call({
     int target_system,
     int target_component,
     int payload_type,
     int payload_length,
     List<int> payload,
-  }) => Tunnel(
-  target_system: target_system,
-  target_component: target_component,
-  payload_type: payload_type,
-  payload_length: payload_length,
-  payload: payload,
-  );
+  }) =>
+      Tunnel(
+        target_system: target_system,
+        target_component: target_component,
+        payload_type: payload_type,
+        payload_length: payload_length,
+        payload: payload,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type Tunnel
@@ -64,10 +63,12 @@ class Tunnel extends RosMessage<Tunnel> {
     writer.writeUint8(payload_length);
     // Check that the constant length array field [payload] has the right length
     if (payload.length != 128) {
-      throw Exception('Unable to serialize array field payload - length must be 128');
+      throw Exception(
+          'Unable to serialize array field payload - length must be 128');
     }
     // Serialize message field [payload]
-    writer.writeArray<int>(payload, (val) => writer.writeUint8(val), specArrayLen: 128);
+    writer.writeArray<int>(payload, (val) => writer.writeUint8(val),
+        specArrayLen: 128);
   }
 
   @override
@@ -83,7 +84,8 @@ class Tunnel extends RosMessage<Tunnel> {
     // Deserialize message field [payload_length]
     data.payload_length = reader.readUint8();
     // Deserialize message field [payload]
-    data.payload = reader.readArray<int>(() => reader.readUint8(), arrayLen: 128);
+    data.payload =
+        reader.readArray<int>(() => reader.readUint8(), arrayLen: 128);
     return data;
   }
 
@@ -162,6 +164,4 @@ uint16 PAYLOAD_TYPE_STORM32_RESERVED9 = 209 # Registered for STorM32 gimbal cont
   static const int PAYLOAD_TYPE_STORM32_RESERVED7 = 207;
   static const int PAYLOAD_TYPE_STORM32_RESERVED8 = 208;
   static const int PAYLOAD_TYPE_STORM32_RESERVED9 = 209;
-
 }
-

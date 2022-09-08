@@ -4,14 +4,12 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
 import 'package:dartros/msg_utils.dart';
 
 //-----------------------------------------------------------
-
 
 //-----------------------------------------------------------
 
@@ -21,21 +19,21 @@ class LogRequestListRequest extends RosMessage<LogRequestListRequest> {
   int end;
 
   static LogRequestListRequest $prototype = LogRequestListRequest();
-  LogRequestListRequest({ 
+  LogRequestListRequest({
     int start,
     int end,
-  }):
-  this.start = start ?? 0,
-  this.end = end ?? 0;
+  })  : this.start = start ?? 0,
+        this.end = end ?? 0;
 
   @override
-  LogRequestListRequest call({ 
+  LogRequestListRequest call({
     int start,
     int end,
-  }) => LogRequestListRequest(
-  start: start,
-  end: end,
-  );
+  }) =>
+      LogRequestListRequest(
+        start: start,
+        end: end,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type LogRequestListRequest
@@ -85,24 +83,23 @@ uint16 end
 
 ''';
   }
-
 }
 
 class LogRequestListResponse extends RosMessage<LogRequestListResponse> {
   bool success;
 
   static LogRequestListResponse $prototype = LogRequestListResponse();
-  LogRequestListResponse({ 
+  LogRequestListResponse({
     bool success,
-  }):
-  this.success = success ?? false;
+  }) : this.success = success ?? false;
 
   @override
-  LogRequestListResponse call({ 
+  LogRequestListResponse call({
     bool success,
-  }) => LogRequestListResponse(
-  success: success,
-  );
+  }) =>
+      LogRequestListResponse(
+        success: success,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type LogRequestListResponse
@@ -143,10 +140,10 @@ class LogRequestListResponse extends RosMessage<LogRequestListResponse> {
 
 ''';
   }
-
 }
 
-class LogRequestList extends RosServiceMessage<LogRequestListRequest, LogRequestListResponse> {
+class LogRequestList
+    extends RosServiceMessage<LogRequestListRequest, LogRequestListResponse> {
   static final $prototype = LogRequestList();
   @override
   LogRequestListRequest get request => LogRequestListRequest.$prototype;

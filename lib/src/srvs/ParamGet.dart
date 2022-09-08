@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -20,17 +19,17 @@ class ParamGetRequest extends RosMessage<ParamGetRequest> {
   String param_id;
 
   static ParamGetRequest $prototype = ParamGetRequest();
-  ParamGetRequest({ 
+  ParamGetRequest({
     String param_id,
-  }):
-  this.param_id = param_id ?? '';
+  }) : this.param_id = param_id ?? '';
 
   @override
-  ParamGetRequest call({ 
+  ParamGetRequest call({
     String param_id,
-  }) => ParamGetRequest(
-  param_id: param_id,
-  );
+  }) =>
+      ParamGetRequest(
+        param_id: param_id,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type ParamGetRequest
@@ -74,7 +73,6 @@ string param_id
 
 ''';
   }
-
 }
 
 class ParamGetResponse extends RosMessage<ParamGetResponse> {
@@ -83,21 +81,21 @@ class ParamGetResponse extends RosMessage<ParamGetResponse> {
   ParamValue value;
 
   static ParamGetResponse $prototype = ParamGetResponse();
-  ParamGetResponse({ 
+  ParamGetResponse({
     bool success,
     ParamValue value,
-  }):
-  this.success = success ?? false,
-  this.value = value ?? ParamValue();
+  })  : this.success = success ?? false,
+        this.value = value ?? ParamValue();
 
   @override
-  ParamGetResponse call({ 
+  ParamGetResponse call({
     bool success,
     ParamValue value,
-  }) => ParamGetResponse(
-  success: success,
-  value: value,
-  );
+  }) =>
+      ParamGetResponse(
+        success: success,
+        value: value,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type ParamGetResponse
@@ -145,7 +143,7 @@ ParamValue value
 MSG: mavros_msgs/ParamValue
 # Parameter value storage type.
 #
-# Integer and float fields:
+# integer and float fields:
 #
 # if integer != 0: it is integer value
 # else if real != 0.0: it is float value
@@ -156,7 +154,6 @@ float64 real
 
 ''';
   }
-
 }
 
 class ParamGet extends RosServiceMessage<ParamGetRequest, ParamGetResponse> {

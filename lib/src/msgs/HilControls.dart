@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -37,7 +36,7 @@ class HilControls extends RosMessage<HilControls> {
   int nav_mode;
 
   static HilControls $prototype = HilControls();
-  HilControls({ 
+  HilControls({
     Header header,
     double roll_ailerons,
     double pitch_elevator,
@@ -49,21 +48,20 @@ class HilControls extends RosMessage<HilControls> {
     double aux4,
     int mode,
     int nav_mode,
-  }):
-  this.header = header ?? Header(),
-  this.roll_ailerons = roll_ailerons ?? 0.0,
-  this.pitch_elevator = pitch_elevator ?? 0.0,
-  this.yaw_rudder = yaw_rudder ?? 0.0,
-  this.throttle = throttle ?? 0.0,
-  this.aux1 = aux1 ?? 0.0,
-  this.aux2 = aux2 ?? 0.0,
-  this.aux3 = aux3 ?? 0.0,
-  this.aux4 = aux4 ?? 0.0,
-  this.mode = mode ?? 0,
-  this.nav_mode = nav_mode ?? 0;
+  })  : this.header = header ?? Header(),
+        this.roll_ailerons = roll_ailerons ?? 0.0,
+        this.pitch_elevator = pitch_elevator ?? 0.0,
+        this.yaw_rudder = yaw_rudder ?? 0.0,
+        this.throttle = throttle ?? 0.0,
+        this.aux1 = aux1 ?? 0.0,
+        this.aux2 = aux2 ?? 0.0,
+        this.aux3 = aux3 ?? 0.0,
+        this.aux4 = aux4 ?? 0.0,
+        this.mode = mode ?? 0,
+        this.nav_mode = nav_mode ?? 0;
 
   @override
-  HilControls call({ 
+  HilControls call({
     Header header,
     double roll_ailerons,
     double pitch_elevator,
@@ -75,19 +73,20 @@ class HilControls extends RosMessage<HilControls> {
     double aux4,
     int mode,
     int nav_mode,
-  }) => HilControls(
-  header: header,
-  roll_ailerons: roll_ailerons,
-  pitch_elevator: pitch_elevator,
-  yaw_rudder: yaw_rudder,
-  throttle: throttle,
-  aux1: aux1,
-  aux2: aux2,
-  aux3: aux3,
-  aux4: aux4,
-  mode: mode,
-  nav_mode: nav_mode,
-  );
+  }) =>
+      HilControls(
+        header: header,
+        roll_ailerons: roll_ailerons,
+        pitch_elevator: pitch_elevator,
+        yaw_rudder: yaw_rudder,
+        throttle: throttle,
+        aux1: aux1,
+        aux2: aux2,
+        aux3: aux3,
+        aux4: aux4,
+        mode: mode,
+        nav_mode: nav_mode,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type HilControls
@@ -202,6 +201,4 @@ string frame_id
 
 ''';
   }
-
 }
-

@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -19,28 +18,29 @@ class WheelOdomStamped extends RosMessage<WheelOdomStamped> {
   List<double> data;
 
   static WheelOdomStamped $prototype = WheelOdomStamped();
-  WheelOdomStamped({ 
+  WheelOdomStamped({
     Header header,
     List<double> data,
-  }):
-  this.header = header ?? Header(),
-  this.data = data ?? [];
+  })  : this.header = header ?? Header(),
+        this.data = data ?? [];
 
   @override
-  WheelOdomStamped call({ 
+  WheelOdomStamped call({
     Header header,
     List<double> data,
-  }) => WheelOdomStamped(
-  header: header,
-  data: data,
-  );
+  }) =>
+      WheelOdomStamped(
+        header: header,
+        data: data,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type WheelOdomStamped
     // Serialize message field [header]
     header.serialize(writer);
     // Serialize message field [data]
-    writer.writeArray<double>(data, (val) => writer.writeFloat64(val), specArrayLen: null);
+    writer.writeArray<double>(data, (val) => writer.writeFloat64(val),
+        specArrayLen: null);
   }
 
   @override
@@ -50,7 +50,8 @@ class WheelOdomStamped extends RosMessage<WheelOdomStamped> {
     // Deserialize message field [header]
     data.header = Header.$prototype.deserialize(reader);
     // Deserialize message field [data]
-    data.data = reader.readArray<double>(() => reader.readFloat64(), arrayLen: null);
+    data.data =
+        reader.readArray<double>(() => reader.readFloat64(), arrayLen: null);
     return data;
   }
 
@@ -101,6 +102,4 @@ string frame_id
 
 ''';
   }
-
 }
-

@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -31,7 +30,7 @@ class CameraImageCaptured extends RosMessage<CameraImageCaptured> {
   String file_url;
 
   static CameraImageCaptured $prototype = CameraImageCaptured();
-  CameraImageCaptured({ 
+  CameraImageCaptured({
     Header header,
     Quaternion orientation,
     GeoPoint geo,
@@ -39,17 +38,16 @@ class CameraImageCaptured extends RosMessage<CameraImageCaptured> {
     int image_index,
     int capture_result,
     String file_url,
-  }):
-  this.header = header ?? Header(),
-  this.orientation = orientation ?? Quaternion(),
-  this.geo = geo ?? GeoPoint(),
-  this.relative_alt = relative_alt ?? 0.0,
-  this.image_index = image_index ?? 0,
-  this.capture_result = capture_result ?? 0,
-  this.file_url = file_url ?? '';
+  })  : this.header = header ?? Header(),
+        this.orientation = orientation ?? Quaternion(),
+        this.geo = geo ?? GeoPoint(),
+        this.relative_alt = relative_alt ?? 0.0,
+        this.image_index = image_index ?? 0,
+        this.capture_result = capture_result ?? 0,
+        this.file_url = file_url ?? '';
 
   @override
-  CameraImageCaptured call({ 
+  CameraImageCaptured call({
     Header header,
     Quaternion orientation,
     GeoPoint geo,
@@ -57,15 +55,16 @@ class CameraImageCaptured extends RosMessage<CameraImageCaptured> {
     int image_index,
     int capture_result,
     String file_url,
-  }) => CameraImageCaptured(
-  header: header,
-  orientation: orientation,
-  geo: geo,
-  relative_alt: relative_alt,
-  image_index: image_index,
-  capture_result: capture_result,
-  file_url: file_url,
-  );
+  }) =>
+      CameraImageCaptured(
+        header: header,
+        orientation: orientation,
+        geo: geo,
+        relative_alt: relative_alt,
+        image_index: image_index,
+        capture_result: capture_result,
+        file_url: file_url,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type CameraImageCaptured
@@ -78,9 +77,9 @@ class CameraImageCaptured extends RosMessage<CameraImageCaptured> {
     // Serialize message field [relative_alt]
     writer.writeFloat32(relative_alt);
     // Serialize message field [image_index]
-    writer.writeInt32(image_index);
+    writer.writeint32(image_index);
     // Serialize message field [capture_result]
-    writer.writeInt8(capture_result);
+    writer.writeint8(capture_result);
     // Serialize message field [file_url]
     writer.writeString(file_url);
   }
@@ -98,9 +97,9 @@ class CameraImageCaptured extends RosMessage<CameraImageCaptured> {
     // Deserialize message field [relative_alt]
     data.relative_alt = reader.readFloat32();
     // Deserialize message field [image_index]
-    data.image_index = reader.readInt32();
+    data.image_index = reader.readint32();
     // Deserialize message field [capture_result]
-    data.capture_result = reader.readInt8();
+    data.capture_result = reader.readint8();
     // Deserialize message field [file_url]
     data.file_url = reader.readString();
     return data;
@@ -183,6 +182,4 @@ float64 altitude
 
 ''';
   }
-
 }
-

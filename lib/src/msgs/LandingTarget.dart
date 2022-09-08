@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -32,7 +31,7 @@ class LandingTarget extends RosMessage<LandingTarget> {
   int type;
 
   static LandingTarget $prototype = LandingTarget();
-  LandingTarget({ 
+  LandingTarget({
     Header header,
     int target_num,
     int frame,
@@ -41,18 +40,17 @@ class LandingTarget extends RosMessage<LandingTarget> {
     List<double> size,
     Pose pose,
     int type,
-  }):
-  this.header = header ?? Header(),
-  this.target_num = target_num ?? 0,
-  this.frame = frame ?? 0,
-  this.angle = angle ?? List.generate(2, (_) => 0),
-  this.distance = distance ?? 0.0,
-  this.size = size ?? List.generate(2, (_) => 0),
-  this.pose = pose ?? Pose(),
-  this.type = type ?? 0;
+  })  : this.header = header ?? Header(),
+        this.target_num = target_num ?? 0,
+        this.frame = frame ?? 0,
+        this.angle = angle ?? List.generate(2, (_) => 0),
+        this.distance = distance ?? 0.0,
+        this.size = size ?? List.generate(2, (_) => 0),
+        this.pose = pose ?? Pose(),
+        this.type = type ?? 0;
 
   @override
-  LandingTarget call({ 
+  LandingTarget call({
     Header header,
     int target_num,
     int frame,
@@ -61,16 +59,17 @@ class LandingTarget extends RosMessage<LandingTarget> {
     List<double> size,
     Pose pose,
     int type,
-  }) => LandingTarget(
-  header: header,
-  target_num: target_num,
-  frame: frame,
-  angle: angle,
-  distance: distance,
-  size: size,
-  pose: pose,
-  type: type,
-  );
+  }) =>
+      LandingTarget(
+        header: header,
+        target_num: target_num,
+        frame: frame,
+        angle: angle,
+        distance: distance,
+        size: size,
+        pose: pose,
+        type: type,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type LandingTarget
@@ -82,18 +81,22 @@ class LandingTarget extends RosMessage<LandingTarget> {
     writer.writeUint8(frame);
     // Check that the constant length array field [angle] has the right length
     if (angle.length != 2) {
-      throw Exception('Unable to serialize array field angle - length must be 2');
+      throw Exception(
+          'Unable to serialize array field angle - length must be 2');
     }
     // Serialize message field [angle]
-    writer.writeArray<double>(angle, (val) => writer.writeFloat32(val), specArrayLen: 2);
+    writer.writeArray<double>(angle, (val) => writer.writeFloat32(val),
+        specArrayLen: 2);
     // Serialize message field [distance]
     writer.writeFloat32(distance);
     // Check that the constant length array field [size] has the right length
     if (size.length != 2) {
-      throw Exception('Unable to serialize array field size - length must be 2');
+      throw Exception(
+          'Unable to serialize array field size - length must be 2');
     }
     // Serialize message field [size]
-    writer.writeArray<double>(size, (val) => writer.writeFloat32(val), specArrayLen: 2);
+    writer.writeArray<double>(size, (val) => writer.writeFloat32(val),
+        specArrayLen: 2);
     // Serialize message field [pose]
     pose.serialize(writer);
     // Serialize message field [type]
@@ -111,11 +114,13 @@ class LandingTarget extends RosMessage<LandingTarget> {
     // Deserialize message field [frame]
     data.frame = reader.readUint8();
     // Deserialize message field [angle]
-    data.angle = reader.readArray<double>(() => reader.readFloat32(), arrayLen: 2);
+    data.angle =
+        reader.readArray<double>(() => reader.readFloat32(), arrayLen: 2);
     // Deserialize message field [distance]
     data.distance = reader.readFloat32();
     // Deserialize message field [size]
-    data.size = reader.readArray<double>(() => reader.readFloat32(), arrayLen: 2);
+    data.size =
+        reader.readArray<double>(() => reader.readFloat32(), arrayLen: 2);
     // Deserialize message field [pose]
     data.pose = Pose.$prototype.deserialize(reader);
     // Deserialize message field [type]
@@ -155,13 +160,13 @@ uint8 LOCAL_NED = 2                # Local coordinate frame, Z-up (x: north, y: 
 uint8 MISSION = 3                  # NOT a coordinate frame, indicates a mission command.
 uint8 GLOBAL_RELATIVE_ALT = 4      # Global coordinate frame, WGS84 coordinate system, relative altitude over ground with respect to the home position. First value / x: latitude, second value / y: longitude, third value / z: positive altitude with 0 being at the altitude of the home location.
 uint8 LOCAL_ENU = 5                # Local coordinate frame, Z-down (x: east, y: north, z: up)
-uint8 GLOBAL_INT = 6               # Global coordinate frame, WGS84 coordinate system. First value / x: latitude in degrees*1.0e-7, second value / y: longitude in degrees*1.0e-7, third value / z: positive altitude over mean sea level (MSL)
-uint8 GLOBAL_RELATIVE_ALT_INT = 7  # Global coordinate frame, WGS84 coordinate system, relative altitude over ground with respect to the home position. First value / x: latitude in degrees*10e-7, second value / y: longitude in degrees*10e-7, third value / z: positive altitude with 0 being at the altitude of the home location.
+uint8 GLOBAL_int = 6               # Global coordinate frame, WGS84 coordinate system. First value / x: latitude in degrees*1.0e-7, second value / y: longitude in degrees*1.0e-7, third value / z: positive altitude over mean sea level (MSL)
+uint8 GLOBAL_RELATIVE_ALT_int = 7  # Global coordinate frame, WGS84 coordinate system, relative altitude over ground with respect to the home position. First value / x: latitude in degrees*10e-7, second value / y: longitude in degrees*10e-7, third value / z: positive altitude with 0 being at the altitude of the home location.
 uint8 LOCAL_OFFSET_NED = 8         # Offset to the current local frame. Anything expressed in this frame should be added to the current local frame position.
 uint8 BODY_NED = 9                 # Setpoint in body NED frame. This makes sense if all position control is externalized - e.g. useful to command 2 m/s^2 acceleration to the right.
 uint8 BODY_OFFSET_NED = 10         # Offset in body NED frame. This makes sense if adding setpoints to the current flight path, to avoid an obstacle - e.g. useful to command 2 m/s^2 acceleration to the east.
 uint8 GLOBAL_TERRAIN_ALT = 11      # Global coordinate frame with above terrain level altitude. WGS84 coordinate system, relative altitude over terrain with respect to the waypoint coordinate. First value / x: latitude in degrees, second value / y: longitude in degrees, third value / z: positive altitude in meters with 0 being at ground level in terrain model.
-uint8 GLOBAL_TERRAIN_ALT_INT = 12  # Global coordinate frame with above terrain level altitude. WGS84 coordinate system, relative altitude over terrain with respect to the waypoint coordinate. First value / x: latitude in degrees*10e-7, second value / y: longitude in degrees*10e-7, third value / z: positive altitude in meters with 0 being at ground level in terrain model.
+uint8 GLOBAL_TERRAIN_ALT_int = 12  # Global coordinate frame with above terrain level altitude. WGS84 coordinate system, relative altitude over terrain with respect to the waypoint coordinate. First value / x: latitude in degrees*10e-7, second value / y: longitude in degrees*10e-7, third value / z: positive altitude in meters with 0 being at ground level in terrain model.
 
 ## LANDING_TARGET_TYPE enum
 uint8 LIGHT_BEACON = 0             # Landing target signaled by light beacon (ex: IR-LOCK)
@@ -224,17 +229,15 @@ float64 w
   static const int MISSION = 3;
   static const int GLOBAL_RELATIVE_ALT = 4;
   static const int LOCAL_ENU = 5;
-  static const int GLOBAL_INT = 6;
-  static const int GLOBAL_RELATIVE_ALT_INT = 7;
+  static const int GLOBAL_int = 6;
+  static const int GLOBAL_RELATIVE_ALT_int = 7;
   static const int LOCAL_OFFSET_NED = 8;
   static const int BODY_NED = 9;
   static const int BODY_OFFSET_NED = 10;
   static const int GLOBAL_TERRAIN_ALT = 11;
-  static const int GLOBAL_TERRAIN_ALT_INT = 12;
+  static const int GLOBAL_TERRAIN_ALT_int = 12;
   static const int LIGHT_BEACON = 0;
   static const int RADIO_BEACON = 1;
   static const int VISION_FIDUCIAL = 2;
   static const int VISION_OTHER = 3;
-
 }
-

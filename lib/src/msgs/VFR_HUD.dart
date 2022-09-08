@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -29,7 +28,7 @@ class VFR_HUD extends RosMessage<VFR_HUD> {
   double climb;
 
   static VFR_HUD $prototype = VFR_HUD();
-  VFR_HUD({ 
+  VFR_HUD({
     Header header,
     double airspeed,
     double groundspeed,
@@ -37,17 +36,16 @@ class VFR_HUD extends RosMessage<VFR_HUD> {
     double throttle,
     double altitude,
     double climb,
-  }):
-  this.header = header ?? Header(),
-  this.airspeed = airspeed ?? 0.0,
-  this.groundspeed = groundspeed ?? 0.0,
-  this.heading = heading ?? 0,
-  this.throttle = throttle ?? 0.0,
-  this.altitude = altitude ?? 0.0,
-  this.climb = climb ?? 0.0;
+  })  : this.header = header ?? Header(),
+        this.airspeed = airspeed ?? 0.0,
+        this.groundspeed = groundspeed ?? 0.0,
+        this.heading = heading ?? 0,
+        this.throttle = throttle ?? 0.0,
+        this.altitude = altitude ?? 0.0,
+        this.climb = climb ?? 0.0;
 
   @override
-  VFR_HUD call({ 
+  VFR_HUD call({
     Header header,
     double airspeed,
     double groundspeed,
@@ -55,15 +53,16 @@ class VFR_HUD extends RosMessage<VFR_HUD> {
     double throttle,
     double altitude,
     double climb,
-  }) => VFR_HUD(
-  header: header,
-  airspeed: airspeed,
-  groundspeed: groundspeed,
-  heading: heading,
-  throttle: throttle,
-  altitude: altitude,
-  climb: climb,
-  );
+  }) =>
+      VFR_HUD(
+        header: header,
+        airspeed: airspeed,
+        groundspeed: groundspeed,
+        heading: heading,
+        throttle: throttle,
+        altitude: altitude,
+        climb: climb,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type VFR_HUD
@@ -74,7 +73,7 @@ class VFR_HUD extends RosMessage<VFR_HUD> {
     // Serialize message field [groundspeed]
     writer.writeFloat32(groundspeed);
     // Serialize message field [heading]
-    writer.writeInt16(heading);
+    writer.writeint16(heading);
     // Serialize message field [throttle]
     writer.writeFloat32(throttle);
     // Serialize message field [altitude]
@@ -94,7 +93,7 @@ class VFR_HUD extends RosMessage<VFR_HUD> {
     // Deserialize message field [groundspeed]
     data.groundspeed = reader.readFloat32();
     // Deserialize message field [heading]
-    data.heading = reader.readInt16();
+    data.heading = reader.readint16();
     // Deserialize message field [throttle]
     data.throttle = reader.readFloat32();
     // Deserialize message field [altitude]
@@ -155,6 +154,4 @@ string frame_id
 
 ''';
   }
-
 }
-

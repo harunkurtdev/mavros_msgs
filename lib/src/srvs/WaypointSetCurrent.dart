@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -12,24 +11,23 @@ import 'package:dartros/msg_utils.dart';
 
 //-----------------------------------------------------------
 
-
 //-----------------------------------------------------------
 
 class WaypointSetCurrentRequest extends RosMessage<WaypointSetCurrentRequest> {
   int wp_seq;
 
   static WaypointSetCurrentRequest $prototype = WaypointSetCurrentRequest();
-  WaypointSetCurrentRequest({ 
+  WaypointSetCurrentRequest({
     int wp_seq,
-  }):
-  this.wp_seq = wp_seq ?? 0;
+  }) : this.wp_seq = wp_seq ?? 0;
 
   @override
-  WaypointSetCurrentRequest call({ 
+  WaypointSetCurrentRequest call({
     int wp_seq,
-  }) => WaypointSetCurrentRequest(
-  wp_seq: wp_seq,
-  );
+  }) =>
+      WaypointSetCurrentRequest(
+        wp_seq: wp_seq,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type WaypointSetCurrentRequest
@@ -73,24 +71,24 @@ uint16 wp_seq
 
 ''';
   }
-
 }
 
-class WaypointSetCurrentResponse extends RosMessage<WaypointSetCurrentResponse> {
+class WaypointSetCurrentResponse
+    extends RosMessage<WaypointSetCurrentResponse> {
   bool success;
 
   static WaypointSetCurrentResponse $prototype = WaypointSetCurrentResponse();
-  WaypointSetCurrentResponse({ 
+  WaypointSetCurrentResponse({
     bool success,
-  }):
-  this.success = success ?? false;
+  }) : this.success = success ?? false;
 
   @override
-  WaypointSetCurrentResponse call({ 
+  WaypointSetCurrentResponse call({
     bool success,
-  }) => WaypointSetCurrentResponse(
-  success: success,
-  );
+  }) =>
+      WaypointSetCurrentResponse(
+        success: success,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type WaypointSetCurrentResponse
@@ -131,15 +129,16 @@ class WaypointSetCurrentResponse extends RosMessage<WaypointSetCurrentResponse> 
 
 ''';
   }
-
 }
 
-class WaypointSetCurrent extends RosServiceMessage<WaypointSetCurrentRequest, WaypointSetCurrentResponse> {
+class WaypointSetCurrent extends RosServiceMessage<WaypointSetCurrentRequest,
+    WaypointSetCurrentResponse> {
   static final $prototype = WaypointSetCurrent();
   @override
   WaypointSetCurrentRequest get request => WaypointSetCurrentRequest.$prototype;
   @override
-  WaypointSetCurrentResponse get response => WaypointSetCurrentResponse.$prototype;
+  WaypointSetCurrentResponse get response =>
+      WaypointSetCurrentResponse.$prototype;
   @override
   String get md5sum => 'f99aa1a911a80ab546ea470f4e90c807';
   @override

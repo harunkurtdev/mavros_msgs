@@ -4,14 +4,12 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
 import 'package:dartros/msg_utils.dart';
 
 //-----------------------------------------------------------
-
 
 //-----------------------------------------------------------
 
@@ -37,7 +35,7 @@ class CommandLongRequest extends RosMessage<CommandLongRequest> {
   double param7;
 
   static CommandLongRequest $prototype = CommandLongRequest();
-  CommandLongRequest({ 
+  CommandLongRequest({
     bool broadcast,
     int command,
     int confirmation,
@@ -48,20 +46,19 @@ class CommandLongRequest extends RosMessage<CommandLongRequest> {
     double param5,
     double param6,
     double param7,
-  }):
-  this.broadcast = broadcast ?? false,
-  this.command = command ?? 0,
-  this.confirmation = confirmation ?? 0,
-  this.param1 = param1 ?? 0.0,
-  this.param2 = param2 ?? 0.0,
-  this.param3 = param3 ?? 0.0,
-  this.param4 = param4 ?? 0.0,
-  this.param5 = param5 ?? 0.0,
-  this.param6 = param6 ?? 0.0,
-  this.param7 = param7 ?? 0.0;
+  })  : this.broadcast = broadcast ?? false,
+        this.command = command ?? 0,
+        this.confirmation = confirmation ?? 0,
+        this.param1 = param1 ?? 0.0,
+        this.param2 = param2 ?? 0.0,
+        this.param3 = param3 ?? 0.0,
+        this.param4 = param4 ?? 0.0,
+        this.param5 = param5 ?? 0.0,
+        this.param6 = param6 ?? 0.0,
+        this.param7 = param7 ?? 0.0;
 
   @override
-  CommandLongRequest call({ 
+  CommandLongRequest call({
     bool broadcast,
     int command,
     int confirmation,
@@ -72,18 +69,19 @@ class CommandLongRequest extends RosMessage<CommandLongRequest> {
     double param5,
     double param6,
     double param7,
-  }) => CommandLongRequest(
-  broadcast: broadcast,
-  command: command,
-  confirmation: confirmation,
-  param1: param1,
-  param2: param2,
-  param3: param3,
-  param4: param4,
-  param5: param5,
-  param6: param6,
-  param7: param7,
-  );
+  }) =>
+      CommandLongRequest(
+        broadcast: broadcast,
+        command: command,
+        confirmation: confirmation,
+        param1: param1,
+        param2: param2,
+        param3: param3,
+        param4: param4,
+        param5: param5,
+        param6: param6,
+        param7: param7,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type CommandLongRequest
@@ -171,7 +169,6 @@ float32 param7	# z_alt
 
 ''';
   }
-
 }
 
 class CommandLongResponse extends RosMessage<CommandLongResponse> {
@@ -180,21 +177,21 @@ class CommandLongResponse extends RosMessage<CommandLongResponse> {
   int result;
 
   static CommandLongResponse $prototype = CommandLongResponse();
-  CommandLongResponse({ 
+  CommandLongResponse({
     bool success,
     int result,
-  }):
-  this.success = success ?? false,
-  this.result = result ?? 0;
+  })  : this.success = success ?? false,
+        this.result = result ?? 0;
 
   @override
-  CommandLongResponse call({ 
+  CommandLongResponse call({
     bool success,
     int result,
-  }) => CommandLongResponse(
-  success: success,
-  result: result,
-  );
+  }) =>
+      CommandLongResponse(
+        success: success,
+        result: result,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type CommandLongResponse
@@ -241,10 +238,10 @@ uint8 result
 
 ''';
   }
-
 }
 
-class CommandLong extends RosServiceMessage<CommandLongRequest, CommandLongResponse> {
+class CommandLong
+    extends RosServiceMessage<CommandLongRequest, CommandLongResponse> {
   static final $prototype = CommandLong();
   @override
   CommandLongRequest get request => CommandLongRequest.$prototype;

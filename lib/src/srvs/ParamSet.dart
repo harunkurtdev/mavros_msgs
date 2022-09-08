@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -12,7 +11,6 @@ import 'package:dartros/msg_utils.dart';
 import '../msgs/ParamValue.dart';
 
 //-----------------------------------------------------------
-
 
 //-----------------------------------------------------------
 
@@ -22,21 +20,21 @@ class ParamSetRequest extends RosMessage<ParamSetRequest> {
   ParamValue value;
 
   static ParamSetRequest $prototype = ParamSetRequest();
-  ParamSetRequest({ 
+  ParamSetRequest({
     String param_id,
     ParamValue value,
-  }):
-  this.param_id = param_id ?? '',
-  this.value = value ?? ParamValue();
+  })  : this.param_id = param_id ?? '',
+        this.value = value ?? ParamValue();
 
   @override
-  ParamSetRequest call({ 
+  ParamSetRequest call({
     String param_id,
     ParamValue value,
-  }) => ParamSetRequest(
-  param_id: param_id,
-  value: value,
-  );
+  }) =>
+      ParamSetRequest(
+        param_id: param_id,
+        value: value,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type ParamSetRequest
@@ -87,7 +85,7 @@ mavros_msgs/ParamValue value
 MSG: mavros_msgs/ParamValue
 # Parameter value storage type.
 #
-# Integer and float fields:
+# integer and float fields:
 #
 # if integer != 0: it is integer value
 # else if real != 0.0: it is float value
@@ -98,7 +96,6 @@ float64 real
 
 ''';
   }
-
 }
 
 class ParamSetResponse extends RosMessage<ParamSetResponse> {
@@ -107,21 +104,21 @@ class ParamSetResponse extends RosMessage<ParamSetResponse> {
   ParamValue value;
 
   static ParamSetResponse $prototype = ParamSetResponse();
-  ParamSetResponse({ 
+  ParamSetResponse({
     bool success,
     ParamValue value,
-  }):
-  this.success = success ?? false,
-  this.value = value ?? ParamValue();
+  })  : this.success = success ?? false,
+        this.value = value ?? ParamValue();
 
   @override
-  ParamSetResponse call({ 
+  ParamSetResponse call({
     bool success,
     ParamValue value,
-  }) => ParamSetResponse(
-  success: success,
-  value: value,
-  );
+  }) =>
+      ParamSetResponse(
+        success: success,
+        value: value,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type ParamSetResponse
@@ -169,7 +166,7 @@ mavros_msgs/ParamValue value
 MSG: mavros_msgs/ParamValue
 # Parameter value storage type.
 #
-# Integer and float fields:
+# integer and float fields:
 #
 # if integer != 0: it is integer value
 # else if real != 0.0: it is float value
@@ -180,7 +177,6 @@ float64 real
 
 ''';
   }
-
 }
 
 class ParamSet extends RosServiceMessage<ParamSetRequest, ParamSetResponse> {

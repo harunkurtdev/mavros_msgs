@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -13,30 +12,31 @@ import 'package:std_msgs/msgs.dart';
 
 //-----------------------------------------------------------
 
-
 //-----------------------------------------------------------
 
-class CommandVtolTransitionRequest extends RosMessage<CommandVtolTransitionRequest> {
+class CommandVtolTransitionRequest
+    extends RosMessage<CommandVtolTransitionRequest> {
   Header header;
 
   int state;
 
-  static CommandVtolTransitionRequest $prototype = CommandVtolTransitionRequest();
-  CommandVtolTransitionRequest({ 
+  static CommandVtolTransitionRequest $prototype =
+      CommandVtolTransitionRequest();
+  CommandVtolTransitionRequest({
     Header header,
     int state,
-  }):
-  this.header = header ?? Header(),
-  this.state = state ?? 0;
+  })  : this.header = header ?? Header(),
+        this.state = state ?? 0;
 
   @override
-  CommandVtolTransitionRequest call({ 
+  CommandVtolTransitionRequest call({
     Header header,
     int state,
-  }) => CommandVtolTransitionRequest(
-  header: header,
-  state: state,
-  );
+  }) =>
+      CommandVtolTransitionRequest(
+        header: header,
+        state: state,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type CommandVtolTransitionRequest
@@ -113,30 +113,31 @@ string frame_id
 // Constants for message
   static const int STATE_MC = 3;
   static const int STATE_FW = 4;
-
 }
 
-class CommandVtolTransitionResponse extends RosMessage<CommandVtolTransitionResponse> {
+class CommandVtolTransitionResponse
+    extends RosMessage<CommandVtolTransitionResponse> {
   bool success;
 
   int result;
 
-  static CommandVtolTransitionResponse $prototype = CommandVtolTransitionResponse();
-  CommandVtolTransitionResponse({ 
+  static CommandVtolTransitionResponse $prototype =
+      CommandVtolTransitionResponse();
+  CommandVtolTransitionResponse({
     bool success,
     int result,
-  }):
-  this.success = success ?? false,
-  this.result = result ?? 0;
+  })  : this.success = success ?? false,
+        this.result = result ?? 0;
 
   @override
-  CommandVtolTransitionResponse call({ 
+  CommandVtolTransitionResponse call({
     bool success,
     int result,
-  }) => CommandVtolTransitionResponse(
-  success: success,
-  result: result,
-  );
+  }) =>
+      CommandVtolTransitionResponse(
+        success: success,
+        result: result,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type CommandVtolTransitionResponse
@@ -182,15 +183,17 @@ uint8 result            # Raw result returned by COMMAND_ACK
 
 ''';
   }
-
 }
 
-class CommandVtolTransition extends RosServiceMessage<CommandVtolTransitionRequest, CommandVtolTransitionResponse> {
+class CommandVtolTransition extends RosServiceMessage<
+    CommandVtolTransitionRequest, CommandVtolTransitionResponse> {
   static final $prototype = CommandVtolTransition();
   @override
-  CommandVtolTransitionRequest get request => CommandVtolTransitionRequest.$prototype;
+  CommandVtolTransitionRequest get request =>
+      CommandVtolTransitionRequest.$prototype;
   @override
-  CommandVtolTransitionResponse get response => CommandVtolTransitionResponse.$prototype;
+  CommandVtolTransitionResponse get response =>
+      CommandVtolTransitionResponse.$prototype;
   @override
   String get md5sum => '9fd38be6714b4cc56cabc5f733b6f095';
   @override

@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -12,7 +11,6 @@ import 'package:dartros/msg_utils.dart';
 import '../msgs/Waypoint.dart';
 
 //-----------------------------------------------------------
-
 
 //-----------------------------------------------------------
 
@@ -22,21 +20,21 @@ class WaypointPushRequest extends RosMessage<WaypointPushRequest> {
   List<Waypoint> waypoints;
 
   static WaypointPushRequest $prototype = WaypointPushRequest();
-  WaypointPushRequest({ 
+  WaypointPushRequest({
     int start_index,
     List<Waypoint> waypoints,
-  }):
-  this.start_index = start_index ?? 0,
-  this.waypoints = waypoints ?? [];
+  })  : this.start_index = start_index ?? 0,
+        this.waypoints = waypoints ?? [];
 
   @override
-  WaypointPushRequest call({ 
+  WaypointPushRequest call({
     int start_index,
     List<Waypoint> waypoints,
-  }) => WaypointPushRequest(
-  start_index: start_index,
-  waypoints: waypoints,
-  );
+  }) =>
+      WaypointPushRequest(
+        start_index: start_index,
+        waypoints: waypoints,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type WaypointPushRequest
@@ -59,8 +57,9 @@ class WaypointPushRequest extends RosMessage<WaypointPushRequest> {
     // Deserialize message field [waypoints]
     {
       // Deserialize array length for message field [waypoints]
-      final len = reader.readInt32();
-      data.waypoints = List.generate(len, (_) => Waypoint.$prototype.deserialize(reader));
+      final len = reader.readint32();
+      data.waypoints =
+          List.generate(len, (_) => Waypoint.$prototype.deserialize(reader));
     }
     return data;
   }
@@ -111,13 +110,13 @@ uint8 FRAME_LOCAL_NED = 1
 uint8 FRAME_MISSION = 2
 uint8 FRAME_GLOBAL_REL_ALT = 3
 uint8 FRAME_LOCAL_ENU = 4
-uint8 FRAME_GLOBAL_INT = 5
-uint8 FRAME_GLOBAL_RELATIVE_ALT_INT = 6
+uint8 FRAME_GLOBAL_int = 5
+uint8 FRAME_GLOBAL_RELATIVE_ALT_int = 6
 uint8 FRAME_LOCAL_OFFSET_NED = 7
 uint8 FRAME_BODY_NED = 8
 uint8 FRAME_BODY_OFFSET_NED = 9
 uint8 FRAME_GLOBAL_TERRAIN_ALT = 10
-uint8 FRAME_GLOBAL_TERRAIN_ALT_INT = 11
+uint8 FRAME_GLOBAL_TERRAIN_ALT_int = 11
 uint8 FRAME_BODY_FRD = 12
 uint8 FRAME_RESERVED_13 = 13
 uint8 FRAME_RESERVED_14 = 14
@@ -145,7 +144,6 @@ float64 z_alt
 
 ''';
   }
-
 }
 
 class WaypointPushResponse extends RosMessage<WaypointPushResponse> {
@@ -154,21 +152,21 @@ class WaypointPushResponse extends RosMessage<WaypointPushResponse> {
   int wp_transfered;
 
   static WaypointPushResponse $prototype = WaypointPushResponse();
-  WaypointPushResponse({ 
+  WaypointPushResponse({
     bool success,
     int wp_transfered,
-  }):
-  this.success = success ?? false,
-  this.wp_transfered = wp_transfered ?? 0;
+  })  : this.success = success ?? false,
+        this.wp_transfered = wp_transfered ?? 0;
 
   @override
-  WaypointPushResponse call({ 
+  WaypointPushResponse call({
     bool success,
     int wp_transfered,
-  }) => WaypointPushResponse(
-  success: success,
-  wp_transfered: wp_transfered,
-  );
+  }) =>
+      WaypointPushResponse(
+        success: success,
+        wp_transfered: wp_transfered,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type WaypointPushResponse
@@ -214,10 +212,10 @@ uint32 wp_transfered
 
 ''';
   }
-
 }
 
-class WaypointPush extends RosServiceMessage<WaypointPushRequest, WaypointPushResponse> {
+class WaypointPush
+    extends RosServiceMessage<WaypointPushRequest, WaypointPushResponse> {
   static final $prototype = WaypointPush();
   @override
   WaypointPushRequest get request => WaypointPushRequest.$prototype;

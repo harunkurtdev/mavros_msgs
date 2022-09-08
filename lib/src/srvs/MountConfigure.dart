@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -12,7 +11,6 @@ import 'package:dartros/msg_utils.dart';
 import 'package:std_msgs/msgs.dart';
 
 //-----------------------------------------------------------
-
 
 //-----------------------------------------------------------
 
@@ -34,7 +32,7 @@ class MountConfigureRequest extends RosMessage<MountConfigureRequest> {
   int yaw_input;
 
   static MountConfigureRequest $prototype = MountConfigureRequest();
-  MountConfigureRequest({ 
+  MountConfigureRequest({
     Header header,
     int mode,
     bool stabilize_roll,
@@ -43,18 +41,17 @@ class MountConfigureRequest extends RosMessage<MountConfigureRequest> {
     int roll_input,
     int pitch_input,
     int yaw_input,
-  }):
-  this.header = header ?? Header(),
-  this.mode = mode ?? 0,
-  this.stabilize_roll = stabilize_roll ?? false,
-  this.stabilize_pitch = stabilize_pitch ?? false,
-  this.stabilize_yaw = stabilize_yaw ?? false,
-  this.roll_input = roll_input ?? 0,
-  this.pitch_input = pitch_input ?? 0,
-  this.yaw_input = yaw_input ?? 0;
+  })  : this.header = header ?? Header(),
+        this.mode = mode ?? 0,
+        this.stabilize_roll = stabilize_roll ?? false,
+        this.stabilize_pitch = stabilize_pitch ?? false,
+        this.stabilize_yaw = stabilize_yaw ?? false,
+        this.roll_input = roll_input ?? 0,
+        this.pitch_input = pitch_input ?? 0,
+        this.yaw_input = yaw_input ?? 0;
 
   @override
-  MountConfigureRequest call({ 
+  MountConfigureRequest call({
     Header header,
     int mode,
     bool stabilize_roll,
@@ -63,16 +60,17 @@ class MountConfigureRequest extends RosMessage<MountConfigureRequest> {
     int roll_input,
     int pitch_input,
     int yaw_input,
-  }) => MountConfigureRequest(
-  header: header,
-  mode: mode,
-  stabilize_roll: stabilize_roll,
-  stabilize_pitch: stabilize_pitch,
-  stabilize_yaw: stabilize_yaw,
-  roll_input: roll_input,
-  pitch_input: pitch_input,
-  yaw_input: yaw_input,
-  );
+  }) =>
+      MountConfigureRequest(
+        header: header,
+        mode: mode,
+        stabilize_roll: stabilize_roll,
+        stabilize_pitch: stabilize_pitch,
+        stabilize_yaw: stabilize_yaw,
+        roll_input: roll_input,
+        pitch_input: pitch_input,
+        yaw_input: yaw_input,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type MountConfigureRequest
@@ -149,7 +147,7 @@ uint8 MODE_RETRACT = 0
 uint8 MODE_NEUTRAL = 1
 uint8 MODE_MAVLINK_TARGETING = 2
 uint8 MODE_RC_TARGETING = 3
-uint8 MODE_GPS_POINT = 4
+uint8 MODE_GPS_POint = 4
 
 bool stabilize_roll     # stabilize roll? (1 = yes, 0 = no)
 bool stabilize_pitch    # stabilize pitch? (1 = yes, 0 = no)
@@ -187,11 +185,10 @@ string frame_id
   static const int MODE_NEUTRAL = 1;
   static const int MODE_MAVLINK_TARGETING = 2;
   static const int MODE_RC_TARGETING = 3;
-  static const int MODE_GPS_POINT = 4;
+  static const int MODE_GPS_POint = 4;
   static const int INPUT_ANGLE_BODY_FRAME = 0;
   static const int INPUT_ANGULAR_RATE = 1;
   static const int INPUT_ANGLE_ABSOLUTE_FRAME = 2;
-
 }
 
 class MountConfigureResponse extends RosMessage<MountConfigureResponse> {
@@ -200,21 +197,21 @@ class MountConfigureResponse extends RosMessage<MountConfigureResponse> {
   int result;
 
   static MountConfigureResponse $prototype = MountConfigureResponse();
-  MountConfigureResponse({ 
+  MountConfigureResponse({
     bool success,
     int result,
-  }):
-  this.success = success ?? false,
-  this.result = result ?? 0;
+  })  : this.success = success ?? false,
+        this.result = result ?? 0;
 
   @override
-  MountConfigureResponse call({ 
+  MountConfigureResponse call({
     bool success,
     int result,
-  }) => MountConfigureResponse(
-  success: success,
-  result: result,
-  );
+  }) =>
+      MountConfigureResponse(
+        success: success,
+        result: result,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type MountConfigureResponse
@@ -260,10 +257,10 @@ uint8 result
 
 ''';
   }
-
 }
 
-class MountConfigure extends RosServiceMessage<MountConfigureRequest, MountConfigureResponse> {
+class MountConfigure
+    extends RosServiceMessage<MountConfigureRequest, MountConfigureResponse> {
   static final $prototype = MountConfigure();
   @override
   MountConfigureRequest get request => MountConfigureRequest.$prototype;

@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -21,25 +20,25 @@ class MagnetometerReporter extends RosMessage<MagnetometerReporter> {
   double confidence;
 
   static MagnetometerReporter $prototype = MagnetometerReporter();
-  MagnetometerReporter({ 
+  MagnetometerReporter({
     Header header,
     int report,
     double confidence,
-  }):
-  this.header = header ?? Header(),
-  this.report = report ?? 0,
-  this.confidence = confidence ?? 0.0;
+  })  : this.header = header ?? Header(),
+        this.report = report ?? 0,
+        this.confidence = confidence ?? 0.0;
 
   @override
-  MagnetometerReporter call({ 
+  MagnetometerReporter call({
     Header header,
     int report,
     double confidence,
-  }) => MagnetometerReporter(
-  header: header,
-  report: report,
-  confidence: confidence,
-  );
+  }) =>
+      MagnetometerReporter(
+        header: header,
+        report: report,
+        confidence: confidence,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type MagnetometerReporter
@@ -107,6 +106,4 @@ string frame_id
 
 ''';
   }
-
 }
-

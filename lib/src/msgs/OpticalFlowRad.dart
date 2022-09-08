@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -37,7 +36,7 @@ class OpticalFlowRad extends RosMessage<OpticalFlowRad> {
   double distance;
 
   static OpticalFlowRad $prototype = OpticalFlowRad();
-  OpticalFlowRad({ 
+  OpticalFlowRad({
     Header header,
     int integration_time_us,
     double integrated_x,
@@ -49,21 +48,20 @@ class OpticalFlowRad extends RosMessage<OpticalFlowRad> {
     int quality,
     int time_delta_distance_us,
     double distance,
-  }):
-  this.header = header ?? Header(),
-  this.integration_time_us = integration_time_us ?? 0,
-  this.integrated_x = integrated_x ?? 0.0,
-  this.integrated_y = integrated_y ?? 0.0,
-  this.integrated_xgyro = integrated_xgyro ?? 0.0,
-  this.integrated_ygyro = integrated_ygyro ?? 0.0,
-  this.integrated_zgyro = integrated_zgyro ?? 0.0,
-  this.temperature = temperature ?? 0,
-  this.quality = quality ?? 0,
-  this.time_delta_distance_us = time_delta_distance_us ?? 0,
-  this.distance = distance ?? 0.0;
+  })  : this.header = header ?? Header(),
+        this.integration_time_us = integration_time_us ?? 0,
+        this.integrated_x = integrated_x ?? 0.0,
+        this.integrated_y = integrated_y ?? 0.0,
+        this.integrated_xgyro = integrated_xgyro ?? 0.0,
+        this.integrated_ygyro = integrated_ygyro ?? 0.0,
+        this.integrated_zgyro = integrated_zgyro ?? 0.0,
+        this.temperature = temperature ?? 0,
+        this.quality = quality ?? 0,
+        this.time_delta_distance_us = time_delta_distance_us ?? 0,
+        this.distance = distance ?? 0.0;
 
   @override
-  OpticalFlowRad call({ 
+  OpticalFlowRad call({
     Header header,
     int integration_time_us,
     double integrated_x,
@@ -75,19 +73,20 @@ class OpticalFlowRad extends RosMessage<OpticalFlowRad> {
     int quality,
     int time_delta_distance_us,
     double distance,
-  }) => OpticalFlowRad(
-  header: header,
-  integration_time_us: integration_time_us,
-  integrated_x: integrated_x,
-  integrated_y: integrated_y,
-  integrated_xgyro: integrated_xgyro,
-  integrated_ygyro: integrated_ygyro,
-  integrated_zgyro: integrated_zgyro,
-  temperature: temperature,
-  quality: quality,
-  time_delta_distance_us: time_delta_distance_us,
-  distance: distance,
-  );
+  }) =>
+      OpticalFlowRad(
+        header: header,
+        integration_time_us: integration_time_us,
+        integrated_x: integrated_x,
+        integrated_y: integrated_y,
+        integrated_xgyro: integrated_xgyro,
+        integrated_ygyro: integrated_ygyro,
+        integrated_zgyro: integrated_zgyro,
+        temperature: temperature,
+        quality: quality,
+        time_delta_distance_us: time_delta_distance_us,
+        distance: distance,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type OpticalFlowRad
@@ -106,7 +105,7 @@ class OpticalFlowRad extends RosMessage<OpticalFlowRad> {
     // Serialize message field [integrated_zgyro]
     writer.writeFloat32(integrated_zgyro);
     // Serialize message field [temperature]
-    writer.writeInt16(temperature);
+    writer.writeint16(temperature);
     // Serialize message field [quality]
     writer.writeUint8(quality);
     // Serialize message field [time_delta_distance_us]
@@ -134,7 +133,7 @@ class OpticalFlowRad extends RosMessage<OpticalFlowRad> {
     // Deserialize message field [integrated_zgyro]
     data.integrated_zgyro = reader.readFloat32();
     // Deserialize message field [temperature]
-    data.temperature = reader.readInt16();
+    data.temperature = reader.readint16();
     // Deserialize message field [quality]
     data.quality = reader.readUint8();
     // Deserialize message field [time_delta_distance_us]
@@ -198,6 +197,4 @@ string frame_id
 
 ''';
   }
-
 }
-

@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -33,7 +32,7 @@ class HilStateQuaternion extends RosMessage<HilStateQuaternion> {
   double true_airspeed;
 
   static HilStateQuaternion $prototype = HilStateQuaternion();
-  HilStateQuaternion({ 
+  HilStateQuaternion({
     Header header,
     Quaternion orientation,
     Vector3 angular_velocity,
@@ -42,18 +41,17 @@ class HilStateQuaternion extends RosMessage<HilStateQuaternion> {
     GeoPoint geo,
     double ind_airspeed,
     double true_airspeed,
-  }):
-  this.header = header ?? Header(),
-  this.orientation = orientation ?? Quaternion(),
-  this.angular_velocity = angular_velocity ?? Vector3(),
-  this.linear_acceleration = linear_acceleration ?? Vector3(),
-  this.linear_velocity = linear_velocity ?? Vector3(),
-  this.geo = geo ?? GeoPoint(),
-  this.ind_airspeed = ind_airspeed ?? 0.0,
-  this.true_airspeed = true_airspeed ?? 0.0;
+  })  : this.header = header ?? Header(),
+        this.orientation = orientation ?? Quaternion(),
+        this.angular_velocity = angular_velocity ?? Vector3(),
+        this.linear_acceleration = linear_acceleration ?? Vector3(),
+        this.linear_velocity = linear_velocity ?? Vector3(),
+        this.geo = geo ?? GeoPoint(),
+        this.ind_airspeed = ind_airspeed ?? 0.0,
+        this.true_airspeed = true_airspeed ?? 0.0;
 
   @override
-  HilStateQuaternion call({ 
+  HilStateQuaternion call({
     Header header,
     Quaternion orientation,
     Vector3 angular_velocity,
@@ -62,16 +60,17 @@ class HilStateQuaternion extends RosMessage<HilStateQuaternion> {
     GeoPoint geo,
     double ind_airspeed,
     double true_airspeed,
-  }) => HilStateQuaternion(
-  header: header,
-  orientation: orientation,
-  angular_velocity: angular_velocity,
-  linear_acceleration: linear_acceleration,
-  linear_velocity: linear_velocity,
-  geo: geo,
-  ind_airspeed: ind_airspeed,
-  true_airspeed: true_airspeed,
-  );
+  }) =>
+      HilStateQuaternion(
+        header: header,
+        orientation: orientation,
+        angular_velocity: angular_velocity,
+        linear_acceleration: linear_acceleration,
+        linear_velocity: linear_velocity,
+        geo: geo,
+        ind_airspeed: ind_airspeed,
+        true_airspeed: true_airspeed,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type HilStateQuaternion
@@ -208,6 +207,4 @@ float64 altitude
 
 ''';
   }
-
 }
-

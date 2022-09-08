@@ -4,14 +4,12 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
 import 'package:dartros/msg_utils.dart';
 
 //-----------------------------------------------------------
-
 
 //-----------------------------------------------------------
 
@@ -21,21 +19,21 @@ class FileOpenRequest extends RosMessage<FileOpenRequest> {
   int mode;
 
   static FileOpenRequest $prototype = FileOpenRequest();
-  FileOpenRequest({ 
+  FileOpenRequest({
     String file_path,
     int mode,
-  }):
-  this.file_path = file_path ?? '',
-  this.mode = mode ?? 0;
+  })  : this.file_path = file_path ?? '',
+        this.mode = mode ?? 0;
 
   @override
-  FileOpenRequest call({ 
+  FileOpenRequest call({
     String file_path,
     int mode,
-  }) => FileOpenRequest(
-  file_path: file_path,
-  mode: mode,
-  );
+  }) =>
+      FileOpenRequest(
+        file_path: file_path,
+        mode: mode,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type FileOpenRequest
@@ -98,7 +96,6 @@ uint8 mode
   static const int MODE_READ = 0;
   static const int MODE_WRITE = 1;
   static const int MODE_CREATE = 2;
-
 }
 
 class FileOpenResponse extends RosMessage<FileOpenResponse> {
@@ -109,25 +106,25 @@ class FileOpenResponse extends RosMessage<FileOpenResponse> {
   int r_errno;
 
   static FileOpenResponse $prototype = FileOpenResponse();
-  FileOpenResponse({ 
+  FileOpenResponse({
     int size,
     bool success,
     int r_errno,
-  }):
-  this.size = size ?? 0,
-  this.success = success ?? false,
-  this.r_errno = r_errno ?? 0;
+  })  : this.size = size ?? 0,
+        this.success = success ?? false,
+        this.r_errno = r_errno ?? 0;
 
   @override
-  FileOpenResponse call({ 
+  FileOpenResponse call({
     int size,
     bool success,
     int r_errno,
-  }) => FileOpenResponse(
-  size: size,
-  success: success,
-  r_errno: r_errno,
-  );
+  }) =>
+      FileOpenResponse(
+        size: size,
+        success: success,
+        r_errno: r_errno,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type FileOpenResponse
@@ -136,7 +133,7 @@ class FileOpenResponse extends RosMessage<FileOpenResponse> {
     // Serialize message field [success]
     writer.writeUint8(success == false ? 0 : 1);
     // Serialize message field [r_errno]
-    writer.writeInt32(r_errno);
+    writer.writeint32(r_errno);
   }
 
   @override
@@ -148,7 +145,7 @@ class FileOpenResponse extends RosMessage<FileOpenResponse> {
     // Deserialize message field [success]
     data.success = reader.readUint8() != 0;
     // Deserialize message field [r_errno]
-    data.r_errno = reader.readInt32();
+    data.r_errno = reader.readint32();
     return data;
   }
 
@@ -178,7 +175,6 @@ int32 r_errno
 
 ''';
   }
-
 }
 
 class FileOpen extends RosServiceMessage<FileOpenRequest, FileOpenResponse> {

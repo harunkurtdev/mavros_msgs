@@ -55,7 +55,7 @@ class ESCInfoItem extends RosMessage<ESCInfoItem> {
     // Serialize message field [error_count]
     writer.writeUint32(error_count);
     // Serialize message field [temperature]
-    writer.writeInt32(temperature);
+    writer.writeint32(temperature);
   }
 
   @override
@@ -69,7 +69,7 @@ class ESCInfoItem extends RosMessage<ESCInfoItem> {
     // Deserialize message field [error_count]
     data.error_count = reader.readUint32();
     // Deserialize message field [temperature]
-    data.temperature = reader.readInt32();
+    data.temperature = reader.readint32();
     return data;
   }
 

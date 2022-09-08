@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -22,25 +21,25 @@ class Vibration extends RosMessage<Vibration> {
   List<double> clipping;
 
   static Vibration $prototype = Vibration();
-  Vibration({ 
+  Vibration({
     Header header,
     Vector3 vibration,
     List<double> clipping,
-  }):
-  this.header = header ?? Header(),
-  this.vibration = vibration ?? Vector3(),
-  this.clipping = clipping ?? List.generate(3, (_) => 0);
+  })  : this.header = header ?? Header(),
+        this.vibration = vibration ?? Vector3(),
+        this.clipping = clipping ?? List.generate(3, (_) => 0);
 
   @override
-  Vibration call({ 
+  Vibration call({
     Header header,
     Vector3 vibration,
     List<double> clipping,
-  }) => Vibration(
-  header: header,
-  vibration: vibration,
-  clipping: clipping,
-  );
+  }) =>
+      Vibration(
+        header: header,
+        vibration: vibration,
+        clipping: clipping,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type Vibration
@@ -50,10 +49,12 @@ class Vibration extends RosMessage<Vibration> {
     vibration.serialize(writer);
     // Check that the constant length array field [clipping] has the right length
     if (clipping.length != 3) {
-      throw Exception('Unable to serialize array field clipping - length must be 3');
+      throw Exception(
+          'Unable to serialize array field clipping - length must be 3');
     }
     // Serialize message field [clipping]
-    writer.writeArray<double>(clipping, (val) => writer.writeFloat32(val), specArrayLen: 3);
+    writer.writeArray<double>(clipping, (val) => writer.writeFloat32(val),
+        specArrayLen: 3);
   }
 
   @override
@@ -65,7 +66,8 @@ class Vibration extends RosMessage<Vibration> {
     // Deserialize message field [vibration]
     data.vibration = Vector3.$prototype.deserialize(reader);
     // Deserialize message field [clipping]
-    data.clipping = reader.readArray<double>(() => reader.readFloat32(), arrayLen: 3);
+    data.clipping =
+        reader.readArray<double>(() => reader.readFloat32(), arrayLen: 3);
     return data;
   }
 
@@ -127,6 +129,4 @@ float64 y
 float64 z
 ''';
   }
-
 }
-

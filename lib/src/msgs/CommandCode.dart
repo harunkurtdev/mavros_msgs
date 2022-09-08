@@ -75,7 +75,7 @@ class CommandCode extends RosMessage<CommandCode> {
 #
 #     enumt = []
 #     # exception list of commands to not include
-#     exlist = ['SPATIAL', 'USER', 'WAYPOINT']
+#     exlist = ['SPATIAL', 'USER', 'WAYPOint']
 #     for k, e in enum:
 #         enumt.extend(e.name[len(ename) + 1:].split('_')[0:1])
 #
@@ -130,7 +130,7 @@ uint16 DO_SET_REVERSE = 194                        # Set moving direction to for
 uint16 DO_SET_ROI_LOCATION = 195                   # Sets the region of interest (ROI) to a location. This can then be used by the vehicle's control system to control the vehicle attitude and the attitude of various sensors such as cameras.
 uint16 DO_SET_ROI_WPNEXT_OFFSET = 196              # Sets the region of interest (ROI) to be toward next waypoint, with optional pitch/roll/yaw offset. This can then be used by the vehicle's control system to control the vehicle attitude and the attitude of various sensors such as cameras.
 uint16 DO_SET_ROI_NONE = 197                       # Cancels any previous ROI command returning the vehicle/sensors to default flight characteristics. This can then be used by the vehicle's control system to control the vehicle attitude and the attitude of various sensors such as cameras.
-uint16 DO_SET_ROI_SYSID = 198                      # Mount tracks system with specified system ID. Determination of target vehicle position may be done with GLOBAL_POSITION_INT or any other means.
+uint16 DO_SET_ROI_SYSID = 198                      # Mount tracks system with specified system ID. Determination of target vehicle position may be done with GLOBAL_POSITION_int or any other means.
 uint16 DO_CONTROL_VIDEO = 200                      # Control onboard camera system.
 uint16 DO_SET_ROI = 201                            # Sets the region of interest (ROI) for a sensor set or the vehicle itself. This can then be used by the vehicle's control system to control the vehicle attitude and the attitude of various sensors such as cameras.
 uint16 DO_DIGICAM_CONFIGURE = 202                  # Configure digital camera. This is a fallback message for systems that have not yet implemented PARAM_EXT_XXX messages and camera definition files (see https://mavlink.io/en/services/camera_def.html ).
@@ -144,7 +144,7 @@ uint16 DO_MOTOR_TEST = 209                         # Mission command to perform 
 uint16 DO_INVERTED_FLIGHT = 210                    # Change to/from inverted flight.
 uint16 DO_GRIPPER = 211                            # Mission command to operate a gripper.
 uint16 DO_AUTOTUNE_ENABLE = 212                    # Enable/disable autotune.
-uint16 DO_SET_CAM_TRIGG_INTERVAL = 214             # Mission command to set camera trigger interval for this flight. If triggering is enabled, the camera is triggered each time this interval expires. This command can also be used to set the shutter integration time for the camera.
+uint16 DO_SET_CAM_TRIGG_intERVAL = 214             # Mission command to set camera trigger interval for this flight. If triggering is enabled, the camera is triggered each time this interval expires. This command can also be used to set the shutter integration time for the camera.
 uint16 DO_MOUNT_CONTROL_QUAT = 220                 # Mission command to control a camera or antenna mount, using a quaternion as reference.
 uint16 DO_GUIDED_MASTER = 221                      # set id of master controller
 uint16 DO_GUIDED_LIMITS = 222                      # Set limits for external control
@@ -162,7 +162,7 @@ uint16 FIXED_MAG_CAL_YAW = 42006                   # Magnetometer calibration ba
 
 # MAV_CMD_GET
 uint16 GET_HOME_POSITION = 410                     # Request the home position from the vehicle.
-uint16 GET_MESSAGE_INTERVAL = 510                  # Request the interval between messages for a particular MAVLink message ID. The receiver should ACK the command and then emit its response in a MESSAGE_INTERVAL message.
+uint16 GET_MESSAGE_intERVAL = 510                  # Request the interval between messages for a particular MAVLink message ID. The receiver should ACK the command and then emit its response in a MESSAGE_intERVAL message.
 
 # MAV_CMD_IMAGE
 uint16 IMAGE_START_CAPTURE = 2000                  # Start image capture sequence. Sends CAMERA_IMAGE_CAPTURED after each capture. Use NaN for reserved values.
@@ -179,7 +179,7 @@ uint16 LOGGING_STOP = 2511                         # Request to stop streaming l
 uint16 MISSION_START = 300                         # start running a mission
 
 # MAV_CMD_NAV
-uint16 NAV_WAYPOINT = 16                           # Navigate to waypoint.
+uint16 NAV_WAYPOint = 16                           # Navigate to waypoint.
 uint16 NAV_LOITER_UNLIM = 17                       # Loiter around this waypoint an unlimited amount of time
 uint16 NAV_LOITER_TURNS = 18                       # Loiter around this waypoint for X turns
 uint16 NAV_LOITER_TIME = 19                        # Loiter around this waypoint for X seconds
@@ -193,7 +193,7 @@ uint16 NAV_CONTINUE_AND_CHANGE_ALT = 30            # Continue on the current cou
 uint16 NAV_LOITER_TO_ALT = 31                      # Begin loiter at the specified Latitude and Longitude.  If Lat=Lon=0, then loiter at the current position.  Don't consider the navigation command complete (don't leave loiter) until the altitude has been reached. Additionally, if the Heading Required parameter is non-zero the aircraft will not leave the loiter until heading toward the next waypoint.
 uint16 NAV_ROI = 80                                # Sets the region of interest (ROI) for a sensor set or the vehicle itself. This can then be used by the vehicle's control system to control the vehicle attitude and the attitude of various sensors such as cameras.
 uint16 NAV_PATHPLANNING = 81                       # Control autonomous path planning on the MAV.
-uint16 NAV_SPLINE_WAYPOINT = 82                    # Navigate to waypoint using a spline path.
+uint16 NAV_SPLINE_WAYPOint = 82                    # Navigate to waypoint using a spline path.
 uint16 NAV_VTOL_TAKEOFF = 84                       # Takeoff from ground using VTOL mode, and transition to forward flight with specified heading.
 uint16 NAV_VTOL_LAND = 85                          # Land using VTOL mode
 uint16 NAV_GUIDED_ENABLE = 92                      # hand control over to an external controller
@@ -201,7 +201,7 @@ uint16 NAV_DELAY = 93                              # Delay the next navigation c
 uint16 NAV_PAYLOAD_PLACE = 94                      # Descend and place payload. Vehicle moves to specified location, descends until it detects a hanging payload has reached the ground, and then releases the payload. If ground is not detected before the reaching the maximum descent value (param1), the command will complete without releasing the payload.
 uint16 NAV_LAST = 95                               # NOP - This command is only used to mark the upper limit of the NAV/ACTION commands in the enumeration
 uint16 NAV_SET_YAW_SPEED = 213                     # Sets a desired vehicle turn angle and speed change.
-uint16 NAV_FENCE_RETURN_POINT = 5000               # Fence return point (there can only be one such point in a geofence definition). If rally points are supported they should be used instead.
+uint16 NAV_FENCE_RETURN_POint = 5000               # Fence return point (there can only be one such point in a geofence definition). If rally points are supported they should be used instead.
 uint16 NAV_FENCE_POLYGON_VERTEX_INCLUSION = 5001   # Fence vertex for an inclusion polygon (the polygon must not be self-intersecting). The vehicle must stay within this area. Minimum of 3 vertices required.
         
 uint16 NAV_FENCE_POLYGON_VERTEX_EXCLUSION = 5002   # Fence vertex for an exclusion polygon (the polygon must not be self-intersecting). The vehicle must stay outside this area. Minimum of 3 vertices required.
@@ -210,7 +210,7 @@ uint16 NAV_FENCE_CIRCLE_INCLUSION = 5003           # Circular fence area. The ve
         
 uint16 NAV_FENCE_CIRCLE_EXCLUSION = 5004           # Circular fence area. The vehicle must stay outside this area.
         
-uint16 NAV_RALLY_POINT = 5100                      # Rally point. You can have multiple rally points defined.
+uint16 NAV_RALLY_POint = 5100                      # Rally point. You can have multiple rally points defined.
         
 
 # MAV_CMD_OBLIQUE
@@ -234,7 +234,7 @@ uint16 PREFLIGHT_STORAGE = 245                     # Request storage of differen
 uint16 PREFLIGHT_REBOOT_SHUTDOWN = 246             # Request the reboot or shutdown of system components.
 
 # MAV_CMD_REQUEST
-uint16 REQUEST_MESSAGE = 512                       # Request the target system(s) emit a single instance of a specified message (i.e. a "one-shot" version of MAV_CMD_SET_MESSAGE_INTERVAL).
+uint16 REQUEST_MESSAGE = 512                       # Request the target system(s) emit a single instance of a specified message (i.e. a "one-shot" version of MAV_CMD_SET_MESSAGE_intERVAL).
 uint16 REQUEST_PROTOCOL_VERSION = 519              # Request MAVLink protocol version compatibility. All receivers should ACK the command and then emit their capabilities in an PROTOCOL_VERSION message
 uint16 REQUEST_AUTOPILOT_CAPABILITIES = 520        # Request autopilot capabilities. The receiver should ACK the command and then emit its capabilities in an AUTOPILOT_VERSION message
 uint16 REQUEST_CAMERA_INFORMATION = 521            # Request camera information (CAMERA_INFORMATION).
@@ -252,7 +252,7 @@ uint16 RESET_CAMERA_SETTINGS = 529                 # Reset all camera settings t
 uint16 RUN_PREARM_CHECKS = 401                     # Instructs system to run pre-arm checks.  This command should return MAV_RESULT_TEMPORARILY_REJECTED in the case the system is armed, otherwse MAV_RESULT_ACCEPTED.  Note that the return value from executing this command does not indicate whether the vehicle is armable or not, just whether the system has successfully run/is currently running the checks.  The result of the checks is reflected in the SYS_STATUS message.
 
 # MAV_CMD_SET
-uint16 SET_MESSAGE_INTERVAL = 511                  # Set the interval between messages for a particular MAVLink message ID. This interface replaces REQUEST_DATA_STREAM.
+uint16 SET_MESSAGE_intERVAL = 511                  # Set the interval between messages for a particular MAVLink message ID. This interface replaces REQUEST_DATA_STREAM.
 uint16 SET_CAMERA_MODE = 530                       # Set camera running mode. Use NaN for reserved values. GCS will send a MAV_CMD_REQUEST_VIDEO_STREAM_STATUS command after a mode change if the camera supports video streaming.
 uint16 SET_GUIDED_SUBMODE_STANDARD = 4000          # This command sets the submode to standard guided when vehicle is in guided mode. The vehicle holds position and altitude and the user can input the desired velocities along all three axes.
                   
@@ -325,7 +325,7 @@ uint16 VIDEO_STOP_STREAMING = 2503                 # Stop the given video stream
   static const int DO_INVERTED_FLIGHT = 210;
   static const int DO_GRIPPER = 211;
   static const int DO_AUTOTUNE_ENABLE = 212;
-  static const int DO_SET_CAM_TRIGG_INTERVAL = 214;
+  static const int DO_SET_CAM_TRIGG_intERVAL = 214;
   static const int DO_MOUNT_CONTROL_QUAT = 220;
   static const int DO_GUIDED_MASTER = 221;
   static const int DO_GUIDED_LIMITS = 222;
@@ -339,14 +339,14 @@ uint16 VIDEO_STOP_STREAMING = 2503                 # Stop the given video stream
   static const int DO_WINCH = 42600;
   static const int FIXED_MAG_CAL_YAW = 42006;
   static const int GET_HOME_POSITION = 410;
-  static const int GET_MESSAGE_INTERVAL = 510;
+  static const int GET_MESSAGE_intERVAL = 510;
   static const int IMAGE_START_CAPTURE = 2000;
   static const int IMAGE_STOP_CAPTURE = 2001;
   static const int JUMP_TAG = 600;
   static const int LOGGING_START = 2510;
   static const int LOGGING_STOP = 2511;
   static const int MISSION_START = 300;
-  static const int NAV_WAYPOINT = 16;
+  static const int NAV_WAYPOint = 16;
   static const int NAV_LOITER_UNLIM = 17;
   static const int NAV_LOITER_TURNS = 18;
   static const int NAV_LOITER_TIME = 19;
@@ -360,7 +360,7 @@ uint16 VIDEO_STOP_STREAMING = 2503                 # Stop the given video stream
   static const int NAV_LOITER_TO_ALT = 31;
   static const int NAV_ROI = 80;
   static const int NAV_PATHPLANNING = 81;
-  static const int NAV_SPLINE_WAYPOINT = 82;
+  static const int NAV_SPLINE_WAYPOint = 82;
   static const int NAV_VTOL_TAKEOFF = 84;
   static const int NAV_VTOL_LAND = 85;
   static const int NAV_GUIDED_ENABLE = 92;
@@ -368,12 +368,12 @@ uint16 VIDEO_STOP_STREAMING = 2503                 # Stop the given video stream
   static const int NAV_PAYLOAD_PLACE = 94;
   static const int NAV_LAST = 95;
   static const int NAV_SET_YAW_SPEED = 213;
-  static const int NAV_FENCE_RETURN_POINT = 5000;
+  static const int NAV_FENCE_RETURN_POint = 5000;
   static const int NAV_FENCE_POLYGON_VERTEX_INCLUSION = 5001;
   static const int NAV_FENCE_POLYGON_VERTEX_EXCLUSION = 5002;
   static const int NAV_FENCE_CIRCLE_INCLUSION = 5003;
   static const int NAV_FENCE_CIRCLE_EXCLUSION = 5004;
-  static const int NAV_RALLY_POINT = 5100;
+  static const int NAV_RALLY_POint = 5100;
   static const int OBLIQUE_SURVEY = 260;
   static const int OVERRIDE_GOTO = 252;
   static const int PANORAMA_CREATE = 2800;
@@ -396,7 +396,7 @@ uint16 VIDEO_STOP_STREAMING = 2503                 # Stop the given video stream
   static const int REQUEST_VIDEO_STREAM_STATUS = 2505;
   static const int RESET_CAMERA_SETTINGS = 529;
   static const int RUN_PREARM_CHECKS = 401;
-  static const int SET_MESSAGE_INTERVAL = 511;
+  static const int SET_MESSAGE_intERVAL = 511;
   static const int SET_CAMERA_MODE = 530;
   static const int SET_GUIDED_SUBMODE_STANDARD = 4000;
   static const int SET_GUIDED_SUBMODE_CIRCLE = 4001;

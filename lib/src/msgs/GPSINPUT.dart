@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -53,7 +52,7 @@ class GPSINPUT extends RosMessage<GPSINPUT> {
   int yaw;
 
   static GPSINPUT $prototype = GPSINPUT();
-  GPSINPUT({ 
+  GPSINPUT({
     Header header,
     int fix_type,
     int gps_id,
@@ -73,29 +72,28 @@ class GPSINPUT extends RosMessage<GPSINPUT> {
     double vert_accuracy,
     int satellites_visible,
     int yaw,
-  }):
-  this.header = header ?? Header(),
-  this.fix_type = fix_type ?? 0,
-  this.gps_id = gps_id ?? 0,
-  this.ignore_flags = ignore_flags ?? 0,
-  this.time_week_ms = time_week_ms ?? 0,
-  this.time_week = time_week ?? 0,
-  this.lat = lat ?? 0,
-  this.lon = lon ?? 0,
-  this.alt = alt ?? 0.0,
-  this.hdop = hdop ?? 0.0,
-  this.vdop = vdop ?? 0.0,
-  this.vn = vn ?? 0.0,
-  this.ve = ve ?? 0.0,
-  this.vd = vd ?? 0.0,
-  this.speed_accuracy = speed_accuracy ?? 0.0,
-  this.horiz_accuracy = horiz_accuracy ?? 0.0,
-  this.vert_accuracy = vert_accuracy ?? 0.0,
-  this.satellites_visible = satellites_visible ?? 0,
-  this.yaw = yaw ?? 0;
+  })  : this.header = header ?? Header(),
+        this.fix_type = fix_type ?? 0,
+        this.gps_id = gps_id ?? 0,
+        this.ignore_flags = ignore_flags ?? 0,
+        this.time_week_ms = time_week_ms ?? 0,
+        this.time_week = time_week ?? 0,
+        this.lat = lat ?? 0,
+        this.lon = lon ?? 0,
+        this.alt = alt ?? 0.0,
+        this.hdop = hdop ?? 0.0,
+        this.vdop = vdop ?? 0.0,
+        this.vn = vn ?? 0.0,
+        this.ve = ve ?? 0.0,
+        this.vd = vd ?? 0.0,
+        this.speed_accuracy = speed_accuracy ?? 0.0,
+        this.horiz_accuracy = horiz_accuracy ?? 0.0,
+        this.vert_accuracy = vert_accuracy ?? 0.0,
+        this.satellites_visible = satellites_visible ?? 0,
+        this.yaw = yaw ?? 0;
 
   @override
-  GPSINPUT call({ 
+  GPSINPUT call({
     Header header,
     int fix_type,
     int gps_id,
@@ -115,27 +113,28 @@ class GPSINPUT extends RosMessage<GPSINPUT> {
     double vert_accuracy,
     int satellites_visible,
     int yaw,
-  }) => GPSINPUT(
-  header: header,
-  fix_type: fix_type,
-  gps_id: gps_id,
-  ignore_flags: ignore_flags,
-  time_week_ms: time_week_ms,
-  time_week: time_week,
-  lat: lat,
-  lon: lon,
-  alt: alt,
-  hdop: hdop,
-  vdop: vdop,
-  vn: vn,
-  ve: ve,
-  vd: vd,
-  speed_accuracy: speed_accuracy,
-  horiz_accuracy: horiz_accuracy,
-  vert_accuracy: vert_accuracy,
-  satellites_visible: satellites_visible,
-  yaw: yaw,
-  );
+  }) =>
+      GPSINPUT(
+        header: header,
+        fix_type: fix_type,
+        gps_id: gps_id,
+        ignore_flags: ignore_flags,
+        time_week_ms: time_week_ms,
+        time_week: time_week,
+        lat: lat,
+        lon: lon,
+        alt: alt,
+        hdop: hdop,
+        vdop: vdop,
+        vn: vn,
+        ve: ve,
+        vd: vd,
+        speed_accuracy: speed_accuracy,
+        horiz_accuracy: horiz_accuracy,
+        vert_accuracy: vert_accuracy,
+        satellites_visible: satellites_visible,
+        yaw: yaw,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type GPSINPUT
@@ -152,9 +151,9 @@ class GPSINPUT extends RosMessage<GPSINPUT> {
     // Serialize message field [time_week]
     writer.writeUint16(time_week);
     // Serialize message field [lat]
-    writer.writeInt32(lat);
+    writer.writeint32(lat);
     // Serialize message field [lon]
-    writer.writeInt32(lon);
+    writer.writeint32(lon);
     // Serialize message field [alt]
     writer.writeFloat32(alt);
     // Serialize message field [hdop]
@@ -196,9 +195,9 @@ class GPSINPUT extends RosMessage<GPSINPUT> {
     // Deserialize message field [time_week]
     data.time_week = reader.readUint16();
     // Deserialize message field [lat]
-    data.lat = reader.readInt32();
+    data.lat = reader.readint32();
     // Deserialize message field [lon]
-    data.lon = reader.readInt32();
+    data.lon = reader.readint32();
     // Deserialize message field [alt]
     data.alt = reader.readFloat32();
     // Deserialize message field [hdop]
@@ -312,6 +311,4 @@ string frame_id
   static const int GPS_FIX_TYPE_RTK_FIXEDR = 6;
   static const int GPS_FIX_TYPE_STATIC = 7;
   static const int GPS_FIX_TYPE_PPP = 8;
-
 }
-

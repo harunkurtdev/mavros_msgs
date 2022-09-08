@@ -4,14 +4,12 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
 import 'package:dartros/msg_utils.dart';
 
 //-----------------------------------------------------------
-
 
 //-----------------------------------------------------------
 
@@ -57,24 +55,23 @@ class LogRequestEndRequest extends RosMessage<LogRequestEndRequest> {
 
 ''';
   }
-
 }
 
 class LogRequestEndResponse extends RosMessage<LogRequestEndResponse> {
   bool success;
 
   static LogRequestEndResponse $prototype = LogRequestEndResponse();
-  LogRequestEndResponse({ 
+  LogRequestEndResponse({
     bool success,
-  }):
-  this.success = success ?? false;
+  }) : this.success = success ?? false;
 
   @override
-  LogRequestEndResponse call({ 
+  LogRequestEndResponse call({
     bool success,
-  }) => LogRequestEndResponse(
-  success: success,
-  );
+  }) =>
+      LogRequestEndResponse(
+        success: success,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type LogRequestEndResponse
@@ -115,10 +112,10 @@ class LogRequestEndResponse extends RosMessage<LogRequestEndResponse> {
 
 ''';
   }
-
 }
 
-class LogRequestEnd extends RosServiceMessage<LogRequestEndRequest, LogRequestEndResponse> {
+class LogRequestEnd
+    extends RosServiceMessage<LogRequestEndRequest, LogRequestEndResponse> {
   static final $prototype = LogRequestEnd();
   @override
   LogRequestEndRequest get request => LogRequestEndRequest.$prototype;

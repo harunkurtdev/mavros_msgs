@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -12,24 +11,23 @@ import 'package:dartros/msg_utils.dart';
 
 //-----------------------------------------------------------
 
-
 //-----------------------------------------------------------
 
 class SetMavFrameRequest extends RosMessage<SetMavFrameRequest> {
   int mav_frame;
 
   static SetMavFrameRequest $prototype = SetMavFrameRequest();
-  SetMavFrameRequest({ 
+  SetMavFrameRequest({
     int mav_frame,
-  }):
-  this.mav_frame = mav_frame ?? 0;
+  }) : this.mav_frame = mav_frame ?? 0;
 
   @override
-  SetMavFrameRequest call({ 
+  SetMavFrameRequest call({
     int mav_frame,
-  }) => SetMavFrameRequest(
-  mav_frame: mav_frame,
-  );
+  }) =>
+      SetMavFrameRequest(
+        mav_frame: mav_frame,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type SetMavFrameRequest
@@ -90,13 +88,13 @@ uint8 FRAME_LOCAL_NED = 1                # Local coordinate frame, Z-down (x: No
 uint8 FRAME_MISSION = 2                  # NOT a coordinate frame, indicates a mission command.
 uint8 FRAME_GLOBAL_RELATIVE_ALT = 3      # Global (WGS84) coordinate frame + altitude relative to the home position. First value / x: latitude, second value / y: longitude, third value / z: positive altitude with 0 being at the altitude of the home location.
 uint8 FRAME_LOCAL_ENU = 4                # Local coordinate frame, Z-up (x: East, y: North, z: Up).
-uint8 FRAME_GLOBAL_INT = 5               # Global (WGS84) coordinate frame (scaled) + MSL altitude. First value / x: latitude in degrees*1.0e-7, second value / y: longitude in degrees*1.0e-7, third value / z: positive altitude over mean sea level (MSL).
-uint8 FRAME_GLOBAL_RELATIVE_ALT_INT = 6  # Global (WGS84) coordinate frame (scaled) + altitude relative to the home position. First value / x: latitude in degrees*10e-7, second value / y: longitude in degrees*10e-7, third value / z: positive altitude with 0 being at the altitude of the home location.
+uint8 FRAME_GLOBAL_int = 5               # Global (WGS84) coordinate frame (scaled) + MSL altitude. First value / x: latitude in degrees*1.0e-7, second value / y: longitude in degrees*1.0e-7, third value / z: positive altitude over mean sea level (MSL).
+uint8 FRAME_GLOBAL_RELATIVE_ALT_int = 6  # Global (WGS84) coordinate frame (scaled) + altitude relative to the home position. First value / x: latitude in degrees*10e-7, second value / y: longitude in degrees*10e-7, third value / z: positive altitude with 0 being at the altitude of the home location.
 uint8 FRAME_LOCAL_OFFSET_NED = 7         # Offset to the current local frame. Anything expressed in this frame should be added to the current local frame position.
 uint8 FRAME_BODY_NED = 8                 # Setpoint in body NED frame. This makes sense if all position control is externalized - e.g. useful to command 2 m/s^2 acceleration to the right.
 uint8 FRAME_BODY_OFFSET_NED = 9          # Offset in body NED frame. This makes sense if adding setpoints to the current flight path, to avoid an obstacle - e.g. useful to command 2 m/s^2 acceleration to the east.
 uint8 FRAME_GLOBAL_TERRAIN_ALT = 10      # Global (WGS84) coordinate frame with AGL altitude (at the waypoint coordinate). First value / x: latitude in degrees, second value / y: longitude in degrees, third value / z: positive altitude in meters with 0 being at ground level in terrain model.
-uint8 FRAME_GLOBAL_TERRAIN_ALT_INT = 11  # Global (WGS84) coordinate frame (scaled) with AGL altitude (at the waypoint coordinate). First value / x: latitude in degrees*10e-7, second value / y: longitude in degrees*10e-7, third value / z: positive altitude in meters with 0 being at ground level in terrain model.
+uint8 FRAME_GLOBAL_TERRAIN_ALT_int = 11  # Global (WGS84) coordinate frame (scaled) with AGL altitude (at the waypoint coordinate). First value / x: latitude in degrees*10e-7, second value / y: longitude in degrees*10e-7, third value / z: positive altitude in meters with 0 being at ground level in terrain model.
 uint8 FRAME_BODY_FRD = 12                # Body fixed frame of reference, Z-down (x: Forward, y: Right, z: Down).
 uint8 FRAME_RESERVED_13 = 13             # MAV_FRAME_BODY_FLU - Body fixed frame of reference, Z-up (x: Forward, y: Left, z: Up).
 uint8 FRAME_RESERVED_14 = 14             # MAV_FRAME_MOCAP_NED - Odometry local coordinate frame of data given by a motion capture system, Z-down (x: North, y: East, z: Down).
@@ -120,13 +118,13 @@ uint8 mav_frame
   static const int FRAME_MISSION = 2;
   static const int FRAME_GLOBAL_RELATIVE_ALT = 3;
   static const int FRAME_LOCAL_ENU = 4;
-  static const int FRAME_GLOBAL_INT = 5;
-  static const int FRAME_GLOBAL_RELATIVE_ALT_INT = 6;
+  static const int FRAME_GLOBAL_int = 5;
+  static const int FRAME_GLOBAL_RELATIVE_ALT_int = 6;
   static const int FRAME_LOCAL_OFFSET_NED = 7;
   static const int FRAME_BODY_NED = 8;
   static const int FRAME_BODY_OFFSET_NED = 9;
   static const int FRAME_GLOBAL_TERRAIN_ALT = 10;
-  static const int FRAME_GLOBAL_TERRAIN_ALT_INT = 11;
+  static const int FRAME_GLOBAL_TERRAIN_ALT_int = 11;
   static const int FRAME_BODY_FRD = 12;
   static const int FRAME_RESERVED_13 = 13;
   static const int FRAME_RESERVED_14 = 14;
@@ -137,24 +135,23 @@ uint8 mav_frame
   static const int FRAME_RESERVED_19 = 19;
   static const int FRAME_LOCAL_FRD = 20;
   static const int FRAME_LOCAL_FLU = 21;
-
 }
 
 class SetMavFrameResponse extends RosMessage<SetMavFrameResponse> {
   bool success;
 
   static SetMavFrameResponse $prototype = SetMavFrameResponse();
-  SetMavFrameResponse({ 
+  SetMavFrameResponse({
     bool success,
-  }):
-  this.success = success ?? false;
+  }) : this.success = success ?? false;
 
   @override
-  SetMavFrameResponse call({ 
+  SetMavFrameResponse call({
     bool success,
-  }) => SetMavFrameResponse(
-  success: success,
-  );
+  }) =>
+      SetMavFrameResponse(
+        success: success,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type SetMavFrameResponse
@@ -195,10 +192,10 @@ class SetMavFrameResponse extends RosMessage<SetMavFrameResponse> {
 
 ''';
   }
-
 }
 
-class SetMavFrame extends RosServiceMessage<SetMavFrameRequest, SetMavFrameResponse> {
+class SetMavFrame
+    extends RosServiceMessage<SetMavFrameRequest, SetMavFrameResponse> {
   static final $prototype = SetMavFrame();
   @override
   SetMavFrameRequest get request => SetMavFrameRequest.$prototype;

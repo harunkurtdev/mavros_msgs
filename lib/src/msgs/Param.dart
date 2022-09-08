@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -26,33 +25,33 @@ class Param extends RosMessage<Param> {
   int param_count;
 
   static Param $prototype = Param();
-  Param({ 
+  Param({
     Header header,
     String param_id,
     ParamValue value,
     int param_index,
     int param_count,
-  }):
-  this.header = header ?? Header(),
-  this.param_id = param_id ?? '',
-  this.value = value ?? ParamValue(),
-  this.param_index = param_index ?? 0,
-  this.param_count = param_count ?? 0;
+  })  : this.header = header ?? Header(),
+        this.param_id = param_id ?? '',
+        this.value = value ?? ParamValue(),
+        this.param_index = param_index ?? 0,
+        this.param_count = param_count ?? 0;
 
   @override
-  Param call({ 
+  Param call({
     Header header,
     String param_id,
     ParamValue value,
     int param_index,
     int param_count,
-  }) => Param(
-  header: header,
-  param_id: param_id,
-  value: value,
-  param_index: param_index,
-  param_count: param_count,
-  );
+  }) =>
+      Param(
+        header: header,
+        param_id: param_id,
+        value: value,
+        param_index: param_index,
+        param_count: param_count,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type Param
@@ -137,7 +136,7 @@ string frame_id
 MSG: mavros_msgs/ParamValue
 # Parameter value storage type.
 #
-# Integer and float fields:
+# integer and float fields:
 #
 # if integer != 0: it is integer value
 # else if real != 0.0: it is float value
@@ -148,6 +147,4 @@ float64 real
 
 ''';
   }
-
 }
-

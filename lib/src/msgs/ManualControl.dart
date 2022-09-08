@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -27,37 +26,37 @@ class ManualControl extends RosMessage<ManualControl> {
   int buttons;
 
   static ManualControl $prototype = ManualControl();
-  ManualControl({ 
+  ManualControl({
     Header header,
     double x,
     double y,
     double z,
     double r,
     int buttons,
-  }):
-  this.header = header ?? Header(),
-  this.x = x ?? 0.0,
-  this.y = y ?? 0.0,
-  this.z = z ?? 0.0,
-  this.r = r ?? 0.0,
-  this.buttons = buttons ?? 0;
+  })  : this.header = header ?? Header(),
+        this.x = x ?? 0.0,
+        this.y = y ?? 0.0,
+        this.z = z ?? 0.0,
+        this.r = r ?? 0.0,
+        this.buttons = buttons ?? 0;
 
   @override
-  ManualControl call({ 
+  ManualControl call({
     Header header,
     double x,
     double y,
     double z,
     double r,
     int buttons,
-  }) => ManualControl(
-  header: header,
-  x: x,
-  y: y,
-  z: z,
-  r: r,
-  buttons: buttons,
-  );
+  }) =>
+      ManualControl(
+        header: header,
+        x: x,
+        y: y,
+        z: z,
+        r: r,
+        buttons: buttons,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type ManualControl
@@ -141,6 +140,4 @@ string frame_id
 
 ''';
   }
-
 }
-

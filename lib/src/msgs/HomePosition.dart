@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -27,33 +26,33 @@ class HomePosition extends RosMessage<HomePosition> {
   Vector3 approach;
 
   static HomePosition $prototype = HomePosition();
-  HomePosition({ 
+  HomePosition({
     Header header,
     GeoPoint geo,
     Point position,
     Quaternion orientation,
     Vector3 approach,
-  }):
-  this.header = header ?? Header(),
-  this.geo = geo ?? GeoPoint(),
-  this.position = position ?? Point(),
-  this.orientation = orientation ?? Quaternion(),
-  this.approach = approach ?? Vector3();
+  })  : this.header = header ?? Header(),
+        this.geo = geo ?? GeoPoint(),
+        this.position = position ?? Point(),
+        this.orientation = orientation ?? Quaternion(),
+        this.approach = approach ?? Vector3();
 
   @override
-  HomePosition call({ 
+  HomePosition call({
     Header header,
     GeoPoint geo,
     Point position,
     Quaternion orientation,
     Vector3 approach,
-  }) => HomePosition(
-  header: header,
-  geo: geo,
-  position: position,
-  orientation: orientation,
-  approach: approach,
-  );
+  }) =>
+      HomePosition(
+        header: header,
+        geo: geo,
+        position: position,
+        orientation: orientation,
+        approach: approach,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type HomePosition
@@ -180,6 +179,4 @@ float64 y
 float64 z
 ''';
   }
-
 }
-

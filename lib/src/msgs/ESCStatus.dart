@@ -56,7 +56,7 @@ class ESCStatus extends RosMessage<ESCStatus> {
     // Deserialize message field [esc_status]
     {
       // Deserialize array length for message field [esc_status]
-      final len = reader.readInt32();
+      final len = reader.readint32();
       data.esc_status = List.generate(
           len, (_) => ESCStatusItem.$prototype.deserialize(reader));
     }

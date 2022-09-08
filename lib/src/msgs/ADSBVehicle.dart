@@ -243,7 +243,7 @@ uint8 EMITTER_SPACE = 15
 uint8 EMITTER_UNASSGINED3 = 16
 uint8 EMITTER_EMERGENCY_SURFACE = 17
 uint8 EMITTER_SERVICE_SURFACE = 18
-uint8 EMITTER_POINT_OBSTACLE = 19
+uint8 EMITTER_POint_OBSTACLE = 19
 # ADSB_FLAGS
 uint16 FLAG_VALID_COORDS = 1
 uint16 FLAG_VALID_ALTITUDE = 2
@@ -318,7 +318,7 @@ string frame_id
   static const int EMITTER_UNASSGINED3 = 16;
   static const int EMITTER_EMERGENCY_SURFACE = 17;
   static const int EMITTER_SERVICE_SURFACE = 18;
-  static const int EMITTER_POINT_OBSTACLE = 19;
+  static const int EMITTER_POint_OBSTACLE = 19;
   static const int FLAG_VALID_COORDS = 1;
   static const int FLAG_VALID_ALTITUDE = 2;
   static const int FLAG_VALID_HEADING = 4;

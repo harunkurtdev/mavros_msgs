@@ -4,14 +4,12 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
 import 'package:dartros/msg_utils.dart';
 
 //-----------------------------------------------------------
-
 
 //-----------------------------------------------------------
 
@@ -21,21 +19,21 @@ class FileTruncateRequest extends RosMessage<FileTruncateRequest> {
   int length;
 
   static FileTruncateRequest $prototype = FileTruncateRequest();
-  FileTruncateRequest({ 
+  FileTruncateRequest({
     String file_path,
     int length,
-  }):
-  this.file_path = file_path ?? '',
-  this.length = length ?? 0;
+  })  : this.file_path = file_path ?? '',
+        this.length = length ?? 0;
 
   @override
-  FileTruncateRequest call({ 
+  FileTruncateRequest call({
     String file_path,
     int length,
-  }) => FileTruncateRequest(
-  file_path: file_path,
-  length: length,
-  );
+  }) =>
+      FileTruncateRequest(
+        file_path: file_path,
+        length: length,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type FileTruncateRequest
@@ -87,7 +85,6 @@ uint64 length
 
 ''';
   }
-
 }
 
 class FileTruncateResponse extends RosMessage<FileTruncateResponse> {
@@ -96,28 +93,28 @@ class FileTruncateResponse extends RosMessage<FileTruncateResponse> {
   int r_errno;
 
   static FileTruncateResponse $prototype = FileTruncateResponse();
-  FileTruncateResponse({ 
+  FileTruncateResponse({
     bool success,
     int r_errno,
-  }):
-  this.success = success ?? false,
-  this.r_errno = r_errno ?? 0;
+  })  : this.success = success ?? false,
+        this.r_errno = r_errno ?? 0;
 
   @override
-  FileTruncateResponse call({ 
+  FileTruncateResponse call({
     bool success,
     int r_errno,
-  }) => FileTruncateResponse(
-  success: success,
-  r_errno: r_errno,
-  );
+  }) =>
+      FileTruncateResponse(
+        success: success,
+        r_errno: r_errno,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type FileTruncateResponse
     // Serialize message field [success]
     writer.writeUint8(success == false ? 0 : 1);
     // Serialize message field [r_errno]
-    writer.writeInt32(r_errno);
+    writer.writeint32(r_errno);
   }
 
   @override
@@ -127,7 +124,7 @@ class FileTruncateResponse extends RosMessage<FileTruncateResponse> {
     // Deserialize message field [success]
     data.success = reader.readUint8() != 0;
     // Deserialize message field [r_errno]
-    data.r_errno = reader.readInt32();
+    data.r_errno = reader.readint32();
     return data;
   }
 
@@ -156,10 +153,10 @@ int32 r_errno
 
 ''';
   }
-
 }
 
-class FileTruncate extends RosServiceMessage<FileTruncateRequest, FileTruncateResponse> {
+class FileTruncate
+    extends RosServiceMessage<FileTruncateRequest, FileTruncateResponse> {
   static final $prototype = FileTruncate();
   @override
   FileTruncateRequest get request => FileTruncateRequest.$prototype;

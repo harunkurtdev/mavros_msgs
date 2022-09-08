@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -29,7 +28,7 @@ class State extends RosMessage<State> {
   int system_status;
 
   static State $prototype = State();
-  State({ 
+  State({
     Header header,
     bool connected,
     bool armed,
@@ -37,17 +36,16 @@ class State extends RosMessage<State> {
     bool manual_input,
     String mode,
     int system_status,
-  }):
-  this.header = header ?? Header(),
-  this.connected = connected ?? false,
-  this.armed = armed ?? false,
-  this.guided = guided ?? false,
-  this.manual_input = manual_input ?? false,
-  this.mode = mode ?? '',
-  this.system_status = system_status ?? 0;
+  })  : this.header = header ?? Header(),
+        this.connected = connected ?? false,
+        this.armed = armed ?? false,
+        this.guided = guided ?? false,
+        this.manual_input = manual_input ?? false,
+        this.mode = mode ?? '',
+        this.system_status = system_status ?? 0;
 
   @override
-  State call({ 
+  State call({
     Header header,
     bool connected,
     bool armed,
@@ -55,15 +53,16 @@ class State extends RosMessage<State> {
     bool manual_input,
     String mode,
     int system_status,
-  }) => State(
-  header: header,
-  connected: connected,
-  armed: armed,
-  guided: guided,
-  manual_input: manual_input,
-  mode: mode,
-  system_status: system_status,
-  );
+  }) =>
+      State(
+        header: header,
+        connected: connected,
+        armed: armed,
+        guided: guided,
+        manual_input: manual_input,
+        mode: mode,
+        system_status: system_status,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type State
@@ -291,6 +290,4 @@ string frame_id
   static const String MODE_PX4_RTGS = 'AUTO.RTGS';
   static const String MODE_PX4_READY = 'AUTO.READY';
   static const String MODE_PX4_TAKEOFF = 'AUTO.TAKEOFF';
-
 }
-

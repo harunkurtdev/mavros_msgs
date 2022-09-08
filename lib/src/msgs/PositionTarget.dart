@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -32,7 +31,7 @@ class PositionTarget extends RosMessage<PositionTarget> {
   double yaw_rate;
 
   static PositionTarget $prototype = PositionTarget();
-  PositionTarget({ 
+  PositionTarget({
     Header header,
     int coordinate_frame,
     int type_mask,
@@ -41,18 +40,17 @@ class PositionTarget extends RosMessage<PositionTarget> {
     Vector3 acceleration_or_force,
     double yaw,
     double yaw_rate,
-  }):
-  this.header = header ?? Header(),
-  this.coordinate_frame = coordinate_frame ?? 0,
-  this.type_mask = type_mask ?? 0,
-  this.position = position ?? Point(),
-  this.velocity = velocity ?? Vector3(),
-  this.acceleration_or_force = acceleration_or_force ?? Vector3(),
-  this.yaw = yaw ?? 0.0,
-  this.yaw_rate = yaw_rate ?? 0.0;
+  })  : this.header = header ?? Header(),
+        this.coordinate_frame = coordinate_frame ?? 0,
+        this.type_mask = type_mask ?? 0,
+        this.position = position ?? Point(),
+        this.velocity = velocity ?? Vector3(),
+        this.acceleration_or_force = acceleration_or_force ?? Vector3(),
+        this.yaw = yaw ?? 0.0,
+        this.yaw_rate = yaw_rate ?? 0.0;
 
   @override
-  PositionTarget call({ 
+  PositionTarget call({
     Header header,
     int coordinate_frame,
     int type_mask,
@@ -61,16 +59,17 @@ class PositionTarget extends RosMessage<PositionTarget> {
     Vector3 acceleration_or_force,
     double yaw,
     double yaw_rate,
-  }) => PositionTarget(
-  header: header,
-  coordinate_frame: coordinate_frame,
-  type_mask: type_mask,
-  position: position,
-  velocity: velocity,
-  acceleration_or_force: acceleration_or_force,
-  yaw: yaw,
-  yaw_rate: yaw_rate,
-  );
+  }) =>
+      PositionTarget(
+        header: header,
+        coordinate_frame: coordinate_frame,
+        type_mask: type_mask,
+        position: position,
+        velocity: velocity,
+        acceleration_or_force: acceleration_or_force,
+        yaw: yaw,
+        yaw_rate: yaw_rate,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type PositionTarget
@@ -224,6 +223,4 @@ float64 z
   static const int FORCE = 512;
   static const int IGNORE_YAW = 1024;
   static const int IGNORE_YAW_RATE = 2048;
-
 }
-

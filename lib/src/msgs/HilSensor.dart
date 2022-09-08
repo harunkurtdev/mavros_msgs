@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -34,7 +33,7 @@ class HilSensor extends RosMessage<HilSensor> {
   int fields_updated;
 
   static HilSensor $prototype = HilSensor();
-  HilSensor({ 
+  HilSensor({
     Header header,
     Vector3 acc,
     Vector3 gyro,
@@ -44,19 +43,18 @@ class HilSensor extends RosMessage<HilSensor> {
     double pressure_alt,
     double temperature,
     int fields_updated,
-  }):
-  this.header = header ?? Header(),
-  this.acc = acc ?? Vector3(),
-  this.gyro = gyro ?? Vector3(),
-  this.mag = mag ?? Vector3(),
-  this.abs_pressure = abs_pressure ?? 0.0,
-  this.diff_pressure = diff_pressure ?? 0.0,
-  this.pressure_alt = pressure_alt ?? 0.0,
-  this.temperature = temperature ?? 0.0,
-  this.fields_updated = fields_updated ?? 0;
+  })  : this.header = header ?? Header(),
+        this.acc = acc ?? Vector3(),
+        this.gyro = gyro ?? Vector3(),
+        this.mag = mag ?? Vector3(),
+        this.abs_pressure = abs_pressure ?? 0.0,
+        this.diff_pressure = diff_pressure ?? 0.0,
+        this.pressure_alt = pressure_alt ?? 0.0,
+        this.temperature = temperature ?? 0.0,
+        this.fields_updated = fields_updated ?? 0;
 
   @override
-  HilSensor call({ 
+  HilSensor call({
     Header header,
     Vector3 acc,
     Vector3 gyro,
@@ -66,17 +64,18 @@ class HilSensor extends RosMessage<HilSensor> {
     double pressure_alt,
     double temperature,
     int fields_updated,
-  }) => HilSensor(
-  header: header,
-  acc: acc,
-  gyro: gyro,
-  mag: mag,
-  abs_pressure: abs_pressure,
-  diff_pressure: diff_pressure,
-  pressure_alt: pressure_alt,
-  temperature: temperature,
-  fields_updated: fields_updated,
-  );
+  }) =>
+      HilSensor(
+        header: header,
+        acc: acc,
+        gyro: gyro,
+        mag: mag,
+        abs_pressure: abs_pressure,
+        diff_pressure: diff_pressure,
+        pressure_alt: pressure_alt,
+        temperature: temperature,
+        fields_updated: fields_updated,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type HilSensor
@@ -193,6 +192,4 @@ float64 y
 float64 z
 ''';
   }
-
 }
-

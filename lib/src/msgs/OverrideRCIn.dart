@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -16,26 +15,28 @@ class OverrideRCIn extends RosMessage<OverrideRCIn> {
   List<int> channels;
 
   static OverrideRCIn $prototype = OverrideRCIn();
-  OverrideRCIn({ 
+  OverrideRCIn({
     List<int> channels,
-  }):
-  this.channels = channels ?? List.generate(18, (_) => 0);
+  }) : this.channels = channels ?? List.generate(18, (_) => 0);
 
   @override
-  OverrideRCIn call({ 
+  OverrideRCIn call({
     List<int> channels,
-  }) => OverrideRCIn(
-  channels: channels,
-  );
+  }) =>
+      OverrideRCIn(
+        channels: channels,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type OverrideRCIn
     // Check that the constant length array field [channels] has the right length
     if (channels.length != 18) {
-      throw Exception('Unable to serialize array field channels - length must be 18');
+      throw Exception(
+          'Unable to serialize array field channels - length must be 18');
     }
     // Serialize message field [channels]
-    writer.writeArray<int>(channels, (val) => writer.writeUint16(val), specArrayLen: 18);
+    writer.writeArray<int>(channels, (val) => writer.writeUint16(val),
+        specArrayLen: 18);
   }
 
   @override
@@ -43,7 +44,8 @@ class OverrideRCIn extends RosMessage<OverrideRCIn> {
     //deserializes a message object of type OverrideRCIn
     final data = OverrideRCIn();
     // Deserialize message field [channels]
-    data.channels = reader.readArray<int>(() => reader.readUint16(), arrayLen: 18);
+    data.channels =
+        reader.readArray<int>(() => reader.readUint16(), arrayLen: 18);
     return data;
   }
 
@@ -82,6 +84,4 @@ uint16[18] channels
 // Constants for message
   static const int CHAN_RELEASE = 0;
   static const int CHAN_NOCHANGE = 65535;
-
 }
-

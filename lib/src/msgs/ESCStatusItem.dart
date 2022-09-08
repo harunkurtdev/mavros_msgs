@@ -51,7 +51,7 @@ class ESCStatusItem extends RosMessage<ESCStatusItem> {
     // Serialize message field [header]
     header.serialize(writer);
     // Serialize message field [rpm]
-    writer.writeInt32(rpm);
+    writer.writeint32(rpm);
     // Serialize message field [voltage]
     writer.writeFloat32(voltage);
     // Serialize message field [current]
@@ -65,7 +65,7 @@ class ESCStatusItem extends RosMessage<ESCStatusItem> {
     // Deserialize message field [header]
     data.header = Header.$prototype.deserialize(reader);
     // Deserialize message field [rpm]
-    data.rpm = reader.readInt32();
+    data.rpm = reader.readint32();
     // Deserialize message field [voltage]
     data.voltage = reader.readFloat32();
     // Deserialize message field [current]

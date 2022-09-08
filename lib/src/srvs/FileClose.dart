@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -12,24 +11,23 @@ import 'package:dartros/msg_utils.dart';
 
 //-----------------------------------------------------------
 
-
 //-----------------------------------------------------------
 
 class FileCloseRequest extends RosMessage<FileCloseRequest> {
   String file_path;
 
   static FileCloseRequest $prototype = FileCloseRequest();
-  FileCloseRequest({ 
+  FileCloseRequest({
     String file_path,
-  }):
-  this.file_path = file_path ?? '';
+  }) : this.file_path = file_path ?? '';
 
   @override
-  FileCloseRequest call({ 
+  FileCloseRequest call({
     String file_path,
-  }) => FileCloseRequest(
-  file_path: file_path,
-  );
+  }) =>
+      FileCloseRequest(
+        file_path: file_path,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type FileCloseRequest
@@ -77,7 +75,6 @@ string file_path
 
 ''';
   }
-
 }
 
 class FileCloseResponse extends RosMessage<FileCloseResponse> {
@@ -86,28 +83,28 @@ class FileCloseResponse extends RosMessage<FileCloseResponse> {
   int r_errno;
 
   static FileCloseResponse $prototype = FileCloseResponse();
-  FileCloseResponse({ 
+  FileCloseResponse({
     bool success,
     int r_errno,
-  }):
-  this.success = success ?? false,
-  this.r_errno = r_errno ?? 0;
+  })  : this.success = success ?? false,
+        this.r_errno = r_errno ?? 0;
 
   @override
-  FileCloseResponse call({ 
+  FileCloseResponse call({
     bool success,
     int r_errno,
-  }) => FileCloseResponse(
-  success: success,
-  r_errno: r_errno,
-  );
+  }) =>
+      FileCloseResponse(
+        success: success,
+        r_errno: r_errno,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type FileCloseResponse
     // Serialize message field [success]
     writer.writeUint8(success == false ? 0 : 1);
     // Serialize message field [r_errno]
-    writer.writeInt32(r_errno);
+    writer.writeint32(r_errno);
   }
 
   @override
@@ -117,7 +114,7 @@ class FileCloseResponse extends RosMessage<FileCloseResponse> {
     // Deserialize message field [success]
     data.success = reader.readUint8() != 0;
     // Deserialize message field [r_errno]
-    data.r_errno = reader.readInt32();
+    data.r_errno = reader.readint32();
     return data;
   }
 
@@ -146,7 +143,6 @@ int32 r_errno
 
 ''';
   }
-
 }
 
 class FileClose extends RosServiceMessage<FileCloseRequest, FileCloseResponse> {

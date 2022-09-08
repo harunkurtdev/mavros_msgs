@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -20,21 +19,21 @@ class ESCTelemetry extends RosMessage<ESCTelemetry> {
   List<ESCTelemetryItem> esc_telemetry;
 
   static ESCTelemetry $prototype = ESCTelemetry();
-  ESCTelemetry({ 
+  ESCTelemetry({
     Header header,
     List<ESCTelemetryItem> esc_telemetry,
-  }):
-  this.header = header ?? Header(),
-  this.esc_telemetry = esc_telemetry ?? [];
+  })  : this.header = header ?? Header(),
+        this.esc_telemetry = esc_telemetry ?? [];
 
   @override
-  ESCTelemetry call({ 
+  ESCTelemetry call({
     Header header,
     List<ESCTelemetryItem> esc_telemetry,
-  }) => ESCTelemetry(
-  header: header,
-  esc_telemetry: esc_telemetry,
-  );
+  }) =>
+      ESCTelemetry(
+        header: header,
+        esc_telemetry: esc_telemetry,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type ESCTelemetry
@@ -57,8 +56,9 @@ class ESCTelemetry extends RosMessage<ESCTelemetry> {
     // Deserialize message field [esc_telemetry]
     {
       // Deserialize array length for message field [esc_telemetry]
-      final len = reader.readInt32();
-      data.esc_telemetry = List.generate(len, (_) => ESCTelemetryItem.$prototype.deserialize(reader));
+      final len = reader.readint32();
+      data.esc_telemetry = List.generate(
+          len, (_) => ESCTelemetryItem.$prototype.deserialize(reader));
     }
     return data;
   }
@@ -134,6 +134,4 @@ uint16 count            # count of telemetry packets
 
 ''';
   }
-
 }
-

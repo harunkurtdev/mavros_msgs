@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -39,7 +38,7 @@ class GPSRTK extends RosMessage<GPSRTK> {
   int iar_num_hypotheses;
 
   static GPSRTK $prototype = GPSRTK();
-  GPSRTK({ 
+  GPSRTK({
     Header header,
     int rtk_receiver_id,
     int wn,
@@ -52,22 +51,21 @@ class GPSRTK extends RosMessage<GPSRTK> {
     int baseline_c,
     int accuracy,
     int iar_num_hypotheses,
-  }):
-  this.header = header ?? Header(),
-  this.rtk_receiver_id = rtk_receiver_id ?? 0,
-  this.wn = wn ?? 0,
-  this.tow = tow ?? 0,
-  this.rtk_health = rtk_health ?? 0,
-  this.rtk_rate = rtk_rate ?? 0,
-  this.nsats = nsats ?? 0,
-  this.baseline_a = baseline_a ?? 0,
-  this.baseline_b = baseline_b ?? 0,
-  this.baseline_c = baseline_c ?? 0,
-  this.accuracy = accuracy ?? 0,
-  this.iar_num_hypotheses = iar_num_hypotheses ?? 0;
+  })  : this.header = header ?? Header(),
+        this.rtk_receiver_id = rtk_receiver_id ?? 0,
+        this.wn = wn ?? 0,
+        this.tow = tow ?? 0,
+        this.rtk_health = rtk_health ?? 0,
+        this.rtk_rate = rtk_rate ?? 0,
+        this.nsats = nsats ?? 0,
+        this.baseline_a = baseline_a ?? 0,
+        this.baseline_b = baseline_b ?? 0,
+        this.baseline_c = baseline_c ?? 0,
+        this.accuracy = accuracy ?? 0,
+        this.iar_num_hypotheses = iar_num_hypotheses ?? 0;
 
   @override
-  GPSRTK call({ 
+  GPSRTK call({
     Header header,
     int rtk_receiver_id,
     int wn,
@@ -80,20 +78,21 @@ class GPSRTK extends RosMessage<GPSRTK> {
     int baseline_c,
     int accuracy,
     int iar_num_hypotheses,
-  }) => GPSRTK(
-  header: header,
-  rtk_receiver_id: rtk_receiver_id,
-  wn: wn,
-  tow: tow,
-  rtk_health: rtk_health,
-  rtk_rate: rtk_rate,
-  nsats: nsats,
-  baseline_a: baseline_a,
-  baseline_b: baseline_b,
-  baseline_c: baseline_c,
-  accuracy: accuracy,
-  iar_num_hypotheses: iar_num_hypotheses,
-  );
+  }) =>
+      GPSRTK(
+        header: header,
+        rtk_receiver_id: rtk_receiver_id,
+        wn: wn,
+        tow: tow,
+        rtk_health: rtk_health,
+        rtk_rate: rtk_rate,
+        nsats: nsats,
+        baseline_a: baseline_a,
+        baseline_b: baseline_b,
+        baseline_c: baseline_c,
+        accuracy: accuracy,
+        iar_num_hypotheses: iar_num_hypotheses,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type GPSRTK
@@ -102,7 +101,7 @@ class GPSRTK extends RosMessage<GPSRTK> {
     // Serialize message field [rtk_receiver_id]
     writer.writeUint8(rtk_receiver_id);
     // Serialize message field [wn]
-    writer.writeInt16(wn);
+    writer.writeint16(wn);
     // Serialize message field [tow]
     writer.writeUint32(tow);
     // Serialize message field [rtk_health]
@@ -112,15 +111,15 @@ class GPSRTK extends RosMessage<GPSRTK> {
     // Serialize message field [nsats]
     writer.writeUint8(nsats);
     // Serialize message field [baseline_a]
-    writer.writeInt32(baseline_a);
+    writer.writeint32(baseline_a);
     // Serialize message field [baseline_b]
-    writer.writeInt32(baseline_b);
+    writer.writeint32(baseline_b);
     // Serialize message field [baseline_c]
-    writer.writeInt32(baseline_c);
+    writer.writeint32(baseline_c);
     // Serialize message field [accuracy]
     writer.writeUint32(accuracy);
     // Serialize message field [iar_num_hypotheses]
-    writer.writeInt32(iar_num_hypotheses);
+    writer.writeint32(iar_num_hypotheses);
   }
 
   @override
@@ -132,7 +131,7 @@ class GPSRTK extends RosMessage<GPSRTK> {
     // Deserialize message field [rtk_receiver_id]
     data.rtk_receiver_id = reader.readUint8();
     // Deserialize message field [wn]
-    data.wn = reader.readInt16();
+    data.wn = reader.readint16();
     // Deserialize message field [tow]
     data.tow = reader.readUint32();
     // Deserialize message field [rtk_health]
@@ -142,15 +141,15 @@ class GPSRTK extends RosMessage<GPSRTK> {
     // Deserialize message field [nsats]
     data.nsats = reader.readUint8();
     // Deserialize message field [baseline_a]
-    data.baseline_a = reader.readInt32();
+    data.baseline_a = reader.readint32();
     // Deserialize message field [baseline_b]
-    data.baseline_b = reader.readInt32();
+    data.baseline_b = reader.readint32();
     // Deserialize message field [baseline_c]
-    data.baseline_c = reader.readInt32();
+    data.baseline_c = reader.readint32();
     // Deserialize message field [accuracy]
     data.accuracy = reader.readUint32();
     // Deserialize message field [iar_num_hypotheses]
-    data.iar_num_hypotheses = reader.readInt32();
+    data.iar_num_hypotheses = reader.readint32();
     return data;
   }
 
@@ -212,6 +211,4 @@ string frame_id
 
 ''';
   }
-
 }
-

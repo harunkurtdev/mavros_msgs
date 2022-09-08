@@ -96,7 +96,7 @@ class ESCInfo extends RosMessage<ESCInfo> {
     // Deserialize message field [esc_info]
     {
       // Deserialize array length for message field [esc_info]
-      final len = reader.readInt32();
+      final len = reader.readint32();
       data.esc_info =
           List.generate(len, (_) => ESCInfoItem.$prototype.deserialize(reader));
     }

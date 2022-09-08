@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -23,29 +22,29 @@ class LogData extends RosMessage<LogData> {
   List<int> data;
 
   static LogData $prototype = LogData();
-  LogData({ 
+  LogData({
     Header header,
     int id,
     int offset,
     List<int> data,
-  }):
-  this.header = header ?? Header(),
-  this.id = id ?? 0,
-  this.offset = offset ?? 0,
-  this.data = data ?? [];
+  })  : this.header = header ?? Header(),
+        this.id = id ?? 0,
+        this.offset = offset ?? 0,
+        this.data = data ?? [];
 
   @override
-  LogData call({ 
+  LogData call({
     Header header,
     int id,
     int offset,
     List<int> data,
-  }) => LogData(
-  header: header,
-  id: id,
-  offset: offset,
-  data: data,
-  );
+  }) =>
+      LogData(
+        header: header,
+        id: id,
+        offset: offset,
+        data: data,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type LogData
@@ -56,7 +55,8 @@ class LogData extends RosMessage<LogData> {
     // Serialize message field [offset]
     writer.writeUint32(offset);
     // Serialize message field [data]
-    writer.writeArray<int>(data, (val) => writer.writeUint8(val), specArrayLen: null);
+    writer.writeArray<int>(data, (val) => writer.writeUint8(val),
+        specArrayLen: null);
   }
 
   @override
@@ -126,6 +126,4 @@ string frame_id
 
 ''';
   }
-
 }
-

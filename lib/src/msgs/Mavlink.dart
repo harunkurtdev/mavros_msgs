@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -41,7 +40,7 @@ class Mavlink extends RosMessage<Mavlink> {
   List<int> signature;
 
   static Mavlink $prototype = Mavlink();
-  Mavlink({ 
+  Mavlink({
     Header header,
     int framing_status,
     int magic,
@@ -55,23 +54,22 @@ class Mavlink extends RosMessage<Mavlink> {
     int checksum,
     List<int> payload64,
     List<int> signature,
-  }):
-  this.header = header ?? Header(),
-  this.framing_status = framing_status ?? 0,
-  this.magic = magic ?? 0,
-  this.len = len ?? 0,
-  this.incompat_flags = incompat_flags ?? 0,
-  this.compat_flags = compat_flags ?? 0,
-  this.seq = seq ?? 0,
-  this.sysid = sysid ?? 0,
-  this.compid = compid ?? 0,
-  this.msgid = msgid ?? 0,
-  this.checksum = checksum ?? 0,
-  this.payload64 = payload64 ?? [],
-  this.signature = signature ?? [];
+  })  : this.header = header ?? Header(),
+        this.framing_status = framing_status ?? 0,
+        this.magic = magic ?? 0,
+        this.len = len ?? 0,
+        this.incompat_flags = incompat_flags ?? 0,
+        this.compat_flags = compat_flags ?? 0,
+        this.seq = seq ?? 0,
+        this.sysid = sysid ?? 0,
+        this.compid = compid ?? 0,
+        this.msgid = msgid ?? 0,
+        this.checksum = checksum ?? 0,
+        this.payload64 = payload64 ?? [],
+        this.signature = signature ?? [];
 
   @override
-  Mavlink call({ 
+  Mavlink call({
     Header header,
     int framing_status,
     int magic,
@@ -85,21 +83,22 @@ class Mavlink extends RosMessage<Mavlink> {
     int checksum,
     List<int> payload64,
     List<int> signature,
-  }) => Mavlink(
-  header: header,
-  framing_status: framing_status,
-  magic: magic,
-  len: len,
-  incompat_flags: incompat_flags,
-  compat_flags: compat_flags,
-  seq: seq,
-  sysid: sysid,
-  compid: compid,
-  msgid: msgid,
-  checksum: checksum,
-  payload64: payload64,
-  signature: signature,
-  );
+  }) =>
+      Mavlink(
+        header: header,
+        framing_status: framing_status,
+        magic: magic,
+        len: len,
+        incompat_flags: incompat_flags,
+        compat_flags: compat_flags,
+        seq: seq,
+        sysid: sysid,
+        compid: compid,
+        msgid: msgid,
+        checksum: checksum,
+        payload64: payload64,
+        signature: signature,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type Mavlink
@@ -126,9 +125,11 @@ class Mavlink extends RosMessage<Mavlink> {
     // Serialize message field [checksum]
     writer.writeUint16(checksum);
     // Serialize message field [payload64]
-    writer.writeArray<int>(payload64, (val) => writer.writeUint64(val), specArrayLen: null);
+    writer.writeArray<int>(payload64, (val) => writer.writeUint64(val),
+        specArrayLen: null);
     // Serialize message field [signature]
-    writer.writeArray<int>(signature, (val) => writer.writeUint8(val), specArrayLen: null);
+    writer.writeArray<int>(signature, (val) => writer.writeUint8(val),
+        specArrayLen: null);
   }
 
   @override
@@ -158,9 +159,11 @@ class Mavlink extends RosMessage<Mavlink> {
     // Deserialize message field [checksum]
     data.checksum = reader.readUint16();
     // Deserialize message field [payload64]
-    data.payload64 = reader.readArray<int>(() => reader.readUint64(), arrayLen: null);
+    data.payload64 =
+        reader.readArray<int>(() => reader.readUint64(), arrayLen: null);
     // Deserialize message field [signature]
-    data.signature = reader.readArray<int>(() => reader.readUint8(), arrayLen: null);
+    data.signature =
+        reader.readArray<int>(() => reader.readUint8(), arrayLen: null);
     return data;
   }
 
@@ -251,6 +254,4 @@ string frame_id
   static const int FRAMING_BAD_SIGNATURE = 3;
   static const int MAVLINK_V10 = 254;
   static const int MAVLINK_V20 = 253;
-
 }
-

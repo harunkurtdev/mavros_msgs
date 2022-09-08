@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -31,7 +30,7 @@ class TerrainReport extends RosMessage<TerrainReport> {
   int loaded;
 
   static TerrainReport $prototype = TerrainReport();
-  TerrainReport({ 
+  TerrainReport({
     Header header,
     double latitude,
     double longitude,
@@ -40,18 +39,17 @@ class TerrainReport extends RosMessage<TerrainReport> {
     double current_height,
     int pending,
     int loaded,
-  }):
-  this.header = header ?? Header(),
-  this.latitude = latitude ?? 0.0,
-  this.longitude = longitude ?? 0.0,
-  this.spacing = spacing ?? 0,
-  this.terrain_height = terrain_height ?? 0.0,
-  this.current_height = current_height ?? 0.0,
-  this.pending = pending ?? 0,
-  this.loaded = loaded ?? 0;
+  })  : this.header = header ?? Header(),
+        this.latitude = latitude ?? 0.0,
+        this.longitude = longitude ?? 0.0,
+        this.spacing = spacing ?? 0,
+        this.terrain_height = terrain_height ?? 0.0,
+        this.current_height = current_height ?? 0.0,
+        this.pending = pending ?? 0,
+        this.loaded = loaded ?? 0;
 
   @override
-  TerrainReport call({ 
+  TerrainReport call({
     Header header,
     double latitude,
     double longitude,
@@ -60,16 +58,17 @@ class TerrainReport extends RosMessage<TerrainReport> {
     double current_height,
     int pending,
     int loaded,
-  }) => TerrainReport(
-  header: header,
-  latitude: latitude,
-  longitude: longitude,
-  spacing: spacing,
-  terrain_height: terrain_height,
-  current_height: current_height,
-  pending: pending,
-  loaded: loaded,
-  );
+  }) =>
+      TerrainReport(
+        header: header,
+        latitude: latitude,
+        longitude: longitude,
+        spacing: spacing,
+        terrain_height: terrain_height,
+        current_height: current_height,
+        pending: pending,
+        loaded: loaded,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type TerrainReport
@@ -166,6 +165,4 @@ string frame_id
 
 ''';
   }
-
 }
-

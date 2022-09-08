@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -29,7 +28,7 @@ class ESCTelemetryItem extends RosMessage<ESCTelemetryItem> {
   int count;
 
   static ESCTelemetryItem $prototype = ESCTelemetryItem();
-  ESCTelemetryItem({ 
+  ESCTelemetryItem({
     Header header,
     double temperature,
     double voltage,
@@ -37,17 +36,16 @@ class ESCTelemetryItem extends RosMessage<ESCTelemetryItem> {
     double totalcurrent,
     int rpm,
     int count,
-  }):
-  this.header = header ?? Header(),
-  this.temperature = temperature ?? 0.0,
-  this.voltage = voltage ?? 0.0,
-  this.current = current ?? 0.0,
-  this.totalcurrent = totalcurrent ?? 0.0,
-  this.rpm = rpm ?? 0,
-  this.count = count ?? 0;
+  })  : this.header = header ?? Header(),
+        this.temperature = temperature ?? 0.0,
+        this.voltage = voltage ?? 0.0,
+        this.current = current ?? 0.0,
+        this.totalcurrent = totalcurrent ?? 0.0,
+        this.rpm = rpm ?? 0,
+        this.count = count ?? 0;
 
   @override
-  ESCTelemetryItem call({ 
+  ESCTelemetryItem call({
     Header header,
     double temperature,
     double voltage,
@@ -55,15 +53,16 @@ class ESCTelemetryItem extends RosMessage<ESCTelemetryItem> {
     double totalcurrent,
     int rpm,
     int count,
-  }) => ESCTelemetryItem(
-  header: header,
-  temperature: temperature,
-  voltage: voltage,
-  current: current,
-  totalcurrent: totalcurrent,
-  rpm: rpm,
-  count: count,
-  );
+  }) =>
+      ESCTelemetryItem(
+        header: header,
+        temperature: temperature,
+        voltage: voltage,
+        current: current,
+        totalcurrent: totalcurrent,
+        rpm: rpm,
+        count: count,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type ESCTelemetryItem
@@ -78,7 +77,7 @@ class ESCTelemetryItem extends RosMessage<ESCTelemetryItem> {
     // Serialize message field [totalcurrent]
     writer.writeFloat32(totalcurrent);
     // Serialize message field [rpm]
-    writer.writeInt32(rpm);
+    writer.writeint32(rpm);
     // Serialize message field [count]
     writer.writeUint16(count);
   }
@@ -98,7 +97,7 @@ class ESCTelemetryItem extends RosMessage<ESCTelemetryItem> {
     // Deserialize message field [totalcurrent]
     data.totalcurrent = reader.readFloat32();
     // Deserialize message field [rpm]
-    data.rpm = reader.readInt32();
+    data.rpm = reader.readint32();
     // Deserialize message field [count]
     data.count = reader.readUint16();
     return data;
@@ -159,6 +158,4 @@ string frame_id
 
 ''';
   }
-
 }
-

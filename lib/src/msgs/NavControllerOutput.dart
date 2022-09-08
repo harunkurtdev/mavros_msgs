@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -33,7 +32,7 @@ class NavControllerOutput extends RosMessage<NavControllerOutput> {
   double xtrack_error;
 
   static NavControllerOutput $prototype = NavControllerOutput();
-  NavControllerOutput({ 
+  NavControllerOutput({
     Header header,
     double nav_roll,
     double nav_pitch,
@@ -43,19 +42,18 @@ class NavControllerOutput extends RosMessage<NavControllerOutput> {
     double alt_error,
     double aspd_error,
     double xtrack_error,
-  }):
-  this.header = header ?? Header(),
-  this.nav_roll = nav_roll ?? 0.0,
-  this.nav_pitch = nav_pitch ?? 0.0,
-  this.nav_bearing = nav_bearing ?? 0,
-  this.target_bearing = target_bearing ?? 0,
-  this.wp_dist = wp_dist ?? 0,
-  this.alt_error = alt_error ?? 0.0,
-  this.aspd_error = aspd_error ?? 0.0,
-  this.xtrack_error = xtrack_error ?? 0.0;
+  })  : this.header = header ?? Header(),
+        this.nav_roll = nav_roll ?? 0.0,
+        this.nav_pitch = nav_pitch ?? 0.0,
+        this.nav_bearing = nav_bearing ?? 0,
+        this.target_bearing = target_bearing ?? 0,
+        this.wp_dist = wp_dist ?? 0,
+        this.alt_error = alt_error ?? 0.0,
+        this.aspd_error = aspd_error ?? 0.0,
+        this.xtrack_error = xtrack_error ?? 0.0;
 
   @override
-  NavControllerOutput call({ 
+  NavControllerOutput call({
     Header header,
     double nav_roll,
     double nav_pitch,
@@ -65,17 +63,18 @@ class NavControllerOutput extends RosMessage<NavControllerOutput> {
     double alt_error,
     double aspd_error,
     double xtrack_error,
-  }) => NavControllerOutput(
-  header: header,
-  nav_roll: nav_roll,
-  nav_pitch: nav_pitch,
-  nav_bearing: nav_bearing,
-  target_bearing: target_bearing,
-  wp_dist: wp_dist,
-  alt_error: alt_error,
-  aspd_error: aspd_error,
-  xtrack_error: xtrack_error,
-  );
+  }) =>
+      NavControllerOutput(
+        header: header,
+        nav_roll: nav_roll,
+        nav_pitch: nav_pitch,
+        nav_bearing: nav_bearing,
+        target_bearing: target_bearing,
+        wp_dist: wp_dist,
+        alt_error: alt_error,
+        aspd_error: aspd_error,
+        xtrack_error: xtrack_error,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type NavControllerOutput
@@ -86,9 +85,9 @@ class NavControllerOutput extends RosMessage<NavControllerOutput> {
     // Serialize message field [nav_pitch]
     writer.writeFloat32(nav_pitch);
     // Serialize message field [nav_bearing]
-    writer.writeInt16(nav_bearing);
+    writer.writeint16(nav_bearing);
     // Serialize message field [target_bearing]
-    writer.writeInt16(target_bearing);
+    writer.writeint16(target_bearing);
     // Serialize message field [wp_dist]
     writer.writeUint16(wp_dist);
     // Serialize message field [alt_error]
@@ -110,9 +109,9 @@ class NavControllerOutput extends RosMessage<NavControllerOutput> {
     // Deserialize message field [nav_pitch]
     data.nav_pitch = reader.readFloat32();
     // Deserialize message field [nav_bearing]
-    data.nav_bearing = reader.readInt16();
+    data.nav_bearing = reader.readint16();
     // Deserialize message field [target_bearing]
-    data.target_bearing = reader.readInt16();
+    data.target_bearing = reader.readint16();
     // Deserialize message field [wp_dist]
     data.wp_dist = reader.readUint16();
     // Deserialize message field [alt_error]
@@ -175,6 +174,4 @@ string frame_id
 
 ''';
   }
-
 }
-

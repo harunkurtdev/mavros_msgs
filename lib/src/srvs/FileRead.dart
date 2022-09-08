@@ -4,14 +4,12 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
 import 'package:dartros/msg_utils.dart';
 
 //-----------------------------------------------------------
-
 
 //-----------------------------------------------------------
 
@@ -23,25 +21,25 @@ class FileReadRequest extends RosMessage<FileReadRequest> {
   int size;
 
   static FileReadRequest $prototype = FileReadRequest();
-  FileReadRequest({ 
+  FileReadRequest({
     String file_path,
     int offset,
     int size,
-  }):
-  this.file_path = file_path ?? '',
-  this.offset = offset ?? 0,
-  this.size = size ?? 0;
+  })  : this.file_path = file_path ?? '',
+        this.offset = offset ?? 0,
+        this.size = size ?? 0;
 
   @override
-  FileReadRequest call({ 
+  FileReadRequest call({
     String file_path,
     int offset,
     int size,
-  }) => FileReadRequest(
-  file_path: file_path,
-  offset: offset,
-  size: size,
-  );
+  }) =>
+      FileReadRequest(
+        file_path: file_path,
+        offset: offset,
+        size: size,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type FileReadRequest
@@ -99,7 +97,6 @@ uint64 size
 
 ''';
   }
-
 }
 
 class FileReadResponse extends RosMessage<FileReadResponse> {
@@ -110,34 +107,35 @@ class FileReadResponse extends RosMessage<FileReadResponse> {
   int r_errno;
 
   static FileReadResponse $prototype = FileReadResponse();
-  FileReadResponse({ 
+  FileReadResponse({
     List<int> data,
     bool success,
     int r_errno,
-  }):
-  this.data = data ?? [],
-  this.success = success ?? false,
-  this.r_errno = r_errno ?? 0;
+  })  : this.data = data ?? [],
+        this.success = success ?? false,
+        this.r_errno = r_errno ?? 0;
 
   @override
-  FileReadResponse call({ 
+  FileReadResponse call({
     List<int> data,
     bool success,
     int r_errno,
-  }) => FileReadResponse(
-  data: data,
-  success: success,
-  r_errno: r_errno,
-  );
+  }) =>
+      FileReadResponse(
+        data: data,
+        success: success,
+        r_errno: r_errno,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type FileReadResponse
     // Serialize message field [data]
-    writer.writeArray<int>(data, (val) => writer.writeUint8(val), specArrayLen: null);
+    writer.writeArray<int>(data, (val) => writer.writeUint8(val),
+        specArrayLen: null);
     // Serialize message field [success]
     writer.writeUint8(success == false ? 0 : 1);
     // Serialize message field [r_errno]
-    writer.writeInt32(r_errno);
+    writer.writeint32(r_errno);
   }
 
   @override
@@ -149,7 +147,7 @@ class FileReadResponse extends RosMessage<FileReadResponse> {
     // Deserialize message field [success]
     data.success = reader.readUint8() != 0;
     // Deserialize message field [r_errno]
-    data.r_errno = reader.readInt32();
+    data.r_errno = reader.readint32();
     return data;
   }
 
@@ -181,7 +179,6 @@ int32 r_errno
 
 ''';
   }
-
 }
 
 class FileRead extends RosServiceMessage<FileReadRequest, FileReadResponse> {

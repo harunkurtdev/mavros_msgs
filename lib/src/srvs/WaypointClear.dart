@@ -4,14 +4,12 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
 import 'package:dartros/msg_utils.dart';
 
 //-----------------------------------------------------------
-
 
 //-----------------------------------------------------------
 
@@ -57,24 +55,23 @@ class WaypointClearRequest extends RosMessage<WaypointClearRequest> {
 
 ''';
   }
-
 }
 
 class WaypointClearResponse extends RosMessage<WaypointClearResponse> {
   bool success;
 
   static WaypointClearResponse $prototype = WaypointClearResponse();
-  WaypointClearResponse({ 
+  WaypointClearResponse({
     bool success,
-  }):
-  this.success = success ?? false;
+  }) : this.success = success ?? false;
 
   @override
-  WaypointClearResponse call({ 
+  WaypointClearResponse call({
     bool success,
-  }) => WaypointClearResponse(
-  success: success,
-  );
+  }) =>
+      WaypointClearResponse(
+        success: success,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type WaypointClearResponse
@@ -115,10 +112,10 @@ class WaypointClearResponse extends RosMessage<WaypointClearResponse> {
 
 ''';
   }
-
 }
 
-class WaypointClear extends RosServiceMessage<WaypointClearRequest, WaypointClearResponse> {
+class WaypointClear
+    extends RosServiceMessage<WaypointClearRequest, WaypointClearResponse> {
   static final $prototype = WaypointClear();
   @override
   WaypointClearRequest get request => WaypointClearRequest.$prototype;

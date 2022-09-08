@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -36,7 +35,7 @@ class GlobalPositionTarget extends RosMessage<GlobalPositionTarget> {
   double yaw_rate;
 
   static GlobalPositionTarget $prototype = GlobalPositionTarget();
-  GlobalPositionTarget({ 
+  GlobalPositionTarget({
     Header header,
     int coordinate_frame,
     int type_mask,
@@ -47,20 +46,19 @@ class GlobalPositionTarget extends RosMessage<GlobalPositionTarget> {
     Vector3 acceleration_or_force,
     double yaw,
     double yaw_rate,
-  }):
-  this.header = header ?? Header(),
-  this.coordinate_frame = coordinate_frame ?? 0,
-  this.type_mask = type_mask ?? 0,
-  this.latitude = latitude ?? 0.0,
-  this.longitude = longitude ?? 0.0,
-  this.altitude = altitude ?? 0.0,
-  this.velocity = velocity ?? Vector3(),
-  this.acceleration_or_force = acceleration_or_force ?? Vector3(),
-  this.yaw = yaw ?? 0.0,
-  this.yaw_rate = yaw_rate ?? 0.0;
+  })  : this.header = header ?? Header(),
+        this.coordinate_frame = coordinate_frame ?? 0,
+        this.type_mask = type_mask ?? 0,
+        this.latitude = latitude ?? 0.0,
+        this.longitude = longitude ?? 0.0,
+        this.altitude = altitude ?? 0.0,
+        this.velocity = velocity ?? Vector3(),
+        this.acceleration_or_force = acceleration_or_force ?? Vector3(),
+        this.yaw = yaw ?? 0.0,
+        this.yaw_rate = yaw_rate ?? 0.0;
 
   @override
-  GlobalPositionTarget call({ 
+  GlobalPositionTarget call({
     Header header,
     int coordinate_frame,
     int type_mask,
@@ -71,18 +69,19 @@ class GlobalPositionTarget extends RosMessage<GlobalPositionTarget> {
     Vector3 acceleration_or_force,
     double yaw,
     double yaw_rate,
-  }) => GlobalPositionTarget(
-  header: header,
-  coordinate_frame: coordinate_frame,
-  type_mask: type_mask,
-  latitude: latitude,
-  longitude: longitude,
-  altitude: altitude,
-  velocity: velocity,
-  acceleration_or_force: acceleration_or_force,
-  yaw: yaw,
-  yaw_rate: yaw_rate,
-  );
+  }) =>
+      GlobalPositionTarget(
+        header: header,
+        coordinate_frame: coordinate_frame,
+        type_mask: type_mask,
+        latitude: latitude,
+        longitude: longitude,
+        altitude: altitude,
+        velocity: velocity,
+        acceleration_or_force: acceleration_or_force,
+        yaw: yaw,
+        yaw_rate: yaw_rate,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type GlobalPositionTarget
@@ -156,16 +155,16 @@ class GlobalPositionTarget extends RosMessage<GlobalPositionTarget> {
   @override
   String get messageDefinition {
     // Returns full string definition for message
-    return '''# Message for SET_POSITION_TARGET_GLOBAL_INT
+    return '''# Message for SET_POSITION_TARGET_GLOBAL_int
 #
-# https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_GLOBAL_INT
+# https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_GLOBAL_int
 # Some complex system requires all feautures that mavlink
 # message provide. See issue #402, #415.
 
 std_msgs/Header header
 
 uint8 coordinate_frame
-uint8 FRAME_GLOBAL_INT = 5
+uint8 FRAME_GLOBAL_int = 5
 uint8 FRAME_GLOBAL_REL_ALT = 6
 uint8 FRAME_GLOBAL_TERRAIN_ALT = 11
 
@@ -223,7 +222,7 @@ float64 z
   }
 
 // Constants for message
-  static const int FRAME_GLOBAL_INT = 5;
+  static const int FRAME_GLOBAL_int = 5;
   static const int FRAME_GLOBAL_REL_ALT = 6;
   static const int FRAME_GLOBAL_TERRAIN_ALT = 11;
   static const int IGNORE_LATITUDE = 1;
@@ -238,6 +237,4 @@ float64 z
   static const int FORCE = 512;
   static const int IGNORE_YAW = 1024;
   static const int IGNORE_YAW_RATE = 2048;
-
 }
-

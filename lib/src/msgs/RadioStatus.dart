@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -35,7 +34,7 @@ class RadioStatus extends RosMessage<RadioStatus> {
   double remrssi_dbm;
 
   static RadioStatus $prototype = RadioStatus();
-  RadioStatus({ 
+  RadioStatus({
     Header header,
     int rssi,
     int remrssi,
@@ -46,20 +45,19 @@ class RadioStatus extends RosMessage<RadioStatus> {
     int fixed,
     double rssi_dbm,
     double remrssi_dbm,
-  }):
-  this.header = header ?? Header(),
-  this.rssi = rssi ?? 0,
-  this.remrssi = remrssi ?? 0,
-  this.txbuf = txbuf ?? 0,
-  this.noise = noise ?? 0,
-  this.remnoise = remnoise ?? 0,
-  this.rxerrors = rxerrors ?? 0,
-  this.fixed = fixed ?? 0,
-  this.rssi_dbm = rssi_dbm ?? 0.0,
-  this.remrssi_dbm = remrssi_dbm ?? 0.0;
+  })  : this.header = header ?? Header(),
+        this.rssi = rssi ?? 0,
+        this.remrssi = remrssi ?? 0,
+        this.txbuf = txbuf ?? 0,
+        this.noise = noise ?? 0,
+        this.remnoise = remnoise ?? 0,
+        this.rxerrors = rxerrors ?? 0,
+        this.fixed = fixed ?? 0,
+        this.rssi_dbm = rssi_dbm ?? 0.0,
+        this.remrssi_dbm = remrssi_dbm ?? 0.0;
 
   @override
-  RadioStatus call({ 
+  RadioStatus call({
     Header header,
     int rssi,
     int remrssi,
@@ -70,18 +68,19 @@ class RadioStatus extends RosMessage<RadioStatus> {
     int fixed,
     double rssi_dbm,
     double remrssi_dbm,
-  }) => RadioStatus(
-  header: header,
-  rssi: rssi,
-  remrssi: remrssi,
-  txbuf: txbuf,
-  noise: noise,
-  remnoise: remnoise,
-  rxerrors: rxerrors,
-  fixed: fixed,
-  rssi_dbm: rssi_dbm,
-  remrssi_dbm: remrssi_dbm,
-  );
+  }) =>
+      RadioStatus(
+        header: header,
+        rssi: rssi,
+        remrssi: remrssi,
+        txbuf: txbuf,
+        noise: noise,
+        remnoise: remnoise,
+        rxerrors: rxerrors,
+        fixed: fixed,
+        rssi_dbm: rssi_dbm,
+        remrssi_dbm: remrssi_dbm,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type RadioStatus
@@ -190,6 +189,4 @@ string frame_id
 
 ''';
   }
-
 }
-

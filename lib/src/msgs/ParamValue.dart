@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -18,26 +17,26 @@ class ParamValue extends RosMessage<ParamValue> {
   double real;
 
   static ParamValue $prototype = ParamValue();
-  ParamValue({ 
+  ParamValue({
     int integer,
     double real,
-  }):
-  this.integer = integer ?? 0,
-  this.real = real ?? 0.0;
+  })  : this.integer = integer ?? 0,
+        this.real = real ?? 0.0;
 
   @override
-  ParamValue call({ 
+  ParamValue call({
     int integer,
     double real,
-  }) => ParamValue(
-  integer: integer,
-  real: real,
-  );
+  }) =>
+      ParamValue(
+        integer: integer,
+        real: real,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type ParamValue
     // Serialize message field [integer]
-    writer.writeInt64(integer);
+    writer.writeint64(integer);
     // Serialize message field [real]
     writer.writeFloat64(real);
   }
@@ -47,7 +46,7 @@ class ParamValue extends RosMessage<ParamValue> {
     //deserializes a message object of type ParamValue
     final data = ParamValue();
     // Deserialize message field [integer]
-    data.integer = reader.readInt64();
+    data.integer = reader.readint64();
     // Deserialize message field [real]
     data.real = reader.readFloat64();
     return data;
@@ -74,7 +73,7 @@ class ParamValue extends RosMessage<ParamValue> {
     // Returns full string definition for message
     return '''# Parameter value storage type.
 #
-# Integer and float fields:
+# integer and float fields:
 #
 # if integer != 0: it is integer value
 # else if real != 0.0: it is float value
@@ -85,6 +84,4 @@ float64 real
 
 ''';
   }
-
 }
-

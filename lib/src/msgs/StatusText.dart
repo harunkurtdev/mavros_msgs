@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -21,25 +20,25 @@ class StatusText extends RosMessage<StatusText> {
   String text;
 
   static StatusText $prototype = StatusText();
-  StatusText({ 
+  StatusText({
     Header header,
     int severity,
     String text,
-  }):
-  this.header = header ?? Header(),
-  this.severity = severity ?? 0,
-  this.text = text ?? '';
+  })  : this.header = header ?? Header(),
+        this.severity = severity ?? 0,
+        this.text = text ?? '';
 
   @override
-  StatusText call({ 
+  StatusText call({
     Header header,
     int severity,
     String text,
-  }) => StatusText(
-  header: header,
-  severity: severity,
-  text: text,
-  );
+  }) =>
+      StatusText(
+        header: header,
+        severity: severity,
+        text: text,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type StatusText
@@ -132,6 +131,4 @@ string frame_id
   static const int NOTICE = 5;
   static const int INFO = 6;
   static const int DEBUG = 7;
-
 }
-

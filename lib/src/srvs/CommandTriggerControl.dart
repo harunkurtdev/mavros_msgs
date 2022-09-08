@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -12,36 +11,37 @@ import 'package:dartros/msg_utils.dart';
 
 //-----------------------------------------------------------
 
-
 //-----------------------------------------------------------
 
-class CommandTriggerControlRequest extends RosMessage<CommandTriggerControlRequest> {
+class CommandTriggerControlRequest
+    extends RosMessage<CommandTriggerControlRequest> {
   bool trigger_enable;
 
   bool sequence_reset;
 
   bool trigger_pause;
 
-  static CommandTriggerControlRequest $prototype = CommandTriggerControlRequest();
-  CommandTriggerControlRequest({ 
+  static CommandTriggerControlRequest $prototype =
+      CommandTriggerControlRequest();
+  CommandTriggerControlRequest({
     bool trigger_enable,
     bool sequence_reset,
     bool trigger_pause,
-  }):
-  this.trigger_enable = trigger_enable ?? false,
-  this.sequence_reset = sequence_reset ?? false,
-  this.trigger_pause = trigger_pause ?? false;
+  })  : this.trigger_enable = trigger_enable ?? false,
+        this.sequence_reset = sequence_reset ?? false,
+        this.trigger_pause = trigger_pause ?? false;
 
   @override
-  CommandTriggerControlRequest call({ 
+  CommandTriggerControlRequest call({
     bool trigger_enable,
     bool sequence_reset,
     bool trigger_pause,
-  }) => CommandTriggerControlRequest(
-  trigger_enable: trigger_enable,
-  sequence_reset: sequence_reset,
-  trigger_pause: trigger_pause,
-  );
+  }) =>
+      CommandTriggerControlRequest(
+        trigger_enable: trigger_enable,
+        sequence_reset: sequence_reset,
+        trigger_pause: trigger_pause,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type CommandTriggerControlRequest
@@ -93,30 +93,31 @@ bool    trigger_pause		# Pause triggering, but without switching the camera off 
 
 ''';
   }
-
 }
 
-class CommandTriggerControlResponse extends RosMessage<CommandTriggerControlResponse> {
+class CommandTriggerControlResponse
+    extends RosMessage<CommandTriggerControlResponse> {
   bool success;
 
   int result;
 
-  static CommandTriggerControlResponse $prototype = CommandTriggerControlResponse();
-  CommandTriggerControlResponse({ 
+  static CommandTriggerControlResponse $prototype =
+      CommandTriggerControlResponse();
+  CommandTriggerControlResponse({
     bool success,
     int result,
-  }):
-  this.success = success ?? false,
-  this.result = result ?? 0;
+  })  : this.success = success ?? false,
+        this.result = result ?? 0;
 
   @override
-  CommandTriggerControlResponse call({ 
+  CommandTriggerControlResponse call({
     bool success,
     int result,
-  }) => CommandTriggerControlResponse(
-  success: success,
-  result: result,
-  );
+  }) =>
+      CommandTriggerControlResponse(
+        success: success,
+        result: result,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type CommandTriggerControlResponse
@@ -162,15 +163,17 @@ uint8 result
 
 ''';
   }
-
 }
 
-class CommandTriggerControl extends RosServiceMessage<CommandTriggerControlRequest, CommandTriggerControlResponse> {
+class CommandTriggerControl extends RosServiceMessage<
+    CommandTriggerControlRequest, CommandTriggerControlResponse> {
   static final $prototype = CommandTriggerControl();
   @override
-  CommandTriggerControlRequest get request => CommandTriggerControlRequest.$prototype;
+  CommandTriggerControlRequest get request =>
+      CommandTriggerControlRequest.$prototype;
   @override
-  CommandTriggerControlResponse get response => CommandTriggerControlResponse.$prototype;
+  CommandTriggerControlResponse get response =>
+      CommandTriggerControlResponse.$prototype;
   @override
   String get md5sum => '65be46a6918cb61b7dceb7c9ba9b1c97';
   @override

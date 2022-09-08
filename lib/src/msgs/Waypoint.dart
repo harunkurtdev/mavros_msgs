@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -36,7 +35,7 @@ class Waypoint extends RosMessage<Waypoint> {
   double z_alt;
 
   static Waypoint $prototype = Waypoint();
-  Waypoint({ 
+  Waypoint({
     int frame,
     int command,
     bool is_current,
@@ -48,21 +47,20 @@ class Waypoint extends RosMessage<Waypoint> {
     double x_lat,
     double y_long,
     double z_alt,
-  }):
-  this.frame = frame ?? 0,
-  this.command = command ?? 0,
-  this.is_current = is_current ?? false,
-  this.autocontinue = autocontinue ?? false,
-  this.param1 = param1 ?? 0.0,
-  this.param2 = param2 ?? 0.0,
-  this.param3 = param3 ?? 0.0,
-  this.param4 = param4 ?? 0.0,
-  this.x_lat = x_lat ?? 0.0,
-  this.y_long = y_long ?? 0.0,
-  this.z_alt = z_alt ?? 0.0;
+  })  : this.frame = frame ?? 0,
+        this.command = command ?? 0,
+        this.is_current = is_current ?? false,
+        this.autocontinue = autocontinue ?? false,
+        this.param1 = param1 ?? 0.0,
+        this.param2 = param2 ?? 0.0,
+        this.param3 = param3 ?? 0.0,
+        this.param4 = param4 ?? 0.0,
+        this.x_lat = x_lat ?? 0.0,
+        this.y_long = y_long ?? 0.0,
+        this.z_alt = z_alt ?? 0.0;
 
   @override
-  Waypoint call({ 
+  Waypoint call({
     int frame,
     int command,
     bool is_current,
@@ -74,19 +72,20 @@ class Waypoint extends RosMessage<Waypoint> {
     double x_lat,
     double y_long,
     double z_alt,
-  }) => Waypoint(
-  frame: frame,
-  command: command,
-  is_current: is_current,
-  autocontinue: autocontinue,
-  param1: param1,
-  param2: param2,
-  param3: param3,
-  param4: param4,
-  x_lat: x_lat,
-  y_long: y_long,
-  z_alt: z_alt,
-  );
+  }) =>
+      Waypoint(
+        frame: frame,
+        command: command,
+        is_current: is_current,
+        autocontinue: autocontinue,
+        param1: param1,
+        param2: param2,
+        param3: param3,
+        param4: param4,
+        x_lat: x_lat,
+        y_long: y_long,
+        z_alt: z_alt,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type Waypoint
@@ -176,13 +175,13 @@ uint8 FRAME_LOCAL_NED = 1
 uint8 FRAME_MISSION = 2
 uint8 FRAME_GLOBAL_REL_ALT = 3
 uint8 FRAME_LOCAL_ENU = 4
-uint8 FRAME_GLOBAL_INT = 5
-uint8 FRAME_GLOBAL_RELATIVE_ALT_INT = 6
+uint8 FRAME_GLOBAL_int = 5
+uint8 FRAME_GLOBAL_RELATIVE_ALT_int = 6
 uint8 FRAME_LOCAL_OFFSET_NED = 7
 uint8 FRAME_BODY_NED = 8
 uint8 FRAME_BODY_OFFSET_NED = 9
 uint8 FRAME_GLOBAL_TERRAIN_ALT = 10
-uint8 FRAME_GLOBAL_TERRAIN_ALT_INT = 11
+uint8 FRAME_GLOBAL_TERRAIN_ALT_int = 11
 uint8 FRAME_BODY_FRD = 12
 uint8 FRAME_RESERVED_13 = 13
 uint8 FRAME_RESERVED_14 = 14
@@ -217,13 +216,13 @@ float64 z_alt
   static const int FRAME_MISSION = 2;
   static const int FRAME_GLOBAL_REL_ALT = 3;
   static const int FRAME_LOCAL_ENU = 4;
-  static const int FRAME_GLOBAL_INT = 5;
-  static const int FRAME_GLOBAL_RELATIVE_ALT_INT = 6;
+  static const int FRAME_GLOBAL_int = 5;
+  static const int FRAME_GLOBAL_RELATIVE_ALT_int = 6;
   static const int FRAME_LOCAL_OFFSET_NED = 7;
   static const int FRAME_BODY_NED = 8;
   static const int FRAME_BODY_OFFSET_NED = 9;
   static const int FRAME_GLOBAL_TERRAIN_ALT = 10;
-  static const int FRAME_GLOBAL_TERRAIN_ALT_INT = 11;
+  static const int FRAME_GLOBAL_TERRAIN_ALT_int = 11;
   static const int FRAME_BODY_FRD = 12;
   static const int FRAME_RESERVED_13 = 13;
   static const int FRAME_RESERVED_14 = 14;
@@ -234,6 +233,4 @@ float64 z_alt
   static const int FRAME_RESERVED_19 = 19;
   static const int FRAME_LOCAL_FRD = 20;
   static const int FRAME_LOCAL_FLU = 21;
-
 }
-

@@ -4,14 +4,12 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
 import 'package:dartros/msg_utils.dart';
 
 //-----------------------------------------------------------
-
 
 //-----------------------------------------------------------
 
@@ -21,21 +19,21 @@ class FileRenameRequest extends RosMessage<FileRenameRequest> {
   String new_path;
 
   static FileRenameRequest $prototype = FileRenameRequest();
-  FileRenameRequest({ 
+  FileRenameRequest({
     String old_path,
     String new_path,
-  }):
-  this.old_path = old_path ?? '',
-  this.new_path = new_path ?? '';
+  })  : this.old_path = old_path ?? '',
+        this.new_path = new_path ?? '';
 
   @override
-  FileRenameRequest call({ 
+  FileRenameRequest call({
     String old_path,
     String new_path,
-  }) => FileRenameRequest(
-  old_path: old_path,
-  new_path: new_path,
-  );
+  }) =>
+      FileRenameRequest(
+        old_path: old_path,
+        new_path: new_path,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type FileRenameRequest
@@ -88,7 +86,6 @@ string new_path
 
 ''';
   }
-
 }
 
 class FileRenameResponse extends RosMessage<FileRenameResponse> {
@@ -97,28 +94,28 @@ class FileRenameResponse extends RosMessage<FileRenameResponse> {
   int r_errno;
 
   static FileRenameResponse $prototype = FileRenameResponse();
-  FileRenameResponse({ 
+  FileRenameResponse({
     bool success,
     int r_errno,
-  }):
-  this.success = success ?? false,
-  this.r_errno = r_errno ?? 0;
+  })  : this.success = success ?? false,
+        this.r_errno = r_errno ?? 0;
 
   @override
-  FileRenameResponse call({ 
+  FileRenameResponse call({
     bool success,
     int r_errno,
-  }) => FileRenameResponse(
-  success: success,
-  r_errno: r_errno,
-  );
+  }) =>
+      FileRenameResponse(
+        success: success,
+        r_errno: r_errno,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type FileRenameResponse
     // Serialize message field [success]
     writer.writeUint8(success == false ? 0 : 1);
     // Serialize message field [r_errno]
-    writer.writeInt32(r_errno);
+    writer.writeint32(r_errno);
   }
 
   @override
@@ -128,7 +125,7 @@ class FileRenameResponse extends RosMessage<FileRenameResponse> {
     // Deserialize message field [success]
     data.success = reader.readUint8() != 0;
     // Deserialize message field [r_errno]
-    data.r_errno = reader.readInt32();
+    data.r_errno = reader.readint32();
     return data;
   }
 
@@ -157,10 +154,10 @@ int32 r_errno
 
 ''';
   }
-
 }
 
-class FileRename extends RosServiceMessage<FileRenameRequest, FileRenameResponse> {
+class FileRename
+    extends RosServiceMessage<FileRenameRequest, FileRenameResponse> {
   static final $prototype = FileRename();
   @override
   FileRenameRequest get request => FileRenameRequest.$prototype;

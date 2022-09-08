@@ -4,14 +4,12 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
 import 'package:dartros/msg_utils.dart';
 
 //-----------------------------------------------------------
-
 
 //-----------------------------------------------------------
 
@@ -59,7 +57,6 @@ class WaypointPullRequest extends RosMessage<WaypointPullRequest> {
 
 ''';
   }
-
 }
 
 class WaypointPullResponse extends RosMessage<WaypointPullResponse> {
@@ -68,21 +65,21 @@ class WaypointPullResponse extends RosMessage<WaypointPullResponse> {
   int wp_received;
 
   static WaypointPullResponse $prototype = WaypointPullResponse();
-  WaypointPullResponse({ 
+  WaypointPullResponse({
     bool success,
     int wp_received,
-  }):
-  this.success = success ?? false,
-  this.wp_received = wp_received ?? 0;
+  })  : this.success = success ?? false,
+        this.wp_received = wp_received ?? 0;
 
   @override
-  WaypointPullResponse call({ 
+  WaypointPullResponse call({
     bool success,
     int wp_received,
-  }) => WaypointPullResponse(
-  success: success,
-  wp_received: wp_received,
-  );
+  }) =>
+      WaypointPullResponse(
+        success: success,
+        wp_received: wp_received,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type WaypointPullResponse
@@ -128,10 +125,10 @@ uint32 wp_received
 
 ''';
   }
-
 }
 
-class WaypointPull extends RosServiceMessage<WaypointPullRequest, WaypointPullResponse> {
+class WaypointPull
+    extends RosServiceMessage<WaypointPullRequest, WaypointPullResponse> {
   static final $prototype = WaypointPull();
   @override
   WaypointPullRequest get request => WaypointPullRequest.$prototype;

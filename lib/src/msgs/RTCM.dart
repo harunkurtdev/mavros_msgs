@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -19,28 +18,29 @@ class RTCM extends RosMessage<RTCM> {
   List<int> data;
 
   static RTCM $prototype = RTCM();
-  RTCM({ 
+  RTCM({
     Header header,
     List<int> data,
-  }):
-  this.header = header ?? Header(),
-  this.data = data ?? [];
+  })  : this.header = header ?? Header(),
+        this.data = data ?? [];
 
   @override
-  RTCM call({ 
+  RTCM call({
     Header header,
     List<int> data,
-  }) => RTCM(
-  header: header,
-  data: data,
-  );
+  }) =>
+      RTCM(
+        header: header,
+        data: data,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type RTCM
     // Serialize message field [header]
     header.serialize(writer);
     // Serialize message field [data]
-    writer.writeArray<int>(data, (val) => writer.writeUint8(val), specArrayLen: null);
+    writer.writeArray<int>(data, (val) => writer.writeUint8(val),
+        specArrayLen: null);
   }
 
   @override
@@ -101,6 +101,4 @@ string frame_id
 
 ''';
   }
-
 }
-

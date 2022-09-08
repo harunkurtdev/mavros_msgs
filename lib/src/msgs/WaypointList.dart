@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -19,21 +18,21 @@ class WaypointList extends RosMessage<WaypointList> {
   List<Waypoint> waypoints;
 
   static WaypointList $prototype = WaypointList();
-  WaypointList({ 
+  WaypointList({
     int current_seq,
     List<Waypoint> waypoints,
-  }):
-  this.current_seq = current_seq ?? 0,
-  this.waypoints = waypoints ?? [];
+  })  : this.current_seq = current_seq ?? 0,
+        this.waypoints = waypoints ?? [];
 
   @override
-  WaypointList call({ 
+  WaypointList call({
     int current_seq,
     List<Waypoint> waypoints,
-  }) => WaypointList(
-  current_seq: current_seq,
-  waypoints: waypoints,
-  );
+  }) =>
+      WaypointList(
+        current_seq: current_seq,
+        waypoints: waypoints,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type WaypointList
@@ -56,8 +55,9 @@ class WaypointList extends RosMessage<WaypointList> {
     // Deserialize message field [waypoints]
     {
       // Deserialize array length for message field [waypoints]
-      final len = reader.readInt32();
-      data.waypoints = List.generate(len, (_) => Waypoint.$prototype.deserialize(reader));
+      final len = reader.readint32();
+      data.waypoints =
+          List.generate(len, (_) => Waypoint.$prototype.deserialize(reader));
     }
     return data;
   }
@@ -109,13 +109,13 @@ uint8 FRAME_LOCAL_NED = 1
 uint8 FRAME_MISSION = 2
 uint8 FRAME_GLOBAL_REL_ALT = 3
 uint8 FRAME_LOCAL_ENU = 4
-uint8 FRAME_GLOBAL_INT = 5
-uint8 FRAME_GLOBAL_RELATIVE_ALT_INT = 6
+uint8 FRAME_GLOBAL_int = 5
+uint8 FRAME_GLOBAL_RELATIVE_ALT_int = 6
 uint8 FRAME_LOCAL_OFFSET_NED = 7
 uint8 FRAME_BODY_NED = 8
 uint8 FRAME_BODY_OFFSET_NED = 9
 uint8 FRAME_GLOBAL_TERRAIN_ALT = 10
-uint8 FRAME_GLOBAL_TERRAIN_ALT_INT = 11
+uint8 FRAME_GLOBAL_TERRAIN_ALT_int = 11
 uint8 FRAME_BODY_FRD = 12
 uint8 FRAME_RESERVED_13 = 13
 uint8 FRAME_RESERVED_14 = 14
@@ -143,6 +143,4 @@ float64 z_alt
 
 ''';
   }
-
 }
-

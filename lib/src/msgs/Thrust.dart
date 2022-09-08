@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -19,21 +18,21 @@ class Thrust extends RosMessage<Thrust> {
   double thrust;
 
   static Thrust $prototype = Thrust();
-  Thrust({ 
+  Thrust({
     Header header,
     double thrust,
-  }):
-  this.header = header ?? Header(),
-  this.thrust = thrust ?? 0.0;
+  })  : this.header = header ?? Header(),
+        this.thrust = thrust ?? 0.0;
 
   @override
-  Thrust call({ 
+  Thrust call({
     Header header,
     double thrust,
-  }) => Thrust(
-  header: header,
-  thrust: thrust,
-  );
+  }) =>
+      Thrust(
+        header: header,
+        thrust: thrust,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type Thrust
@@ -99,6 +98,4 @@ string frame_id
 
 ''';
   }
-
 }
-

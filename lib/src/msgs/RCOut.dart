@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -19,28 +18,29 @@ class RCOut extends RosMessage<RCOut> {
   List<int> channels;
 
   static RCOut $prototype = RCOut();
-  RCOut({ 
+  RCOut({
     Header header,
     List<int> channels,
-  }):
-  this.header = header ?? Header(),
-  this.channels = channels ?? [];
+  })  : this.header = header ?? Header(),
+        this.channels = channels ?? [];
 
   @override
-  RCOut call({ 
+  RCOut call({
     Header header,
     List<int> channels,
-  }) => RCOut(
-  header: header,
-  channels: channels,
-  );
+  }) =>
+      RCOut(
+        header: header,
+        channels: channels,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type RCOut
     // Serialize message field [header]
     header.serialize(writer);
     // Serialize message field [channels]
-    writer.writeArray<int>(channels, (val) => writer.writeUint16(val), specArrayLen: null);
+    writer.writeArray<int>(channels, (val) => writer.writeUint16(val),
+        specArrayLen: null);
   }
 
   @override
@@ -50,7 +50,8 @@ class RCOut extends RosMessage<RCOut> {
     // Deserialize message field [header]
     data.header = Header.$prototype.deserialize(reader);
     // Deserialize message field [channels]
-    data.channels = reader.readArray<int>(() => reader.readUint16(), arrayLen: null);
+    data.channels =
+        reader.readArray<int>(() => reader.readUint16(), arrayLen: null);
     return data;
   }
 
@@ -99,6 +100,4 @@ string frame_id
 
 ''';
   }
-
 }
-

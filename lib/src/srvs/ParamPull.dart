@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -12,24 +11,23 @@ import 'package:dartros/msg_utils.dart';
 
 //-----------------------------------------------------------
 
-
 //-----------------------------------------------------------
 
 class ParamPullRequest extends RosMessage<ParamPullRequest> {
   bool force_pull;
 
   static ParamPullRequest $prototype = ParamPullRequest();
-  ParamPullRequest({ 
+  ParamPullRequest({
     bool force_pull,
-  }):
-  this.force_pull = force_pull ?? false;
+  }) : this.force_pull = force_pull ?? false;
 
   @override
-  ParamPullRequest call({ 
+  ParamPullRequest call({
     bool force_pull,
-  }) => ParamPullRequest(
-  force_pull: force_pull,
-  );
+  }) =>
+      ParamPullRequest(
+        force_pull: force_pull,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type ParamPullRequest
@@ -73,7 +71,6 @@ bool force_pull
 
 ''';
   }
-
 }
 
 class ParamPullResponse extends RosMessage<ParamPullResponse> {
@@ -82,21 +79,21 @@ class ParamPullResponse extends RosMessage<ParamPullResponse> {
   int param_received;
 
   static ParamPullResponse $prototype = ParamPullResponse();
-  ParamPullResponse({ 
+  ParamPullResponse({
     bool success,
     int param_received,
-  }):
-  this.success = success ?? false,
-  this.param_received = param_received ?? 0;
+  })  : this.success = success ?? false,
+        this.param_received = param_received ?? 0;
 
   @override
-  ParamPullResponse call({ 
+  ParamPullResponse call({
     bool success,
     int param_received,
-  }) => ParamPullResponse(
-  success: success,
-  param_received: param_received,
-  );
+  }) =>
+      ParamPullResponse(
+        success: success,
+        param_received: param_received,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type ParamPullResponse
@@ -142,7 +139,6 @@ uint32 param_received
 
 ''';
   }
-
 }
 
 class ParamPull extends RosServiceMessage<ParamPullRequest, ParamPullResponse> {

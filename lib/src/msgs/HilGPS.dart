@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -38,7 +37,7 @@ class HilGPS extends RosMessage<HilGPS> {
   int satellites_visible;
 
   static HilGPS $prototype = HilGPS();
-  HilGPS({ 
+  HilGPS({
     Header header,
     int fix_type,
     GeoPoint geo,
@@ -50,21 +49,20 @@ class HilGPS extends RosMessage<HilGPS> {
     int vd,
     int cog,
     int satellites_visible,
-  }):
-  this.header = header ?? Header(),
-  this.fix_type = fix_type ?? 0,
-  this.geo = geo ?? GeoPoint(),
-  this.eph = eph ?? 0,
-  this.epv = epv ?? 0,
-  this.vel = vel ?? 0,
-  this.vn = vn ?? 0,
-  this.ve = ve ?? 0,
-  this.vd = vd ?? 0,
-  this.cog = cog ?? 0,
-  this.satellites_visible = satellites_visible ?? 0;
+  })  : this.header = header ?? Header(),
+        this.fix_type = fix_type ?? 0,
+        this.geo = geo ?? GeoPoint(),
+        this.eph = eph ?? 0,
+        this.epv = epv ?? 0,
+        this.vel = vel ?? 0,
+        this.vn = vn ?? 0,
+        this.ve = ve ?? 0,
+        this.vd = vd ?? 0,
+        this.cog = cog ?? 0,
+        this.satellites_visible = satellites_visible ?? 0;
 
   @override
-  HilGPS call({ 
+  HilGPS call({
     Header header,
     int fix_type,
     GeoPoint geo,
@@ -76,19 +74,20 @@ class HilGPS extends RosMessage<HilGPS> {
     int vd,
     int cog,
     int satellites_visible,
-  }) => HilGPS(
-  header: header,
-  fix_type: fix_type,
-  geo: geo,
-  eph: eph,
-  epv: epv,
-  vel: vel,
-  vn: vn,
-  ve: ve,
-  vd: vd,
-  cog: cog,
-  satellites_visible: satellites_visible,
-  );
+  }) =>
+      HilGPS(
+        header: header,
+        fix_type: fix_type,
+        geo: geo,
+        eph: eph,
+        epv: epv,
+        vel: vel,
+        vn: vn,
+        ve: ve,
+        vd: vd,
+        cog: cog,
+        satellites_visible: satellites_visible,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type HilGPS
@@ -105,11 +104,11 @@ class HilGPS extends RosMessage<HilGPS> {
     // Serialize message field [vel]
     writer.writeUint16(vel);
     // Serialize message field [vn]
-    writer.writeInt16(vn);
+    writer.writeint16(vn);
     // Serialize message field [ve]
-    writer.writeInt16(ve);
+    writer.writeint16(ve);
     // Serialize message field [vd]
-    writer.writeInt16(vd);
+    writer.writeint16(vd);
     // Serialize message field [cog]
     writer.writeUint16(cog);
     // Serialize message field [satellites_visible]
@@ -133,11 +132,11 @@ class HilGPS extends RosMessage<HilGPS> {
     // Deserialize message field [vel]
     data.vel = reader.readUint16();
     // Deserialize message field [vn]
-    data.vn = reader.readInt16();
+    data.vn = reader.readint16();
     // Deserialize message field [ve]
-    data.ve = reader.readInt16();
+    data.ve = reader.readint16();
     // Deserialize message field [vd]
-    data.vd = reader.readInt16();
+    data.vd = reader.readint16();
     // Deserialize message field [cog]
     data.cog = reader.readUint16();
     // Deserialize message field [satellites_visible]
@@ -218,6 +217,4 @@ float64 altitude
 
 ''';
   }
-
 }
-

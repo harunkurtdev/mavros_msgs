@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -18,21 +17,21 @@ class PlayTuneV2 extends RosMessage<PlayTuneV2> {
   String tune;
 
   static PlayTuneV2 $prototype = PlayTuneV2();
-  PlayTuneV2({ 
+  PlayTuneV2({
     int format,
     String tune,
-  }):
-  this.format = format ?? 0,
-  this.tune = tune ?? '';
+  })  : this.format = format ?? 0,
+        this.tune = tune ?? '';
 
   @override
-  PlayTuneV2 call({ 
+  PlayTuneV2 call({
     int format,
     String tune,
-  }) => PlayTuneV2(
-  format: format,
-  tune: tune,
-  );
+  }) =>
+      PlayTuneV2(
+        format: format,
+        tune: tune,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type PlayTuneV2
@@ -91,6 +90,4 @@ string tune
 // Constants for message
   static const int QBASIC1_1 = 1;
   static const int MML_MODERN = 2;
-
 }
-

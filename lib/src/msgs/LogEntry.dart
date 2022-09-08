@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -27,37 +26,37 @@ class LogEntry extends RosMessage<LogEntry> {
   int size;
 
   static LogEntry $prototype = LogEntry();
-  LogEntry({ 
+  LogEntry({
     Header header,
     int id,
     int num_logs,
     int last_log_num,
     RosTime time_utc,
     int size,
-  }):
-  this.header = header ?? Header(),
-  this.id = id ?? 0,
-  this.num_logs = num_logs ?? 0,
-  this.last_log_num = last_log_num ?? 0,
-  this.time_utc = time_utc ?? RosTime(secs: 0, nsecs: 0),
-  this.size = size ?? 0;
+  })  : this.header = header ?? Header(),
+        this.id = id ?? 0,
+        this.num_logs = num_logs ?? 0,
+        this.last_log_num = last_log_num ?? 0,
+        this.time_utc = time_utc ?? RosTime(secs: 0, nsecs: 0),
+        this.size = size ?? 0;
 
   @override
-  LogEntry call({ 
+  LogEntry call({
     Header header,
     int id,
     int num_logs,
     int last_log_num,
     RosTime time_utc,
     int size,
-  }) => LogEntry(
-  header: header,
-  id: id,
-  num_logs: num_logs,
-  last_log_num: last_log_num,
-  time_utc: time_utc,
-  size: size,
-  );
+  }) =>
+      LogEntry(
+        header: header,
+        id: id,
+        num_logs: num_logs,
+        last_log_num: last_log_num,
+        time_utc: time_utc,
+        size: size,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type LogEntry
@@ -149,6 +148,4 @@ string frame_id
 
 ''';
   }
-
 }
-

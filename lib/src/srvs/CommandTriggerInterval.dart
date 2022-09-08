@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.srv)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -12,33 +11,34 @@ import 'package:dartros/msg_utils.dart';
 
 //-----------------------------------------------------------
 
-
 //-----------------------------------------------------------
 
-class CommandTriggerIntervalRequest extends RosMessage<CommandTriggerIntervalRequest> {
+class CommandTriggerintervalRequest
+    extends RosMessage<CommandTriggerintervalRequest> {
   double cycle_time;
 
   double integration_time;
 
-  static CommandTriggerIntervalRequest $prototype = CommandTriggerIntervalRequest();
-  CommandTriggerIntervalRequest({ 
+  static CommandTriggerintervalRequest $prototype =
+      CommandTriggerintervalRequest();
+  CommandTriggerintervalRequest({
     double cycle_time,
     double integration_time,
-  }):
-  this.cycle_time = cycle_time ?? 0.0,
-  this.integration_time = integration_time ?? 0.0;
+  })  : this.cycle_time = cycle_time ?? 0.0,
+        this.integration_time = integration_time ?? 0.0;
 
   @override
-  CommandTriggerIntervalRequest call({ 
+  CommandTriggerintervalRequest call({
     double cycle_time,
     double integration_time,
-  }) => CommandTriggerIntervalRequest(
-  cycle_time: cycle_time,
-  integration_time: integration_time,
-  );
+  }) =>
+      CommandTriggerintervalRequest(
+        cycle_time: cycle_time,
+        integration_time: integration_time,
+      );
 
   void serialize(ByteDataWriter writer) {
-    // Serializes a message object of type CommandTriggerIntervalRequest
+    // Serializes a message object of type CommandTriggerintervalRequest
     // Serialize message field [cycle_time]
     writer.writeFloat32(cycle_time);
     // Serialize message field [integration_time]
@@ -46,9 +46,9 @@ class CommandTriggerIntervalRequest extends RosMessage<CommandTriggerIntervalReq
   }
 
   @override
-  CommandTriggerIntervalRequest deserialize(ByteDataReader reader) {
-    //deserializes a message object of type CommandTriggerIntervalRequest
-    final data = CommandTriggerIntervalRequest();
+  CommandTriggerintervalRequest deserialize(ByteDataReader reader) {
+    //deserializes a message object of type CommandTriggerintervalRequest
+    final data = CommandTriggerintervalRequest();
     // Deserialize message field [cycle_time]
     data.cycle_time = reader.readFloat32();
     // Deserialize message field [integration_time]
@@ -63,7 +63,7 @@ class CommandTriggerIntervalRequest extends RosMessage<CommandTriggerIntervalReq
   @override
   String get fullType {
     // Returns string type for a service object
-    return 'mavros_msgs/CommandTriggerIntervalRequest';
+    return 'mavros_msgs/CommandTriggerintervalRequest';
   }
 
   @override
@@ -82,33 +82,34 @@ float32   integration_time	# Camera shutter integration_time - set to 0 to ignor
 
 ''';
   }
-
 }
 
-class CommandTriggerIntervalResponse extends RosMessage<CommandTriggerIntervalResponse> {
+class CommandTriggerintervalResponse
+    extends RosMessage<CommandTriggerintervalResponse> {
   bool success;
 
   int result;
 
-  static CommandTriggerIntervalResponse $prototype = CommandTriggerIntervalResponse();
-  CommandTriggerIntervalResponse({ 
+  static CommandTriggerintervalResponse $prototype =
+      CommandTriggerintervalResponse();
+  CommandTriggerintervalResponse({
     bool success,
     int result,
-  }):
-  this.success = success ?? false,
-  this.result = result ?? 0;
+  })  : this.success = success ?? false,
+        this.result = result ?? 0;
 
   @override
-  CommandTriggerIntervalResponse call({ 
+  CommandTriggerintervalResponse call({
     bool success,
     int result,
-  }) => CommandTriggerIntervalResponse(
-  success: success,
-  result: result,
-  );
+  }) =>
+      CommandTriggerintervalResponse(
+        success: success,
+        result: result,
+      );
 
   void serialize(ByteDataWriter writer) {
-    // Serializes a message object of type CommandTriggerIntervalResponse
+    // Serializes a message object of type CommandTriggerintervalResponse
     // Serialize message field [success]
     writer.writeUint8(success == false ? 0 : 1);
     // Serialize message field [result]
@@ -116,9 +117,9 @@ class CommandTriggerIntervalResponse extends RosMessage<CommandTriggerIntervalRe
   }
 
   @override
-  CommandTriggerIntervalResponse deserialize(ByteDataReader reader) {
-    //deserializes a message object of type CommandTriggerIntervalResponse
-    final data = CommandTriggerIntervalResponse();
+  CommandTriggerintervalResponse deserialize(ByteDataReader reader) {
+    //deserializes a message object of type CommandTriggerintervalResponse
+    final data = CommandTriggerintervalResponse();
     // Deserialize message field [success]
     data.success = reader.readUint8() != 0;
     // Deserialize message field [result]
@@ -133,7 +134,7 @@ class CommandTriggerIntervalResponse extends RosMessage<CommandTriggerIntervalRe
   @override
   String get fullType {
     // Returns string type for a service object
-    return 'mavros_msgs/CommandTriggerIntervalResponse';
+    return 'mavros_msgs/CommandTriggerintervalResponse';
   }
 
   @override
@@ -150,17 +151,19 @@ uint8 result
 
 ''';
   }
-
 }
 
-class CommandTriggerInterval extends RosServiceMessage<CommandTriggerIntervalRequest, CommandTriggerIntervalResponse> {
-  static final $prototype = CommandTriggerInterval();
+class CommandTriggerinterval extends RosServiceMessage<
+    CommandTriggerintervalRequest, CommandTriggerintervalResponse> {
+  static final $prototype = CommandTriggerinterval();
   @override
-  CommandTriggerIntervalRequest get request => CommandTriggerIntervalRequest.$prototype;
+  CommandTriggerintervalRequest get request =>
+      CommandTriggerintervalRequest.$prototype;
   @override
-  CommandTriggerIntervalResponse get response => CommandTriggerIntervalResponse.$prototype;
+  CommandTriggerintervalResponse get response =>
+      CommandTriggerintervalResponse.$prototype;
   @override
   String get md5sum => 'b16f28a04389d5d47ddaa9e025e7383a';
   @override
-  String get fullType => 'mavros_msgs/CommandTriggerInterval';
+  String get fullType => 'mavros_msgs/CommandTriggerinterval';
 }

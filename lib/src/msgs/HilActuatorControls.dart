@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -23,29 +22,29 @@ class HilActuatorControls extends RosMessage<HilActuatorControls> {
   int flags;
 
   static HilActuatorControls $prototype = HilActuatorControls();
-  HilActuatorControls({ 
+  HilActuatorControls({
     Header header,
     List<double> controls,
     int mode,
     int flags,
-  }):
-  this.header = header ?? Header(),
-  this.controls = controls ?? List.generate(16, (_) => 0),
-  this.mode = mode ?? 0,
-  this.flags = flags ?? 0;
+  })  : this.header = header ?? Header(),
+        this.controls = controls ?? List.generate(16, (_) => 0),
+        this.mode = mode ?? 0,
+        this.flags = flags ?? 0;
 
   @override
-  HilActuatorControls call({ 
+  HilActuatorControls call({
     Header header,
     List<double> controls,
     int mode,
     int flags,
-  }) => HilActuatorControls(
-  header: header,
-  controls: controls,
-  mode: mode,
-  flags: flags,
-  );
+  }) =>
+      HilActuatorControls(
+        header: header,
+        controls: controls,
+        mode: mode,
+        flags: flags,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type HilActuatorControls
@@ -53,10 +52,12 @@ class HilActuatorControls extends RosMessage<HilActuatorControls> {
     header.serialize(writer);
     // Check that the constant length array field [controls] has the right length
     if (controls.length != 16) {
-      throw Exception('Unable to serialize array field controls - length must be 16');
+      throw Exception(
+          'Unable to serialize array field controls - length must be 16');
     }
     // Serialize message field [controls]
-    writer.writeArray<double>(controls, (val) => writer.writeFloat32(val), specArrayLen: 16);
+    writer.writeArray<double>(controls, (val) => writer.writeFloat32(val),
+        specArrayLen: 16);
     // Serialize message field [mode]
     writer.writeUint8(mode);
     // Serialize message field [flags]
@@ -70,7 +71,8 @@ class HilActuatorControls extends RosMessage<HilActuatorControls> {
     // Deserialize message field [header]
     data.header = Header.$prototype.deserialize(reader);
     // Deserialize message field [controls]
-    data.controls = reader.readArray<double>(() => reader.readFloat32(), arrayLen: 16);
+    data.controls =
+        reader.readArray<double>(() => reader.readFloat32(), arrayLen: 16);
     // Deserialize message field [mode]
     data.mode = reader.readUint8();
     // Deserialize message field [flags]
@@ -128,6 +130,4 @@ string frame_id
 
 ''';
   }
-
 }
-

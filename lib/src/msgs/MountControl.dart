@@ -4,7 +4,6 @@
 
 // (in-package mavros_msgs.msg)
 
-
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
@@ -31,7 +30,7 @@ class MountControl extends RosMessage<MountControl> {
   double longitude;
 
   static MountControl $prototype = MountControl();
-  MountControl({ 
+  MountControl({
     Header header,
     int mode,
     double pitch,
@@ -40,18 +39,17 @@ class MountControl extends RosMessage<MountControl> {
     double altitude,
     double latitude,
     double longitude,
-  }):
-  this.header = header ?? Header(),
-  this.mode = mode ?? 0,
-  this.pitch = pitch ?? 0.0,
-  this.roll = roll ?? 0.0,
-  this.yaw = yaw ?? 0.0,
-  this.altitude = altitude ?? 0.0,
-  this.latitude = latitude ?? 0.0,
-  this.longitude = longitude ?? 0.0;
+  })  : this.header = header ?? Header(),
+        this.mode = mode ?? 0,
+        this.pitch = pitch ?? 0.0,
+        this.roll = roll ?? 0.0,
+        this.yaw = yaw ?? 0.0,
+        this.altitude = altitude ?? 0.0,
+        this.latitude = latitude ?? 0.0,
+        this.longitude = longitude ?? 0.0;
 
   @override
-  MountControl call({ 
+  MountControl call({
     Header header,
     int mode,
     double pitch,
@@ -60,16 +58,17 @@ class MountControl extends RosMessage<MountControl> {
     double altitude,
     double latitude,
     double longitude,
-  }) => MountControl(
-  header: header,
-  mode: mode,
-  pitch: pitch,
-  roll: roll,
-  yaw: yaw,
-  altitude: altitude,
-  latitude: latitude,
-  longitude: longitude,
-  );
+  }) =>
+      MountControl(
+        header: header,
+        mode: mode,
+        pitch: pitch,
+        roll: roll,
+        yaw: yaw,
+        altitude: altitude,
+        latitude: latitude,
+        longitude: longitude,
+      );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type MountControl
@@ -145,7 +144,7 @@ uint8 MAV_MOUNT_MODE_RETRACT = 0
 uint8 MAV_MOUNT_MODE_NEUTRAL = 1
 uint8 MAV_MOUNT_MODE_MAVLINK_TARGETING = 2
 uint8 MAV_MOUNT_MODE_RC_TARGETING = 3
-uint8 MAV_MOUNT_MODE_GPS_POINT = 4
+uint8 MAV_MOUNT_MODE_GPS_POint = 4
 
 float32 pitch # pitch degrees or degrees/second depending on mount mode.
 float32 roll # roll degrees or degrees/second depending on mount mode.
@@ -177,7 +176,5 @@ string frame_id
   static const int MAV_MOUNT_MODE_NEUTRAL = 1;
   static const int MAV_MOUNT_MODE_MAVLINK_TARGETING = 2;
   static const int MAV_MOUNT_MODE_RC_TARGETING = 3;
-  static const int MAV_MOUNT_MODE_GPS_POINT = 4;
-
+  static const int MAV_MOUNT_MODE_GPS_POint = 4;
 }
-

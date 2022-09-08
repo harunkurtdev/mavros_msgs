@@ -38,7 +38,7 @@ class CamIMUStamp extends RosMessage<CamIMUStamp> {
     // Serialize message field [frame_stamp]
     writer.writeTime(frame_stamp);
     // Serialize message field [frame_seq_id]
-    writer.writeInt32(frame_seq_id);
+    writer.writeint32(frame_seq_id);
   }
 
   @override
@@ -48,7 +48,7 @@ class CamIMUStamp extends RosMessage<CamIMUStamp> {
     // Deserialize message field [frame_stamp]
     data.frame_stamp = reader.readTime();
     // Deserialize message field [frame_seq_id]
-    data.frame_seq_id = reader.readInt32();
+    data.frame_seq_id = reader.readint32();
     return data;
   }
 
