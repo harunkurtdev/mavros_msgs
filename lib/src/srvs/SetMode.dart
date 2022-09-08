@@ -125,7 +125,7 @@ class SetModeResponse extends RosMessage<SetModeResponse> {
 
   @override
   SetModeResponse call({
-    bool? mode_sent,
+    bool mode_sent,
   }) =>
       SetModeResponse(
         mode_sent: mode_sent,
