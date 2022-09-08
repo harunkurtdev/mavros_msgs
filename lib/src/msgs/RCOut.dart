@@ -19,15 +19,15 @@ class RCOut extends RosMessage<RCOut> {
 
   static RCOut $prototype = RCOut();
   RCOut({
-    Header header,
-    List<int> channels,
+    Header? header,
+    List<int>? channels,
   })  : this.header = header ?? Header(),
         this.channels = channels ?? [];
 
   @override
   RCOut call({
-    Header header,
-    List<int> channels,
+    eader? header,
+    List<int>? channels,
   }) =>
       RCOut(
         header: header,

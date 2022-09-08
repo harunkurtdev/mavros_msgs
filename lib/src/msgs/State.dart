@@ -29,13 +29,13 @@ class State extends RosMessage<State> {
 
   static State $prototype = State();
   State({
-    Header header,
-    bool connected,
-    bool armed,
-    bool guided,
-    bool manual_input,
-    String mode,
-    int system_status,
+    Header? header,
+    bool? connected,
+    bool? armed,
+    bool? guided,
+    bool? manual_input,
+    String? mode,
+    int? system_status,
   })  : this.header = header ?? Header(),
         this.connected = connected ?? false,
         this.armed = armed ?? false,
@@ -46,13 +46,13 @@ class State extends RosMessage<State> {
 
   @override
   State call({
-    Header header,
-    bool connected,
-    bool armed,
-    bool guided,
-    bool manual_input,
-    String mode,
-    int system_status,
+    Header? header,
+    bool? connected,
+    bool? armed,
+    bool? guided,
+    bool? manual_input,
+    String? mode,
+    int? system_status,
   }) =>
       State(
         header: header,

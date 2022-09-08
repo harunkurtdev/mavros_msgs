@@ -16,12 +16,12 @@ class OverrideRCIn extends RosMessage<OverrideRCIn> {
 
   static OverrideRCIn $prototype = OverrideRCIn();
   OverrideRCIn({
-    List<int> channels,
+    List<int>? channels,
   }) : this.channels = channels ?? List.generate(18, (_) => 0);
 
   @override
   OverrideRCIn call({
-    List<int> channels,
+    List<int>? channels,
   }) =>
       OverrideRCIn(
         channels: channels,
