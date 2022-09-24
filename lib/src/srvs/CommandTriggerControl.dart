@@ -24,18 +24,18 @@ class CommandTriggerControlRequest
   static CommandTriggerControlRequest $prototype =
       CommandTriggerControlRequest();
   CommandTriggerControlRequest({
-    bool trigger_enable,
-    bool sequence_reset,
-    bool trigger_pause,
+    bool? trigger_enable,
+    bool? sequence_reset,
+    bool? trigger_pause,
   })  : this.trigger_enable = trigger_enable ?? false,
         this.sequence_reset = sequence_reset ?? false,
         this.trigger_pause = trigger_pause ?? false;
 
   @override
   CommandTriggerControlRequest call({
-    bool trigger_enable,
-    bool sequence_reset,
-    bool trigger_pause,
+    bool? trigger_enable,
+    bool? sequence_reset,
+    bool? trigger_pause,
   }) =>
       CommandTriggerControlRequest(
         trigger_enable: trigger_enable,
@@ -104,15 +104,15 @@ class CommandTriggerControlResponse
   static CommandTriggerControlResponse $prototype =
       CommandTriggerControlResponse();
   CommandTriggerControlResponse({
-    bool success,
-    int result,
+    bool? success,
+    int? result,
   })  : this.success = success ?? false,
         this.result = result ?? 0;
 
   @override
   CommandTriggerControlResponse call({
-    bool success,
-    int result,
+    bool? success,
+    int? result,
   }) =>
       CommandTriggerControlResponse(
         success: success,

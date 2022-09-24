@@ -36,16 +36,16 @@ class CommandLongRequest extends RosMessage<CommandLongRequest> {
 
   static CommandLongRequest $prototype = CommandLongRequest();
   CommandLongRequest({
-    bool broadcast,
-    int command,
-    int confirmation,
-    double param1,
-    double param2,
-    double param3,
-    double param4,
-    double param5,
-    double param6,
-    double param7,
+    bool? broadcast,
+    int? command,
+    int? confirmation,
+    double? param1,
+    double? param2,
+    double? param3,
+    double? param4,
+    double? param5,
+    double? param6,
+    double? param7,
   })  : this.broadcast = broadcast ?? false,
         this.command = command ?? 0,
         this.confirmation = confirmation ?? 0,
@@ -59,16 +59,16 @@ class CommandLongRequest extends RosMessage<CommandLongRequest> {
 
   @override
   CommandLongRequest call({
-    bool broadcast,
-    int command,
-    int confirmation,
-    double param1,
-    double param2,
-    double param3,
-    double param4,
-    double param5,
-    double param6,
-    double param7,
+    bool? broadcast,
+    int? command,
+    int? confirmation,
+    double? param1,
+    double? param2,
+    double? param3,
+    double? param4,
+    double? param5,
+    double? param6,
+    double? param7,
   }) =>
       CommandLongRequest(
         broadcast: broadcast,
@@ -178,15 +178,15 @@ class CommandLongResponse extends RosMessage<CommandLongResponse> {
 
   static CommandLongResponse $prototype = CommandLongResponse();
   CommandLongResponse({
-    bool success,
-    int result,
+    bool? success,
+    int? result,
   })  : this.success = success ?? false,
         this.result = result ?? 0;
 
   @override
   CommandLongResponse call({
-    bool success,
-    int result,
+    bool? success,
+    int? result,
   }) =>
       CommandLongResponse(
         success: success,

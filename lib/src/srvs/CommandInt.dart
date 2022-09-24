@@ -40,18 +40,18 @@ class CommandintRequest extends RosMessage<CommandintRequest> {
 
   static CommandintRequest $prototype = CommandintRequest();
   CommandintRequest({
-    bool broadcast,
-    int frame,
-    int command,
-    int current,
-    int autocontinue,
-    double param1,
-    double param2,
-    double param3,
-    double param4,
-    int x,
-    int y,
-    double z,
+    bool? broadcast,
+    int? frame,
+    int? command,
+    int? current,
+    int? autocontinue,
+    double? param1,
+    double? param2,
+    double? param3,
+    double? param4,
+    int? x,
+    int? y,
+    double? z,
   })  : this.broadcast = broadcast ?? false,
         this.frame = frame ?? 0,
         this.command = command ?? 0,
@@ -67,18 +67,18 @@ class CommandintRequest extends RosMessage<CommandintRequest> {
 
   @override
   CommandintRequest call({
-    bool broadcast,
-    int frame,
-    int command,
-    int current,
-    int autocontinue,
-    double param1,
-    double param2,
-    double param3,
-    double param4,
-    int x,
-    int y,
-    double z,
+    bool? broadcast,
+    int? frame,
+    int? command,
+    int? current,
+    int? autocontinue,
+    double? param1,
+    double? param2,
+    double? param3,
+    double? param4,
+    int? x,
+    int? y,
+    double? z,
   }) =>
       CommandintRequest(
         broadcast: broadcast,
@@ -198,12 +198,12 @@ class CommandintResponse extends RosMessage<CommandintResponse> {
 
   static CommandintResponse $prototype = CommandintResponse();
   CommandintResponse({
-    bool success,
+    bool? success,
   }) : this.success = success ?? false;
 
   @override
   CommandintResponse call({
-    bool success,
+    bool? success,
   }) =>
       CommandintResponse(
         success: success,
