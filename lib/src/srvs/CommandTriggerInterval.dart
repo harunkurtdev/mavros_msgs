@@ -22,15 +22,15 @@ class CommandTriggerintervalRequest
   static CommandTriggerintervalRequest $prototype =
       CommandTriggerintervalRequest();
   CommandTriggerintervalRequest({
-    double cycle_time,
-    double integration_time,
+    double? cycle_time,
+    double? integration_time,
   })  : this.cycle_time = cycle_time ?? 0.0,
         this.integration_time = integration_time ?? 0.0;
 
   @override
   CommandTriggerintervalRequest call({
-    double cycle_time,
-    double integration_time,
+    double? cycle_time,
+    double? integration_time,
   }) =>
       CommandTriggerintervalRequest(
         cycle_time: cycle_time,
@@ -93,15 +93,15 @@ class CommandTriggerintervalResponse
   static CommandTriggerintervalResponse $prototype =
       CommandTriggerintervalResponse();
   CommandTriggerintervalResponse({
-    bool success,
-    int result,
+    bool? success,
+    int? result,
   })  : this.success = success ?? false,
         this.result = result ?? 0;
 
   @override
   CommandTriggerintervalResponse call({
-    bool success,
-    int result,
+    bool? success,
+    int? result,
   }) =>
       CommandTriggerintervalResponse(
         success: success,
