@@ -32,7 +32,7 @@ class ActuatorControl extends RosMessage<ActuatorControl> {
   ActuatorControl call({
     Header? header,
     int? group_mix,
-    List<double>? controls,
+    List<double?> controls,
   }) =>
       ActuatorControl(
         header: header,
