@@ -16,5 +16,5 @@ dependencies:
   dartros: ^0.0.4+3
   geometry_msgs: ^0.0.3
   std_msgs: ^0.0.3
-  geographic_msgs:
-    path: ../geographic_msgs
+  # geographic_msgs:
+    # path: ../geographic_msgs
