@@ -137,11 +137,11 @@ class GPSRAW extends RosMessage<GPSRAW> {
     // Serialize message field [fix_type]
     writer.writeUint8(fix_type);
     // Serialize message field [lat]
-    writer.writeint32(lat);
+    writer.writeInt32(lat);
     // Serialize message field [lon]
-    writer.writeint32(lon);
+    writer.writeInt32(lon);
     // Serialize message field [alt]
-    writer.writeint32(alt);
+    writer.writeInt32(alt);
     // Serialize message field [eph]
     writer.writeUint16(eph);
     // Serialize message field [epv]
@@ -153,7 +153,7 @@ class GPSRAW extends RosMessage<GPSRAW> {
     // Serialize message field [satellites_visible]
     writer.writeUint8(satellites_visible);
     // Serialize message field [alt_ellipsoid]
-    writer.writeint32(alt_ellipsoid);
+    writer.writeInt32(alt_ellipsoid);
     // Serialize message field [h_acc]
     writer.writeUint32(h_acc);
     // Serialize message field [v_acc]
@@ -161,7 +161,7 @@ class GPSRAW extends RosMessage<GPSRAW> {
     // Serialize message field [vel_acc]
     writer.writeUint32(vel_acc);
     // Serialize message field [hdg_acc]
-    writer.writeint32(hdg_acc);
+    writer.writeInt32(hdg_acc);
     // Serialize message field [yaw]
     writer.writeUint16(yaw);
     // Serialize message field [dgps_numch]
@@ -179,11 +179,11 @@ class GPSRAW extends RosMessage<GPSRAW> {
     // Deserialize message field [fix_type]
     data.fix_type = reader.readUint8();
     // Deserialize message field [lat]
-    data.lat = reader.readint32();
+    data.lat = reader.readInt32();
     // Deserialize message field [lon]
-    data.lon = reader.readint32();
+    data.lon = reader.readInt32();
     // Deserialize message field [alt]
-    data.alt = reader.readint32();
+    data.alt = reader.readInt32();
     // Deserialize message field [eph]
     data.eph = reader.readUint16();
     // Deserialize message field [epv]
@@ -195,7 +195,7 @@ class GPSRAW extends RosMessage<GPSRAW> {
     // Deserialize message field [satellites_visible]
     data.satellites_visible = reader.readUint8();
     // Deserialize message field [alt_ellipsoid]
-    data.alt_ellipsoid = reader.readint32();
+    data.alt_ellipsoid = reader.readInt32();
     // Deserialize message field [h_acc]
     data.h_acc = reader.readUint32();
     // Deserialize message field [v_acc]
@@ -203,7 +203,7 @@ class GPSRAW extends RosMessage<GPSRAW> {
     // Deserialize message field [vel_acc]
     data.vel_acc = reader.readUint32();
     // Deserialize message field [hdg_acc]
-    data.hdg_acc = reader.readint32();
+    data.hdg_acc = reader.readInt32();
     // Deserialize message field [yaw]
     data.yaw = reader.readUint16();
     // Deserialize message field [dgps_numch]

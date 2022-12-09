@@ -151,9 +151,9 @@ class GPSINPUT extends RosMessage<GPSINPUT> {
     // Serialize message field [time_week]
     writer.writeUint16(time_week);
     // Serialize message field [lat]
-    writer.writeint32(lat);
+    writer.writeInt32(lat);
     // Serialize message field [lon]
-    writer.writeint32(lon);
+    writer.writeInt32(lon);
     // Serialize message field [alt]
     writer.writeFloat32(alt);
     // Serialize message field [hdop]
@@ -195,9 +195,9 @@ class GPSINPUT extends RosMessage<GPSINPUT> {
     // Deserialize message field [time_week]
     data.time_week = reader.readUint16();
     // Deserialize message field [lat]
-    data.lat = reader.readint32();
+    data.lat = reader.readInt32();
     // Deserialize message field [lon]
-    data.lon = reader.readint32();
+    data.lon = reader.readInt32();
     // Deserialize message field [alt]
     data.alt = reader.readFloat32();
     // Deserialize message field [hdop]

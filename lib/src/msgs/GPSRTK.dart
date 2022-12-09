@@ -111,15 +111,15 @@ class GPSRTK extends RosMessage<GPSRTK> {
     // Serialize message field [nsats]
     writer.writeUint8(nsats);
     // Serialize message field [baseline_a]
-    writer.writeint32(baseline_a);
+    writer.writeInt32(baseline_a);
     // Serialize message field [baseline_b]
-    writer.writeint32(baseline_b);
+    writer.writeInt32(baseline_b);
     // Serialize message field [baseline_c]
-    writer.writeint32(baseline_c);
+    writer.writeInt32(baseline_c);
     // Serialize message field [accuracy]
     writer.writeUint32(accuracy);
     // Serialize message field [iar_num_hypotheses]
-    writer.writeint32(iar_num_hypotheses);
+    writer.writeInt32(iar_num_hypotheses);
   }
 
   @override
@@ -141,15 +141,15 @@ class GPSRTK extends RosMessage<GPSRTK> {
     // Deserialize message field [nsats]
     data.nsats = reader.readUint8();
     // Deserialize message field [baseline_a]
-    data.baseline_a = reader.readint32();
+    data.baseline_a = reader.readInt32();
     // Deserialize message field [baseline_b]
-    data.baseline_b = reader.readint32();
+    data.baseline_b = reader.readInt32();
     // Deserialize message field [baseline_c]
-    data.baseline_c = reader.readint32();
+    data.baseline_c = reader.readInt32();
     // Deserialize message field [accuracy]
     data.accuracy = reader.readUint32();
     // Deserialize message field [iar_num_hypotheses]
-    data.iar_num_hypotheses = reader.readint32();
+    data.iar_num_hypotheses = reader.readInt32();
     return data;
   }
 

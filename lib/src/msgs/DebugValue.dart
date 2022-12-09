@@ -7,7 +7,7 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros_msgutils/msg_utils.dart';
+import 'package:dartros/msg_utils.dart';
 import 'package:std_msgs/msgs.dart';
 
 //-----------------------------------------------------------
@@ -69,13 +69,13 @@ class DebugValue extends RosMessage<DebugValue> {
     // Serialize message field [header]
     header.serialize(writer);
     // Serialize message field [index]
-    writer.writeint32(index);
+    writer.writeInt32(index);
     // Serialize message field [name]
     writer.writeString(name);
     // Serialize message field [value_float]
     writer.writeFloat32(value_float);
     // Serialize message field [value_int]
-    writer.writeint32(value_int);
+    writer.writeInt32(value_int);
     // Serialize message field [data]
     writer.writeArray<double>(data, (val) => writer.writeFloat32(val),
         specArrayLen: null);
@@ -90,13 +90,13 @@ class DebugValue extends RosMessage<DebugValue> {
     // Deserialize message field [header]
     data.header = Header.$prototype.deserialize(reader);
     // Deserialize message field [index]
-    data.index = reader.readint32();
+    data.index = reader.readInt32();
     // Deserialize message field [name]
     data.name = reader.readString();
     // Deserialize message field [value_float]
     data.value_float = reader.readFloat32();
     // Deserialize message field [value_int]
-    data.value_int = reader.readint32();
+    data.value_int = reader.readInt32();
     // Deserialize message field [data]
     data.data =
         reader.readArray<double>(() => reader.readFloat32(), arrayLen: null);

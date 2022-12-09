@@ -7,7 +7,7 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros_msgutils/msg_utils.dart';
+import 'package:dartros/msg_utils.dart';
 import 'package:std_msgs/msgs.dart';
 
 //-----------------------------------------------------------
@@ -23,10 +23,10 @@ class ESCInfoItem extends RosMessage<ESCInfoItem> {
 
   static ESCInfoItem $prototype = ESCInfoItem();
   ESCInfoItem({
-    Header? header,
-    int? failure_flags,
-    int? error_count,
-    int? temperature,
+    Header header,
+    int failure_flags,
+    int error_count,
+    int temperature,
   })  : this.header = header ?? Header(),
         this.failure_flags = failure_flags ?? 0,
         this.error_count = error_count ?? 0,
@@ -34,10 +34,10 @@ class ESCInfoItem extends RosMessage<ESCInfoItem> {
 
   @override
   ESCInfoItem call({
-    Header? header,
-    int? failure_flags,
-    int? error_count,
-    int? temperature,
+    Header header,
+    int failure_flags,
+    int error_count,
+    int temperature,
   }) =>
       ESCInfoItem(
         header: header,
@@ -55,7 +55,7 @@ class ESCInfoItem extends RosMessage<ESCInfoItem> {
     // Serialize message field [error_count]
     writer.writeUint32(error_count);
     // Serialize message field [temperature]
-    writer.writeint32(temperature);
+    writer.writeInt32(temperature);
   }
 
   @override
@@ -69,7 +69,7 @@ class ESCInfoItem extends RosMessage<ESCInfoItem> {
     // Deserialize message field [error_count]
     data.error_count = reader.readUint32();
     // Deserialize message field [temperature]
-    data.temperature = reader.readint32();
+    data.temperature = reader.readInt32();
     return data;
   }
 

@@ -7,7 +7,7 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros_msgutils/msg_utils.dart';
+import 'package:dartros/msg_utils.dart';
 import 'package:std_msgs/msgs.dart';
 import 'ESCInfoItem.dart';
 
@@ -96,7 +96,7 @@ class ESCInfo extends RosMessage<ESCInfo> {
     // Deserialize message field [esc_info]
     {
       // Deserialize array length for message field [esc_info]
-      final len = reader.readint32();
+      final len = reader.readInt32();
       data.esc_info =
           List.generate(len, (_) => ESCInfoItem.$prototype.deserialize(reader));
     }

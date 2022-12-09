@@ -57,7 +57,7 @@ class WaypointPushRequest extends RosMessage<WaypointPushRequest> {
     // Deserialize message field [waypoints]
     {
       // Deserialize array length for message field [waypoints]
-      final len = reader.readint32();
+      final len = reader.readInt32();
       data.waypoints =
           List.generate(len, (_) => Waypoint.$prototype.deserialize(reader));
     }

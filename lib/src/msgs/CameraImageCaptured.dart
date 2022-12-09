@@ -77,7 +77,7 @@ class CameraImageCaptured extends RosMessage<CameraImageCaptured> {
     // Serialize message field [relative_alt]
     writer.writeFloat32(relative_alt);
     // Serialize message field [image_index]
-    writer.writeint32(image_index);
+    writer.writeInt32(image_index);
     // Serialize message field [capture_result]
     writer.writeint8(capture_result);
     // Serialize message field [file_url]
@@ -97,7 +97,7 @@ class CameraImageCaptured extends RosMessage<CameraImageCaptured> {
     // Deserialize message field [relative_alt]
     data.relative_alt = reader.readFloat32();
     // Deserialize message field [image_index]
-    data.image_index = reader.readint32();
+    data.image_index = reader.readInt32();
     // Deserialize message field [capture_result]
     data.capture_result = reader.readint8();
     // Deserialize message field [file_url]

@@ -147,7 +147,7 @@ class VehicleInfoGetResponse extends RosMessage<VehicleInfoGetResponse> {
     // Deserialize message field [vehicles]
     {
       // Deserialize array length for message field [vehicles]
-      final len = reader.readint32();
+      final len = reader.readInt32();
       data.vehicles =
           List.generate(len, (_) => VehicleInfo.$prototype.deserialize(reader));
     }

@@ -127,15 +127,15 @@ class RTKBaseline extends RosMessage<RTKBaseline> {
     // Serialize message field [baseline_coords_type]
     writer.writeUint8(baseline_coords_type);
     // Serialize message field [baseline_a_mm]
-    writer.writeint32(baseline_a_mm);
+    writer.writeInt32(baseline_a_mm);
     // Serialize message field [baseline_b_mm]
-    writer.writeint32(baseline_b_mm);
+    writer.writeInt32(baseline_b_mm);
     // Serialize message field [baseline_c_mm]
-    writer.writeint32(baseline_c_mm);
+    writer.writeInt32(baseline_c_mm);
     // Serialize message field [accuracy]
     writer.writeUint32(accuracy);
     // Serialize message field [iar_num_hypotheses]
-    writer.writeint32(iar_num_hypotheses);
+    writer.writeInt32(iar_num_hypotheses);
   }
 
   @override
@@ -161,15 +161,15 @@ class RTKBaseline extends RosMessage<RTKBaseline> {
     // Deserialize message field [baseline_coords_type]
     data.baseline_coords_type = reader.readUint8();
     // Deserialize message field [baseline_a_mm]
-    data.baseline_a_mm = reader.readint32();
+    data.baseline_a_mm = reader.readInt32();
     // Deserialize message field [baseline_b_mm]
-    data.baseline_b_mm = reader.readint32();
+    data.baseline_b_mm = reader.readInt32();
     // Deserialize message field [baseline_c_mm]
-    data.baseline_c_mm = reader.readint32();
+    data.baseline_c_mm = reader.readInt32();
     // Deserialize message field [accuracy]
     data.accuracy = reader.readUint32();
     // Deserialize message field [iar_num_hypotheses]
-    data.iar_num_hypotheses = reader.readint32();
+    data.iar_num_hypotheses = reader.readInt32();
     return data;
   }
 

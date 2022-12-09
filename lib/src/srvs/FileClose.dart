@@ -104,7 +104,7 @@ class FileCloseResponse extends RosMessage<FileCloseResponse> {
     // Serialize message field [success]
     writer.writeUint8(success == false ? 0 : 1);
     // Serialize message field [r_errno]
-    writer.writeint32(r_errno);
+    writer.writeInt32(r_errno);
   }
 
   @override
@@ -114,7 +114,7 @@ class FileCloseResponse extends RosMessage<FileCloseResponse> {
     // Deserialize message field [success]
     data.success = reader.readUint8() != 0;
     // Deserialize message field [r_errno]
-    data.r_errno = reader.readint32();
+    data.r_errno = reader.readInt32();
     return data;
   }
 

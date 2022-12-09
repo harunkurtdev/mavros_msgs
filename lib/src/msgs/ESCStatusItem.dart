@@ -7,7 +7,7 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros_msgutils/msg_utils.dart';
+import 'package:dartros/msg_utils.dart';
 import 'package:std_msgs/msgs.dart';
 
 //-----------------------------------------------------------
@@ -51,7 +51,7 @@ class ESCStatusItem extends RosMessage<ESCStatusItem> {
     // Serialize message field [header]
     header.serialize(writer);
     // Serialize message field [rpm]
-    writer.writeint32(rpm);
+    writer.writeInt32(rpm);
     // Serialize message field [voltage]
     writer.writeFloat32(voltage);
     // Serialize message field [current]
@@ -65,7 +65,7 @@ class ESCStatusItem extends RosMessage<ESCStatusItem> {
     // Deserialize message field [header]
     data.header = Header.$prototype.deserialize(reader);
     // Deserialize message field [rpm]
-    data.rpm = reader.readint32();
+    data.rpm = reader.readInt32();
     // Deserialize message field [voltage]
     data.voltage = reader.readFloat32();
     // Deserialize message field [current]

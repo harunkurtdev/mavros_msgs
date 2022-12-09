@@ -56,7 +56,7 @@ class ESCTelemetry extends RosMessage<ESCTelemetry> {
     // Deserialize message field [esc_telemetry]
     {
       // Deserialize array length for message field [esc_telemetry]
-      final len = reader.readint32();
+      final len = reader.readInt32();
       data.esc_telemetry = List.generate(
           len, (_) => ESCTelemetryItem.$prototype.deserialize(reader));
     }

@@ -7,7 +7,7 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros_msgutils/msg_utils.dart';
+import 'package:dartros/msg_utils.dart';
 
 //-----------------------------------------------------------
 
@@ -38,7 +38,7 @@ class CamIMUStamp extends RosMessage<CamIMUStamp> {
     // Serialize message field [frame_stamp]
     writer.writeTime(frame_stamp);
     // Serialize message field [frame_seq_id]
-    writer.writeint32(frame_seq_id);
+    writer.writeInt32(frame_seq_id);
   }
 
   @override
@@ -48,7 +48,7 @@ class CamIMUStamp extends RosMessage<CamIMUStamp> {
     // Deserialize message field [frame_stamp]
     data.frame_stamp = reader.readTime();
     // Deserialize message field [frame_seq_id]
-    data.frame_seq_id = reader.readint32();
+    data.frame_seq_id = reader.readInt32();
     return data;
   }
 

@@ -116,9 +116,9 @@ class CommandintRequest extends RosMessage<CommandintRequest> {
     // Serialize message field [param4]
     writer.writeFloat32(param4);
     // Serialize message field [x]
-    writer.writeint32(x);
+    writer.writeInt32(x);
     // Serialize message field [y]
-    writer.writeint32(y);
+    writer.writeInt32(y);
     // Serialize message field [z]
     writer.writeFloat32(z);
   }
@@ -146,9 +146,9 @@ class CommandintRequest extends RosMessage<CommandintRequest> {
     // Deserialize message field [param4]
     data.param4 = reader.readFloat32();
     // Deserialize message field [x]
-    data.x = reader.readint32();
+    data.x = reader.readInt32();
     // Deserialize message field [y]
-    data.y = reader.readint32();
+    data.y = reader.readInt32();
     // Deserialize message field [z]
     data.z = reader.readFloat32();
     return data;

@@ -77,7 +77,7 @@ class ESCTelemetryItem extends RosMessage<ESCTelemetryItem> {
     // Serialize message field [totalcurrent]
     writer.writeFloat32(totalcurrent);
     // Serialize message field [rpm]
-    writer.writeint32(rpm);
+    writer.writeInt32(rpm);
     // Serialize message field [count]
     writer.writeUint16(count);
   }
@@ -97,7 +97,7 @@ class ESCTelemetryItem extends RosMessage<ESCTelemetryItem> {
     // Deserialize message field [totalcurrent]
     data.totalcurrent = reader.readFloat32();
     // Deserialize message field [rpm]
-    data.rpm = reader.readint32();
+    data.rpm = reader.readInt32();
     // Deserialize message field [count]
     data.count = reader.readUint16();
     return data;
