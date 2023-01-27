@@ -9,7 +9,7 @@
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
 import 'package:dartros/msg_utils.dart';
-import 'package:geographic_msgs/msgs.dart';
+// import 'package:geographic_msgs/msgs.dart';
 import 'package:std_msgs/msgs.dart';
 
 //-----------------------------------------------------------
@@ -19,7 +19,7 @@ class HilGPS extends RosMessage<HilGPS> {
 
   int fix_type;
 
-  GeoPoint geo;
+  // GeoPoint geo;
 
   int eph;
 
@@ -41,7 +41,7 @@ class HilGPS extends RosMessage<HilGPS> {
   HilGPS({ 
     Header header,
     int fix_type,
-    GeoPoint geo,
+    // GeoPoint geo,
     int eph,
     int epv,
     int vel,
@@ -53,7 +53,7 @@ class HilGPS extends RosMessage<HilGPS> {
   }):
   this.header = header ?? Header(),
   this.fix_type = fix_type ?? 0,
-  this.geo = geo ?? GeoPoint(),
+  // this.geo = geo ?? GeoPoint(),
   this.eph = eph ?? 0,
   this.epv = epv ?? 0,
   this.vel = vel ?? 0,
@@ -67,7 +67,7 @@ class HilGPS extends RosMessage<HilGPS> {
   HilGPS call({ 
     Header header,
     int fix_type,
-    GeoPoint geo,
+    // GeoPoint geo,
     int eph,
     int epv,
     int vel,
@@ -79,7 +79,7 @@ class HilGPS extends RosMessage<HilGPS> {
   }) => HilGPS(
   header: header,
   fix_type: fix_type,
-  geo: geo,
+  // geo: geo,
   eph: eph,
   epv: epv,
   vel: vel,
@@ -97,7 +97,7 @@ class HilGPS extends RosMessage<HilGPS> {
     // Serialize message field [fix_type]
     writer.writeUint8(fix_type);
     // Serialize message field [geo]
-    geo.serialize(writer);
+    // geo.serialize(writer);
     // Serialize message field [eph]
     writer.writeUint16(eph);
     // Serialize message field [epv]
@@ -125,7 +125,7 @@ class HilGPS extends RosMessage<HilGPS> {
     // Deserialize message field [fix_type]
     data.fix_type = reader.readUint8();
     // Deserialize message field [geo]
-    data.geo = GeoPoint.$prototype.deserialize(reader);
+    // data.geo = GeoPoint.$prototype.deserialize(reader);
     // Deserialize message field [eph]
     data.eph = reader.readUint16();
     // Deserialize message field [epv]

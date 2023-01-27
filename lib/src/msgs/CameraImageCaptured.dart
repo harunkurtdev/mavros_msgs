@@ -10,7 +10,7 @@ import 'dart:convert';
 import 'package:buffer/buffer.dart';
 import 'package:dartros/msg_utils.dart';
 import 'package:std_msgs/msgs.dart';
-import 'package:geographic_msgs/msgs.dart';
+// import 'package:geographic_msgs/msgs.dart';
 import 'package:geometry_msgs/msgs.dart';
 
 //-----------------------------------------------------------
@@ -20,7 +20,7 @@ class CameraImageCaptured extends RosMessage<CameraImageCaptured> {
 
   Quaternion orientation;
 
-  GeoPoint geo;
+  // GeoPoint geo;
 
   double relative_alt;
 
@@ -34,7 +34,7 @@ class CameraImageCaptured extends RosMessage<CameraImageCaptured> {
   CameraImageCaptured({ 
     Header header,
     Quaternion orientation,
-    GeoPoint geo,
+    // GeoPoint geo,
     double relative_alt,
     int image_index,
     int capture_result,
@@ -42,7 +42,7 @@ class CameraImageCaptured extends RosMessage<CameraImageCaptured> {
   }):
   this.header = header ?? Header(),
   this.orientation = orientation ?? Quaternion(),
-  this.geo = geo ?? GeoPoint(),
+  // this.geo = geo ?? GeoPoint(),
   this.relative_alt = relative_alt ?? 0.0,
   this.image_index = image_index ?? 0,
   this.capture_result = capture_result ?? 0,
@@ -52,7 +52,7 @@ class CameraImageCaptured extends RosMessage<CameraImageCaptured> {
   CameraImageCaptured call({ 
     Header header,
     Quaternion orientation,
-    GeoPoint geo,
+    // GeoPoint geo,
     double relative_alt,
     int image_index,
     int capture_result,
@@ -60,7 +60,7 @@ class CameraImageCaptured extends RosMessage<CameraImageCaptured> {
   }) => CameraImageCaptured(
   header: header,
   orientation: orientation,
-  geo: geo,
+  // geo: geo,
   relative_alt: relative_alt,
   image_index: image_index,
   capture_result: capture_result,
@@ -74,7 +74,7 @@ class CameraImageCaptured extends RosMessage<CameraImageCaptured> {
     // Serialize message field [orientation]
     orientation.serialize(writer);
     // Serialize message field [geo]
-    geo.serialize(writer);
+    // geo.serialize(writer);
     // Serialize message field [relative_alt]
     writer.writeFloat32(relative_alt);
     // Serialize message field [image_index]
@@ -94,7 +94,7 @@ class CameraImageCaptured extends RosMessage<CameraImageCaptured> {
     // Deserialize message field [orientation]
     data.orientation = Quaternion.$prototype.deserialize(reader);
     // Deserialize message field [geo]
-    data.geo = GeoPoint.$prototype.deserialize(reader);
+    // data.geo = GeoPoint.$prototype.deserialize(reader);
     // Deserialize message field [relative_alt]
     data.relative_alt = reader.readFloat32();
     // Deserialize message field [image_index]

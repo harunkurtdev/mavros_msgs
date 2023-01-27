@@ -10,7 +10,7 @@ import 'dart:convert';
 import 'package:buffer/buffer.dart';
 import 'package:dartros/msg_utils.dart';
 import 'package:geometry_msgs/msgs.dart';
-import 'package:geographic_msgs/msgs.dart';
+// import 'package:geographic_msgs/msgs.dart';
 import 'package:std_msgs/msgs.dart';
 
 //-----------------------------------------------------------
@@ -18,7 +18,7 @@ import 'package:std_msgs/msgs.dart';
 class HomePosition extends RosMessage<HomePosition> {
   Header header;
 
-  GeoPoint geo;
+  // GeoPoint geo;
 
   Point position;
 
@@ -29,13 +29,13 @@ class HomePosition extends RosMessage<HomePosition> {
   static HomePosition $prototype = HomePosition();
   HomePosition({ 
     Header header,
-    GeoPoint geo,
+    // GeoPoint geo,
     Point position,
     Quaternion orientation,
     Vector3 approach,
   }):
   this.header = header ?? Header(),
-  this.geo = geo ?? GeoPoint(),
+  // this.geo = geo ?? GeoPoint(),
   this.position = position ?? Point(),
   this.orientation = orientation ?? Quaternion(),
   this.approach = approach ?? Vector3();
@@ -43,13 +43,13 @@ class HomePosition extends RosMessage<HomePosition> {
   @override
   HomePosition call({ 
     Header header,
-    GeoPoint geo,
+    // GeoPoint geo,
     Point position,
     Quaternion orientation,
     Vector3 approach,
   }) => HomePosition(
   header: header,
-  geo: geo,
+  // geo: geo,
   position: position,
   orientation: orientation,
   approach: approach,
@@ -60,7 +60,7 @@ class HomePosition extends RosMessage<HomePosition> {
     // Serialize message field [header]
     header.serialize(writer);
     // Serialize message field [geo]
-    geo.serialize(writer);
+    // geo.serialize(writer);
     // Serialize message field [position]
     position.serialize(writer);
     // Serialize message field [orientation]
@@ -76,7 +76,7 @@ class HomePosition extends RosMessage<HomePosition> {
     // Deserialize message field [header]
     data.header = Header.$prototype.deserialize(reader);
     // Deserialize message field [geo]
-    data.geo = GeoPoint.$prototype.deserialize(reader);
+    // data.geo = GeoPoint.$prototype.deserialize(reader);
     // Deserialize message field [position]
     data.position = Point.$prototype.deserialize(reader);
     // Deserialize message field [orientation]

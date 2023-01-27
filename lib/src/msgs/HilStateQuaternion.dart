@@ -10,7 +10,7 @@ import 'dart:convert';
 import 'package:buffer/buffer.dart';
 import 'package:dartros/msg_utils.dart';
 import 'package:std_msgs/msgs.dart';
-import 'package:geographic_msgs/msgs.dart';
+// import 'package:geographic_msgs/msgs.dart';
 import 'package:geometry_msgs/msgs.dart';
 
 //-----------------------------------------------------------
@@ -26,7 +26,7 @@ class HilStateQuaternion extends RosMessage<HilStateQuaternion> {
 
   Vector3 linear_velocity;
 
-  GeoPoint geo;
+  // GeoPoint geo;
 
   double ind_airspeed;
 
@@ -39,7 +39,7 @@ class HilStateQuaternion extends RosMessage<HilStateQuaternion> {
     Vector3 angular_velocity,
     Vector3 linear_acceleration,
     Vector3 linear_velocity,
-    GeoPoint geo,
+    // GeoPoint geo,
     double ind_airspeed,
     double true_airspeed,
   }):
@@ -48,7 +48,7 @@ class HilStateQuaternion extends RosMessage<HilStateQuaternion> {
   this.angular_velocity = angular_velocity ?? Vector3(),
   this.linear_acceleration = linear_acceleration ?? Vector3(),
   this.linear_velocity = linear_velocity ?? Vector3(),
-  this.geo = geo ?? GeoPoint(),
+  // this.geo = geo ?? GeoPoint(),
   this.ind_airspeed = ind_airspeed ?? 0.0,
   this.true_airspeed = true_airspeed ?? 0.0;
 
@@ -59,7 +59,7 @@ class HilStateQuaternion extends RosMessage<HilStateQuaternion> {
     Vector3 angular_velocity,
     Vector3 linear_acceleration,
     Vector3 linear_velocity,
-    GeoPoint geo,
+    // GeoPoint geo,
     double ind_airspeed,
     double true_airspeed,
   }) => HilStateQuaternion(
@@ -68,7 +68,7 @@ class HilStateQuaternion extends RosMessage<HilStateQuaternion> {
   angular_velocity: angular_velocity,
   linear_acceleration: linear_acceleration,
   linear_velocity: linear_velocity,
-  geo: geo,
+  // geo: geo,
   ind_airspeed: ind_airspeed,
   true_airspeed: true_airspeed,
   );
@@ -86,7 +86,7 @@ class HilStateQuaternion extends RosMessage<HilStateQuaternion> {
     // Serialize message field [linear_velocity]
     linear_velocity.serialize(writer);
     // Serialize message field [geo]
-    geo.serialize(writer);
+    // geo.serialize(writer);
     // Serialize message field [ind_airspeed]
     writer.writeFloat32(ind_airspeed);
     // Serialize message field [true_airspeed]
@@ -108,7 +108,7 @@ class HilStateQuaternion extends RosMessage<HilStateQuaternion> {
     // Deserialize message field [linear_velocity]
     data.linear_velocity = Vector3.$prototype.deserialize(reader);
     // Deserialize message field [geo]
-    data.geo = GeoPoint.$prototype.deserialize(reader);
+    // data.geo = GeoPoint.$prototype.deserialize(reader);
     // Deserialize message field [ind_airspeed]
     data.ind_airspeed = reader.readFloat32();
     // Deserialize message field [true_airspeed]
