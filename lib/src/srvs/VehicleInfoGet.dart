@@ -25,9 +25,9 @@ class VehicleInfoGetRequest extends RosMessage<VehicleInfoGetRequest> {
 
   static VehicleInfoGetRequest $prototype = VehicleInfoGetRequest();
   VehicleInfoGetRequest({ 
-    int sysid,
-    int compid,
-    bool get_all,
+    int? sysid,
+    int? compid,
+    bool? get_all,
   }):
   this.sysid = sysid ?? 0,
   this.compid = compid ?? 0,
@@ -35,9 +35,9 @@ class VehicleInfoGetRequest extends RosMessage<VehicleInfoGetRequest> {
 
   @override
   VehicleInfoGetRequest call({ 
-    int sysid,
-    int compid,
-    bool get_all,
+    int? sysid,
+    int? compid,
+    bool? get_all,
   }) => VehicleInfoGetRequest(
   sysid: sysid,
   compid: compid,
@@ -113,16 +113,16 @@ class VehicleInfoGetResponse extends RosMessage<VehicleInfoGetResponse> {
 
   static VehicleInfoGetResponse $prototype = VehicleInfoGetResponse();
   VehicleInfoGetResponse({ 
-    bool success,
-    List<VehicleInfo> vehicles,
+    bool? success,
+    List<VehicleInfo>? vehicles,
   }):
   this.success = success ?? false,
   this.vehicles = vehicles ?? [];
 
   @override
   VehicleInfoGetResponse call({ 
-    bool success,
-    List<VehicleInfo> vehicles,
+    bool? success,
+    List<VehicleInfo>? vehicles,
   }) => VehicleInfoGetResponse(
   success: success,
   vehicles: vehicles,

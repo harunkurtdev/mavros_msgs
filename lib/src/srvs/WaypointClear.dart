@@ -65,13 +65,13 @@ class WaypointClearResponse extends RosMessage<WaypointClearResponse> {
 
   static WaypointClearResponse $prototype = WaypointClearResponse();
   WaypointClearResponse({ 
-    bool success,
+    bool? success,
   }):
   this.success = success ?? false;
 
   @override
   WaypointClearResponse call({ 
-    bool success,
+    bool? success,
   }) => WaypointClearResponse(
   success: success,
   );

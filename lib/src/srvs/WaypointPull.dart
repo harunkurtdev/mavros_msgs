@@ -69,16 +69,16 @@ class WaypointPullResponse extends RosMessage<WaypointPullResponse> {
 
   static WaypointPullResponse $prototype = WaypointPullResponse();
   WaypointPullResponse({ 
-    bool success,
-    int wp_received,
+    bool? success,
+    int? wp_received,
   }):
   this.success = success ?? false,
   this.wp_received = wp_received ?? 0;
 
   @override
   WaypointPullResponse call({ 
-    bool success,
-    int wp_received,
+    bool? success,
+    int? wp_received,
   }) => WaypointPullResponse(
   success: success,
   wp_received: wp_received,

@@ -20,13 +20,13 @@ class WaypointSetCurrentRequest extends RosMessage<WaypointSetCurrentRequest> {
 
   static WaypointSetCurrentRequest $prototype = WaypointSetCurrentRequest();
   WaypointSetCurrentRequest({ 
-    int wp_seq,
+    int? wp_seq,
   }):
   this.wp_seq = wp_seq ?? 0;
 
   @override
   WaypointSetCurrentRequest call({ 
-    int wp_seq,
+    int? wp_seq,
   }) => WaypointSetCurrentRequest(
   wp_seq: wp_seq,
   );
@@ -81,13 +81,13 @@ class WaypointSetCurrentResponse extends RosMessage<WaypointSetCurrentResponse> 
 
   static WaypointSetCurrentResponse $prototype = WaypointSetCurrentResponse();
   WaypointSetCurrentResponse({ 
-    bool success,
+    bool? success,
   }):
   this.success = success ?? false;
 
   @override
   WaypointSetCurrentResponse call({ 
-    bool success,
+    bool? success,
   }) => WaypointSetCurrentResponse(
   success: success,
   );

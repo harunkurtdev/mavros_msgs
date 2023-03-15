@@ -20,13 +20,13 @@ class ParamPullRequest extends RosMessage<ParamPullRequest> {
 
   static ParamPullRequest $prototype = ParamPullRequest();
   ParamPullRequest({ 
-    bool force_pull,
+    bool? force_pull,
   }):
   this.force_pull = force_pull ?? false;
 
   @override
   ParamPullRequest call({ 
-    bool force_pull,
+    bool? force_pull,
   }) => ParamPullRequest(
   force_pull: force_pull,
   );
@@ -83,16 +83,16 @@ class ParamPullResponse extends RosMessage<ParamPullResponse> {
 
   static ParamPullResponse $prototype = ParamPullResponse();
   ParamPullResponse({ 
-    bool success,
-    int param_received,
+    bool? success,
+    int? param_received,
   }):
   this.success = success ?? false,
   this.param_received = param_received ?? 0;
 
   @override
   ParamPullResponse call({ 
-    bool success,
-    int param_received,
+    bool? success,
+    int? param_received,
   }) => ParamPullResponse(
   success: success,
   param_received: param_received,

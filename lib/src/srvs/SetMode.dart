@@ -22,15 +22,15 @@ class SetModeRequest extends RosMessage<SetModeRequest> {
 
   static SetModeRequest $prototype = SetModeRequest();
   SetModeRequest({
-    int base_mode,
-    String custom_mode,
+    int? base_mode,
+    String? custom_mode,
   })  : this.base_mode = base_mode ?? 0,
         this.custom_mode = custom_mode ?? '';
 
   @override
   SetModeRequest call({
-    int base_mode,
-    String custom_mode,
+    int? base_mode,
+    String? custom_mode,
   }) =>
       SetModeRequest(
         base_mode: base_mode,
@@ -120,12 +120,12 @@ class SetModeResponse extends RosMessage<SetModeResponse> {
 
   static SetModeResponse $prototype = SetModeResponse();
   SetModeResponse({
-    bool mode_sent,
+    bool? mode_sent,
   }) : this.mode_sent = mode_sent ?? false;
 
   @override
   SetModeResponse call({
-    bool mode_sent,
+    bool? mode_sent,
   }) =>
       SetModeResponse(
         mode_sent: mode_sent,

@@ -31,13 +31,13 @@ class Altitude extends RosMessage<Altitude> {
 
   static Altitude $prototype = Altitude();
   Altitude({
-    Header header,
-    double monotonic,
-    double amsl,
-    double local,
-    double relative,
-    double terrain,
-    double bottom_clearance,
+    Header? header,
+    double? monotonic,
+    double? amsl,
+    double? local,
+    double? relative,
+    double? terrain,
+    double? bottom_clearance,
   })  : this.header = header ?? Header(),
         this.monotonic = monotonic ?? 0.0,
         this.amsl = amsl ?? 0.0,
@@ -48,13 +48,13 @@ class Altitude extends RosMessage<Altitude> {
 
   @override
   Altitude call({
-    Header header,
-    double monotonic,
-    double amsl,
-    double local,
-    double relative,
-    double terrain,
-    double bottom_clearance,
+    Header? header,
+    double? monotonic,
+    double? amsl,
+    double? local,
+    double? relative,
+    double? terrain,
+    double? bottom_clearance,
   }) =>
       Altitude(
         header: header,

@@ -23,16 +23,16 @@ class ParamSetRequest extends RosMessage<ParamSetRequest> {
 
   static ParamSetRequest $prototype = ParamSetRequest();
   ParamSetRequest({ 
-    String param_id,
-    ParamValue value,
+    String? param_id,
+    ParamValue? value,
   }):
   this.param_id = param_id ?? '',
   this.value = value ?? ParamValue();
 
   @override
   ParamSetRequest call({ 
-    String param_id,
-    ParamValue value,
+    String? param_id,
+    ParamValue? value,
   }) => ParamSetRequest(
   param_id: param_id,
   value: value,
@@ -108,16 +108,16 @@ class ParamSetResponse extends RosMessage<ParamSetResponse> {
 
   static ParamSetResponse $prototype = ParamSetResponse();
   ParamSetResponse({ 
-    bool success,
-    ParamValue value,
+    bool? success,
+    ParamValue? value,
   }):
   this.success = success ?? false,
   this.value = value ?? ParamValue();
 
   @override
   ParamSetResponse call({ 
-    bool success,
-    ParamValue value,
+    bool? success,
+    ParamValue? value,
   }) => ParamSetResponse(
   success: success,
   value: value,

@@ -69,16 +69,16 @@ class ParamPushResponse extends RosMessage<ParamPushResponse> {
 
   static ParamPushResponse $prototype = ParamPushResponse();
   ParamPushResponse({ 
-    bool success,
-    int param_transfered,
+    bool? success,
+    int? param_transfered,
   }):
   this.success = success ?? false,
   this.param_transfered = param_transfered ?? 0;
 
   @override
   ParamPushResponse call({ 
-    bool success,
-    int param_transfered,
+    bool? success,
+    int? param_transfered,
   }) => ParamPushResponse(
   success: success,
   param_transfered: param_transfered,

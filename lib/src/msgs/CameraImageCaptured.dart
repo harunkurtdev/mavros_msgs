@@ -32,13 +32,13 @@ class CameraImageCaptured extends RosMessage<CameraImageCaptured> {
 
   static CameraImageCaptured $prototype = CameraImageCaptured();
   CameraImageCaptured({ 
-    Header header,
-    Quaternion orientation,
+    Header? header,
+    Quaternion? orientation,
     // GeoPoint geo,
-    double relative_alt,
-    int image_index,
-    int capture_result,
-    String file_url,
+    double? relative_alt,
+    int? image_index,
+    int? capture_result,
+    String? file_url,
   }):
   this.header = header ?? Header(),
   this.orientation = orientation ?? Quaternion(),
@@ -50,13 +50,13 @@ class CameraImageCaptured extends RosMessage<CameraImageCaptured> {
 
   @override
   CameraImageCaptured call({ 
-    Header header,
-    Quaternion orientation,
+    Header? header,
+    Quaternion? orientation,
     // GeoPoint geo,
-    double relative_alt,
-    int image_index,
-    int capture_result,
-    String file_url,
+    double? relative_alt,
+    int? image_index,
+    int? capture_result,
+    String? file_url,
   }) => CameraImageCaptured(
   header: header,
   orientation: orientation,

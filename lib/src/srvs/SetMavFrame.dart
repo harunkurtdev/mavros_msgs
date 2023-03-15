@@ -20,13 +20,13 @@ class SetMavFrameRequest extends RosMessage<SetMavFrameRequest> {
 
   static SetMavFrameRequest $prototype = SetMavFrameRequest();
   SetMavFrameRequest({ 
-    int mav_frame,
+    int? mav_frame,
   }):
   this.mav_frame = mav_frame ?? 0;
 
   @override
   SetMavFrameRequest call({ 
-    int mav_frame,
+    int? mav_frame,
   }) => SetMavFrameRequest(
   mav_frame: mav_frame,
   );
@@ -145,13 +145,13 @@ class SetMavFrameResponse extends RosMessage<SetMavFrameResponse> {
 
   static SetMavFrameResponse $prototype = SetMavFrameResponse();
   SetMavFrameResponse({ 
-    bool success,
+    bool? success,
   }):
   this.success = success ?? false;
 
   @override
   SetMavFrameResponse call({ 
-    bool success,
+    bool? success,
   }) => SetMavFrameResponse(
   success: success,
   );

@@ -23,16 +23,16 @@ class WaypointPushRequest extends RosMessage<WaypointPushRequest> {
 
   static WaypointPushRequest $prototype = WaypointPushRequest();
   WaypointPushRequest({ 
-    int start_index,
-    List<Waypoint> waypoints,
+    int? start_index,
+    List<Waypoint>? waypoints,
   }):
   this.start_index = start_index ?? 0,
   this.waypoints = waypoints ?? [];
 
   @override
   WaypointPushRequest call({ 
-    int start_index,
-    List<Waypoint> waypoints,
+    int? start_index,
+    List<Waypoint>? waypoints,
   }) => WaypointPushRequest(
   start_index: start_index,
   waypoints: waypoints,
@@ -155,16 +155,16 @@ class WaypointPushResponse extends RosMessage<WaypointPushResponse> {
 
   static WaypointPushResponse $prototype = WaypointPushResponse();
   WaypointPushResponse({ 
-    bool success,
-    int wp_transfered,
+    bool? success,
+    int? wp_transfered,
   }):
   this.success = success ?? false,
   this.wp_transfered = wp_transfered ?? 0;
 
   @override
   WaypointPushResponse call({ 
-    bool success,
-    int wp_transfered,
+    bool? success,
+    int? wp_transfered,
   }) => WaypointPushResponse(
   success: success,
   wp_transfered: wp_transfered,
