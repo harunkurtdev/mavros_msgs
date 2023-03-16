@@ -22,16 +22,16 @@ class CommandTriggerIntervalRequest extends RosMessage<CommandTriggerIntervalReq
 
   static CommandTriggerIntervalRequest $prototype = CommandTriggerIntervalRequest();
   CommandTriggerIntervalRequest({ 
-    double cycle_time,
-    double integration_time,
+    double? cycle_time,
+    double? integration_time,
   }):
   this.cycle_time = cycle_time ?? 0.0,
   this.integration_time = integration_time ?? 0.0;
 
   @override
   CommandTriggerIntervalRequest call({ 
-    double cycle_time,
-    double integration_time,
+    double? cycle_time,
+    double? integration_time,
   }) => CommandTriggerIntervalRequest(
   cycle_time: cycle_time,
   integration_time: integration_time,
@@ -92,16 +92,16 @@ class CommandTriggerIntervalResponse extends RosMessage<CommandTriggerIntervalRe
 
   static CommandTriggerIntervalResponse $prototype = CommandTriggerIntervalResponse();
   CommandTriggerIntervalResponse({ 
-    bool success,
-    int result,
+    bool? success,
+    int? result,
   }):
   this.success = success ?? false,
   this.result = result ?? 0;
 
   @override
   CommandTriggerIntervalResponse call({ 
-    bool success,
-    int result,
+    bool? success,
+    int? result,
   }) => CommandTriggerIntervalResponse(
   success: success,
   result: result,

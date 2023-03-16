@@ -20,13 +20,13 @@ class FileChecksumRequest extends RosMessage<FileChecksumRequest> {
 
   static FileChecksumRequest $prototype = FileChecksumRequest();
   FileChecksumRequest({ 
-    String file_path,
+    String? file_path,
   }):
   this.file_path = file_path ?? '';
 
   @override
   FileChecksumRequest call({ 
-    String file_path,
+    String? file_path,
   }) => FileChecksumRequest(
   file_path: file_path,
   );
@@ -90,9 +90,9 @@ class FileChecksumResponse extends RosMessage<FileChecksumResponse> {
 
   static FileChecksumResponse $prototype = FileChecksumResponse();
   FileChecksumResponse({ 
-    int crc32,
-    bool success,
-    int r_errno,
+    int? crc32,
+    bool? success,
+    int? r_errno,
   }):
   this.crc32 = crc32 ?? 0,
   this.success = success ?? false,
@@ -100,9 +100,9 @@ class FileChecksumResponse extends RosMessage<FileChecksumResponse> {
 
   @override
   FileChecksumResponse call({ 
-    int crc32,
-    bool success,
-    int r_errno,
+    int? crc32,
+    bool? success,
+    int? r_errno,
   }) => FileChecksumResponse(
   crc32: crc32,
   success: success,

@@ -21,13 +21,13 @@ class FileListRequest extends RosMessage<FileListRequest> {
 
   static FileListRequest $prototype = FileListRequest();
   FileListRequest({ 
-    String dir_path,
+    String? dir_path,
   }):
   this.dir_path = dir_path ?? '';
 
   @override
   FileListRequest call({ 
-    String dir_path,
+    String? dir_path,
   }) => FileListRequest(
   dir_path: dir_path,
   );
@@ -89,9 +89,9 @@ class FileListResponse extends RosMessage<FileListResponse> {
 
   static FileListResponse $prototype = FileListResponse();
   FileListResponse({ 
-    List<FileEntry> list,
-    bool success,
-    int r_errno,
+    List<FileEntry>? list,
+    bool? success,
+    int? r_errno,
   }):
   this.list = list ?? [],
   this.success = success ?? false,
@@ -99,9 +99,9 @@ class FileListResponse extends RosMessage<FileListResponse> {
 
   @override
   FileListResponse call({ 
-    List<FileEntry> list,
-    bool success,
-    int r_errno,
+    List<FileEntry>? list,
+    bool? success,
+    int? r_errno,
   }) => FileListResponse(
   list: list,
   success: success,

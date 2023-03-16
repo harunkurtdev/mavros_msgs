@@ -65,13 +65,13 @@ class LogRequestEndResponse extends RosMessage<LogRequestEndResponse> {
 
   static LogRequestEndResponse $prototype = LogRequestEndResponse();
   LogRequestEndResponse({ 
-    bool success,
+    bool? success,
   }):
   this.success = success ?? false;
 
   @override
   LogRequestEndResponse call({ 
-    bool success,
+    bool? success,
   }) => LogRequestEndResponse(
   success: success,
   );

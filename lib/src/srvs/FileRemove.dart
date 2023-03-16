@@ -20,13 +20,13 @@ class FileRemoveRequest extends RosMessage<FileRemoveRequest> {
 
   static FileRemoveRequest $prototype = FileRemoveRequest();
   FileRemoveRequest({ 
-    String file_path,
+    String? file_path,
   }):
   this.file_path = file_path ?? '';
 
   @override
   FileRemoveRequest call({ 
-    String file_path,
+    String? file_path,
   }) => FileRemoveRequest(
   file_path: file_path,
   );
@@ -86,16 +86,16 @@ class FileRemoveResponse extends RosMessage<FileRemoveResponse> {
 
   static FileRemoveResponse $prototype = FileRemoveResponse();
   FileRemoveResponse({ 
-    bool success,
-    int r_errno,
+    bool? success,
+    int? r_errno,
   }):
   this.success = success ?? false,
   this.r_errno = r_errno ?? 0;
 
   @override
   FileRemoveResponse call({ 
-    bool success,
-    int r_errno,
+    bool? success,
+    int? r_errno,
   }) => FileRemoveResponse(
   success: success,
   r_errno: r_errno,

@@ -24,9 +24,9 @@ class FileWriteRequest extends RosMessage<FileWriteRequest> {
 
   static FileWriteRequest $prototype = FileWriteRequest();
   FileWriteRequest({ 
-    String file_path,
-    int offset,
-    List<int> data,
+    String? file_path,
+    int? offset,
+    List<int>? data,
   }):
   this.file_path = file_path ?? '',
   this.offset = offset ?? 0,
@@ -34,9 +34,9 @@ class FileWriteRequest extends RosMessage<FileWriteRequest> {
 
   @override
   FileWriteRequest call({ 
-    String file_path,
-    int offset,
-    List<int> data,
+    String? file_path,
+    int? offset,
+    List<int>? data,
   }) => FileWriteRequest(
   file_path: file_path,
   offset: offset,
@@ -110,16 +110,16 @@ class FileWriteResponse extends RosMessage<FileWriteResponse> {
 
   static FileWriteResponse $prototype = FileWriteResponse();
   FileWriteResponse({ 
-    bool success,
-    int r_errno,
+    bool? success,
+    int? r_errno,
   }):
   this.success = success ?? false,
   this.r_errno = r_errno ?? 0;
 
   @override
   FileWriteResponse call({ 
-    bool success,
-    int r_errno,
+    bool? success,
+    int? r_errno,
   }) => FileWriteResponse(
   success: success,
   r_errno: r_errno,

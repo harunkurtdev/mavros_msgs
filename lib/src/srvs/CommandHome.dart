@@ -28,11 +28,11 @@ class CommandHomeRequest extends RosMessage<CommandHomeRequest> {
 
   static CommandHomeRequest $prototype = CommandHomeRequest();
   CommandHomeRequest({ 
-    bool current_gps,
-    double yaw,
-    double latitude,
-    double longitude,
-    double altitude,
+    bool? current_gps,
+    double? yaw,
+    double? latitude,
+    double? longitude,
+    double? altitude,
   }):
   this.current_gps = current_gps ?? false,
   this.yaw = yaw ?? 0.0,
@@ -42,11 +42,11 @@ class CommandHomeRequest extends RosMessage<CommandHomeRequest> {
 
   @override
   CommandHomeRequest call({ 
-    bool current_gps,
-    double yaw,
-    double latitude,
-    double longitude,
-    double altitude,
+    bool? current_gps,
+    double? yaw,
+    double? latitude,
+    double? longitude,
+    double? altitude,
   }) => CommandHomeRequest(
   current_gps: current_gps,
   yaw: yaw,
@@ -125,16 +125,16 @@ class CommandHomeResponse extends RosMessage<CommandHomeResponse> {
 
   static CommandHomeResponse $prototype = CommandHomeResponse();
   CommandHomeResponse({ 
-    bool success,
-    int result,
+    bool? success,
+    int? result,
   }):
   this.success = success ?? false,
   this.result = result ?? 0;
 
   @override
   CommandHomeResponse call({ 
-    bool success,
-    int result,
+    bool? success,
+    int? result,
   }) => CommandHomeResponse(
   success: success,
   result: result,

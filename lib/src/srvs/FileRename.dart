@@ -22,16 +22,16 @@ class FileRenameRequest extends RosMessage<FileRenameRequest> {
 
   static FileRenameRequest $prototype = FileRenameRequest();
   FileRenameRequest({ 
-    String old_path,
-    String new_path,
+    String? old_path,
+    String? new_path,
   }):
   this.old_path = old_path ?? '',
   this.new_path = new_path ?? '';
 
   @override
   FileRenameRequest call({ 
-    String old_path,
-    String new_path,
+    String? old_path,
+    String? new_path,
   }) => FileRenameRequest(
   old_path: old_path,
   new_path: new_path,
@@ -98,16 +98,16 @@ class FileRenameResponse extends RosMessage<FileRenameResponse> {
 
   static FileRenameResponse $prototype = FileRenameResponse();
   FileRenameResponse({ 
-    bool success,
-    int r_errno,
+    bool? success,
+    int? r_errno,
   }):
   this.success = success ?? false,
   this.r_errno = r_errno ?? 0;
 
   @override
   FileRenameResponse call({ 
-    bool success,
-    int r_errno,
+    bool? success,
+    int? r_errno,
   }) => FileRenameResponse(
   success: success,
   r_errno: r_errno,

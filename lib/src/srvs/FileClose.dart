@@ -20,13 +20,13 @@ class FileCloseRequest extends RosMessage<FileCloseRequest> {
 
   static FileCloseRequest $prototype = FileCloseRequest();
   FileCloseRequest({ 
-    String file_path,
+    String? file_path,
   }):
   this.file_path = file_path ?? '';
 
   @override
   FileCloseRequest call({ 
-    String file_path,
+    String? file_path,
   }) => FileCloseRequest(
   file_path: file_path,
   );
@@ -87,16 +87,16 @@ class FileCloseResponse extends RosMessage<FileCloseResponse> {
 
   static FileCloseResponse $prototype = FileCloseResponse();
   FileCloseResponse({ 
-    bool success,
-    int r_errno,
+    bool? success,
+    int? r_errno,
   }):
   this.success = success ?? false,
   this.r_errno = r_errno ?? 0;
 
   @override
   FileCloseResponse call({ 
-    bool success,
-    int r_errno,
+    bool? success,
+    int? r_errno,
   }) => FileCloseResponse(
   success: success,
   r_errno: r_errno,

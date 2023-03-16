@@ -20,13 +20,13 @@ class FileMakeDirRequest extends RosMessage<FileMakeDirRequest> {
 
   static FileMakeDirRequest $prototype = FileMakeDirRequest();
   FileMakeDirRequest({ 
-    String dir_path,
+    String? dir_path,
   }):
   this.dir_path = dir_path ?? '';
 
   @override
   FileMakeDirRequest call({ 
-    String dir_path,
+    String? dir_path,
   }) => FileMakeDirRequest(
   dir_path: dir_path,
   );
@@ -86,16 +86,16 @@ class FileMakeDirResponse extends RosMessage<FileMakeDirResponse> {
 
   static FileMakeDirResponse $prototype = FileMakeDirResponse();
   FileMakeDirResponse({ 
-    bool success,
-    int r_errno,
+    bool? success,
+    int? r_errno,
   }):
   this.success = success ?? false,
   this.r_errno = r_errno ?? 0;
 
   @override
   FileMakeDirResponse call({ 
-    bool success,
-    int r_errno,
+    bool? success,
+    int? r_errno,
   }) => FileMakeDirResponse(
   success: success,
   r_errno: r_errno,
