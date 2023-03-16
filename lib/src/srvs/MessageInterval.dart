@@ -22,16 +22,16 @@ class MessageIntervalRequest extends RosMessage<MessageIntervalRequest> {
 
   static MessageIntervalRequest $prototype = MessageIntervalRequest();
   MessageIntervalRequest({ 
-    int message_id,
-    double message_rate,
+    int? message_id,
+    double? message_rate,
   }):
   this.message_id = message_id ?? 0,
   this.message_rate = message_rate ?? 0.0;
 
   @override
   MessageIntervalRequest call({ 
-    int message_id,
-    double message_rate,
+    int? message_id,
+    double? message_rate,
   }) => MessageIntervalRequest(
   message_id: message_id,
   message_rate: message_rate,
@@ -91,13 +91,13 @@ class MessageIntervalResponse extends RosMessage<MessageIntervalResponse> {
 
   static MessageIntervalResponse $prototype = MessageIntervalResponse();
   MessageIntervalResponse({ 
-    bool success,
+    bool? success,
   }):
   this.success = success ?? false;
 
   @override
   MessageIntervalResponse call({ 
-    bool success,
+    bool? success,
   }) => MessageIntervalResponse(
   success: success,
   );

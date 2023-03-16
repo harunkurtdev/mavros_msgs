@@ -22,16 +22,16 @@ class LogRequestListRequest extends RosMessage<LogRequestListRequest> {
 
   static LogRequestListRequest $prototype = LogRequestListRequest();
   LogRequestListRequest({ 
-    int start,
-    int end,
+    int? start,
+    int? end,
   }):
   this.start = start ?? 0,
   this.end = end ?? 0;
 
   @override
   LogRequestListRequest call({ 
-    int start,
-    int end,
+    int? start,
+    int? end,
   }) => LogRequestListRequest(
   start: start,
   end: end,
@@ -93,13 +93,13 @@ class LogRequestListResponse extends RosMessage<LogRequestListResponse> {
 
   static LogRequestListResponse $prototype = LogRequestListResponse();
   LogRequestListResponse({ 
-    bool success,
+    bool? success,
   }):
   this.success = success ?? false;
 
   @override
   LogRequestListResponse call({ 
-    bool success,
+    bool? success,
   }) => LogRequestListResponse(
   success: success,
   );

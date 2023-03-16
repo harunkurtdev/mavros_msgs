@@ -21,13 +21,13 @@ class ParamGetRequest extends RosMessage<ParamGetRequest> {
 
   static ParamGetRequest $prototype = ParamGetRequest();
   ParamGetRequest({ 
-    String param_id,
+    String? param_id,
   }):
   this.param_id = param_id ?? '';
 
   @override
   ParamGetRequest call({ 
-    String param_id,
+    String? param_id,
   }) => ParamGetRequest(
   param_id: param_id,
   );
@@ -84,16 +84,16 @@ class ParamGetResponse extends RosMessage<ParamGetResponse> {
 
   static ParamGetResponse $prototype = ParamGetResponse();
   ParamGetResponse({ 
-    bool success,
-    ParamValue value,
+    bool? success,
+    ParamValue? value,
   }):
   this.success = success ?? false,
   this.value = value ?? ParamValue();
 
   @override
   ParamGetResponse call({ 
-    bool success,
-    ParamValue value,
+    bool? success,
+    ParamValue? value,
   }) => ParamGetResponse(
   success: success,
   value: value,
