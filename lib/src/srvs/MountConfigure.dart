@@ -8,7 +8,7 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros/dartros.dart';
 import 'package:std_msgs/msgs.dart';
 
 //-----------------------------------------------------------
@@ -273,4 +273,8 @@ class MountConfigure extends RosServiceMessage<MountConfigureRequest, MountConfi
   String get md5sum => '8d724be18b06cd8e10d8c97c487c546a';
   @override
   String get fullType => 'mavros_msgs/MountConfigure';
+  
+  @override
+  // TODO: implement messageDefinition
+  String get messageDefinition => throw UnimplementedError();
 }

@@ -8,7 +8,7 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros/dartros.dart';
 
 //-----------------------------------------------------------
 
@@ -163,4 +163,8 @@ class CommandTriggerInterval extends RosServiceMessage<CommandTriggerIntervalReq
   String get md5sum => 'b16f28a04389d5d47ddaa9e025e7383a';
   @override
   String get fullType => 'mavros_msgs/CommandTriggerInterval';
+  
+  @override
+  // TODO: implement messageDefinition
+  String get messageDefinition => throw UnimplementedError();
 }

@@ -8,7 +8,7 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros/dartros.dart';
 
 //-----------------------------------------------------------
 
@@ -155,4 +155,8 @@ class ParamPull extends RosServiceMessage<ParamPullRequest, ParamPullResponse> {
   String get md5sum => 'c9628aea2226088718fd240fbd62afc7';
   @override
   String get fullType => 'mavros_msgs/ParamPull';
+  
+  @override
+  // TODO: implement messageDefinition
+  String get messageDefinition => throw UnimplementedError();
 }

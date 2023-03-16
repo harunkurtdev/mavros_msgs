@@ -8,7 +8,7 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros/dartros.dart';
 import 'package:geometry_msgs/msgs.dart';
 import 'package:std_msgs/msgs.dart';
 

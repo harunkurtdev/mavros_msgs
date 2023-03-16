@@ -8,7 +8,7 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros/dartros.dart';
 
 //-----------------------------------------------------------
 
@@ -141,4 +141,8 @@ class ParamPush extends RosServiceMessage<ParamPushRequest, ParamPushResponse> {
   String get md5sum => 'd3fc4d8cefa193382985a92a041a2a3d';
   @override
   String get fullType => 'mavros_msgs/ParamPush';
+  
+  @override
+  // TODO: implement messageDefinition
+  String get messageDefinition => throw UnimplementedError();
 }

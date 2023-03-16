@@ -8,7 +8,7 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros/dartros.dart';
 
 //-----------------------------------------------------------
 
@@ -172,4 +172,8 @@ class StreamRate extends RosServiceMessage<StreamRateRequest, StreamRateResponse
   String get md5sum => 'd12f7661724c8ba25f67ba597bb7d039';
   @override
   String get fullType => 'mavros_msgs/StreamRate';
+  
+  @override
+  // TODO: implement messageDefinition
+  String get messageDefinition => throw UnimplementedError();
 }

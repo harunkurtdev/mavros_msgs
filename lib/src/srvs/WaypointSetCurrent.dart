@@ -8,7 +8,7 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros/dartros.dart';
 
 //-----------------------------------------------------------
 
@@ -144,4 +144,8 @@ class WaypointSetCurrent extends RosServiceMessage<WaypointSetCurrentRequest, Wa
   String get md5sum => 'f99aa1a911a80ab546ea470f4e90c807';
   @override
   String get fullType => 'mavros_msgs/WaypointSetCurrent';
+  
+  @override
+  // TODO: implement messageDefinition
+  String get messageDefinition => throw UnimplementedError();
 }

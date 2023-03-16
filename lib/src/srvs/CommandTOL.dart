@@ -7,9 +7,9 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-// import 'package:dartros/msg_utils.dart';
+// import 'package:dartros/dartros.dart';
 
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros/dartros.dart';
 
 //-----------------------------------------------------------
 
@@ -29,10 +29,10 @@ class CommandTOLRequest extends RosMessage<CommandTOLRequest> {
   static CommandTOLRequest $prototype = CommandTOLRequest();
   CommandTOLRequest({
     double? min_pitch,
-    double?? yaw,
-    double?? latitude,
-    double?? longitude,
-    double?? altitude,
+    double? yaw,
+    double? latitude,
+    double? longitude,
+    double? altitude,
   })  : this.min_pitch = min_pitch ?? 0.0,
         this.yaw = yaw ?? 0.0,
         this.latitude = latitude ?? 0.0,
@@ -42,10 +42,10 @@ class CommandTOLRequest extends RosMessage<CommandTOLRequest> {
   @override
   CommandTOLRequest call({
     double? min_pitch,
-    double?? yaw,
-    double?? latitude,
-    double?? longitude,
-    double?? altitude,
+    double? yaw,
+    double? latitude,
+    double? longitude,
+    double? altitude,
   }) =>
       CommandTOLRequest(
         min_pitch: min_pitch,

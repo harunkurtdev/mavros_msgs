@@ -8,7 +8,7 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros/dartros.dart';
 
 //-----------------------------------------------------------
 
@@ -41,13 +41,13 @@ class CommandLongRequest extends RosMessage<CommandLongRequest> {
     bool? broadcast,
     int? command,
     int? confirmation,
-    double?? param1,
-    double?? param2,
-    double?? param3,
-    double?? param4,
-    double?? param5,
-    double?? param6,
-    double?? param7,
+    double? param1,
+    double? param2,
+    double? param3,
+    double? param4,
+    double? param5,
+    double? param6,
+    double? param7,
   }):
   this.broadcast = broadcast ?? false,
   this.command = command ?? 0,
@@ -65,13 +65,13 @@ class CommandLongRequest extends RosMessage<CommandLongRequest> {
     bool? broadcast,
     int? command,
     int? confirmation,
-    double?? param1,
-    double?? param2,
-    double?? param3,
-    double?? param4,
-    double?? param5,
-    double?? param6,
-    double?? param7,
+    double? param1,
+    double? param2,
+    double? param3,
+    double? param4,
+    double? param5,
+    double? param6,
+    double? param7,
   }) => CommandLongRequest(
   broadcast: broadcast,
   command: command,
@@ -254,4 +254,8 @@ class CommandLong extends RosServiceMessage<CommandLongRequest, CommandLongRespo
   String get md5sum => 'eb9034afc87577c0a235d45b8f3437d2';
   @override
   String get fullType => 'mavros_msgs/CommandLong';
+  
+  @override
+  // TODO: implement messageDefinition
+  String get messageDefinition => throw UnimplementedError();
 }

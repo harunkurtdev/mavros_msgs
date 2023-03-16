@@ -11,9 +11,9 @@
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
 //
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros/dartros.dart';
 
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros/dartros.dart';
 import 'package:std_msgs/msgs.dart';
 
 //-----------------------------------------------------------

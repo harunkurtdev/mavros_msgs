@@ -8,7 +8,7 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros/dartros.dart';
 
 //-----------------------------------------------------------
 
@@ -156,4 +156,8 @@ class LogRequestList extends RosServiceMessage<LogRequestListRequest, LogRequest
   String get md5sum => '3e2e88c935b3047e14f450bc4a90c4d2';
   @override
   String get fullType => 'mavros_msgs/LogRequestList';
+  
+  @override
+  // TODO: implement messageDefinition
+  String get messageDefinition => throw UnimplementedError();
 }

@@ -8,7 +8,7 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros/dartros.dart';
 import '../msgs/Waypoint.dart';
 
 //-----------------------------------------------------------
@@ -227,4 +227,8 @@ class WaypointPush extends RosServiceMessage<WaypointPushRequest, WaypointPushRe
   String get md5sum => '96690cb0f07ea4a54cdd6f188e10228e';
   @override
   String get fullType => 'mavros_msgs/WaypointPush';
+  
+  @override
+  // TODO: implement messageDefinition
+  String get messageDefinition => throw UnimplementedError();
 }

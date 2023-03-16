@@ -8,7 +8,7 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros/dartros.dart';
 
 //-----------------------------------------------------------
 
@@ -169,4 +169,8 @@ class FileTruncate extends RosServiceMessage<FileTruncateRequest, FileTruncateRe
   String get md5sum => '71bf45fe3600fc220a82346ce1d1430c';
   @override
   String get fullType => 'mavros_msgs/FileTruncate';
+  
+  @override
+  // TODO: implement messageDefinition
+  String get messageDefinition => throw UnimplementedError();
 }

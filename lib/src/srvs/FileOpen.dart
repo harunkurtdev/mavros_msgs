@@ -8,7 +8,7 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros/dartros.dart';
 
 //-----------------------------------------------------------
 
@@ -191,4 +191,8 @@ class FileOpen extends RosServiceMessage<FileOpenRequest, FileOpenResponse> {
   String get md5sum => '99a3f49cc67b91477cf49ff15c42af0e';
   @override
   String get fullType => 'mavros_msgs/FileOpen';
+  
+  @override
+  // TODO: implement messageDefinition
+  String get messageDefinition => throw UnimplementedError();
 }

@@ -8,7 +8,7 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros/dartros.dart';
 
 //-----------------------------------------------------------
 
@@ -158,4 +158,8 @@ class FileRemove extends RosServiceMessage<FileRemoveRequest, FileRemoveResponse
   String get md5sum => '1c309002d7f7c6df7d3f094925ea8e10';
   @override
   String get fullType => 'mavros_msgs/FileRemove';
+  
+  @override
+  // TODO: implement messageDefinition
+  String get messageDefinition => throw UnimplementedError();
 }

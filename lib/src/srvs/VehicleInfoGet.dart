@@ -8,7 +8,7 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros/dartros.dart';
 
 //-----------------------------------------------------------
 
@@ -248,4 +248,8 @@ class VehicleInfoGet extends RosServiceMessage<VehicleInfoGetRequest, VehicleInf
   String get md5sum => 'd85d85aa4f49fb3764201b7aeeb6cc2b';
   @override
   String get fullType => 'mavros_msgs/VehicleInfoGet';
+  
+  @override
+  // TODO: implement messageDefinition
+  String get messageDefinition => throw UnimplementedError();
 }

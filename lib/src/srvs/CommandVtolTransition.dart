@@ -8,7 +8,7 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros/dartros.dart';
 import 'package:std_msgs/msgs.dart';
 
 //-----------------------------------------------------------
@@ -195,4 +195,8 @@ class CommandVtolTransition extends RosServiceMessage<CommandVtolTransitionReque
   String get md5sum => '9fd38be6714b4cc56cabc5f733b6f095';
   @override
   String get fullType => 'mavros_msgs/CommandVtolTransition';
+  
+  @override
+  // TODO: implement messageDefinition
+  String get messageDefinition => throw UnimplementedError();
 }

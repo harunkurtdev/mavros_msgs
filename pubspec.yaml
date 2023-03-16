@@ -3,8 +3,8 @@
 # Updated: Wed Aug 31 21:42:38 2022
 
 name: mavros_msgs
-description: A ros mavros_msgs message package for dartros
-version: 0.0.3
+description: A ROS mavros_msgs message package for dartros
+version: 1.0.0
 repository: https://github.com/harunkurtme/mavros_msgs
 
 # publish_to: "none"
@@ -13,10 +13,10 @@ environment:
   sdk: '>=2.12.0 < 3.0.0'
 
 dependencies:
-  buffer: ^1.0.6
-  dartros: ^0.0.4+3
-  geometry_msgs: ^0.0.3
-  std_msgs: ^0.0.3
+  buffer: ^1.2.0
+  dartros: ^0.1.6
+  geometry_msgs: ^0.1.0
+  std_msgs: ^0.1.0
   
   # geographic_msgs: any
     # git:

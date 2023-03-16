@@ -8,7 +8,7 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros/dartros.dart';
 
 //-----------------------------------------------------------
 
@@ -208,4 +208,8 @@ class SetMavFrame extends RosServiceMessage<SetMavFrameRequest, SetMavFrameRespo
   String get md5sum => 'bda5ad49b9b82fbf5d1eeb3c9cdc0bfa';
   @override
   String get fullType => 'mavros_msgs/SetMavFrame';
+  
+  @override
+  // TODO: implement messageDefinition
+  String get messageDefinition => throw UnimplementedError();
 }

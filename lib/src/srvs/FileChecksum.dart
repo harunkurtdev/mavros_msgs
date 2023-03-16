@@ -8,7 +8,7 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros/dartros.dart';
 
 //-----------------------------------------------------------
 
@@ -171,4 +171,8 @@ class FileChecksum extends RosServiceMessage<FileChecksumRequest, FileChecksumRe
   String get md5sum => 'c32158e17d9a1a1c682fe19adbd29fac';
   @override
   String get fullType => 'mavros_msgs/FileChecksum';
+  
+  @override
+  // TODO: implement messageDefinition
+  String get messageDefinition => throw UnimplementedError();
 }

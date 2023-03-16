@@ -8,7 +8,7 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros/dartros.dart';
 
 //-----------------------------------------------------------
 
@@ -47,13 +47,13 @@ class CommandIntRequest extends RosMessage<CommandIntRequest> {
     int? command,
     int? current,
     int? autocontinue,
-    double?? param1,
-    double?? param2,
-    double?? param3,
-    double?? param4,
+    double? param1,
+    double? param2,
+    double? param3,
+    double? param4,
     int? x,
     int? y,
-    double?? z,
+    double? z,
   }):
   this.broadcast = broadcast ?? false,
   this.frame = frame ?? 0,
@@ -75,13 +75,13 @@ class CommandIntRequest extends RosMessage<CommandIntRequest> {
     int? command,
     int? current,
     int? autocontinue,
-    double?? param1,
-    double?? param2,
-    double?? param3,
-    double?? param4,
+    double? param1,
+    double? param2,
+    double? param3,
+    double? param4,
     int? x,
     int? y,
-    double?? z,
+    double? z,
   }) => CommandIntRequest(
   broadcast: broadcast,
   frame: frame,
@@ -266,4 +266,8 @@ class CommandInt extends RosServiceMessage<CommandIntRequest, CommandIntResponse
   String get md5sum => '5d5fd287bf3d27ad6ec508b1692f3b09';
   @override
   String get fullType => 'mavros_msgs/CommandInt';
+  
+  @override
+  // TODO: implement messageDefinition
+  String get messageDefinition => throw UnimplementedError();
 }

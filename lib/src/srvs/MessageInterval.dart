@@ -8,7 +8,7 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros/dartros.dart';
 
 //-----------------------------------------------------------
 
@@ -154,4 +154,8 @@ class MessageInterval extends RosServiceMessage<MessageIntervalRequest, MessageI
   String get md5sum => '99e633e185b7ee6b477bc9843a87b5ae';
   @override
   String get fullType => 'mavros_msgs/MessageInterval';
+  
+  @override
+  // TODO: implement messageDefinition
+  String get messageDefinition => throw UnimplementedError();
 }

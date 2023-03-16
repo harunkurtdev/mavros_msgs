@@ -8,7 +8,7 @@
 // ignore_for_file: unused_import, overridden_fields
 import 'dart:convert';
 import 'package:buffer/buffer.dart';
-import 'package:dartros/msg_utils.dart';
+import 'package:dartros/dartros.dart';
 
 //-----------------------------------------------------------
 
@@ -29,10 +29,10 @@ class CommandHomeRequest extends RosMessage<CommandHomeRequest> {
   static CommandHomeRequest $prototype = CommandHomeRequest();
   CommandHomeRequest({ 
     bool? current_gps,
-    double?? yaw,
-    double?? latitude,
-    double?? longitude,
-    double?? altitude,
+    double? yaw,
+    double? latitude,
+    double? longitude,
+    double? altitude,
   }):
   this.current_gps = current_gps ?? false,
   this.yaw = yaw ?? 0.0,
@@ -43,10 +43,10 @@ class CommandHomeRequest extends RosMessage<CommandHomeRequest> {
   @override
   CommandHomeRequest call({ 
     bool? current_gps,
-    double?? yaw,
-    double?? latitude,
-    double?? longitude,
-    double?? altitude,
+    double? yaw,
+    double? latitude,
+    double? longitude,
+    double? altitude,
   }) => CommandHomeRequest(
   current_gps: current_gps,
   yaw: yaw,
@@ -197,4 +197,8 @@ class CommandHome extends RosServiceMessage<CommandHomeRequest, CommandHomeRespo
   String get md5sum => '05b5da557a6a0cf6c2b958dba173bca1';
   @override
   String get fullType => 'mavros_msgs/CommandHome';
+  
+  @override
+  // TODO: implement messageDefinition
+  String get messageDefinition => throw UnimplementedError();
 }
