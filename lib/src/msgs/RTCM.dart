@@ -21,7 +21,7 @@ class RTCM extends RosMessage<RTCM> {
   static RTCM $prototype = RTCM();
   RTCM({ 
     Header? header,
-    List<int> data,
+    List<int>? data,
   }):
   this.header = header ?? Header(),
   this.data = data ?? [];
@@ -29,7 +29,7 @@ class RTCM extends RosMessage<RTCM> {
   @override
   RTCM call({ 
     Header? header,
-    List<int> data,
+    List<int>? data,
   }) => RTCM(
   header: header,
   data: data,

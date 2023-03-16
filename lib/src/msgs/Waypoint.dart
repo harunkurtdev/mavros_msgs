@@ -37,7 +37,7 @@ class Waypoint extends RosMessage<Waypoint> {
 
   static Waypoint $prototype = Waypoint();
   Waypoint({ 
-    int frame,
+    int? frame,
     int? command,
     bool? is_current,
     bool? autocontinue,
@@ -63,7 +63,7 @@ class Waypoint extends RosMessage<Waypoint> {
 
   @override
   Waypoint call({ 
-    int frame,
+    int? frame,
     int? command,
     bool? is_current,
     bool? autocontinue,

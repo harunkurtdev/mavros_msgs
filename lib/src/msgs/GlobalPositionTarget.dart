@@ -43,8 +43,8 @@ class GlobalPositionTarget extends RosMessage<GlobalPositionTarget> {
     double? latitude,
     double? longitude,
     double? altitude,
-    Vector3 velocity,
-    Vector3 acceleration_or_force,
+    Vector3? velocity,
+    Vector3? acceleration_or_force,
     double? yaw,
     double? yaw_rate,
   }):
@@ -67,8 +67,8 @@ class GlobalPositionTarget extends RosMessage<GlobalPositionTarget> {
     double? latitude,
     double? longitude,
     double? altitude,
-    Vector3 velocity,
-    Vector3 acceleration_or_force,
+    Vector3? velocity,
+    Vector3? acceleration_or_force,
     double? yaw,
     double? yaw_rate,
   }) => GlobalPositionTarget(

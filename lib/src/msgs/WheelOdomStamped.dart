@@ -21,7 +21,7 @@ class WheelOdomStamped extends RosMessage<WheelOdomStamped> {
   static WheelOdomStamped $prototype = WheelOdomStamped();
   WheelOdomStamped({ 
     Header? header,
-    List<double> data,
+    List<double>? data,
   }):
   this.header = header ?? Header(),
   this.data = data ?? [];
@@ -29,7 +29,7 @@ class WheelOdomStamped extends RosMessage<WheelOdomStamped> {
   @override
   WheelOdomStamped call({ 
     Header? header,
-    List<double> data,
+    List<double>? data,
   }) => WheelOdomStamped(
   header: header,
   data: data,

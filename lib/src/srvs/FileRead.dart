@@ -25,8 +25,8 @@ class FileReadRequest extends RosMessage<FileReadRequest> {
   static FileReadRequest $prototype = FileReadRequest();
   FileReadRequest({ 
     String? file_path,
-    int?? offset,
-    int?? size,
+    int? offset,
+    int? size,
   }):
   this.file_path = file_path ?? '',
   this.offset = offset ?? 0,
@@ -35,8 +35,8 @@ class FileReadRequest extends RosMessage<FileReadRequest> {
   @override
   FileReadRequest call({ 
     String? file_path,
-    int?? offset,
-    int?? size,
+    int? offset,
+    int? size,
   }) => FileReadRequest(
   file_path: file_path,
   offset: offset,
@@ -112,8 +112,8 @@ class FileReadResponse extends RosMessage<FileReadResponse> {
   static FileReadResponse $prototype = FileReadResponse();
   FileReadResponse({ 
     List<int>? data,
-    bool?? success,
-    int?? r_errno,
+    bool? success,
+    int? r_errno,
   }):
   this.data = data ?? [],
   this.success = success ?? false,
@@ -122,8 +122,8 @@ class FileReadResponse extends RosMessage<FileReadResponse> {
   @override
   FileReadResponse call({ 
     List<int>? data,
-    bool?? success,
-    int?? r_errno,
+    bool? success,
+    int? r_errno,
   }) => FileReadResponse(
   data: data,
   success: success,

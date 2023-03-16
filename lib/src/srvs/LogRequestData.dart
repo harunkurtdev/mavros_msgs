@@ -25,8 +25,8 @@ class LogRequestDataRequest extends RosMessage<LogRequestDataRequest> {
   static LogRequestDataRequest $prototype = LogRequestDataRequest();
   LogRequestDataRequest({ 
     int? id,
-    int?? offset,
-    int?? count,
+    int? offset,
+    int? count,
   }):
   this.id = id ?? 0,
   this.offset = offset ?? 0,
@@ -35,8 +35,8 @@ class LogRequestDataRequest extends RosMessage<LogRequestDataRequest> {
   @override
   LogRequestDataRequest call({ 
     int? id,
-    int?? offset,
-    int?? count,
+    int? offset,
+    int? count,
   }) => LogRequestDataRequest(
   id: id,
   offset: offset,

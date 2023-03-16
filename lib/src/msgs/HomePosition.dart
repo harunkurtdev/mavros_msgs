@@ -30,9 +30,9 @@ class HomePosition extends RosMessage<HomePosition> {
   HomePosition({ 
     Header? header,
     // GeoPoint geo,
-    Point position,
-    Quaternion orientation,
-    Vector3 approach,
+    Point? position,
+    Quaternion? orientation,
+    Vector3? approach,
   }):
   this.header = header ?? Header(),
   // this.geo = geo ?? GeoPoint(),
@@ -44,9 +44,9 @@ class HomePosition extends RosMessage<HomePosition> {
   HomePosition call({ 
     Header? header,
     // GeoPoint geo,
-    Point position,
-    Quaternion orientation,
-    Vector3 approach,
+    Point? position,
+    Quaternion? orientation,
+    Vector3? approach,
   }) => HomePosition(
   header: header,
   // geo: geo,

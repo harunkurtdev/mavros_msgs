@@ -19,7 +19,7 @@ class ParamValue extends RosMessage<ParamValue> {
 
   static ParamValue $prototype = ParamValue();
   ParamValue({ 
-    int integer,
+    int? integer,
     double? real,
   }):
   this.integer = integer ?? 0,
@@ -27,7 +27,7 @@ class ParamValue extends RosMessage<ParamValue> {
 
   @override
   ParamValue call({ 
-    int integer,
+    int? integer,
     double? real,
   }) => ParamValue(
   integer: integer,

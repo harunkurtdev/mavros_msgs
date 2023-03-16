@@ -20,16 +20,16 @@ class WaypointList extends RosMessage<WaypointList> {
 
   static WaypointList $prototype = WaypointList();
   WaypointList({ 
-    int current_seq,
-    List<Waypoint> waypoints,
+    int? current_seq,
+    List<Waypoint>? waypoints,
   }):
   this.current_seq = current_seq ?? 0,
   this.waypoints = waypoints ?? [];
 
   @override
   WaypointList call({ 
-    int current_seq,
-    List<Waypoint> waypoints,
+    int? current_seq,
+    List<Waypoint>? waypoints,
   }) => WaypointList(
   current_seq: current_seq,
   waypoints: waypoints,

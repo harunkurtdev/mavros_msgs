@@ -32,7 +32,7 @@ class LogEntry extends RosMessage<LogEntry> {
     int? id,
     int? num_logs,
     int? last_log_num,
-    RosTime time_utc,
+    RosTime? time_utc,
     int? size,
   }):
   this.header = header ?? Header(),
@@ -48,7 +48,7 @@ class LogEntry extends RosMessage<LogEntry> {
     int? id,
     int? num_logs,
     int? last_log_num,
-    RosTime time_utc,
+    RosTime? time_utc,
     int? size,
   }) => LogEntry(
   header: header,

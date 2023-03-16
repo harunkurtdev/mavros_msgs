@@ -24,7 +24,7 @@ class RCIn extends RosMessage<RCIn> {
   RCIn({ 
     Header? header,
     int? rssi,
-    List<int> channels,
+    List<int>? channels,
   }):
   this.header = header ?? Header(),
   this.rssi = rssi ?? 0,
@@ -34,7 +34,7 @@ class RCIn extends RosMessage<RCIn> {
   RCIn call({ 
     Header? header,
     int? rssi,
-    List<int> channels,
+    List<int>? channels,
   }) => RCIn(
   header: header,
   rssi: rssi,

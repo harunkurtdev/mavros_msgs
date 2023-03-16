@@ -24,7 +24,7 @@ class CommandVtolTransitionRequest extends RosMessage<CommandVtolTransitionReque
   static CommandVtolTransitionRequest $prototype = CommandVtolTransitionRequest();
   CommandVtolTransitionRequest({ 
     Header? header,
-    int?? state,
+    int? state,
   }):
   this.header = header ?? Header(),
   this.state = state ?? 0;
@@ -32,7 +32,7 @@ class CommandVtolTransitionRequest extends RosMessage<CommandVtolTransitionReque
   @override
   CommandVtolTransitionRequest call({ 
     Header? header,
-    int?? state,
+    int? state,
   }) => CommandVtolTransitionRequest(
   header: header,
   state: state,
@@ -124,7 +124,7 @@ class CommandVtolTransitionResponse extends RosMessage<CommandVtolTransitionResp
   static CommandVtolTransitionResponse $prototype = CommandVtolTransitionResponse();
   CommandVtolTransitionResponse({ 
     bool? success,
-    int?? result,
+    int? result,
   }):
   this.success = success ?? false,
   this.result = result ?? 0;
@@ -132,7 +132,7 @@ class CommandVtolTransitionResponse extends RosMessage<CommandVtolTransitionResp
   @override
   CommandVtolTransitionResponse call({ 
     bool? success,
-    int?? result,
+    int? result,
   }) => CommandVtolTransitionResponse(
   success: success,
   result: result,

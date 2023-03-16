@@ -90,8 +90,8 @@ class FileListResponse extends RosMessage<FileListResponse> {
   static FileListResponse $prototype = FileListResponse();
   FileListResponse({ 
     List<FileEntry>? list,
-    bool?? success,
-    int?? r_errno,
+    bool? success,
+    int? r_errno,
   }):
   this.list = list ?? [],
   this.success = success ?? false,
@@ -100,8 +100,8 @@ class FileListResponse extends RosMessage<FileListResponse> {
   @override
   FileListResponse call({ 
     List<FileEntry>? list,
-    bool?? success,
-    int?? r_errno,
+    bool? success,
+    int? r_errno,
   }) => FileListResponse(
   list: list,
   success: success,

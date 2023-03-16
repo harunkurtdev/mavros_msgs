@@ -36,9 +36,9 @@ class HilSensor extends RosMessage<HilSensor> {
   static HilSensor $prototype = HilSensor();
   HilSensor({ 
     Header? header,
-    Vector3 acc,
-    Vector3 gyro,
-    Vector3 mag,
+    Vector3? acc,
+    Vector3? gyro,
+    Vector3? mag,
     double? abs_pressure,
     double? diff_pressure,
     double? pressure_alt,
@@ -58,9 +58,9 @@ class HilSensor extends RosMessage<HilSensor> {
   @override
   HilSensor call({ 
     Header? header,
-    Vector3 acc,
-    Vector3 gyro,
-    Vector3 mag,
+    Vector3? acc,
+    Vector3? gyro,
+    Vector3? mag,
     double? abs_pressure,
     double? diff_pressure,
     double? pressure_alt,

@@ -53,8 +53,8 @@ class Mavlink extends RosMessage<Mavlink> {
     int? compid,
     int? msgid,
     int? checksum,
-    List<int> payload64,
-    List<int> signature,
+    List<int>? payload64,
+    List<int>? signature,
   }):
   this.header = header ?? Header(),
   this.framing_status = framing_status ?? 0,
@@ -83,8 +83,8 @@ class Mavlink extends RosMessage<Mavlink> {
     int? compid,
     int? msgid,
     int? checksum,
-    List<int> payload64,
-    List<int> signature,
+    List<int>? payload64,
+    List<int>? signature,
   }) => Mavlink(
   header: header,
   framing_status: framing_status,

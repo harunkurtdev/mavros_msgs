@@ -125,14 +125,14 @@ class CommandTOLResponse extends RosMessage<CommandTOLResponse> {
   static CommandTOLResponse $prototype = CommandTOLResponse();
   CommandTOLResponse({
     bool? success,
-    int?? result,
+    int? result,
   })  : this.success = success ?? false,
         this.result = result ?? 0;
 
   @override
   CommandTOLResponse call({
     bool? success,
-    int?? result,
+    int? result,
   }) =>
       CommandTOLResponse(
         success: success,

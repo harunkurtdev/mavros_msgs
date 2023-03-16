@@ -87,7 +87,7 @@ class FileRemoveDirResponse extends RosMessage<FileRemoveDirResponse> {
   static FileRemoveDirResponse $prototype = FileRemoveDirResponse();
   FileRemoveDirResponse({ 
     bool? success,
-    int?? r_errno,
+    int? r_errno,
   }):
   this.success = success ?? false,
   this.r_errno = r_errno ?? 0;
@@ -95,7 +95,7 @@ class FileRemoveDirResponse extends RosMessage<FileRemoveDirResponse> {
   @override
   FileRemoveDirResponse call({ 
     bool? success,
-    int?? r_errno,
+    int? r_errno,
   }) => FileRemoveDirResponse(
   success: success,
   r_errno: r_errno,

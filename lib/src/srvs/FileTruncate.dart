@@ -23,7 +23,7 @@ class FileTruncateRequest extends RosMessage<FileTruncateRequest> {
   static FileTruncateRequest $prototype = FileTruncateRequest();
   FileTruncateRequest({ 
     String? file_path,
-    int?? length,
+    int? length,
   }):
   this.file_path = file_path ?? '',
   this.length = length ?? 0;
@@ -31,7 +31,7 @@ class FileTruncateRequest extends RosMessage<FileTruncateRequest> {
   @override
   FileTruncateRequest call({ 
     String? file_path,
-    int?? length,
+    int? length,
   }) => FileTruncateRequest(
   file_path: file_path,
   length: length,
@@ -98,7 +98,7 @@ class FileTruncateResponse extends RosMessage<FileTruncateResponse> {
   static FileTruncateResponse $prototype = FileTruncateResponse();
   FileTruncateResponse({ 
     bool? success,
-    int?? r_errno,
+    int? r_errno,
   }):
   this.success = success ?? false,
   this.r_errno = r_errno ?? 0;
@@ -106,7 +106,7 @@ class FileTruncateResponse extends RosMessage<FileTruncateResponse> {
   @override
   FileTruncateResponse call({ 
     bool? success,
-    int?? r_errno,
+    int? r_errno,
   }) => FileTruncateResponse(
   success: success,
   r_errno: r_errno,

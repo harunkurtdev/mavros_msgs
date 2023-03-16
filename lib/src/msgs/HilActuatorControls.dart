@@ -25,7 +25,7 @@ class HilActuatorControls extends RosMessage<HilActuatorControls> {
   static HilActuatorControls $prototype = HilActuatorControls();
   HilActuatorControls({ 
     Header? header,
-    List<double> controls,
+    List<double>? controls,
     int? mode,
     int? flags,
   }):
@@ -37,7 +37,7 @@ class HilActuatorControls extends RosMessage<HilActuatorControls> {
   @override
   HilActuatorControls call({ 
     Header? header,
-    List<double> controls,
+    List<double>? controls,
     int? mode,
     int? flags,
   }) => HilActuatorControls(

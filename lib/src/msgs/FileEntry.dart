@@ -21,7 +21,7 @@ class FileEntry extends RosMessage<FileEntry> {
 
   static FileEntry $prototype = FileEntry();
   FileEntry({ 
-    String name,
+    String? name,
     int? type,
     int? size,
   }):
@@ -31,7 +31,7 @@ class FileEntry extends RosMessage<FileEntry> {
 
   @override
   FileEntry call({ 
-    String name,
+    String? name,
     int? type,
     int? size,
   }) => FileEntry(

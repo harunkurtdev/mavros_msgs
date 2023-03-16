@@ -156,7 +156,7 @@ class WaypointPushResponse extends RosMessage<WaypointPushResponse> {
   static WaypointPushResponse $prototype = WaypointPushResponse();
   WaypointPushResponse({ 
     bool? success,
-    int?? wp_transfered,
+    int? wp_transfered,
   }):
   this.success = success ?? false,
   this.wp_transfered = wp_transfered ?? 0;
@@ -164,7 +164,7 @@ class WaypointPushResponse extends RosMessage<WaypointPushResponse> {
   @override
   WaypointPushResponse call({ 
     bool? success,
-    int?? wp_transfered,
+    int? wp_transfered,
   }) => WaypointPushResponse(
   success: success,
   wp_transfered: wp_transfered,

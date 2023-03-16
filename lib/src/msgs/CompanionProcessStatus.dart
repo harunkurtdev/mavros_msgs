@@ -23,8 +23,8 @@ class CompanionProcessStatus extends RosMessage<CompanionProcessStatus> {
   static CompanionProcessStatus $prototype = CompanionProcessStatus();
   CompanionProcessStatus({
     Header? header,
-    int?? state,
-    int?? component,
+    int? state,
+    int? component,
   })  : this.header = header ?? Header(),
         this.state = state ?? 0,
         this.component = component ?? 0;
@@ -32,8 +32,8 @@ class CompanionProcessStatus extends RosMessage<CompanionProcessStatus> {
   @override
   CompanionProcessStatus call({
     Header? header,
-    int?? state,
-    int?? component,
+    int? state,
+    int? component,
   }) =>
       CompanionProcessStatus(
         header: header,

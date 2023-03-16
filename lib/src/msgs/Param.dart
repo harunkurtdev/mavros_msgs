@@ -29,7 +29,7 @@ class Param extends RosMessage<Param> {
   Param({ 
     Header? header,
     String? param_id,
-    ParamValue value,
+    ParamValue? value,
     int? param_index,
     int? param_count,
   }):
@@ -43,7 +43,7 @@ class Param extends RosMessage<Param> {
   Param call({ 
     Header? header,
     String? param_id,
-    ParamValue value,
+    ParamValue? value,
     int? param_index,
     int? param_count,
   }) => Param(

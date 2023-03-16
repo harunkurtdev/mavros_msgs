@@ -84,7 +84,7 @@ class ParamPullResponse extends RosMessage<ParamPullResponse> {
   static ParamPullResponse $prototype = ParamPullResponse();
   ParamPullResponse({ 
     bool? success,
-    int?? param_received,
+    int? param_received,
   }):
   this.success = success ?? false,
   this.param_received = param_received ?? 0;
@@ -92,7 +92,7 @@ class ParamPullResponse extends RosMessage<ParamPullResponse> {
   @override
   ParamPullResponse call({ 
     bool? success,
-    int?? param_received,
+    int? param_received,
   }) => ParamPullResponse(
   success: success,
   param_received: param_received,

@@ -25,8 +25,8 @@ class StreamRateRequest extends RosMessage<StreamRateRequest> {
   static StreamRateRequest $prototype = StreamRateRequest();
   StreamRateRequest({ 
     int? stream_id,
-    int?? message_rate,
-    bool?? on_off,
+    int? message_rate,
+    bool? on_off,
   }):
   this.stream_id = stream_id ?? 0,
   this.message_rate = message_rate ?? 0,
@@ -35,8 +35,8 @@ class StreamRateRequest extends RosMessage<StreamRateRequest> {
   @override
   StreamRateRequest call({ 
     int? stream_id,
-    int?? message_rate,
-    bool?? on_off,
+    int? message_rate,
+    bool? on_off,
   }) => StreamRateRequest(
   stream_id: stream_id,
   message_rate: message_rate,

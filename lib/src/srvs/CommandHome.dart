@@ -126,7 +126,7 @@ class CommandHomeResponse extends RosMessage<CommandHomeResponse> {
   static CommandHomeResponse $prototype = CommandHomeResponse();
   CommandHomeResponse({ 
     bool? success,
-    int?? result,
+    int? result,
   }):
   this.success = success ?? false,
   this.result = result ?? 0;
@@ -134,7 +134,7 @@ class CommandHomeResponse extends RosMessage<CommandHomeResponse> {
   @override
   CommandHomeResponse call({ 
     bool? success,
-    int?? result,
+    int? result,
   }) => CommandHomeResponse(
   success: success,
   result: result,

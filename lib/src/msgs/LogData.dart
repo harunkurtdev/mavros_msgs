@@ -27,7 +27,7 @@ class LogData extends RosMessage<LogData> {
     Header? header,
     int? id,
     int? offset,
-    List<int> data,
+    List<int>? data,
   }):
   this.header = header ?? Header(),
   this.id = id ?? 0,
@@ -39,7 +39,7 @@ class LogData extends RosMessage<LogData> {
     Header? header,
     int? id,
     int? offset,
-    List<int> data,
+    List<int>? data,
   }) => LogData(
   header: header,
   id: id,
