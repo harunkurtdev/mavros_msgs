@@ -91,8 +91,8 @@ class FileChecksumResponse extends RosMessage<FileChecksumResponse> {
   static FileChecksumResponse $prototype = FileChecksumResponse();
   FileChecksumResponse({ 
     int? crc32,
-    bool? success,
-    int? r_errno,
+    bool?? success,
+    int?? r_errno,
   }):
   this.crc32 = crc32 ?? 0,
   this.success = success ?? false,
@@ -101,8 +101,8 @@ class FileChecksumResponse extends RosMessage<FileChecksumResponse> {
   @override
   FileChecksumResponse call({ 
     int? crc32,
-    bool? success,
-    int? r_errno,
+    bool?? success,
+    int?? r_errno,
   }) => FileChecksumResponse(
   crc32: crc32,
   success: success,

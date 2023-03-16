@@ -80,14 +80,14 @@ class CommandBoolResponse extends RosMessage<CommandBoolResponse> {
   static CommandBoolResponse $prototype = CommandBoolResponse();
   CommandBoolResponse({
     bool? success,
-    int? result,
+    int?? result,
   })  : this.success = success ?? false,
         this.result = result ?? 0;
 
   @override
   CommandBoolResponse call({
     bool? success,
-    int? result,
+    int?? result,
   }) =>
       CommandBoolResponse(
         success: success,

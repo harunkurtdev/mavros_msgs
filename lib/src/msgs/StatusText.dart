@@ -22,9 +22,9 @@ class StatusText extends RosMessage<StatusText> {
 
   static StatusText $prototype = StatusText();
   StatusText({ 
-    Header header,
-    int severity,
-    String text,
+    Header? header,
+    int? severity,
+    String? text,
   }):
   this.header = header ?? Header(),
   this.severity = severity ?? 0,
@@ -32,9 +32,9 @@ class StatusText extends RosMessage<StatusText> {
 
   @override
   StatusText call({ 
-    Header header,
-    int severity,
-    String text,
+    Header? header,
+    int? severity,
+    String? text,
   }) => StatusText(
   header: header,
   severity: severity,

@@ -20,16 +20,16 @@ class WaypointReached extends RosMessage<WaypointReached> {
 
   static WaypointReached $prototype = WaypointReached();
   WaypointReached({ 
-    Header header,
-    int wp_seq,
+    Header? header,
+    int? wp_seq,
   }):
   this.header = header ?? Header(),
   this.wp_seq = wp_seq ?? 0;
 
   @override
   WaypointReached call({ 
-    Header header,
-    int wp_seq,
+    Header? header,
+    int? wp_seq,
   }) => WaypointReached(
   header: header,
   wp_seq: wp_seq,

@@ -23,7 +23,7 @@ class LogRequestListRequest extends RosMessage<LogRequestListRequest> {
   static LogRequestListRequest $prototype = LogRequestListRequest();
   LogRequestListRequest({ 
     int? start,
-    int? end,
+    int?? end,
   }):
   this.start = start ?? 0,
   this.end = end ?? 0;
@@ -31,7 +31,7 @@ class LogRequestListRequest extends RosMessage<LogRequestListRequest> {
   @override
   LogRequestListRequest call({ 
     int? start,
-    int? end,
+    int?? end,
   }) => LogRequestListRequest(
   start: start,
   end: end,

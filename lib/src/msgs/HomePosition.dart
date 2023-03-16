@@ -28,7 +28,7 @@ class HomePosition extends RosMessage<HomePosition> {
 
   static HomePosition $prototype = HomePosition();
   HomePosition({ 
-    Header header,
+    Header? header,
     // GeoPoint geo,
     Point position,
     Quaternion orientation,
@@ -42,7 +42,7 @@ class HomePosition extends RosMessage<HomePosition> {
 
   @override
   HomePosition call({ 
-    Header header,
+    Header? header,
     // GeoPoint geo,
     Point position,
     Quaternion orientation,

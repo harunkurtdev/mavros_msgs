@@ -36,16 +36,16 @@ class RadioStatus extends RosMessage<RadioStatus> {
 
   static RadioStatus $prototype = RadioStatus();
   RadioStatus({ 
-    Header header,
-    int rssi,
-    int remrssi,
-    int txbuf,
-    int noise,
-    int remnoise,
-    int rxerrors,
-    int fixed,
-    double rssi_dbm,
-    double remrssi_dbm,
+    Header? header,
+    int? rssi,
+    int? remrssi,
+    int? txbuf,
+    int? noise,
+    int? remnoise,
+    int? rxerrors,
+    int? fixed,
+    double? rssi_dbm,
+    double? remrssi_dbm,
   }):
   this.header = header ?? Header(),
   this.rssi = rssi ?? 0,
@@ -60,16 +60,16 @@ class RadioStatus extends RosMessage<RadioStatus> {
 
   @override
   RadioStatus call({ 
-    Header header,
-    int rssi,
-    int remrssi,
-    int txbuf,
-    int noise,
-    int remnoise,
-    int rxerrors,
-    int fixed,
-    double rssi_dbm,
-    double remrssi_dbm,
+    Header? header,
+    int? rssi,
+    int? remrssi,
+    int? txbuf,
+    int? noise,
+    int? remnoise,
+    int? rxerrors,
+    int? fixed,
+    double? rssi_dbm,
+    double? remrssi_dbm,
   }) => RadioStatus(
   header: header,
   rssi: rssi,

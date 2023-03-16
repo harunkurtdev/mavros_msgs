@@ -29,10 +29,10 @@ class CommandTOLRequest extends RosMessage<CommandTOLRequest> {
   static CommandTOLRequest $prototype = CommandTOLRequest();
   CommandTOLRequest({
     double? min_pitch,
-    double? yaw,
-    double? latitude,
-    double? longitude,
-    double? altitude,
+    double?? yaw,
+    double?? latitude,
+    double?? longitude,
+    double?? altitude,
   })  : this.min_pitch = min_pitch ?? 0.0,
         this.yaw = yaw ?? 0.0,
         this.latitude = latitude ?? 0.0,
@@ -42,10 +42,10 @@ class CommandTOLRequest extends RosMessage<CommandTOLRequest> {
   @override
   CommandTOLRequest call({
     double? min_pitch,
-    double? yaw,
-    double? latitude,
-    double? longitude,
-    double? altitude,
+    double?? yaw,
+    double?? latitude,
+    double?? longitude,
+    double?? altitude,
   }) =>
       CommandTOLRequest(
         min_pitch: min_pitch,
@@ -125,14 +125,14 @@ class CommandTOLResponse extends RosMessage<CommandTOLResponse> {
   static CommandTOLResponse $prototype = CommandTOLResponse();
   CommandTOLResponse({
     bool? success,
-    int? result,
+    int?? result,
   })  : this.success = success ?? false,
         this.result = result ?? 0;
 
   @override
   CommandTOLResponse call({
     bool? success,
-    int? result,
+    int?? result,
   }) =>
       CommandTOLResponse(
         success: success,

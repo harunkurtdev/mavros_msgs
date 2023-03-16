@@ -20,16 +20,16 @@ class Thrust extends RosMessage<Thrust> {
 
   static Thrust $prototype = Thrust();
   Thrust({ 
-    Header header,
-    double thrust,
+    Header? header,
+    double? thrust,
   }):
   this.header = header ?? Header(),
   this.thrust = thrust ?? 0.0;
 
   @override
   Thrust call({ 
-    Header header,
-    double thrust,
+    Header? header,
+    double? thrust,
   }) => Thrust(
   header: header,
   thrust: thrust,

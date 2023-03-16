@@ -24,10 +24,10 @@ class ESCInfoItem extends RosMessage<ESCInfoItem> {
 
   static ESCInfoItem $prototype = ESCInfoItem();
   ESCInfoItem({
-    Header header,
-    int failure_flags,
-    int error_count,
-    int temperature,
+    Header? header,
+    int?? failure_flags,
+    int?? error_count,
+    int?? temperature,
   })  : this.header = header ?? Header(),
         this.failure_flags = failure_flags ?? 0,
         this.error_count = error_count ?? 0,
@@ -35,10 +35,10 @@ class ESCInfoItem extends RosMessage<ESCInfoItem> {
 
   @override
   ESCInfoItem call({
-    Header header,
-    int failure_flags,
-    int error_count,
-    int temperature,
+      Header? header,
+    int?? failure_flags,
+    int?? error_count,
+    int?? temperature,
   }) =>
       ESCInfoItem(
         header: header,

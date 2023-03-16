@@ -37,8 +37,8 @@ class Trajectory extends RosMessage<Trajectory> {
 
   static Trajectory $prototype = Trajectory();
   Trajectory({ 
-    Header header,
-    int type,
+    Header? header,
+    int? type,
     PositionTarget point_1,
     PositionTarget point_2,
     PositionTarget point_3,
@@ -61,8 +61,8 @@ class Trajectory extends RosMessage<Trajectory> {
 
   @override
   Trajectory call({ 
-    Header header,
-    int type,
+    Header? header,
+    int? type,
     PositionTarget point_1,
     PositionTarget point_2,
     PositionTarget point_3,

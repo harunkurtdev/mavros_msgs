@@ -26,8 +26,8 @@ class VehicleInfoGetRequest extends RosMessage<VehicleInfoGetRequest> {
   static VehicleInfoGetRequest $prototype = VehicleInfoGetRequest();
   VehicleInfoGetRequest({ 
     int? sysid,
-    int? compid,
-    bool? get_all,
+    int?? compid,
+    bool?? get_all,
   }):
   this.sysid = sysid ?? 0,
   this.compid = compid ?? 0,
@@ -36,8 +36,8 @@ class VehicleInfoGetRequest extends RosMessage<VehicleInfoGetRequest> {
   @override
   VehicleInfoGetRequest call({ 
     int? sysid,
-    int? compid,
-    bool? get_all,
+    int?? compid,
+    bool?? get_all,
   }) => VehicleInfoGetRequest(
   sysid: sysid,
   compid: compid,

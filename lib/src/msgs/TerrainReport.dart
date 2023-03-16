@@ -32,14 +32,14 @@ class TerrainReport extends RosMessage<TerrainReport> {
 
   static TerrainReport $prototype = TerrainReport();
   TerrainReport({ 
-    Header header,
-    double latitude,
-    double longitude,
-    int spacing,
-    double terrain_height,
-    double current_height,
-    int pending,
-    int loaded,
+    Header? header,
+    double? latitude,
+    double? longitude,
+    int? spacing,
+    double? terrain_height,
+    double? current_height,
+    int? pending,
+    int? loaded,
   }):
   this.header = header ?? Header(),
   this.latitude = latitude ?? 0.0,
@@ -52,14 +52,14 @@ class TerrainReport extends RosMessage<TerrainReport> {
 
   @override
   TerrainReport call({ 
-    Header header,
-    double latitude,
-    double longitude,
-    int spacing,
-    double terrain_height,
-    double current_height,
-    int pending,
-    int loaded,
+    Header? header,
+    double? latitude,
+    double? longitude,
+    int? spacing,
+    double? terrain_height,
+    double? current_height,
+    int? pending,
+    int? loaded,
   }) => TerrainReport(
   header: header,
   latitude: latitude,

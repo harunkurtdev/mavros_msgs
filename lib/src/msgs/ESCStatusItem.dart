@@ -26,10 +26,10 @@ class ESCStatusItem extends RosMessage<ESCStatusItem> {
 
   static ESCStatusItem $prototype = ESCStatusItem();
   ESCStatusItem({
-    Header header,
-    int rpm,
-    double voltage,
-    double current,
+    Header? header,
+    int?? rpm,
+    double? voltage,
+    double? current,
   })  : this.header = header ?? Header(),
         this.rpm = rpm ?? 0,
         this.voltage = voltage ?? 0.0,
@@ -37,10 +37,10 @@ class ESCStatusItem extends RosMessage<ESCStatusItem> {
 
   @override
   ESCStatusItem call({
-    Header header,
-    int rpm,
-    double voltage,
-    double current,
+    Header? header,
+    int?? rpm,
+    double? voltage,
+    double? current,
   }) =>
       ESCStatusItem(
         header: header,

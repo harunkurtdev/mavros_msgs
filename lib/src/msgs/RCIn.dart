@@ -22,8 +22,8 @@ class RCIn extends RosMessage<RCIn> {
 
   static RCIn $prototype = RCIn();
   RCIn({ 
-    Header header,
-    int rssi,
+    Header? header,
+    int? rssi,
     List<int> channels,
   }):
   this.header = header ?? Header(),
@@ -32,8 +32,8 @@ class RCIn extends RosMessage<RCIn> {
 
   @override
   RCIn call({ 
-    Header header,
-    int rssi,
+    Header? header,
+    int? rssi,
     List<int> channels,
   }) => RCIn(
   header: header,

@@ -21,16 +21,16 @@ class ESCTelemetry extends RosMessage<ESCTelemetry> {
 
   static ESCTelemetry $prototype = ESCTelemetry();
   ESCTelemetry({ 
-    Header header,
-    List<ESCTelemetryItem> esc_telemetry,
+    Header? header,
+    List<ESCTelemetryItem>? esc_telemetry,
   }):
   this.header = header ?? Header(),
   this.esc_telemetry = esc_telemetry ?? [];
 
   @override
   ESCTelemetry call({ 
-    Header header,
-    List<ESCTelemetryItem> esc_telemetry,
+    Header? header,
+    List<ESCTelemetryItem>? esc_telemetry,
   }) => ESCTelemetry(
   header: header,
   esc_telemetry: esc_telemetry,

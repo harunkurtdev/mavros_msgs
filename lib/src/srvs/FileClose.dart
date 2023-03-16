@@ -88,7 +88,7 @@ class FileCloseResponse extends RosMessage<FileCloseResponse> {
   static FileCloseResponse $prototype = FileCloseResponse();
   FileCloseResponse({ 
     bool? success,
-    int? r_errno,
+    int?? r_errno,
   }):
   this.success = success ?? false,
   this.r_errno = r_errno ?? 0;
@@ -96,7 +96,7 @@ class FileCloseResponse extends RosMessage<FileCloseResponse> {
   @override
   FileCloseResponse call({ 
     bool? success,
-    int? r_errno,
+    int?? r_errno,
   }) => FileCloseResponse(
   success: success,
   r_errno: r_errno,

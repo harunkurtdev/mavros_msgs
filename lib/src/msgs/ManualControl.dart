@@ -28,12 +28,12 @@ class ManualControl extends RosMessage<ManualControl> {
 
   static ManualControl $prototype = ManualControl();
   ManualControl({ 
-    Header header,
-    double x,
-    double y,
-    double z,
-    double r,
-    int buttons,
+    Header? header,
+    double? x,
+    double? y,
+    double? z,
+    double? r,
+    int? buttons,
   }):
   this.header = header ?? Header(),
   this.x = x ?? 0.0,
@@ -44,12 +44,12 @@ class ManualControl extends RosMessage<ManualControl> {
 
   @override
   ManualControl call({ 
-    Header header,
-    double x,
-    double y,
-    double z,
-    double r,
-    int buttons,
+    Header? header,
+    double? x,
+    double? y,
+    double? z,
+    double? r,
+    int? buttons,
   }) => ManualControl(
   header: header,
   x: x,

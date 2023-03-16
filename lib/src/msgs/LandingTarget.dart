@@ -33,14 +33,14 @@ class LandingTarget extends RosMessage<LandingTarget> {
 
   static LandingTarget $prototype = LandingTarget();
   LandingTarget({ 
-    Header header,
-    int target_num,
-    int frame,
+    Header? header,
+    int? target_num,
+    int? frame,
     List<double> angle,
-    double distance,
+    double? distance,
     List<double> size,
     Pose pose,
-    int type,
+    int? type,
   }):
   this.header = header ?? Header(),
   this.target_num = target_num ?? 0,
@@ -53,14 +53,14 @@ class LandingTarget extends RosMessage<LandingTarget> {
 
   @override
   LandingTarget call({ 
-    Header header,
-    int target_num,
-    int frame,
+    Header? header,
+    int? target_num,
+    int? frame,
     List<double> angle,
-    double distance,
+    double? distance,
     List<double> size,
     Pose pose,
-    int type,
+    int? type,
   }) => LandingTarget(
   header: header,
   target_num: target_num,

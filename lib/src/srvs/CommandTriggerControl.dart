@@ -25,8 +25,8 @@ class CommandTriggerControlRequest extends RosMessage<CommandTriggerControlReque
   static CommandTriggerControlRequest $prototype = CommandTriggerControlRequest();
   CommandTriggerControlRequest({ 
     bool? trigger_enable,
-    bool? sequence_reset,
-    bool? trigger_pause,
+    bool?? sequence_reset,
+    bool?? trigger_pause,
   }):
   this.trigger_enable = trigger_enable ?? false,
   this.sequence_reset = sequence_reset ?? false,
@@ -35,8 +35,8 @@ class CommandTriggerControlRequest extends RosMessage<CommandTriggerControlReque
   @override
   CommandTriggerControlRequest call({ 
     bool? trigger_enable,
-    bool? sequence_reset,
-    bool? trigger_pause,
+    bool?? sequence_reset,
+    bool?? trigger_pause,
   }) => CommandTriggerControlRequest(
   trigger_enable: trigger_enable,
   sequence_reset: sequence_reset,
@@ -104,7 +104,7 @@ class CommandTriggerControlResponse extends RosMessage<CommandTriggerControlResp
   static CommandTriggerControlResponse $prototype = CommandTriggerControlResponse();
   CommandTriggerControlResponse({ 
     bool? success,
-    int? result,
+    int?? result,
   }):
   this.success = success ?? false,
   this.result = result ?? 0;
@@ -112,7 +112,7 @@ class CommandTriggerControlResponse extends RosMessage<CommandTriggerControlResp
   @override
   CommandTriggerControlResponse call({ 
     bool? success,
-    int? result,
+    int?? result,
   }) => CommandTriggerControlResponse(
   success: success,
   result: result,

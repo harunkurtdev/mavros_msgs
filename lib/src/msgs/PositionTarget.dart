@@ -33,14 +33,14 @@ class PositionTarget extends RosMessage<PositionTarget> {
 
   static PositionTarget $prototype = PositionTarget();
   PositionTarget({ 
-    Header header,
-    int coordinate_frame,
-    int type_mask,
+    Header? header,
+    int? coordinate_frame,
+    int? type_mask,
     Point position,
     Vector3 velocity,
     Vector3 acceleration_or_force,
-    double yaw,
-    double yaw_rate,
+    double? yaw,
+    double? yaw_rate,
   }):
   this.header = header ?? Header(),
   this.coordinate_frame = coordinate_frame ?? 0,
@@ -53,14 +53,14 @@ class PositionTarget extends RosMessage<PositionTarget> {
 
   @override
   PositionTarget call({ 
-    Header header,
-    int coordinate_frame,
-    int type_mask,
+    Header? header,
+    int? coordinate_frame,
+    int? type_mask,
     Point position,
     Vector3 velocity,
     Vector3 acceleration_or_force,
-    double yaw,
-    double yaw_rate,
+    double? yaw,
+    double? yaw_rate,
   }) => PositionTarget(
   header: header,
   coordinate_frame: coordinate_frame,

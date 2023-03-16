@@ -24,9 +24,9 @@ class LogData extends RosMessage<LogData> {
 
   static LogData $prototype = LogData();
   LogData({ 
-    Header header,
-    int id,
-    int offset,
+    Header? header,
+    int? id,
+    int? offset,
     List<int> data,
   }):
   this.header = header ?? Header(),
@@ -36,9 +36,9 @@ class LogData extends RosMessage<LogData> {
 
   @override
   LogData call({ 
-    Header header,
-    int id,
-    int offset,
+    Header? header,
+    int? id,
+    int? offset,
     List<int> data,
   }) => LogData(
   header: header,

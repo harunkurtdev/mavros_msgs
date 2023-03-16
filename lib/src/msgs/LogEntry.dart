@@ -28,12 +28,12 @@ class LogEntry extends RosMessage<LogEntry> {
 
   static LogEntry $prototype = LogEntry();
   LogEntry({ 
-    Header header,
-    int id,
-    int num_logs,
-    int last_log_num,
+    Header? header,
+    int? id,
+    int? num_logs,
+    int? last_log_num,
     RosTime time_utc,
-    int size,
+    int? size,
   }):
   this.header = header ?? Header(),
   this.id = id ?? 0,
@@ -44,12 +44,12 @@ class LogEntry extends RosMessage<LogEntry> {
 
   @override
   LogEntry call({ 
-    Header header,
-    int id,
-    int num_logs,
-    int last_log_num,
+    Header? header,
+    int? id,
+    int? num_logs,
+    int? last_log_num,
     RosTime time_utc,
-    int size,
+    int? size,
   }) => LogEntry(
   header: header,
   id: id,

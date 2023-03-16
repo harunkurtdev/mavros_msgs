@@ -23,7 +23,7 @@ class FileOpenRequest extends RosMessage<FileOpenRequest> {
   static FileOpenRequest $prototype = FileOpenRequest();
   FileOpenRequest({ 
     String? file_path,
-    int? mode,
+    int?? mode,
   }):
   this.file_path = file_path ?? '',
   this.mode = mode ?? 0;
@@ -31,7 +31,7 @@ class FileOpenRequest extends RosMessage<FileOpenRequest> {
   @override
   FileOpenRequest call({ 
     String? file_path,
-    int? mode,
+    int?? mode,
   }) => FileOpenRequest(
   file_path: file_path,
   mode: mode,
@@ -111,8 +111,8 @@ class FileOpenResponse extends RosMessage<FileOpenResponse> {
   static FileOpenResponse $prototype = FileOpenResponse();
   FileOpenResponse({ 
     int? size,
-    bool? success,
-    int? r_errno,
+    bool?? success,
+    int?? r_errno,
   }):
   this.size = size ?? 0,
   this.success = success ?? false,
@@ -121,8 +121,8 @@ class FileOpenResponse extends RosMessage<FileOpenResponse> {
   @override
   FileOpenResponse call({ 
     int? size,
-    bool? success,
-    int? r_errno,
+    bool?? success,
+    int?? r_errno,
   }) => FileOpenResponse(
   size: size,
   success: success,

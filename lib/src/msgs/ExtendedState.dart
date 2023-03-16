@@ -21,18 +21,18 @@ class ExtendedState extends RosMessage<ExtendedState> {
 
   static ExtendedState $prototype = ExtendedState();
   ExtendedState({
-    Header header,
-    int vtol_state,
-    int landed_state,
+    Header? header,
+    int? vtol_state,
+    int? landed_state,
   })  : this.header = header ?? Header(),
         this.vtol_state = vtol_state ?? 0,
         this.landed_state = landed_state ?? 0;
 
   @override
   ExtendedState call({
-    Header header,
-    int vtol_state,
-    int landed_state,
+    Header? header,
+    int? vtol_state,
+    int? landed_state,
   }) =>
       ExtendedState(
         header: header,

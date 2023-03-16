@@ -30,13 +30,13 @@ class VFR_HUD extends RosMessage<VFR_HUD> {
 
   static VFR_HUD $prototype = VFR_HUD();
   VFR_HUD({ 
-    Header header,
-    double airspeed,
-    double groundspeed,
-    int heading,
-    double throttle,
-    double altitude,
-    double climb,
+    Header? header,
+    double? airspeed,
+    double? groundspeed,
+    int? heading,
+    double? throttle,
+    double? altitude,
+    double? climb,
   }):
   this.header = header ?? Header(),
   this.airspeed = airspeed ?? 0.0,
@@ -48,13 +48,13 @@ class VFR_HUD extends RosMessage<VFR_HUD> {
 
   @override
   VFR_HUD call({ 
-    Header header,
-    double airspeed,
-    double groundspeed,
-    int heading,
-    double throttle,
-    double altitude,
-    double climb,
+    Header? header,
+    double? airspeed,
+    double? groundspeed,
+    int? heading,
+    double? throttle,
+    double? altitude,
+    double? climb,
   }) => VFR_HUD(
   header: header,
   airspeed: airspeed,

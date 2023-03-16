@@ -34,15 +34,15 @@ class NavControllerOutput extends RosMessage<NavControllerOutput> {
 
   static NavControllerOutput $prototype = NavControllerOutput();
   NavControllerOutput({ 
-    Header header,
-    double nav_roll,
-    double nav_pitch,
-    int nav_bearing,
-    int target_bearing,
-    int wp_dist,
-    double alt_error,
-    double aspd_error,
-    double xtrack_error,
+    Header? header,
+    double? nav_roll,
+    double? nav_pitch,
+    int? nav_bearing,
+    int? target_bearing,
+    int? wp_dist,
+    double? alt_error,
+    double? aspd_error,
+    double? xtrack_error,
   }):
   this.header = header ?? Header(),
   this.nav_roll = nav_roll ?? 0.0,
@@ -56,15 +56,15 @@ class NavControllerOutput extends RosMessage<NavControllerOutput> {
 
   @override
   NavControllerOutput call({ 
-    Header header,
-    double nav_roll,
-    double nav_pitch,
-    int nav_bearing,
-    int target_bearing,
-    int wp_dist,
-    double alt_error,
-    double aspd_error,
-    double xtrack_error,
+    Header? header,
+    double? nav_roll,
+    double? nav_pitch,
+    int? nav_bearing,
+    int? target_bearing,
+    int? wp_dist,
+    double? alt_error,
+    double? aspd_error,
+    double? xtrack_error,
   }) => NavControllerOutput(
   header: header,
   nav_roll: nav_roll,

@@ -34,14 +34,14 @@ class HilStateQuaternion extends RosMessage<HilStateQuaternion> {
 
   static HilStateQuaternion $prototype = HilStateQuaternion();
   HilStateQuaternion({ 
-    Header header,
-    Quaternion orientation,
-    Vector3 angular_velocity,
-    Vector3 linear_acceleration,
-    Vector3 linear_velocity,
+    Header? header,
+    Quaternion? orientation,
+    Vector3? angular_velocity,
+    Vector3? linear_acceleration,
+    Vector3? linear_velocity,
     // GeoPoint geo,
-    double ind_airspeed,
-    double true_airspeed,
+    double? ind_airspeed,
+    double? true_airspeed,
   }):
   this.header = header ?? Header(),
   this.orientation = orientation ?? Quaternion(),
@@ -54,14 +54,14 @@ class HilStateQuaternion extends RosMessage<HilStateQuaternion> {
 
   @override
   HilStateQuaternion call({ 
-    Header header,
-    Quaternion orientation,
-    Vector3 angular_velocity,
-    Vector3 linear_acceleration,
-    Vector3 linear_velocity,
+    Header? header,
+    Quaternion? orientation,
+    Vector3? angular_velocity,
+    Vector3? linear_acceleration,
+    Vector3? linear_velocity,
     // GeoPoint geo,
-    double ind_airspeed,
-    double true_airspeed,
+    double? ind_airspeed,
+    double? true_airspeed,
   }) => HilStateQuaternion(
   header: header,
   orientation: orientation,

@@ -36,13 +36,13 @@ class MountConfigureRequest extends RosMessage<MountConfigureRequest> {
   static MountConfigureRequest $prototype = MountConfigureRequest();
   MountConfigureRequest({ 
     Header? header,
-    int? mode,
-    bool? stabilize_roll,
-    bool? stabilize_pitch,
-    bool? stabilize_yaw,
-    int? roll_input,
-    int? pitch_input,
-    int? yaw_input,
+    int?? mode,
+    bool?? stabilize_roll,
+    bool?? stabilize_pitch,
+    bool?? stabilize_yaw,
+    int?? roll_input,
+    int?? pitch_input,
+    int?? yaw_input,
   }):
   this.header = header ?? Header(),
   this.mode = mode ?? 0,
@@ -56,13 +56,13 @@ class MountConfigureRequest extends RosMessage<MountConfigureRequest> {
   @override
   MountConfigureRequest call({ 
     Header? header,
-    int? mode,
-    bool? stabilize_roll,
-    bool? stabilize_pitch,
-    bool? stabilize_yaw,
-    int? roll_input,
-    int? pitch_input,
-    int? yaw_input,
+    int?? mode,
+    bool?? stabilize_roll,
+    bool?? stabilize_pitch,
+    bool?? stabilize_yaw,
+    int?? roll_input,
+    int?? pitch_input,
+    int?? yaw_input,
   }) => MountConfigureRequest(
   header: header,
   mode: mode,
@@ -202,7 +202,7 @@ class MountConfigureResponse extends RosMessage<MountConfigureResponse> {
   static MountConfigureResponse $prototype = MountConfigureResponse();
   MountConfigureResponse({ 
     bool? success,
-    int? result,
+    int?? result,
   }):
   this.success = success ?? false,
   this.result = result ?? 0;
@@ -210,7 +210,7 @@ class MountConfigureResponse extends RosMessage<MountConfigureResponse> {
   @override
   MountConfigureResponse call({ 
     bool? success,
-    int? result,
+    int?? result,
   }) => MountConfigureResponse(
   success: success,
   result: result,

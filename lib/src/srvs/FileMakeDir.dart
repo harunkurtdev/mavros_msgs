@@ -87,7 +87,7 @@ class FileMakeDirResponse extends RosMessage<FileMakeDirResponse> {
   static FileMakeDirResponse $prototype = FileMakeDirResponse();
   FileMakeDirResponse({ 
     bool? success,
-    int? r_errno,
+    int?? r_errno,
   }):
   this.success = success ?? false,
   this.r_errno = r_errno ?? 0;
@@ -95,7 +95,7 @@ class FileMakeDirResponse extends RosMessage<FileMakeDirResponse> {
   @override
   FileMakeDirResponse call({ 
     bool? success,
-    int? r_errno,
+    int?? r_errno,
   }) => FileMakeDirResponse(
   success: success,
   r_errno: r_errno,

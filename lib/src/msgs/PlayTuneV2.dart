@@ -20,7 +20,7 @@ class PlayTuneV2 extends RosMessage<PlayTuneV2> {
   static PlayTuneV2 $prototype = PlayTuneV2();
   PlayTuneV2({ 
     int format,
-    String tune,
+    String? tune,
   }):
   this.format = format ?? 0,
   this.tune = tune ?? '';
@@ -28,7 +28,7 @@ class PlayTuneV2 extends RosMessage<PlayTuneV2> {
   @override
   PlayTuneV2 call({ 
     int format,
-    String tune,
+    String? tune,
   }) => PlayTuneV2(
   format: format,
   tune: tune,

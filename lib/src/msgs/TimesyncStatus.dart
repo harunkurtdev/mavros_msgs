@@ -26,11 +26,11 @@ class TimesyncStatus extends RosMessage<TimesyncStatus> {
 
   static TimesyncStatus $prototype = TimesyncStatus();
   TimesyncStatus({ 
-    Header header,
-    int remote_timestamp_ns,
-    int observed_offset_ns,
-    int estimated_offset_ns,
-    double round_trip_time_ms,
+    Header? header,
+    int? remote_timestamp_ns,
+    int? observed_offset_ns,
+    int? estimated_offset_ns,
+    double? round_trip_time_ms,
   }):
   this.header = header ?? Header(),
   this.remote_timestamp_ns = remote_timestamp_ns ?? 0,
@@ -40,11 +40,11 @@ class TimesyncStatus extends RosMessage<TimesyncStatus> {
 
   @override
   TimesyncStatus call({ 
-    Header header,
-    int remote_timestamp_ns,
-    int observed_offset_ns,
-    int estimated_offset_ns,
-    double round_trip_time_ms,
+    Header? header,
+    int? remote_timestamp_ns,
+    int? observed_offset_ns,
+    int? estimated_offset_ns,
+    double? round_trip_time_ms,
   }) => TimesyncStatus(
   header: header,
   remote_timestamp_ns: remote_timestamp_ns,

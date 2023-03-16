@@ -29,12 +29,12 @@ class ESCInfo extends RosMessage<ESCInfo> {
 
   static ESCInfo $prototype = ESCInfo();
   ESCInfo({
-    Header header,
-    int counter,
-    int count,
-    int connection_type,
-    int info,
-    List<ESCInfoItem> esc_info,
+    Header? header,
+    int? counter,
+    int? count,
+    int? connection_type,
+    int? info,
+    List<ESCInfoItem>? esc_info,
   })  : this.header = header ?? Header(),
         this.counter = counter ?? 0,
         this.count = count ?? 0,
@@ -44,12 +44,12 @@ class ESCInfo extends RosMessage<ESCInfo> {
 
   @override
   ESCInfo call({
-    Header header,
-    int counter,
-    int count,
-    int connection_type,
-    int info,
-    List<ESCInfoItem> esc_info,
+    Header? header,
+    int? counter,
+    int? count,
+    int? connection_type,
+    int? info,
+    List<ESCInfoItem>? esc_info,
   }) =>
       ESCInfo(
         header: header,

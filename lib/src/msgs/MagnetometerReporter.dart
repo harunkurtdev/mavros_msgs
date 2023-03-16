@@ -22,9 +22,9 @@ class MagnetometerReporter extends RosMessage<MagnetometerReporter> {
 
   static MagnetometerReporter $prototype = MagnetometerReporter();
   MagnetometerReporter({ 
-    Header header,
-    int report,
-    double confidence,
+    Header? header,
+    int? report,
+    double? confidence,
   }):
   this.header = header ?? Header(),
   this.report = report ?? 0,
@@ -32,9 +32,9 @@ class MagnetometerReporter extends RosMessage<MagnetometerReporter> {
 
   @override
   MagnetometerReporter call({ 
-    Header header,
-    int report,
-    double confidence,
+    Header? header,
+    int? report,
+    double? confidence,
   }) => MagnetometerReporter(
   header: header,
   report: report,

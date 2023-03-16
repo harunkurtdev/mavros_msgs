@@ -27,11 +27,11 @@ class Param extends RosMessage<Param> {
 
   static Param $prototype = Param();
   Param({ 
-    Header header,
-    String param_id,
+    Header? header,
+    String? param_id,
     ParamValue value,
-    int param_index,
-    int param_count,
+    int? param_index,
+    int? param_count,
   }):
   this.header = header ?? Header(),
   this.param_id = param_id ?? '',
@@ -41,11 +41,11 @@ class Param extends RosMessage<Param> {
 
   @override
   Param call({ 
-    Header header,
-    String param_id,
+    Header? header,
+    String? param_id,
     ParamValue value,
-    int param_index,
-    int param_count,
+    int? param_index,
+    int? param_count,
   }) => Param(
   header: header,
   param_id: param_id,

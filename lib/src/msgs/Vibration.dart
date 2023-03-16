@@ -23,7 +23,7 @@ class Vibration extends RosMessage<Vibration> {
 
   static Vibration $prototype = Vibration();
   Vibration({ 
-    Header header,
+    Header? header,
     Vector3 vibration,
     List<double> clipping,
   }):
@@ -33,7 +33,7 @@ class Vibration extends RosMessage<Vibration> {
 
   @override
   Vibration call({ 
-    Header header,
+    Header? header,
     Vector3 vibration,
     List<double> clipping,
   }) => Vibration(

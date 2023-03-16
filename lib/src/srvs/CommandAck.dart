@@ -27,9 +27,9 @@ class CommandAckRequest extends RosMessage<CommandAckRequest> {
   static CommandAckRequest $prototype = CommandAckRequest();
   CommandAckRequest({
     int? command,
-    int? result,
-    int? progress,
-    int? result_param2,
+    int?? result,
+    int?? progress,
+    int?? result_param2,
   })  : this.command = command ?? 0,
         this.result = result ?? 0,
         this.progress = progress ?? 0,
@@ -38,9 +38,9 @@ class CommandAckRequest extends RosMessage<CommandAckRequest> {
   @override
   CommandAckRequest call({
     int? command,
-    int? result,
-    int? progress,
-    int? result_param2,
+    int?? result,
+    int?? progress,
+    int?? result_param2,
   }) =>
       CommandAckRequest(
         command: command,
@@ -115,14 +115,14 @@ class CommandAckResponse extends RosMessage<CommandAckResponse> {
   static CommandAckResponse $prototype = CommandAckResponse();
   CommandAckResponse({
     bool? success,
-    int? result,
+    int?? result,
   })  : this.success = success ?? false,
         this.result = result ?? 0;
 
   @override
   CommandAckResponse call({
     bool? success,
-    int? result,
+    int?? result,
   }) =>
       CommandAckResponse(
         success: success,

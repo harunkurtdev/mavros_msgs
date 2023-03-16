@@ -30,13 +30,13 @@ class ESCTelemetryItem extends RosMessage<ESCTelemetryItem> {
 
   static ESCTelemetryItem $prototype = ESCTelemetryItem();
   ESCTelemetryItem({ 
-    Header header,
-    double temperature,
-    double voltage,
-    double current,
-    double totalcurrent,
-    int rpm,
-    int count,
+    Header? header,
+    double? temperature,
+    double? voltage,
+    double? current,
+    double? totalcurrent,
+    int? rpm,
+    int? count,
   }):
   this.header = header ?? Header(),
   this.temperature = temperature ?? 0.0,
@@ -48,13 +48,13 @@ class ESCTelemetryItem extends RosMessage<ESCTelemetryItem> {
 
   @override
   ESCTelemetryItem call({ 
-    Header header,
-    double temperature,
-    double voltage,
-    double current,
-    double totalcurrent,
-    int rpm,
-    int count,
+    Header? header,
+    double? temperature,
+    double? voltage,
+    double? current,
+    double? totalcurrent,
+    int? rpm,
+    int? count,
   }) => ESCTelemetryItem(
   header: header,
   temperature: temperature,

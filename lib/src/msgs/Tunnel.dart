@@ -26,9 +26,9 @@ class Tunnel extends RosMessage<Tunnel> {
   static Tunnel $prototype = Tunnel();
   Tunnel({ 
     int target_system,
-    int target_component,
-    int payload_type,
-    int payload_length,
+    int? target_component,
+    int? payload_type,
+    int? payload_length,
     List<int> payload,
   }):
   this.target_system = target_system ?? 0,
@@ -40,9 +40,9 @@ class Tunnel extends RosMessage<Tunnel> {
   @override
   Tunnel call({ 
     int target_system,
-    int target_component,
-    int payload_type,
-    int payload_length,
+    int? target_component,
+    int? payload_type,
+    int? payload_length,
     List<int> payload,
   }) => Tunnel(
   target_system: target_system,

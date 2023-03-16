@@ -37,16 +37,16 @@ class GlobalPositionTarget extends RosMessage<GlobalPositionTarget> {
 
   static GlobalPositionTarget $prototype = GlobalPositionTarget();
   GlobalPositionTarget({ 
-    Header header,
-    int coordinate_frame,
-    int type_mask,
-    double latitude,
-    double longitude,
-    double altitude,
+    Header? header,
+    int? coordinate_frame,
+    int? type_mask,
+    double? latitude,
+    double? longitude,
+    double? altitude,
     Vector3 velocity,
     Vector3 acceleration_or_force,
-    double yaw,
-    double yaw_rate,
+    double? yaw,
+    double? yaw_rate,
   }):
   this.header = header ?? Header(),
   this.coordinate_frame = coordinate_frame ?? 0,
@@ -61,16 +61,16 @@ class GlobalPositionTarget extends RosMessage<GlobalPositionTarget> {
 
   @override
   GlobalPositionTarget call({ 
-    Header header,
-    int coordinate_frame,
-    int type_mask,
-    double latitude,
-    double longitude,
-    double altitude,
+    Header? header,
+    int? coordinate_frame,
+    int? type_mask,
+    double? latitude,
+    double? longitude,
+    double? altitude,
     Vector3 velocity,
     Vector3 acceleration_or_force,
-    double yaw,
-    double yaw_rate,
+    double? yaw,
+    double? yaw_rate,
   }) => GlobalPositionTarget(
   header: header,
   coordinate_frame: coordinate_frame,

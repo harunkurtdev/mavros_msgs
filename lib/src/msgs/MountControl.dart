@@ -32,14 +32,14 @@ class MountControl extends RosMessage<MountControl> {
 
   static MountControl $prototype = MountControl();
   MountControl({ 
-    Header header,
-    int mode,
-    double pitch,
-    double roll,
-    double yaw,
-    double altitude,
-    double latitude,
-    double longitude,
+    Header? header,
+    int? mode,
+    double? pitch,
+    double? roll,
+    double? yaw,
+    double? altitude,
+    double? latitude,
+    double? longitude,
   }):
   this.header = header ?? Header(),
   this.mode = mode ?? 0,
@@ -52,14 +52,14 @@ class MountControl extends RosMessage<MountControl> {
 
   @override
   MountControl call({ 
-    Header header,
-    int mode,
-    double pitch,
-    double roll,
-    double yaw,
-    double altitude,
-    double latitude,
-    double longitude,
+    Header? header,
+    int? mode,
+    double? pitch,
+    double? roll,
+    double? yaw,
+    double? altitude,
+    double? latitude,
+    double? longitude,
   }) => MountControl(
   header: header,
   mode: mode,

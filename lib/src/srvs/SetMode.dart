@@ -23,14 +23,14 @@ class SetModeRequest extends RosMessage<SetModeRequest> {
   static SetModeRequest $prototype = SetModeRequest();
   SetModeRequest({
     int? base_mode,
-    String? custom_mode,
+    String?? custom_mode,
   })  : this.base_mode = base_mode ?? 0,
         this.custom_mode = custom_mode ?? '';
 
   @override
   SetModeRequest call({
     int? base_mode,
-    String? custom_mode,
+    String?? custom_mode,
   }) =>
       SetModeRequest(
         base_mode: base_mode,
