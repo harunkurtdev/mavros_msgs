@@ -4,7 +4,7 @@
 
 name: mavros_msgs
 description: A ROS mavros_msgs message package for dartros
-version: 1.0.0
+version: 1.0.3
 repository: https://github.com/harunkurtme/mavros_msgs
 
 # publish_to: "none"
